@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path=""/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Mindswap OWL-S API"/>
+	<classpathentry kind="lib" path="/NExT Core/libs/log4j-1.2.13.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Simpack"/>
+	<classpathentry kind="lib" path="C:/Hacks/workspace/jetty-6.0.2/lib/jetty-6.0.2.jar"/>
+	<classpathentry kind="lib" path="C:/Hacks/workspace/jetty-6.0.2/lib/servlet-api-2.5-6.0.2.jar"/>
+	<classpathentry kind="lib" path="C:/Hacks/workspace/jetty-6.0.2/lib/jetty-util-6.0.2.jar"/>
+	<classpathentry kind="output" path=""/>
+</classpath>
