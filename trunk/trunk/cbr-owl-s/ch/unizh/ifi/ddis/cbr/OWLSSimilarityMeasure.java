@@ -34,8 +34,8 @@ import simpack.tokenizer.SplittedStringTokenizer;
 public class OWLSSimilarityMeasure {
 
 	private Logger logger = Logger.getLogger(this.getClass().getName());
-	private RecordedCase oldCase;
-	private RecordedCase newCase;
+	private OWLWrapper oldCase;
+	private OWLWrapper newCase;
 
 	private boolean calculated = false;
 	private double similarity;
@@ -71,7 +71,7 @@ public class OWLSSimilarityMeasure {
 	/*
 	 * constructor
 	 */
-	public OWLSSimilarityMeasure(RecordedCase oldCase, RecordedCase newCase) {
+	public OWLSSimilarityMeasure(OWLWrapper oldCase, OWLWrapper newCase) {
 		this.oldCase = oldCase;
 		this.newCase = newCase;
 	}
@@ -98,11 +98,11 @@ public class OWLSSimilarityMeasure {
 		if(syntacticProcessWeight != null) this.syntacticProcessWeight = syntacticProcessWeight.doubleValue();
 	}
 	
-	public RecordedCase getOldCase() {
+	public OWLWrapper getOldCase() {
 		return oldCase;
 	}
 
-	public RecordedCase getNewCase() {
+	public OWLWrapper getNewCase() {
 		return newCase;
 	}
 	
@@ -205,7 +205,7 @@ public class OWLSSimilarityMeasure {
 		}
 	}
 	
-	private double compareGraph(RecordedCase newCase) {
+	private double compareGraph(OWLWrapper newCase) {
 		OWLSGraph oldgraph = oldCase.getGraph();
 		OWLSGraph newgraph = newCase.getGraph();
 		
@@ -247,7 +247,7 @@ public class OWLSSimilarityMeasure {
 		return similarity;
 	}
 
-	private double compareSyntacticInputs(RecordedCase newCase) {
+	private double compareSyntacticInputs(OWLWrapper newCase) {
 		double match = -1;
 		ArrayList oldInputs = oldCase.getInputNames();
 		ArrayList newInputs = newCase.getInputNames();
@@ -285,7 +285,7 @@ public class OWLSSimilarityMeasure {
 		return match;
 	}
 
-	private double compareSyntacticOutputs(RecordedCase newCase) {
+	private double compareSyntacticOutputs(OWLWrapper newCase) {
 		double match = -1;
 		ArrayList oldOutputs = oldCase.getOutputNames();
 		ArrayList newOutputs = newCase.getOutputNames();
@@ -323,7 +323,7 @@ public class OWLSSimilarityMeasure {
 		return match;
 	}
 
-	private double compareSyntacticProcesses(RecordedCase newCase) {
+	private double compareSyntacticProcesses(OWLWrapper newCase) {
 		double match = -1;
 		ArrayList oldProcesses = oldCase.getOutputNames();
 		ArrayList newProcesses = newCase.getOutputNames();
@@ -361,7 +361,7 @@ public class OWLSSimilarityMeasure {
 		return match;
 	}
 
-	private int compareSemanticInputs(RecordedCase newCase) {
+	private int compareSemanticInputs(OWLWrapper newCase) {
 		int match = -1;
 		InputList oldInputs = oldCase.getInputs();
 		InputList newInputs = newCase.getInputs();
@@ -402,7 +402,7 @@ public class OWLSSimilarityMeasure {
 		return match;
 	}
 
-	private int compareSemanticOutputs(RecordedCase newCase) {
+	private int compareSemanticOutputs(OWLWrapper newCase) {
 		int match = -1;
 		OutputList oldOutputs = oldCase.getOutputs();
 		OutputList newOutputs = newCase.getOutputs();
@@ -442,7 +442,7 @@ public class OWLSSimilarityMeasure {
 		return match;
 	}
 	
-	private int compareSemanticProcesses(RecordedCase newCase) {
+	private int compareSemanticProcesses(OWLWrapper newCase) {
 		int match = -1;
 		ProcessList oldProcesses = oldCase.getProcesses();
 		ProcessList newProcesses = newCase.getProcesses();

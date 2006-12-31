@@ -25,7 +25,7 @@ import org.mindswap.owls.service.Service;
 import ch.unizh.ifi.ddis.cbr.CBRKnowledgeBase;
 import ch.unizh.ifi.ddis.cbr.OWLCaseBasedReasoner;
 import ch.unizh.ifi.ddis.cbr.OWLSSimilarityMeasure;
-import ch.unizh.ifi.ddis.cbr.RecordedCase;
+import ch.unizh.ifi.ddis.cbr.OWLWrapper;
 
 public class TestCBR {
 	

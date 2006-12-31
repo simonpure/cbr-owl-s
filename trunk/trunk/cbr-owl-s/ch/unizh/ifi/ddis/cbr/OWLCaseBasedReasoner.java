@@ -95,7 +95,7 @@ public class OWLCaseBasedReasoner {
 		while(i.hasNext()) {
 			service = (Service) i.next();
 			ont = service.getOntology();
-			RecordedCase rc = new RecordedCase(ont, kb);
+			OWLWrapper rc = new OWLWrapper(ont, kb);
 			if(!containsCase(rc)) {
 				cases.add(rc);
 			}
@@ -149,15 +149,15 @@ public class OWLCaseBasedReasoner {
 		// load ontology into the kb
 		kb.load(ont);
 		
-		RecordedCase newCase = new RecordedCase(ont);
+		OWLWrapper newCase = new OWLWrapper(ont);
 		
 		//logger.info(newCase.getGraph().getNodeSet());
 		
-		RecordedCase oldCase;
+		OWLWrapper oldCase;
 		Iterator i = cases.iterator();
 		OWLSSimilarityMeasure similarity;
 		while(i.hasNext()) {
-			oldCase = (RecordedCase) i.next();
+			oldCase = (OWLWrapper) i.next();
 			similarity = compare(newCase, oldCase);
 			bestCases.add(similarity);
 			logger.info("match:: " + similarity.getSimilarity() + "::size::" + bestCases.size());
@@ -166,7 +166,7 @@ public class OWLCaseBasedReasoner {
 		return bestCases;
 	}
 	
-	private OWLSSimilarityMeasure compare(RecordedCase newCase, RecordedCase oldCase) {
+	private OWLSSimilarityMeasure compare(OWLWrapper newCase, OWLWrapper oldCase) {
 		logger.info("compare\n new::" + newCase + "\nto old::\n" + oldCase);
 		
 		OWLSSimilarityMeasure similarity = new OWLSSimilarityMeasure(oldCase, newCase);
@@ -179,11 +179,11 @@ public class OWLCaseBasedReasoner {
 	 * helper method to avoid duplicates as the kb returns somehow duplicates
 	 * 
 	 */
-	private boolean containsCase(RecordedCase rc) {
+	private boolean containsCase(OWLWrapper rc) {
 		Iterator i = cases.iterator();
-		RecordedCase temp;
+		OWLWrapper temp;
 		while(i.hasNext()) {
-			temp = (RecordedCase) i.next();
+			temp = (OWLWrapper) i.next();
 			if(temp.getURI().equals(rc.getURI())) return true;
 		}
 		return false;
@@ -217,7 +217,7 @@ public class OWLCaseBasedReasoner {
 		
 		for(int i = 0; i<a.length; i++) {
 			Integer match = new Integer(a[i]);
-			RecordedCase rc = (RecordedCase) hashtable.get(match);
+			OWLWrapper rc = (OWLWrapper) hashtable.get(match);
 			rankedHashtable.put(match, rc);
 		}
 		
