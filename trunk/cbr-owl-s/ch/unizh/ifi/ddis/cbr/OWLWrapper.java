@@ -43,7 +43,7 @@ import org.mindswap.query.ValueMap;
  * @author simonl
  *
  */
-public class RecordedCase {
+public class OWLWrapper {
 
 	private Logger logger = Logger.getLogger(this.getClass().getName());
 	private OWLOntology ont;
@@ -54,7 +54,7 @@ public class RecordedCase {
 	private static final String TRAILPROCESS = "ExecutionTrailProcess", TRAILSERVICE = "ExecutionTrailService", TRAILPROFILE = "ExecutionTrailProfile";
 	private static final String TRAILURL = "http://www.ifi.unizh.ch/ddis/ont/owl-s/trails/";
 
-	public RecordedCase(OWLOntology ont) throws FileNotFoundException, URISyntaxException {
+	public OWLWrapper(OWLOntology ont) throws FileNotFoundException, URISyntaxException {
 		this.ont = ont;
 		isTrail = (ont.getURI().toString().indexOf(TRAILURL)==0);
 		populateGraph();
@@ -62,7 +62,7 @@ public class RecordedCase {
 		//ont.write(System.out);
 	}
 
-	public RecordedCase(OWLOntology ont, OWLKnowledgeBase kb) throws FileNotFoundException, URISyntaxException {
+	public OWLWrapper(OWLOntology ont, OWLKnowledgeBase kb) throws FileNotFoundException, URISyntaxException {
 		this.ont = ont;
 		this.kb = kb;
 		isTrail = (ont.getURI().toString().indexOf(TRAILURL)==0);
