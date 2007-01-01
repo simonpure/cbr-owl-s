@@ -13,6 +13,7 @@ import java.util.Iterator;
 
 import org.apache.log4j.Logger;
 import org.mindswap.owl.OWLType;
+import org.mindswap.owl.OWLValue;
 import org.mindswap.owls.process.Input;
 import org.mindswap.owls.process.InputList;
 import org.mindswap.owls.process.Output;
@@ -37,7 +38,9 @@ public class OWLSSimilarityMeasure {
 	private OWLWrapper oldCase;
 	private OWLWrapper newCase;
 
+	// state of calculation
 	private boolean calculated = false;
+	// the overall similarity measure 
 	private double similarity;
 
 	// the different similarities
@@ -51,6 +54,10 @@ public class OWLSSimilarityMeasure {
 	private double syntacticInputsWeigth = 0.6, syntacticOutputsWeight = 0.3, syntacticProcessWeight = 0.1;
 	private double semanticWeight = 0.8, syntacticWeight = 0.1, graphWeight = 0.1;
 
+	// whether to include constants in the matching process
+	// default is false
+	private boolean constants = false;
+	
 	// constants used for semantic matching
     public static String[] MATCHES = {"EXACT", "SUBSUME", "RELAXED", "FAIL"};
     public static int EXACT   = 0;
@@ -98,10 +105,12 @@ public class OWLSSimilarityMeasure {
 		if(syntacticProcessWeight != null) this.syntacticProcessWeight = syntacticProcessWeight.doubleValue();
 	}
 	
+	// return ontology associated with this similarity measure
 	public OWLWrapper getOldCase() {
 		return oldCase;
 	}
 
+	// return ontology associated with this similarity measure
 	public OWLWrapper getNewCase() {
 		return newCase;
 	}
@@ -111,13 +120,23 @@ public class OWLSSimilarityMeasure {
 		double [] tmp = {semanticmatch, semanticinputs, semanticoutputs, semanticprocesses};
 		return tmp;
 	}
+	
+	public double getSemanticSimilarity() {
+		calculate();
+		return semanticmatch;
+	}
 
 	public double [] getSyntacticSimilarities() {
 		calculate();
 		double [] tmp = {syntacticmatch, syntacticinputs, syntacticoutputs, syntacticprocessses};
 		return tmp;
 	}
-	
+
+	public double getSyntacticSimilarity() {
+		calculate();
+		return syntacticmatch;
+	}
+
 	public double getGraphSimilarity() {
 		return graphmatch;
 	}
@@ -131,6 +150,14 @@ public class OWLSSimilarityMeasure {
 			calculate();
 		}
 		return similarity;
+	}
+	
+	public void setConsiderConstants(boolean constants) {
+		this.constants = constants;
+	}
+	
+	public boolean getConsiderConstants() {
+		return constants;
 	}
 
 	public void calculate() {
@@ -155,7 +182,7 @@ public class OWLSSimilarityMeasure {
 			semanticprocesses = ((double) compareSemanticProcesses(newCase) / (double) oldCase.getNumberOfProcesses())*semanticProcessWeight;
 
 			// normalize
-			double semanticmatch = ((semanticinputs) + (semanticoutputs) 
+			semanticmatch = ((semanticinputs) + (semanticoutputs) 
 					+ (semanticprocesses) / 3 );
 			
 //			semanticmatch = ((semanticinputs*semanticInputsWeight) + (semanticoutputs*semanticOutputsWeight) 
@@ -179,7 +206,7 @@ public class OWLSSimilarityMeasure {
 			syntacticprocessses = (compareSyntacticProcesses(newCase) / oldCase.getNumberOfProcesses())*syntacticProcessWeight;
 
 			// normalize
-			double syntacticmatch = ((syntacticinputs) + (syntacticoutputs) 
+			syntacticmatch = ((syntacticinputs) + (syntacticoutputs) 
 					+ (syntacticprocessses) / 3 );
 			
 //			syntacticmatch = ((syntacticinputs*syntacticInputsWeigth) + (syntacticoutputs*syntacticOutputsWeight) 
@@ -199,9 +226,8 @@ public class OWLSSimilarityMeasure {
 			
 			// compute overall match with weights
 			//
-			double match = (semanticmatch*semanticWeight + syntacticmatch*syntacticWeight + graphmatch*graphWeight);
+			similarity = (semanticmatch*semanticWeight + syntacticmatch*syntacticWeight + graphmatch*graphWeight);
 			calculated = true;
-			similarity = match;
 		}
 	}
 	
@@ -212,9 +238,9 @@ public class OWLSSimilarityMeasure {
 		logger.info("graph1:: " + oldgraph.size());
 		logger.info("graph2:: " + newgraph.size());
 		
-		GraphIsomorphism compareGraph = new GraphIsomorphism(oldgraph, newgraph);
+		//GraphIsomorphism compareGraph = new GraphIsomorphism(oldgraph, newgraph);
 		
-		//MaxCommonSubgraphIsoValiente compareGraph = new MaxCommonSubgraphIsoValiente(oldgraph, newgraph, 2, 0.5, 0.5, "big");
+		MaxCommonSubgraphIsoValiente compareGraph = new MaxCommonSubgraphIsoValiente(oldgraph, newgraph, 2, 0.5, 0.5, "big");
 		return compareGraph.getSimilarity();
 	}
 	
@@ -391,7 +417,14 @@ public class OWLSSimilarityMeasure {
 				    OWLType newInputType = newInput.getParamType();
 			    	if(getMatchType(oldInputType, newInputType)<3) {
 			    		//inputs.add(oldInput);
-			    		match++;
+			    		// TODO should constant values be included in matching by default?
+			    		if(constants) {
+			    			if(compareConstants(oldInput.getConstantValue(), newInput.getConstantValue())) {
+			    				match++;		
+			    			}
+			    		} else {
+			    			match++;
+			    		}
 			    		//logger.info("added::" + oldInput);
 			    	}
 			    }
@@ -400,6 +433,15 @@ public class OWLSSimilarityMeasure {
 		//logger.info("match::" + match);
 		//return (InputList) inputs;
 		return match;
+	}
+	
+	private boolean compareConstants(OWLValue oldValue, OWLValue newValue) {
+		logger.info("new value::" + newValue);
+		if(newValue != null) {
+			return oldValue.equals(newValue);
+		}
+		// return true if no constant value is specified
+		return true;
 	}
 
 	private int compareSemanticOutputs(OWLWrapper newCase) {
@@ -432,12 +474,18 @@ public class OWLSSimilarityMeasure {
 				    OWLType newOutputType = newOutput.getParamType();
 			    	if(getMatchType(oldOutputType, newOutputType)<3) {
 			    		//Outputs.add(oldOutput);
-			    		match++;
+			    		// TODO should constant values be included in matching by default?
+			    		if(constants) {
+			    			if(compareConstants(oldOutput.getConstantValue(), newOutput.getConstantValue())) {
+			    				match++;		
+			    			}
+			    		} else {
+			    			match++;
+			    		}
 			    	}
 			    }
 			}
 		}
-		
 		//return (OutputList) Outputs;
 		return match;
 	}
@@ -484,7 +532,7 @@ public class OWLSSimilarityMeasure {
 		   //logger.info("match type::" + oldCaseType + " " + newCaseType);
 	        if(oldCaseType.isEquivalent(newCaseType))
 	           return EXACT;
-	        else if(oldCaseType.isSubTypeOf(newCaseType))
+	        else if(newCaseType.isSubTypeOf(oldCaseType))
 	           return SUBSUME;        
 	        else if(oldCaseType.isSubTypeOf(newCaseType)) 
 	            return RELAXED;

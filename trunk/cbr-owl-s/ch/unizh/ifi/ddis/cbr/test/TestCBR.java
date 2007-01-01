@@ -22,8 +22,7 @@ import org.mindswap.owls.process.Input;
 import org.mindswap.owls.process.Perform;
 import org.mindswap.owls.service.Service;
 
-import ch.unizh.ifi.ddis.cbr.CBRKnowledgeBase;
-import ch.unizh.ifi.ddis.cbr.OWLCaseBasedReasoner;
+import ch.unizh.ifi.ddis.cbr.OWLSCaseBasedReasoner;
 import ch.unizh.ifi.ddis.cbr.OWLSSimilarityMeasure;
 import ch.unizh.ifi.ddis.cbr.OWLWrapper;
 
@@ -39,7 +38,7 @@ public class TestCBR {
 		
 		String baseURI = "http://www.ifi.unizh.ch/ddis/ont/owl-s/trails/TrailList";
 
-		OWLCaseBasedReasoner cbr = new OWLCaseBasedReasoner();
+		OWLSCaseBasedReasoner cbr = new OWLSCaseBasedReasoner();
 		OWLOntology newCase = kb.createOntology(URI.create(baseURI));
 		
 		OWLOntology ont;
@@ -121,6 +120,9 @@ public class TestCBR {
 		input1.setParamType(new OWLDataTypeImpl(XSD.nonNegativeInteger));
 		input1.setProcess(p);
 		input1.setLabel("Input1");
+		//input1.setConstantValue(newCase.createDataValue("3"));
+		
+		
 		
 	    perform.addBinding(input1, Perform.TheParentPerform, input1);
 		perform.setProcess(p);
@@ -129,7 +131,7 @@ public class TestCBR {
 		newCase.write(System.out);
 		
 
-		OWLCaseBasedReasoner cbr = new OWLCaseBasedReasoner();
+		OWLSCaseBasedReasoner cbr = new OWLSCaseBasedReasoner();
 		ArrayList bestCases = cbr.getSimilar(newCase);
 
 		System.out.println("# best cases::" + bestCases.size());
