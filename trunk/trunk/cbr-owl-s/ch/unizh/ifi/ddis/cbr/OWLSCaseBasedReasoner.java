@@ -50,7 +50,7 @@ import examples.Matchmaker.Match;
  * @author simonl
  *
  */
-public class OWLCaseBasedReasoner {
+public class OWLSCaseBasedReasoner {
 
 	private Logger logger = Logger.getLogger(this.getClass().getName());
 	private OWLKnowledgeBase kb;
@@ -67,13 +67,16 @@ public class OWLCaseBasedReasoner {
 	private double semanticInputsWeight = 0.6, semanticOutputsWeight = 0.3, semanticProcessWeight = 0.1;
 	private double syntacticInputsWeigth = 0.6, syntacticOutputsWeight = 0.3, syntacticProcessWeight = 0.1;
 	private double semanticWeight = 0.5, syntacticWeight = 0.25, graphWeight = 0.25;
+	
+	// threshold to add matches
+	private double semanticThreshold = 0.6, syntacticThreshold = 0.7, graphThreshold = 0.8;
 
 	/**
 	 * Constructor for the CBR system  
 	 * @throws URISyntaxException 
 	 * @throws FileNotFoundException 
 	 */
-	public OWLCaseBasedReasoner() throws FileNotFoundException, URISyntaxException {
+	public OWLSCaseBasedReasoner() throws FileNotFoundException, URISyntaxException {
 		init();
 	}
 
@@ -107,7 +110,7 @@ public class OWLCaseBasedReasoner {
 		this.cacheDir = cacheDir;
 	}
 
-	public OWLCaseBasedReasoner(OWLKnowledgeBase kb) {
+	public OWLSCaseBasedReasoner(OWLKnowledgeBase kb) {
 		this.kb = kb;
 	}
 	
@@ -159,8 +162,11 @@ public class OWLCaseBasedReasoner {
 		while(i.hasNext()) {
 			oldCase = (OWLWrapper) i.next();
 			similarity = compare(newCase, oldCase);
-			bestCases.add(similarity);
-			logger.info("match:: " + similarity.getSimilarity() + "::size::" + bestCases.size());
+			if(similarity.getGraphSimilarity() >= graphThreshold || similarity.getSemanticSimilarity() >= semanticThreshold 
+					|| similarity.getSyntacticSimilarity() >= syntacticThreshold) {
+				bestCases.add(similarity);
+			}
+			logger.info("match:: " + similarity.getSimilarity());
 		}
 		
 		return bestCases;
