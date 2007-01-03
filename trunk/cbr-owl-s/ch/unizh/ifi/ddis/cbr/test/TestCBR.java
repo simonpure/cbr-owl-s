@@ -31,6 +31,7 @@ public class TestCBR {
 		
 	}
 
+	/*
 	private void createTrailList() {
 		OWLKnowledgeBase kb = OWLFactory.createKB();
 	    kb.getReader().getCache().setLocalCacheDirectory( "C:\\Hacks\\workspace\\Ontologies\\ont_cache");
@@ -65,6 +66,8 @@ public class TestCBR {
 		System.out.println(ontologies);		
 
 	}
+	*/
+	
 	private void run() throws FileNotFoundException, URISyntaxException {
 		
 		OWLKnowledgeBase kb = OWLFactory.createKB();
