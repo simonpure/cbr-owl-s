@@ -7,8 +7,6 @@ import java.io.FileNotFoundException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -17,14 +15,15 @@ import org.mindswap.owl.OWLKnowledgeBase;
 import org.mindswap.owl.OWLOntology;
 import org.mindswap.owl.vocabulary.XSD;
 import org.mindswap.owls.process.AtomicProcess;
-import org.mindswap.owls.process.Process;
+import org.mindswap.owls.process.CompositeProcess;
+import org.mindswap.owls.process.ControlConstruct;
 import org.mindswap.owls.process.Input;
 import org.mindswap.owls.process.Perform;
+import org.mindswap.owls.process.Process;
 import org.mindswap.owls.service.Service;
 
 import ch.unizh.ifi.ddis.cbr.OWLSCaseBasedReasoner;
 import ch.unizh.ifi.ddis.cbr.OWLSSimilarityMeasure;
-import ch.unizh.ifi.ddis.cbr.OWLWrapper;
 
 public class TestCBR {
 	
@@ -84,6 +83,15 @@ public class TestCBR {
 			e.printStackTrace();
 		}
 	
+		/*
+		Process p1 = s.getProcess();
+		ControlConstruct cc = ((CompositeProcess) p1).getComposedOf();
+		System.out.println("name::" + cc.getConstructName());
+		System.out.println("processes::"+cc.getAllProcesses());
+		*/
+		//System.exit(0);
+		
+		
 //		newCase = s.getOntology();
 		/*
 		System.out.println("ont URI::"+newCase.getURI());
