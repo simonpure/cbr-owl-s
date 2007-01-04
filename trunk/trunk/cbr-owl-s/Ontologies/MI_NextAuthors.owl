@@ -1,0 +1,68 @@
+<?xml version='1.0'?>
+<!DOCTYPE uridef [
+	<!ENTITY rdf 		"http://www.w3.org/1999/02/22-rdf-syntax-ns">
+	<!ENTITY rdfs 		"http://www.w3.org/2000/01/rdf-schema">
+	<!ENTITY owl 		"http://www.w3.org/2002/07/owl">
+	<!ENTITY xsd 		"http://www.w3.org/2001/XMLSchema">
+	<!ENTITY dc			"http://purl.org/dc/elements/1.1.owl">				
+	<!ENTITY nextAuthor   "http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextAuthorModel.owl">
+]>
+
+<rdf:RDF
+	xmlns:rdf  =	"&rdf;#" 
+	xmlns:rdfs =	"&rdfs;#" 
+	xmlns:owl  =	"&owl;#" 
+	xmlns:xsd  =	"&xsd;#" 
+  	xmlns:dc   =	"&dc;#"
+	xmlns:nextAuthor = "&nextAuthor;#"
+   	xml:base=		"http://www.ifi.unizh.ch/ddis/ont/next/model/instances/MI_NextAuthors.owl"
+> 
+	<!-- Use rdf:label for human-readable identifier, rdf:ID for machine-readable identifier and rdfs:comment for a description of the element -->
+	
+	<owl:Ontology>
+		<rdfs:comment>KB collection of Authors for easy retrieval</rdfs:comment>
+		<owl:versionInfo>NextAuthors.owl v1.1, 2005-11-03</owl:versionInfo> 
+		<dc:creator>Michael Daenzer</dc:creator>
+		<dc:date>2005-11-03</dc:date>
+		<dc:rights>copyright 2005 by Michael Daenzer</dc:rights>	
+
+		<owl:imports rdf:resource="&nextAuthor;#"/>
+	</owl:Ontology>
+	
+	<nextAuthor:Author rdf:ID="MichaelDaenzer">		
+		<nextAuthor:firstName>Michael</nextAuthor:firstName>
+		<nextAuthor:lastName>Daenzer</nextAuthor:lastName>					
+		<nextAuthor:middleName>Daenzer</nextAuthor:middleName>
+		<nextAuthor:street>Kalkbreitestr. 88</nextAuthor:street>
+		<nextAuthor:zip>8003</nextAuthor:zip>
+		<nextAuthor:city>Zurich</nextAuthor:city>
+		<nextAuthor:country>Switzerland</nextAuthor:country>
+		<nextAuthor:email>daenzer@ifi.unizh.ch</nextAuthor:email>
+		<nextAuthor:website>http://www.ifi.unizh.ch/ddis/people/michaeldaenzer/</nextAuthor:website>
+		<nextAuthor:phoneNumber>044 493 17 69</nextAuthor:phoneNumber>
+	</nextAuthor:Author>		
+
+	<nextAuthor:Author rdf:ID="KonstantinPervushin">
+		<nextAuthor:firstName>Konstantin</nextAuthor:firstName>
+		<nextAuthor:lastName>Pervushin</nextAuthor:lastName>					
+		<nextAuthor:street>Moskovijta 43ac</nextAuthor:street>
+		<nextAuthor:zip>45879</nextAuthor:zip>
+		<nextAuthor:city>St. Petersburg</nextAuthor:city>
+		<nextAuthor:country>Russia</nextAuthor:country>
+		<nextAuthor:email>kope@nmr.com</nextAuthor:email>
+		<nextAuthor:website>http://www.kope.ru</nextAuthor:website>			
+	</nextAuthor:Author>	
+
+	<nextAuthor:Author rdf:ID="AbrahamBernstein">
+		<nextAuthor:firstName>Abraham</nextAuthor:firstName>
+		<nextAuthor:lastName>Bernstein</nextAuthor:lastName>					
+		<nextAuthor:middleName>Avi</nextAuthor:middleName>
+		<nextAuthor:street>Binzmuehlestrasse 14</nextAuthor:street>
+		<nextAuthor:zip>8050</nextAuthor:zip>
+		<nextAuthor:city>Zurich</nextAuthor:city>
+		<nextAuthor:country>Switzerland</nextAuthor:country>
+		<nextAuthor:email>bernstein@ifi.unizh.ch</nextAuthor:email>
+		<nextAuthor:website>http://www.ifi.unizh.ch/ddis/people/bernstein/</nextAuthor:website>
+		<nextAuthor:phoneNumber>044 635 45 79</nextAuthor:phoneNumber>				
+	</nextAuthor:Author>	
+</rdf:RDF>

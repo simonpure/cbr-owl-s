@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:process="http://www.daml.org/services/owl-s/1.1/Process.owl#"
+    xmlns="http://www.ifi.unizh.ch/ddis/ont/owl-s/trails/ExecutionTrail-1167165220043.owl#"
+    xmlns:list="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:expression="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
+    xmlns:j.0="http://www.ifi.unizh.ch/ddis/ont/owl-s/OWLSExtensions.owl#"
+    xmlns:service="http://www.daml.org/services/owl-s/1.1/Service.owl#"
+    xmlns:grounding="http://www.daml.org/services/owl-s/1.1/Grounding.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns:profile="http://www.daml.org/services/owl-s/1.1/Profile.owl#"
+  xml:base="http://www.ifi.unizh.ch/ddis/ont/owl-s/trails/ExecutionTrail-1167165220043.owl#">
+  <service:Service rdf:ID="ExecutionTrailService">
+    <rdfs:label>http://www.mindswap.org/2004/owl-s/1.1/Dictionary.owl#DictionaryService</rdfs:label>
+    <service:presents>
+      <profile:Profile rdf:ID="ExecutionTrailProfile"/>
+    </service:presents>
+    <service:describedBy>
+      <process:CompositeProcess rdf:ID="ExecutionTrailProcess"/>
+    </service:describedBy>
+  </service:Service>
+  <profile:Profile rdf:about="#ExecutionTrailProfile">
+    <service:presentedBy rdf:resource="#ExecutionTrailService"/>
+    <profile:hasInput>
+      <process:Input rdf:ID="Input1">
+        <rdfs:label>http://www.ifi.unizh.ch/ddis/ont/owl-s/MyTestService#myInput1</rdfs:label>
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.w3.org/2001/XMLSchema#nonNegativeInteger</process:parameterType>
+        <process:valueData>2</process:valueData>
+      </process:Input>
+    </profile:hasInput>
+    <profile:hasInput>
+      <process:Input rdf:ID="Input2">
+        <rdfs:label>http://www.ifi.unizh.ch/ddis/ont/owl-s/MyTestService#myInput2</rdfs:label>
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.w3.org/2001/XMLSchema#nonNegativeInteger</process:parameterType>
+        <process:valueData>3</process:valueData>
+      </process:Input>
+    </profile:hasInput>
+    <profile:hasOutput>
+      <process:Output rdf:ID="Output1">
+        <rdfs:label>http://www.ifi.unizh.ch/ddis/ont/owl-s/MyTestService#myOutput</rdfs:label>
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.w3.org/2001/XMLSchema#nonNegativeInteger</process:parameterType>
+        <process:valueData rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Return value of JavaGrounding 6.0</process:valueData>
+      </process:Output>
+    </profile:hasOutput>
+    <rdfs:label>[null]</rdfs:label>
+    <profile:textDescription>[null]</profile:textDescription>
+  </profile:Profile>
+  <process:AtomicProcess rdf:ID="Process1">
+    <rdfs:label>http://www.ifi.unizh.ch/ddis/ont/owl-s/MyTestService#MyProcess</rdfs:label>
+    <j.0:hasPerform>
+      <process:Perform rdf:ID="Perform1"/>
+    </j.0:hasPerform>
+    <process:hasInput rdf:resource="#Input1"/>
+    <process:hasInput rdf:resource="#Input2"/>
+    <process:hasOutput rdf:resource="#Output1"/>
+    <process:hasResult>
+      <process:Result rdf:ID="Result1">
+        <process:withOutput>
+          <process:OutputBinding>
+            <process:toParam rdf:resource="#Output1"/>
+            <process:valueSource>
+              <process:ValueOf>
+                <process:fromProcess>
+                  <process:Perform rdf:about="#Perform1"/>
+                </process:fromProcess>
+                <process:theVar rdf:resource="../MyTestService#myOutput"/>
+              </process:ValueOf>
+            </process:valueSource>
+          </process:OutputBinding>
+        </process:withOutput>
+      </process:Result>
+    </process:hasResult>
+  </process:AtomicProcess>
+  <process:CompositeProcess rdf:about="#ExecutionTrailProcess">
+    <service:describes rdf:resource="#ExecutionTrailService"/>
+    <process:composedOf>
+      <process:Sequence rdf:ID="Sequence1">
+        <process:components>
+          <process:ControlConstructList>
+            <list:first>
+              <process:Perform rdf:about="#Perform1"/>
+            </list:first>
+            <list:rest rdf:resource="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#nil"/>
+          </process:ControlConstructList>
+        </process:components>
+      </process:Sequence>
+    </process:composedOf>
+    <process:hasInput rdf:resource="#Input1"/>
+    <process:hasInput rdf:resource="#Input2"/>
+    <process:hasOutput rdf:resource="#Output1"/>
+    <process:hasResult>
+      <process:Result rdf:ID="Result2">
+        <process:withOutput>
+          <process:OutputBinding>
+            <process:toParam rdf:resource="#Output1"/>
+            <process:valueSource>
+              <process:ValueOf>
+                <process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+                <process:theVar rdf:resource="../MyTestService#myOutput"/>
+              </process:ValueOf>
+            </process:valueSource>
+          </process:OutputBinding>
+        </process:withOutput>
+      </process:Result>
+    </process:hasResult>
+  </process:CompositeProcess>
+  <process:Perform rdf:about="#Perform1">
+    <process:process rdf:resource="#Process1"/>
+    <process:hasDataFrom>
+      <process:InputBinding>
+        <process:toParam rdf:resource="#Input1"/>
+        <process:valueSource>
+          <process:ValueOf>
+            <process:fromProcess rdf:resource="#Perform1"/>
+            <process:theVar rdf:resource="../MyTestService#myInput1"/>
+          </process:ValueOf>
+        </process:valueSource>
+      </process:InputBinding>
+    </process:hasDataFrom>
+    <process:hasDataFrom>
+      <process:InputBinding>
+        <process:toParam rdf:resource="../MyTestService#myInput1"/>
+        <process:valueSource>
+          <process:ValueOf>
+            <process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+            <process:theVar rdf:resource="#Input1"/>
+          </process:ValueOf>
+        </process:valueSource>
+      </process:InputBinding>
+    </process:hasDataFrom>
+    <process:hasDataFrom>
+      <process:InputBinding>
+        <process:toParam rdf:resource="#Input2"/>
+        <process:valueSource>
+          <process:ValueOf>
+            <process:fromProcess rdf:resource="#Perform1"/>
+            <process:theVar rdf:resource="../MyTestService#myInput2"/>
+          </process:ValueOf>
+        </process:valueSource>
+      </process:InputBinding>
+    </process:hasDataFrom>
+    <process:hasDataFrom>
+      <process:InputBinding>
+        <process:toParam rdf:resource="../MyTestService#myInput2"/>
+        <process:valueSource>
+          <process:ValueOf>
+            <process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+            <process:theVar rdf:resource="#Input2"/>
+          </process:ValueOf>
+        </process:valueSource>
+      </process:InputBinding>
+    </process:hasDataFrom>
+  </process:Perform>
+</rdf:RDF>

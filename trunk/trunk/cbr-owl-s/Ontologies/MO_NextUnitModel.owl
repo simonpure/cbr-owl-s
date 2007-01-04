@@ -1,0 +1,79 @@
+<?xml version='1.0'?>
+<!DOCTYPE uridef [
+	<!ENTITY rdf 		"http://www.w3.org/1999/02/22-rdf-syntax-ns">
+	<!ENTITY rdfs 		"http://www.w3.org/2000/01/rdf-schema">
+	<!ENTITY owl 		"http://www.w3.org/2002/07/owl">
+	<!ENTITY xsd 		"http://www.w3.org/2001/XMLSchema">
+	<!ENTITY dc			"http://purl.org/dc/elements/1.1.owl">					
+	<!ENTITY this		"http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextUnitModel.owl">	
+]>
+
+<rdf:RDF
+	xmlns:rdf=		"&rdf;#" 
+	xmlns:rdfs=		"&rdfs;#" 
+	xmlns:owl=		"&owl;#" 
+	xmlns:xsd= 		"&xsd;#" 
+  	xmlns:dc=	    "&dc;#"
+	xmlns:this=	    "&this;#"
+   	xml:base=		"http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextUnitModel.owl"
+> 
+	<owl:Ontology rdf:ID="NExTUnitModel">
+		<rdfs:comment>Upper-Level Ontology for Next Units.</rdfs:comment>
+		<owl:versionInfo>NextUnits.owl v1, 2005-05-18</owl:versionInfo> 
+		<dc:creator>Michael Daenzer</dc:creator>
+		<dc:contributor>Konstantin Pervushin</dc:contributor>
+		<dc:contributor>Peter Vorburger</dc:contributor>
+		<dc:contributor>Abraham Bernstein</dc:contributor>
+		<dc:date>2005-05-18</dc:date>
+		<dc:rights>copyright 2005 by Michael Daenzer</dc:rights>
+	</owl:Ontology>
+		
+	<owl:Class rdf:ID="Unit">
+		<rdfs:comment>Base class for Units</rdfs:comment>
+	</owl:Class>
+	
+	<owl:Class rdf:ID="NullUnit">
+		<rdfs:subClassOf rdf:resource="#Unit"/>
+		<rdfs:comment>Pseudo class for no unit</rdfs:comment>
+	</owl:Class>
+	
+	<this:Unit rdf:ID="PPM">
+		<rdfs:comment>Parts Per Million</rdfs:comment>
+		<rdfs:label>ppm</rdfs:label>
+	</this:Unit>
+	
+	<this:Unit rdf:ID="DB">
+		<rdfs:comment>Dezibel</rdfs:comment>
+		<rdfs:label>db</rdfs:label>
+	</this:Unit>
+	
+	<this:Unit rdf:ID="MIN">
+		<rdfs:comment>Minute</rdfs:comment>
+		<rdfs:label>min</rdfs:label>
+	</this:Unit>
+	
+	<this:Unit rdf:ID="SEC">
+		<rdfs:comment>Second</rdfs:comment>
+		<rdfs:label>sec</rdfs:label>
+	</this:Unit>
+	
+	<this:Unit rdf:ID="MICROSEC">
+		<rdfs:comment>Micro Second</rdfs:comment>
+		<rdfs:label>microsec</rdfs:label>
+	</this:Unit>
+	
+	<this:Unit rdf:ID="MOL">
+		<rdfs:comment>Mol</rdfs:comment>
+		<rdfs:label>mol</rdfs:label>
+	</this:Unit>
+	
+	<this:Unit rdf:ID="MICROMOL">
+		<rdfs:comment>Micro Mol</rdfs:comment>
+		<rdfs:label>micromol</rdfs:label>
+	</this:Unit>
+	
+	<this:Unit rdf:ID="KELVIN">
+		<rdfs:comment>Kelvin</rdfs:comment>
+		<rdfs:label>kelvin</rdfs:label>
+	</this:Unit>
+</rdf:RDF>

@@ -1,0 +1,73 @@
+<?xml version='1.0'?>
+<!DOCTYPE uridef [
+	<!ENTITY rdf 		"http://www.w3.org/1999/02/22-rdf-syntax-ns">
+	<!ENTITY rdfs 		"http://www.w3.org/2000/01/rdf-schema">
+	<!ENTITY owl 		"http://www.w3.org/2002/07/owl">
+	<!ENTITY xsd 		"http://www.w3.org/2001/XMLSchema">
+	<!ENTITY dc			"http://purl.org/dc/elements/1.1.owl">	
+	<!ENTITY process 	"http://www.daml.org/services/owl-s/1.1/Process.owl">
+	<!ENTITY nextGeneral "http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextGeneralModel.owl">	
+]>
+
+<rdf:RDF
+	xmlns:rdf=		"&rdf;#" 
+	xmlns:rdfs=		"&rdfs;#" 
+	xmlns:owl=		"&owl;#" 
+	xmlns:xsd=		"&xsd;#" 
+  	xmlns:dc=	    "&dc;#"	
+	xmlns:process =	"&process;#" 
+	xmlns:nextGeneral="&nextGeneral;#"
+   	xml:base=		"http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextDataModel.owl"
+> 
+	<owl:Ontology rdf:ID="NextDataModel">
+		<rdfs:comment>
+			Upper-Level Ontology for the NExT Data Model. Contains an Ontology describing abstractly data items used within NExT
+		</rdfs:comment>
+		<owl:versionInfo>MO_NextDataModel.owl v1.2, 2006-03-06</owl:versionInfo> 
+		<dc:creator>Michael Daenzer</dc:creator>
+		<dc:contributor>Konstantin Pervushin</dc:contributor>
+		<dc:contributor>Peter Vorburger</dc:contributor>
+		<dc:contributor>Abraham Bernstein</dc:contributor>
+		<dc:date>2006-03-06</dc:date>
+		<dc:rights>copyright 2006 by Michael Daenzer</dc:rights> 
+						
+		<owl:imports rdf:resource="&process;#"/>		
+		<owl:imports rdf:resource="&nextGeneral;#"/>				
+	</owl:Ontology>
+	
+	<owl:Class rdf:ID="NextDataItem">
+		<rdfs:comment>The class for a NExT Data Item</rdfs:comment>
+		<rdfs:label>NExT Data Item</rdfs:label>	
+		<rdfs:subClassOf rdf:resource="&process;#Parameter"/>
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:about="&process;#parameterType">
+		<rdfs:domain rdf:resource="#NextDataItem"/>
+	</owl:DatatypeProperty>
+
+	<!-- Annotations -->
+	<owl:ObjectProperty rdf:about="&nextGeneral;#hasAuthor">		
+		<rdfs:comment>Binds an author to the NextDataItem</rdfs:comment>
+		<rdfs:domain rdf:resource="#NextDataItem"/>		
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&nextGeneral;#versionShort">
+		<rdfs:comment>Binds a version number to the NextDataItem</rdfs:comment>
+		<rdfs:domain rdf:resource="#NextDataItem"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&nextGeneral;#versionLong">
+		<rdfs:comment>Binds a version text to the NextDataItem</rdfs:comment>
+		<rdfs:domain rdf:resource="#NextDataItem"/>
+	</owl:DatatypeProperty>
+
+	<owl:DatatypeProperty rdf:about="&nextGeneral;#versionDate">
+		<rdfs:comment>Binds a version date to the NextDataItem</rdfs:comment>
+		<rdfs:domain rdf:resource="#NextDataItem"/>
+	</owl:DatatypeProperty>
+
+	<owl:DatatypeProperty rdf:about="&nextGeneral;#ipDisclaimer">
+		<rdfs:comment>Binds an IP disclaimer to the NextDataItem</rdfs:comment>
+		<rdfs:domain rdf:resource="#NextDataItem"/>
+	</owl:DatatypeProperty>			
+</rdf:RDF>

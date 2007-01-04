@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE uridef [
+	<!ENTITY rdf 		"http://www.w3.org/1999/02/22-rdf-syntax-ns">
+	<!ENTITY rdfs 		"http://www.w3.org/2000/01/rdf-schema">
+	<!ENTITY owl 		"http://www.w3.org/2002/07/owl">
+	<!ENTITY xsd 		"http://www.w3.org/2001/XMLSchema">
+	<!ENTITY service 	"http://www.daml.org/services/owl-s/1.1/Service.owl">
+	<!ENTITY profile 	"http://www.daml.org/services/owl-s/1.1/Profile.owl">
+	<!ENTITY process 	"http://www.daml.org/services/owl-s/1.1/Process.owl">
+	<!ENTITY grounding 	"http://www.daml.org/services/owl-s/1.1/Grounding.owl">
+	<!ENTITY dc			"http://purl.org/dc/elements/1.1.owl">	
+	<!ENTITY myGroundings 	"http://www.ifi.unizh.ch/ddis/ont/owl-s/MoreGroundings.owl">
+	<!ENTITY nextProc   "http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextProcessModel.owl">
+	<!ENTITY nextData   "http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextDataModel.owl">	
+	<!ENTITY nextAuthors "http://www.ifi.unizh.ch/ddis/ont/next/model/instances/MI_NextAuthors.owl">
+	<!ENTITY nextVar	"http://www.ifi.unizh.ch/ddis/ont/next/kb/DataItemLibrary/DA_NextDataItems.owl">		
+]>
+<rdf:RDF
+    xmlns:rdf =		"&rdf;#" 
+    xmlns:rdfs =	"&rdfs;#" 
+    xmlns:owl =		"&owl;#" 
+    xmlns:xsd =		"&xsd;#" 
+    xmlns:service =	"&service;#" 
+    xmlns:profile =	"&profile;#" 
+    xmlns:process =	"&process;#" 
+    xmlns:grounding="&grounding;#" 
+  	xmlns:dc=	    "&dc;#"
+	xmlns:myGroundings=	"&myGroundings;#"
+	xmlns:nextProc=	"&nextProc;#"
+	xmlns:nextData=	"&nextData;#"	
+	xmlns:nextAuthors= "&nextAuthors;#"
+	xmlns:nextVar=	"&nextVar;#"
+   	xml:base=		"http://www.ifi.unizh.ch/ddis/ont/next/kb/ProcessLibrary/processes/SwissReservation.owl"
+> 
+	<owl:Ontology rdf:ID="SwissReservation">
+		<owl:versionInfo>SwissReservation.owl v1, 2006-03-06</owl:versionInfo> 
+		<dc:creator>Michael Daenzer</dc:creator>
+		<dc:date>2006-03-06</dc:date>
+		<dc:rights>copyright 2006 by Michael Daenzer, University of Zurich</dc:rights> 
+		
+		<owl:imports rdf:resource="&process;#"/>
+		<owl:imports rdf:resource="&grounding;#"/>
+		<owl:imports rdf:resource="&service;#"/>
+		<owl:imports rdf:resource="&profile;#"/>
+		
+		<owl:imports rdf:resource="&myGroundings;#"/>
+		
+		<owl:imports rdf:resource="&nextProc;#"/>
+		<owl:imports rdf:resource="&nextData;#"/>
+		<owl:imports rdf:resource="&nextVar;#"/>
+ 	</owl:Ontology>
+ 	
+ 	<!-- Service Description -->
+ 	<nextProc:NextProcess rdf:ID="SwissReservationService">
+		<service:presents rdf:resource="#SwissReservationProfile"/>
+		<service:describedBy rdf:resource="#SwissReservationProcess"/>
+		<service:supports rdf:resource="#SwissReservationGrounding"/>
+		
+		<nextProc:specifity rdf:datatype="&xsd;#float">1</nextProc:specifity>
+	</nextProc:NextProcess>  
+	 
+	<!-- Profile -->
+	<profile:Profile rdf:ID="SwissReservationProfile">
+		<service:presentedBy rdf:resource="#SwissReservationService"/>
+	  
+		<profile:serviceName xml:lang="en">search for a flight with SWISS</profile:serviceName>
+		<profile:textDescription xml:lang="en">
+			searches a flight with SWISS from the given source to the given destination at the given date
+		</profile:textDescription>
+		<profile:contactInformation rdf:resource="&nextAuthors;#MichaelDaenzer"/>
+      		
+		<profile:hasInput rdf:resource="#TheFlightNumber"/>
+		<profile:hasInput rdf:resource="#FlightClass"/>
+		<profile:hasInput rdf:resource="#NumberOfPersons"/>		
+		<profile:hasOutput rdf:resource="#Price"/>		
+	</profile:Profile> 
+
+	<!-- Process -->
+ 	<process:AtomicProcess rdf:ID="SwissReservationProcess">	
+		<service:describes rdf:resource="#SwissReservationService"/>	
+		
+		<process:hasInput rdf:resource="#TheFlightNumber"/>						
+		<process:hasInput rdf:resource="#FlightClass"/>
+		<process:hasInput rdf:resource="#NumberOfPersons"/>	
+		<process:hasOutput rdf:resource="#Price"/>	    	
+	</process:AtomicProcess>
+	
+	<process:Input rdf:ID="TheFlightNumber">			
+		<nextData:hasNextDataItem rdf:resource="&nextVar;#FlightNumber"/>
+		<process:parameterType rdf:datatype="xsd#anyURI">&xsd;#string</process:parameterType>
+	</process:Input>
+		
+	<process:Input rdf:ID="FlightClass">
+		<nextData:hasNextDataItem rdf:resource="&nextVar;#FlightClass"/>
+		<process:parameterType rdf:datatype="xsd#anyURI">&xsd;#string</process:parameterType>
+	</process:Input>
+	
+	<process:Input rdf:ID="NumberOfPersons">
+		<nextData:hasNextDataItem rdf:resource="&nextVar;#NumberOfPersons"/>
+		<process:parameterType rdf:datatype="xsd#anyURI">&xsd;#nonNegativeInteger</process:parameterType>
+	</process:Input>			
+	
+	<process:Output rdf:ID="Price">
+		<nextData:hasNextDataItem rdf:resource="&nextVar;#Price"/>
+		<process:parameterType rdf:datatype="xsd#anyURI">&xsd;#double</process:parameterType>
+	</process:Output>
+	 	      
+    <!-- Grounding -->
+    <myGroundings:JavaGrounding rdf:ID="SwissReservationGrounding">
+		<service:supportedBy rdf:resource="#SwissReservationService"/>
+		<grounding:hasAtomicProcessGrounding rdf:resource="#SwissReservationAtomicGrounding"/>
+    </myGroundings:JavaGrounding>
+    
+    <!-- AtomicProcessGrounding  -->
+	<myGroundings:JavaAtomicProcessGrounding rdf:ID="SwissReservationAtomicGrounding">
+		<grounding:owlsProcess rdf:resource="#SwissReservationProcess"/>
+		<myGroundings:javaClass>ch.unizh.ifi.next.model.grounding.Swiss</myGroundings:javaClass>
+		<myGroundings:javaMethod>reservation</myGroundings:javaMethod>
+		
+		<myGroundings:hasJavaParameter>
+			<myGroundings:JavaParameter rdf:ID="JavaFlightNumber">
+				<myGroundings:javaType>java.lang.String</myGroundings:javaType>
+				<myGroundings:owlsParameter rdf:resource="#TheFlightNumber"/>
+				<myGroundings:paramIndex rdf:datatype="&xsd;#nonNegativeInteger">1</myGroundings:paramIndex>
+			</myGroundings:JavaParameter>
+		</myGroundings:hasJavaParameter>
+		<myGroundings:hasJavaParameter>
+			<myGroundings:JavaParameter rdf:ID="JavaFlightClass">
+				<myGroundings:javaType>java.lang.String</myGroundings:javaType>
+				<myGroundings:owlsParameter rdf:resource="#FlightClass"/>
+				<myGroundings:paramIndex rdf:datatype="&xsd;#nonNegativeInteger">2</myGroundings:paramIndex>
+			</myGroundings:JavaParameter>
+		</myGroundings:hasJavaParameter>
+		<myGroundings:hasJavaParameter>
+			<myGroundings:JavaParameter rdf:ID="JavaNumberOfPersons">
+				<myGroundings:javaType>int</myGroundings:javaType>
+				<myGroundings:owlsParameter rdf:resource="#NumberOfPersons"/>
+				<myGroundings:paramIndex rdf:datatype="&xsd;#nonNegativeInteger">3</myGroundings:paramIndex>
+			</myGroundings:JavaParameter>
+		</myGroundings:hasJavaParameter>
+		
+		<myGroundings:javaOutput>
+			<myGroundings:JavaVariable rdf:ID="JavaPrice">
+				<myGroundings:javaType>double</myGroundings:javaType>
+				<myGroundings:owlsParameter rdf:resource="#Price"/>
+			</myGroundings:JavaVariable>
+		</myGroundings:javaOutput>
+    </myGroundings:JavaAtomicProcessGrounding> 
+</rdf:RDF>

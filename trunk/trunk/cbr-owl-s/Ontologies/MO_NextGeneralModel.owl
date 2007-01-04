@@ -1,0 +1,66 @@
+<?xml version='1.0'?>
+<!DOCTYPE uridef [
+	<!ENTITY rdf 		"http://www.w3.org/1999/02/22-rdf-syntax-ns">
+	<!ENTITY rdfs 		"http://www.w3.org/2000/01/rdf-schema">
+	<!ENTITY owl 		"http://www.w3.org/2002/07/owl">
+	<!ENTITY xsd 		"http://www.w3.org/2001/XMLSchema">
+	<!ENTITY dc			"http://purl.org/dc/elements/1.1.owl">	
+	<!ENTITY nextAuthor   "http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextAuthorModel.owl">
+]>
+<rdf:RDF
+	xmlns:rdf  =	"&rdf;#" 
+	xmlns:rdfs =	"&rdfs;#" 
+	xmlns:owl  =	"&owl;#" 
+	xmlns:xsd  =	"&xsd;#" 
+  	xmlns:dc   =	"&dc;#"
+	xmlns:nextAuthor = "&nextAuthor;#"	
+   	xml:base=		"http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextGeneralModel.owl"
+> 
+	<owl:Ontology rdf:ID="NExTGeneralModel">				
+		<rdfs:comment>
+			Upper-Level Ontology for Next General Model. Contains an Ontology to describe common classes and properties for all 				
+			models				
+		</rdfs:comment>
+		<owl:versionInfo>NextGeneralModel.owl v1.1, 2005-11-03</owl:versionInfo> 
+		<dc:creator>Michael Daenzer</dc:creator>
+		<dc:contributor>Konstantin Pervushin</dc:contributor>
+		<dc:contributor>Peter Vorburger</dc:contributor>
+		<dc:contributor>Abraham Bernstein</dc:contributor>
+		<dc:date>2005-11-03</dc:date>
+		<dc:rights>copyright 2005 by Michael Daenzer</dc:rights>
+		
+		<owl:imports rdf:resource="&nextAuthor;#"/>
+	</owl:Ontology>
+	
+	<!-- Use rdf:label for human-readable identifier, rdf:ID for machine-readable identifier and rdfs:comment for a description of the element -->
+	
+	<owl:ObjectProperty rdf:ID="hasAuthor">					
+		<rdfs:range rdf:resource="&nextAuthor;#Author"/>
+	</owl:ObjectProperty>
+	
+	<!-- Version -->
+	<owl:DatatypeProperty rdf:ID="versionShort">
+		<rdfs:comment>the pure version number of the semantic web resource</rdfs:comment>
+		<rdfs:label>Version Number</rdfs:label>		
+		<rdfs:range rdf:resource="&xsd;#string"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:ID="versionLong">
+		<rdfs:comment>the version number of the semantic web resource including a text (such as project-name or so)</rdfs:comment>
+		<rdfs:label>Version Text</rdfs:label>		
+		<rdfs:range rdf:resource="&xsd;#string"/>
+	</owl:DatatypeProperty>
+
+	<owl:DatatypeProperty rdf:ID="versionDate">
+		<rdfs:comment>the release date of the version</rdfs:comment>
+		<rdfs:label>Version Date</rdfs:label>		
+		<rdfs:range rdf:resource="&xsd;#string"/>
+	</owl:DatatypeProperty>
+	
+	<!-- IP -->	
+	<owl:DatatypeProperty rdf:ID="ipDisclaimer">
+		<rdfs:comment>A disclaimer for IP issues</rdfs:comment>		
+		<rdfs:label>IP Disclaimer</rdfs:label>		
+		<rdfs:range rdf:resource="&xsd;#string"/>
+	</owl:DatatypeProperty>		
+</rdf:RDF>

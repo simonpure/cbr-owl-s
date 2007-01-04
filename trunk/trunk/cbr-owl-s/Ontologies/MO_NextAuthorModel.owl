@@ -1,0 +1,109 @@
+<?xml version='1.0'?>
+<!DOCTYPE uridef [
+	<!ENTITY rdf 		"http://www.w3.org/1999/02/22-rdf-syntax-ns">
+	<!ENTITY rdfs 		"http://www.w3.org/2000/01/rdf-schema">
+	<!ENTITY owl 		"http://www.w3.org/2002/07/owl">
+	<!ENTITY xsd 		"http://www.w3.org/2001/XMLSchema">
+	<!ENTITY dc			"http://purl.org/dc/elements/1.1.owl">	
+]>
+<rdf:RDF
+	xmlns:rdf  =	"&rdf;#" 
+	xmlns:rdfs =	"&rdfs;#" 
+	xmlns:owl  =	"&owl;#" 
+	xmlns:xsd  =	"&xsd;#" 
+  	xmlns:dc   =	"&dc;#"
+   	xml:base=		"http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextAuthorModel.owl"
+> 
+	<owl:Ontology rdf:ID="NextAuthorModel">				
+		<rdfs:comment>
+			Upper-Level Ontology for Next Author Model. Contains an Ontology to describe an author of a Next model entity.
+		</rdfs:comment>
+		<owl:versionInfo>NextAuthorModel.owl v1.0</owl:versionInfo> 
+		<dc:creator>Michael Daenzer</dc:creator>
+		<dc:date>2006-09-12</dc:date>
+		<dc:rights>copyright 2006 by Michael Daenzer, University of Zuerich</dc:rights>
+	</owl:Ontology>
+
+	<!-- Author -->
+	<owl:Class rdf:ID="Author">
+		<rdfs:comment>An author of Next cases and KB entries</rdfs:comment>
+		<rdfs:label>Author</rdfs:label>					
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:ID="firstName">
+		<rdfs:comment>the first name of the Author</rdfs:comment>
+		<rdfs:label>First Name</rdfs:label>		
+		<rdfs:range rdf:resource="&xsd;#string"/>
+		<rdfs:domain rdf:resource="#Author"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:ID="lastName">
+		<rdfs:comment>the last name of the Author</rdfs:comment>
+		<rdfs:label>Last Name</rdfs:label>		
+		<rdfs:range rdf:resource="&xsd;#string"/>
+		<rdfs:domain rdf:resource="#Author"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:ID="middleName">
+		<rdfs:comment>the middle name of the Author</rdfs:comment>
+		<rdfs:label>Last Name</rdfs:label>		
+		<rdfs:range rdf:resource="&xsd;#string"/>
+		<rdfs:domain rdf:resource="#Author"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:ID="title">
+		<rdfs:comment>the title of the Author</rdfs:comment>
+		<rdfs:label>First Name</rdfs:label>		
+		<rdfs:range rdf:resource="&xsd;#string"/>
+		<rdfs:domain rdf:resource="#Author"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:ID="street">
+		<rdfs:comment>the street the Author lives in</rdfs:comment>
+		<rdfs:label>Last Name</rdfs:label>		
+		<rdfs:range rdf:resource="&xsd;#string"/>
+		<rdfs:domain rdf:resource="#Author"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:ID="zip">
+		<rdfs:comment>the zip of the site the Author lives</rdfs:comment>
+		<rdfs:label>Last Name</rdfs:label>		
+		<rdfs:range rdf:resource="&xsd;#string"/>
+		<rdfs:domain rdf:resource="#Author"/>
+	</owl:DatatypeProperty>	
+	
+	<owl:DatatypeProperty rdf:ID="city">
+		<rdfs:comment>the name of the site the Author lives</rdfs:comment>
+		<rdfs:label>Last Name</rdfs:label>		
+		<rdfs:range rdf:resource="&xsd;#string"/>
+		<rdfs:domain rdf:resource="#Author"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:ID="country">
+		<rdfs:comment>the name of the country the Author lives</rdfs:comment>
+		<rdfs:label>Last Name</rdfs:label>		
+		<rdfs:range rdf:resource="&xsd;#string"/>
+		<rdfs:domain rdf:resource="#Author"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:ID="email">
+		<rdfs:comment>the email address of the Author</rdfs:comment>
+		<rdfs:label>First Name</rdfs:label>		
+		<rdfs:range rdf:resource="&xsd;#string"/>
+		<rdfs:domain rdf:resource="#Author"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:ID="phoneNumber">
+		<rdfs:comment>the phone number of the Author</rdfs:comment>
+		<rdfs:label>Last Name</rdfs:label>		
+		<rdfs:range rdf:resource="&xsd;#string"/>
+		<rdfs:domain rdf:resource="#Author"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:ID="website">
+		<rdfs:comment>the web site of the Author</rdfs:comment>
+		<rdfs:label>Last Name</rdfs:label>		
+		<rdfs:range rdf:resource="&xsd;#string"/>
+		<rdfs:domain rdf:resource="#Author"/>
+	</owl:DatatypeProperty>		
+</rdf:RDF>

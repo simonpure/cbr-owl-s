@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<rdf:RDF
+    xmlns:process="http://www.daml.org/services/owl-s/1.1/Process.owl#"
+    xmlns:j.0="http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextGeneralModel.owl#"
+    xmlns:j.1="http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextAuthorModel.owl#"
+    xmlns:list="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://www.ifi.unizh.ch/ddis/ont/next/kb/ProcessLibrary/processes/Subtract.owl"
+    xmlns:j.2="http://www.ifi.unizh.ch/ddis/ont/owl-s/MoreGroundings.owl#"
+    xmlns:expression="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
+    xmlns:service="http://www.daml.org/services/owl-s/1.1/Service.owl#"
+    xmlns:grounding="http://www.daml.org/services/owl-s/1.1/Grounding.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns:j.3="http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextProcessModel.owl#"
+    xmlns:profile="http://www.daml.org/services/owl-s/1.1/Profile.owl#"
+  xml:base="http://www.ifi.unizh.ch/ddis/ont/next/kb/ProcessLibrary/AtomicProcesses/Subtract.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="/ddis/ont/next/model/MO_NextProcessModel.owl"/>
+  </owl:Ontology>
+  <process:AtomicProcess rdf:ID="SubtractProcess">
+    <process:hasOutput>
+      <process:Output rdf:ID="SubtractOutput">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.w3.org/2001/XMLSchema#string</process:parameterType>
+      </process:Output>
+    </process:hasOutput>
+    <process:hasInput>
+      <process:Input rdf:ID="SubtractInput1">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.w3.org/2001/XMLSchema#string</process:parameterType>
+        <rdf:type rdf:resource="/ddis/ont/owl-s/MoreGroundings.owl#JavaParameter"/>
+        <j.2:javaType>java.lang.String</j.2:javaType>
+        <j.2:owlsParameter rdf:resource="#SubtractInput1"/>
+        <j.2:paramIndex>1</j.2:paramIndex>
+      </process:Input>
+    </process:hasInput>
+    <process:hasInput>
+      <process:Input rdf:ID="SubtractInput2">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.w3.org/2001/XMLSchema#string</process:parameterType>
+        <rdf:type rdf:resource="/ddis/ont/owl-s/MoreGroundings.owl#JavaParameter"/>
+        <j.2:javaType>java.lang.String</j.2:javaType>
+        <j.2:owlsParameter rdf:resource="#SubtractInput2"/>
+        <j.2:paramIndex>2</j.2:paramIndex>
+      </process:Input>
+    </process:hasInput>
+  </process:AtomicProcess>
+  <rdf:Description rdf:about="/ddis/ont/next/model/instances/PeterBichsel.owl#PeterBichsel">
+    <j.1:lastName>Dänzer</j.1:lastName>
+    <j.1:middleName>Bruno</j.1:middleName>
+    <j.1:street>Kalkbreitestr. 88</j.1:street>
+    <j.1:zip>8003</j.1:zip>
+    <j.1:city>Zürich</j.1:city>
+    <j.1:email>mailto:mdaenzer@gmx.net</j.1:email>
+    <j.1:phoneNumber>01 452 25 66</j.1:phoneNumber>
+  </rdf:Description>
+  <j.2:JavaVariable rdf:ID="owlsSubtractOutput">
+    <j.2:javaType>java.lang.String</j.2:javaType>
+    <j.2:owlsParameter rdf:resource="#SubtractOutput"/>
+  </j.2:JavaVariable>
+  <j.3:NextProcess rdf:ID="SubtractService">
+    <service:presents>
+      <j.3:NextProfile rdf:ID="SubtractProfile">
+        <rdfs:comment>This is a test description</rdfs:comment>
+        <j.0:versionShort>1.0</j.0:versionShort>
+        <j.0:versionLong>Version 1</j.0:versionLong>
+        <j.0:versionDate>1.10.2006</j.0:versionDate>
+        <j.0:ipDisclaimer>This is an IP disclaimer</j.0:ipDisclaimer>
+        <j.0:hasAuthor rdf:resource="/ddis/ont/next/model/instances/PeterBichsel.owl#PeterBichsel"/>
+      </j.3:NextProfile>
+    </service:presents>
+    <service:describedBy rdf:resource="#SubtractProcess"/>
+    <service:supports>
+      <j.2:JavaGrounding rdf:ID="SubtractGrounding">
+        <grounding:hasAtomicProcessGrounding>
+          <j.2:JavaAtomicProcessGrounding rdf:ID="SubtractAtomicGrounding">
+            <j.2:javaClass>ch.unizh.ifi.next.model.grounding.TestGroundings</j.2:javaClass>
+            <j.2:javaMethod>subtract</j.2:javaMethod>
+            <grounding:owlsProcess rdf:resource="#SubtractProcess"/>
+            <j.2:javaOutput rdf:resource="#owlsSubtractOutput"/>
+            <j.2:hasJavaParameter rdf:resource="#SubtractInput1"/>
+            <j.2:hasJavaParameter rdf:resource="#SubtractInput2"/>
+          </j.2:JavaAtomicProcessGrounding>
+        </grounding:hasAtomicProcessGrounding>
+      </j.2:JavaGrounding>
+    </service:supports>
+  </j.3:NextProcess>
+</rdf:RDF>

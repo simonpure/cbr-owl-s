@@ -1,0 +1,48 @@
+#
+#Fri Dec 01 17:39:30 CET 2006
+http\://www.ifi.unizh.ch/ddis/ont/next/model/instances/MI_NextAuthors.owl=MI_NextAuthors.owl
+http\://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextGeneralModel.owl=MO_NextGeneralModel.owl
+http\://www.ifi.unizh.ch/ddis/ont/next/kb/ProcessLibrary/AtomicProcesses/Divide.owl=Divide.owl
+http\://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextProcessModel.owl=MO_NextProcessModel.owl
+http\://www.daml.org/services/owl-s/1.1/Process.owl=Process.owl
+http\://www.ifi.unizh.ch/ddis/ont/next/ProcessSpace/ProjectTest15Service21.owl=Test15Service21.owl
+http\://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextResourceModel.owl=MO_NextResourceModel.owl
+http\://www.ifi.unizh.ch/ddis/ont/next/kb/ProcessLibrary/ProcessTemplates/AddMultiplySubtract.owl=AddMultiplySubtract.owl
+http\://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextDataModel.owl=MO_NextDataModel.owl
+http\://www.daml.org/services/owl-s/1.1/Expression.owl=Expression.owl
+http\://www.ifi.unizh.ch/ddis/ont/next/model/MO_OWLSExtensions.owl=MO_OWLSExtensions.owl
+http\://www.daml.org/services/owl-s/1.1/Profile.owl=Profile.owl
+http\://www.ifi.unizh.ch/ddis/ont/next/kb/ProcessLibrary/ProcessTemplates/SubtractMultiplyAdd.owl=SubtractMultiplyAdd.owl
+http\://www.daml.org/services/owl-s/1.1/Service.owl=Service.owl
+http\://www.ifi.unizh.ch/ddis/ont/next/kb/ProcessLibrary/AtomicProcesses/Subtract.owl=Subtract.owl
+http\://www.daml.org/services/owl-s/1.1/ObjectList.owl=ObjectList.owl
+http\://www.ifi.unizh.ch/ddis/ont/next/kb/ProcessLibrary/AtomicProcesses/Add.owl=Add.owl
+http\://www.daml.org/services/owl-s/1.1/Grounding.owl=Grounding.owl
+http\://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextUnitModel.owl=MO_NextUnitModel.owl
+http\://www.ifi.unizh.ch/ddis/ont/next/kb/ProcessLibrary/AtomicProcesses/Multiply.owl=Multiply.owl
+http\://www.ifi.unizh.ch/ddis/ont/next/kb/DataItemLibrary/DA_NextDataItems.owl=DA_NextDataItems.owl
+http\://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextProjectModel.owl=MO_NextProjectModel.owl
+http\://www.ifi.unizh.ch/ddis/ont/owl-s/MyTestService.owl=MyTestService.owl
+http\://www.mindswap.org/2004/owl-s/1.1/BNPrice.owl=BNPrice.owl
+http\://www.mindswap.org/2004/owl-s/1.1/BookFinder.owl=BookFinder.owl
+http\://www.daml.org/services/owl-s/1.0/Process.owl=Process-1-0.owl
+http://www.mindswap.org/2004/owl-s/1.1/BookPrice.owl=BookPrice.owl
+#saved onts
+http\://www.example.org/FindCheaperBook.owl=CreateComplexProcess.owl
+# Trails
+#
+http\://www.ifi.unizh.ch/ddis/ont/owl-s/trails/TrailList=TrailList.owl
+http\://www.ifi.unizh.ch/ddis/ont/next/model/ExecutionTrialMath.owl=ExecutionTrialMath.owl
+http\://www.ifi.unizh.ch/ddis/ont/next/model/ExecutionTrial.owl=ExecutionTrial.owl
+http\://www.ifi.unizh.ch/ddis/ont/owl-s/trails/CreateJavaGroundingTrail.owl=CreateJavaGroundingTrail.owl
+http\://www.ifi.unizh.ch/ddis/ont/owl-s/trails/ExecutionTrail-1167165220043.owl=newJavaGroundingTrail.owl
+http\://www.ifi.unizh.ch/ddis/ont/owl-s/trails/ExecutionTrail-1167215985364.owl=ExecutionTrail-1167215985364.owl
+http\://www.ifi.unizh.ch/ddis/ont/owl-s/trails/ExecutionTrail-1167222817039.owl=ExecutionTrail-1167222817039.owl
+http\://www.ifi.unizh.ch/ddis/ont/owl-s/trails/ExecutionTrail-1167226213892.owl=CreateSequenceTrail.owl
+# dictonary trail
+http\://www.ifi.unizh.ch/ddis/ont/owl-s/trails/ExecutionTrail-1167304662236.owl=ExecutionTrail-1167304662236.owl
+#
+# weird stuff
+#
+#http\://www.ifi.unizh.ch/ddis/ont/next/ProcessSpace/ProjectTestNeu.owl\#TestNeu=TestNeu.owl
+#http\://www.ifi.unizh.ch/ddis/ont/next/ProcessSpace/ProjectTest15Service21.owl\#Test15Service21=Test15Service21.owl

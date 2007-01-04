@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE uridef [
+  <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns">
+  <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema">
+  <!ENTITY owl "http://www.w3.org/2002/07/owl">
+  <!ENTITY xsd "http://www.w3.org/2001/XMLSchema">
+  <!ENTITY service "http://www.daml.org/services/owl-s/1.1/Service.owl">
+  <!ENTITY profile "http://www.daml.org/services/owl-s/1.1/Profile.owl">
+  <!ENTITY process "http://www.daml.org/services/owl-s/1.1/Process.owl">
+  <!ENTITY grounding "http://www.daml.org/services/owl-s/1.1/Grounding.owl">
+  <!ENTITY list "http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl">  
+  <!ENTITY concepts "http://www.mindswap.org/2004/owl-s/concepts.owl">  
+  <!ENTITY currency "http://www.daml.ecs.soton.ac.uk/ont/currency.owl">
+  <!ENTITY mind "http://www.mindswap.org/2004/owl-s/1.1/MindswapProfileHierarchy.owl">
+]>
+<rdf:RDF
+  xmlns:rdf="&rdf;#" 
+  xmlns:rdfs="&rdfs;#" 
+  xmlns:owl="&owl;#" 
+  xmlns:xsd="&xsd;#" 
+  xmlns:service="&service;#" 
+  xmlns:profile="&profile;#" 
+  xmlns:process="&process;#" 
+  xmlns:grounding="&grounding;#" 
+  xmlns:list="&list;#"
+  xmlns:mind="&mind;#"
+  xml:base="http://www.mindswap.org/2004/owl-s/1.1/BookPrice.owl"
+>
+
+  <owl:Ontology rdf:about="">
+	<owl:imports rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/BookFinder.owl" /> 
+	<owl:imports rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/BNPrice.owl" /> 
+	<owl:imports rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/CurrencyConverter.owl" /> 
+	<owl:imports rdf:resource="&mind;"/>
+  </owl:Ontology>
+
+  <service:Service rdf:ID="BookPriceService">
+    <service:describedBy>
+      <process:CompositeProcess rdf:ID="BookPriceProcess"/>
+    </service:describedBy>
+    <service:supports>
+      <grounding:WsdlGrounding rdf:ID="BookPriceGrounding"/>
+    </service:supports>
+    <service:presents>
+      <profile:Profile rdf:ID="BookPriceProfile"/>
+    </service:presents>
+  </service:Service>
+
+  <mind:BookInformationService rdf:about="#BookPriceProfile">
+    <service:presentedBy rdf:resource="#BookPriceService"/>
+
+	<profile:serviceName xml:lang="en">Book Price Finder</profile:serviceName>
+	<profile:textDescription xml:lang="en">Returns the price of a book in the desired currency. First the ISBN number for the given book is found and then this ISBN number is used to get the prive of the book from Barnes &amp; Nobles service.</profile:textDescription>
+
+    <profile:hasInput>
+      <process:Input rdf:ID="BookName">
+        <rdfs:label>Book Name</rdfs:label>
+        <process:parameterType rdf:datatype="&xsd;#anyURI">&xsd;#string</process:parameterType>
+      </process:Input>
+    </profile:hasInput>
+    <profile:hasInput>
+      <process:Input rdf:ID="Currency">
+        <rdfs:label>Output Currency</rdfs:label>
+        <process:parameterType rdf:datatype="&xsd;#anyURI">&currency;#Currency</process:parameterType>
+      </process:Input>
+    </profile:hasInput>
+    <profile:hasOutput>
+      <process:Output rdf:ID="BookPrice">
+        <rdfs:label>Output Price</rdfs:label>
+        <process:parameterType rdf:datatype="&xsd;#anyURI">&concepts;#Price</process:parameterType>
+      </process:Output>
+    </profile:hasOutput>
+  </mind:BookInformationService>
+
+  <process:CompositeProcess rdf:about="#BookPriceProcess">
+    <service:describes rdf:resource="#BookPriceService"/>
+
+    <process:hasInput rdf:resource="#BookName"/>
+    <process:hasInput rdf:resource="#Currency"/>
+    <process:hasOutput rdf:resource="#BookPrice"/>
+
+    <process:composedOf>
+      <process:Sequence>
+        <process:components>
+          <process:ControlConstructList>
+            <list:first>
+              <process:Perform rdf:nodeID="Perform1"/>
+            </list:first>
+            <list:rest>
+              <process:ControlConstructList>
+                <list:first>
+                  <process:Perform rdf:nodeID="Perform2"/>
+                </list:first>
+                <list:rest>
+                  <process:ControlConstructList>
+                    <list:rest rdf:resource="&list;#nil"/>
+                    <list:first>
+                      <process:Perform rdf:nodeID="Perform3"/>
+                    </list:first>
+                  </process:ControlConstructList>
+                </list:rest>
+              </process:ControlConstructList>
+            </list:rest>
+          </process:ControlConstructList>
+        </process:components>
+      </process:Sequence>
+    </process:composedOf>
+    <process:hasResult>
+      <process:Result>
+        <process:withOutput>
+          <process:OutputBinding>
+            <process:toParam rdf:resource="#BookPrice"/>
+            <process:valueSource>
+              <process:ValueOf>
+                <process:fromProcess>
+                  <process:Perform rdf:nodeID="Perform3"/>
+                </process:fromProcess>
+                <process:theVar rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/CurrencyConverter.owl#OutputPrice"/>
+              </process:ValueOf>
+            </process:valueSource>
+          </process:OutputBinding>
+        </process:withOutput>
+      </process:Result>
+    </process:hasResult>
+  </process:CompositeProcess>
+
+  <process:Perform rdf:nodeID="Perform1">
+    <process:process rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/BookFinder.owl#BookFinderProcess"/>
+    <process:hasDataFrom>
+      <process:InputBinding>
+        <process:toParam rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/BookFinder.owl#BookName"/>
+        <process:valueSource>
+          <process:ValueOf>
+            <process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+            <process:theVar rdf:resource="#BookName"/>
+          </process:ValueOf>
+        </process:valueSource>
+      </process:InputBinding>
+    </process:hasDataFrom>
+  </process:Perform>
+
+  <process:Perform rdf:nodeID="Perform2">
+    <process:process rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/BNPrice.owl#BNPriceProcess"/>
+    <process:hasDataFrom>
+      <process:InputBinding>
+        <process:toParam rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/BNPrice.owl#BookInfo"/>
+        <process:valueSource>
+          <process:ValueOf>
+            <process:theVar rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/BookFinder.owl#BookInfo"/>
+            <process:fromProcess>
+              <process:Perform rdf:nodeID="Perform1"/>
+            </process:fromProcess>
+          </process:ValueOf>
+        </process:valueSource>
+      </process:InputBinding>
+    </process:hasDataFrom>
+  </process:Perform>
+
+  <process:Perform rdf:nodeID="Perform3">
+    <process:process rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/CurrencyConverter.owl#CurrencyConverterProcess"/>
+    <process:hasDataFrom>
+      <process:InputBinding>
+        <process:valueSource>
+          <process:ValueOf>
+            <process:fromProcess rdf:nodeID="Perform2"/>
+            <process:theVar rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/BNPrice.owl#BookPrice"/>
+          </process:ValueOf>
+        </process:valueSource>
+        <process:toParam rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/CurrencyConverter.owl#InputPrice"/>
+      </process:InputBinding>
+    </process:hasDataFrom>
+    <process:hasDataFrom>
+      <process:InputBinding>
+        <process:valueSource>
+          <process:ValueOf>
+            <process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+            <process:theVar rdf:resource="#Currency"/>
+          </process:ValueOf>
+        </process:valueSource>
+        <process:toParam rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/CurrencyConverter.owl#OutputCurrency"/>
+      </process:InputBinding>
+    </process:hasDataFrom>
+  </process:Perform> 
+
+  <grounding:WsdlGrounding rdf:about="#BookPriceGrounding">
+    <grounding:hasAtomicProcessGrounding rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/CurrencyConverter.owl#CurrencyConverterProcessGrounding"/>
+    <grounding:hasAtomicProcessGrounding rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/BNPrice.owl#BNPriceProcessGrounding"/>
+    <grounding:hasAtomicProcessGrounding rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/BookFinder.owl#BookFinderProcessGrounding"/>
+    <service:supportedBy rdf:resource="#BookPriceService"/>
+  </grounding:WsdlGrounding>
+</rdf:RDF>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE uridef [
+	<!ENTITY rdf 		"http://www.w3.org/1999/02/22-rdf-syntax-ns">
+	<!ENTITY rdfs 		"http://www.w3.org/2000/01/rdf-schema">
+	<!ENTITY owl 		"http://www.w3.org/2002/07/owl">
+	<!ENTITY xsd 		"http://www.w3.org/2001/XMLSchema">
+	<!ENTITY service 	"http://www.daml.org/services/owl-s/1.1/Service.owl">
+	<!ENTITY profile 	"http://www.daml.org/services/owl-s/1.1/Profile.owl">
+	<!ENTITY process 	"http://www.daml.org/services/owl-s/1.1/Process.owl">
+	<!ENTITY grounding 	"http://www.daml.org/services/owl-s/1.1/Grounding.owl">
+	<!ENTITY dc			"http://purl.org/dc/elements/1.1.owl">	
+	<!ENTITY owlsext 	"http://www.ifi.unizh.ch/ddis/ont/owl-s/MoreGroundings.owl">
+	<!ENTITY nextProc   "http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextProcessModel.owl">
+	<!ENTITY nextData   "http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextDataModel.owl">	
+	<!ENTITY nextAuthors "http://www.ifi.unizh.ch/ddis/ont/next/model/instances/MI_NextAuthors.owl">
+	<!ENTITY nextVar	"http://www.ifi.unizh.ch/ddis/ont/next/kb/DataItemLibrary/DA_NextDataItems.owl">		
+]>
+<rdf:RDF
+    xmlns:rdf =		"&rdf;#" 
+    xmlns:rdfs =	"&rdfs;#" 
+    xmlns:owl =		"&owl;#" 
+    xmlns:xsd =		"&xsd;#" 
+    xmlns:service =	"&service;#" 
+    xmlns:profile =	"&profile;#" 
+    xmlns:process =	"&process;#" 
+    xmlns:grounding="&grounding;#" 
+  	xmlns:dc=	    "&dc;#"
+	xmlns:owlsext=	"&owlsext;#"
+	xmlns:nextProc=	"&nextProc;#"
+	xmlns:nextData=	"&nextData;#"	
+	xmlns:nextAuthors= "&nextAuthors;#"
+	xmlns:nextVar=	"&nextVar;#"
+   	xml:base=		"http://www.ifi.unizh.ch/ddis/ont/next/kb/ProcessLibrary/Processes/HotelReservation.owl"
+> 
+	<owl:Ontology rdf:ID="HotelReservation">
+		<owl:versionInfo>HotelReservation.owl v1, 2006-03-06</owl:versionInfo> 
+		<dc:creator>Michael Daenzer</dc:creator>
+		<dc:date>2006-03-06</dc:date>
+		<dc:rights>copyright 2006 by Michael Daenzer, University of Zurich</dc:rights> 
+		
+		<owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl"/>
+		<owl:imports rdf:resource="http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextProcessModel.owl"/>
+		<owl:imports rdf:resource="http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextDataModel.owl"/>
+		<owl:imports rdf:resource="http://www.ifi.unizh.ch/ddis/ont/owl-s/MoreGroundings.owl"/>
+		<owl:imports rdf:resource="http://www.ifi.unizh.ch/ddis/ont/next/kb/DataItemLibrary/DA_NextDataItems.owl"/>
+ 	</owl:Ontology>
+ 	
+ 	<!-- Service Description -->
+ 	<nextProc:NextProcess rdf:ID="HotelReservationService">
+		<service:presents rdf:resource="#HotelReservationProfile"/>
+		<service:describedBy rdf:resource="#HotelReservationProcess"/>
+		<service:supports rdf:resource="#HotelReservationGrounding"/>
+		
+		<nextProc:specifity rdf:datatype="&xsd;#float">1</nextProc:specifity>
+	</nextProc:NextProcess>  
+	 
+	<!-- Profile -->
+	<profile:Profile rdf:ID="HotelReservationProfile">
+		<service:presentedBy rdf:resource="#HotelReservationService"/>
+	  
+		<profile:serviceName xml:lang="en">search for a flight with Hotel</profile:serviceName>
+		<profile:textDescription xml:lang="en">
+			searches a flight with Hotel from the given source to the given destination at the given date
+		</profile:textDescription>
+		<profile:contactInformation rdf:resource="&nextAuthors;#MichaelDaenzer"/>
+      		
+		<profile:hasInput rdf:resource="&nextVar;#City"/>
+		<profile:hasInput rdf:resource="&nextVar;#ReservationDate"/>
+		<profile:hasInput rdf:resource="&nextVar;#NumberOfPersons"/>		
+		<profile:hasOutput rdf:resource="&nextVar;#Price"/>		
+	</profile:Profile> 
+
+	<!-- Process -->
+ 	<process:AtomicProcess rdf:ID="HotelReservationProcess">	
+		<service:describes rdf:resource="#HotelReservationService"/>	
+
+		<process:hasInput rdf:resource="&nextVar;#City"/>
+		<process:hasInput rdf:resource="&nextVar;#Date"/>
+		<process:hasInput rdf:resource="&nextVar;#NumberOfPersons"/>			
+		<process:hasOutput rdf:resource="&nextVar;#Price"/>		    	
+	</process:AtomicProcess>
+	 	      
+    <!-- Grounding -->
+    <owlsext:JavaGrounding rdf:ID="HotelReservationGrounding">
+		<service:supportedBy rdf:resource="#HotelReservationService"/>
+		<owlsext:hasJavaAtomicProcessGrounding rdf:resource="#HotelReservationAtomicGrounding"/>
+    </owlsext:JavaGrounding>
+    
+    <!-- AtomicProcessGrounding  -->
+	<owlsext:JavaAtomicProcessGrounding rdf:ID="HotelReservationAtomicGrounding">
+		<owlsext:hasOwlsProcess rdf:resource="#HotelReservationProcess"/>
+		<owlsext:javaClass>ch.unizh.ifi.next.model.grounding.Hotel</owlsext:javaClass>
+		<owlsext:javaMethod>reservation</owlsext:javaMethod>
+		
+		<owlsext:hasJavaParameter>
+			<owlsext:JavaParameter rdf:ID="JavaCity">
+				<owlsext:javaType>String</owlsext:javaType>
+				<owlsext:owlsParameter rdf:resource="&nextVar;#City"/>
+				<owlsext:paramIndex>1</owlsext:paramIndex>
+			</owlsext:JavaParameter>
+		</owlsext:hasJavaParameter>
+		<owlsext:hasJavaParameter>
+			<owlsext:JavaParameter rdf:ID="JavaDate">
+				<owlsext:javaType>String</owlsext:javaType>
+				<owlsext:owlsParameter rdf:resource="&nextVar;#Date"/>
+				<owlsext:paramIndex>2</owlsext:paramIndex>
+			</owlsext:JavaParameter>
+		</owlsext:hasJavaParameter>
+		<owlsext:hasJavaParameter>
+			<owlsext:JavaParameter rdf:ID="JavaNumberOfPersons">
+				<owlsext:javaType>int</owlsext:javaType>
+				<owlsext:owlsParameter rdf:resource="&nextVar;#NumberOfPersons"/>
+				<owlsext:paramIndex>3</owlsext:paramIndex>
+			</owlsext:JavaParameter>
+		</owlsext:hasJavaParameter>
+		
+		<owlsext:javaOutput>
+			<owlsext:JavaVariable rdf:ID="JavaPrice">
+				<owlsext:javaType>double</owlsext:javaType>
+				<owlsext:owlsParameter rdf:resource="&nextVar;#Price"/>
+			</owlsext:JavaVariable>
+		</owlsext:javaOutput>
+    </owlsext:JavaAtomicProcessGrounding> 
+</rdf:RDF>

@@ -1,0 +1,98 @@
+<?xml version='1.0'?>
+<!DOCTYPE uridef [
+	<!ENTITY rdf 		"http://www.w3.org/1999/02/22-rdf-syntax-ns">
+	<!ENTITY rdfs 		"http://www.w3.org/2000/01/rdf-schema">
+	<!ENTITY owl 		"http://www.w3.org/2002/07/owl">
+	<!ENTITY xsd 		"http://www.w3.org/2001/XMLSchema">
+	<!ENTITY service 	"http://www.daml.org/services/owl-s/1.1/Service.owl">
+	<!ENTITY dc			"http://purl.org/dc/elements/1.1.owl">
+	<!ENTITY nextRes	"http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextResourceModel.owl">	
+	<!ENTITY nextGeneral "http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextGeneralModel.owl">
+	<!ENTITY nextProc   "http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextProcessModel.owl">	
+	<!ENTITY nextAuthors "http://www.ifi.unizh.ch/ddis/ont/next/model/instances/MI_NextAuthors.owl">
+]>
+
+<rdf:RDF
+	xmlns:rdf =		"&rdf;#" 
+	xmlns:rdfs =	"&rdfs;#" 
+	xmlns:owl =		"&owl;#" 
+	xmlns:xsd =		"&xsd;#" 
+	xmlns:service = "&service;#"  
+	xmlns:dc=	    "&dc;#"	
+	xmlns:nextProc= "&nextProc;#"
+	xmlns:nextRes=	"&nextRes;#"
+	xmlns:nextGeneral="&nextGeneral;#"
+	xmlns:nextAuthors="&nextAuthors;#"	
+	xml:base=		"http://www.ifi.unizh.ch/ddis/ont/next/model/NextCaseModel.owl"
+> 
+	<owl:Ontology rdf:ID="NextCaseModel">
+		<rdfs:comment>Upper-Level Ontology for NExT project Model.</rdfs:comment>
+		<owl:versionInfo>MO_NextProjectModel.owl v1.2, 2006-03-06</owl:versionInfo> 
+		<dc:creator>Michael Daenzer</dc:creator>
+		<dc:contributor>Konstantin Pervushin</dc:contributor>
+		<dc:contributor>Peter Vorburger</dc:contributor>
+		<dc:contributor>Abraham Bernstein</dc:contributor>
+		<dc:date>2006-03-06</dc:date>
+		<dc:rights>copyright 2006 by Michael Daenzer, University of Zurich</dc:rights> 
+		
+		<owl:imports rdf:resource="http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextResourceModel.owl"/>
+		<owl:imports rdf:resource="http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextGeneralModel.owl"/>
+		<owl:imports rdf:resource="http://www.ifi.unizh.ch/ddis/ont/next/model/instances/MI_NextAuthors.owl"/>	
+		<owl:imports rdf:resource="http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextProcessModel.owl"/>
+	</owl:Ontology>
+	
+	<owl:Class rdf:ID="NExTProject">
+		<rdfs:comment>The class for a NExT project. This may be subclassed with a domain-specific project class</rdfs:comment>		
+		<rdfs:subClassOf>
+	    	<owl:Restriction>
+		      <owl:onProperty rdf:resource="#hasPlan"/>
+		      <owl:cardinality rdf:datatype="&xsd;#nonNegativeInteger">1</owl:cardinality>  
+			</owl:Restriction>
+	   </rdfs:subClassOf>	
+		<rdfs:subClassOf>
+	    	<owl:Restriction>
+		      <owl:onProperty rdf:resource="#hasProcessPath"/>
+		      <owl:cardinality rdf:datatype="&xsd;#nonNegativeInteger">1</owl:cardinality>  
+			</owl:Restriction>
+	   </rdfs:subClassOf>
+		<rdfs:subClassOf>
+	    	<owl:Restriction>
+		      <owl:onProperty rdf:resource="#hasValueList"/>
+		      <owl:cardinality rdf:datatype="&xsd;#nonNegativeInteger">1</owl:cardinality>  
+			</owl:Restriction>
+	   </rdfs:subClassOf>		
+	</owl:Class>
+	
+	<owl:ObjectProperty rdf:ID="hasPlan">
+		<rdfs:comment>relates a NExT project with its process plan</rdfs:comment>
+		<rdfs:domain rdf:resource="#NExTProject"/>
+		<rdfs:range rdf:resource="#ProcessPlan"/>
+	</owl:ObjectProperty>
+	
+	<owl:Class rdf:ID="ProcessPlan">
+		<rdfs:comment>A Next process representing the process plan of a NExT project</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="&nextProc;#NextProcess"/>	
+	</owl:Class>
+	
+	<owl:Class rdf:ID="ProcessPath">
+		<rdfs:comment>a temporally ordered list of executed processes through the process plan</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="&rdf;#List"/>
+	</owl:Class>
+	
+	<owl:ObjectProperty rdf:ID="hasPathway">
+		<rdfs:comment>relates a NExT project with the pathway trough the process plan</rdfs:comment>
+		<rdfs:domain rdf:resource="#NExTProject"/>
+		<rdfs:range rdf:resource="#ProcessPath"/>
+	</owl:ObjectProperty>
+	
+	<owl:Class rdf:ID="ValueList">
+		<rdfs:comment>the temporally ordered list of data values changes throughout the pathway through the process plan</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="&rdf;#List"/>
+	</owl:Class>
+	
+	<owl:ObjectProperty rdf:ID="hasValueList">
+		<rdfs:comment>relates a NExT project with the history of the values iof its data</rdfs:comment>
+		<rdfs:domain rdf:resource="#NExTProject"/>
+		<rdfs:range rdf:resource="#ValueList"/>
+	</owl:ObjectProperty>
+</rdf:RDF>

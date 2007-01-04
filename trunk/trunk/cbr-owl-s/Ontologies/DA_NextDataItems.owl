@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<rdf:RDF
+    xmlns:process="http://www.daml.org/services/owl-s/1.1/Process.owl#"
+    xmlns:list="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:expression="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
+    xmlns:j.0="http://purl.org/dc/elements/1.1.owl#"
+    xmlns:service="http://www.daml.org/services/owl-s/1.1/Service.owl#"
+    xmlns:grounding="http://www.daml.org/services/owl-s/1.1/Grounding.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.1="http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextDataModel.owl#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns:profile="http://www.daml.org/services/owl-s/1.1/Profile.owl#">
+  <j.1:NextDataItem rdf:about="http://www.ifi.unizh.ch/ddis/ont/next/kb/DataItemLibrary/DA_NextDataItems.owl#City">
+    <rdfs:comment>A city</rdfs:comment>
+    <rdfs:label>City</rdfs:label>
+    <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >
+			http://www.w3.org/2001/XMLSchema#string
+		</process:parameterType>
+    <j.1:hasAuthor rdf:resource="http://www.ifi.unizh.ch/ddis/ont/next/model/instances/MI_NextAuthors.owl#MichaelDaenzer"/>
+    <j.1:versionShort>1.0</j.1:versionShort>
+    <j.1:versionLong>1.0 final</j.1:versionLong>
+    <j.1:versionDate>2006-09-05</j.1:versionDate>
+    <j.1:ipDisclaimer>copyright by Michael Daenzer and the University of Zurich. licensed under GPL</j.1:ipDisclaimer>
+  </j.1:NextDataItem>
+  <owl:Ontology>
+    <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Service.owl"/>
+    <owl:imports rdf:resource="http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextAuthorModel.owl"/>
+    <owl:imports rdf:resource="http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextGeneralModel.owl"/>
+    <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl"/>
+    <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl"/>
+    <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl"/>
+    <owl:imports rdf:resource="http://www.ifi.unizh.ch/ddis/ont/next/model/instances/MI_NextAuthors.owl"/>
+    <owl:imports rdf:resource="http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextDataModel.owl"/>
+  </owl:Ontology>
+  <j.1:NextDataItem rdf:about="http://www.ifi.unizh.ch/ddis/ont/next/kb/DataItemLibrary/DA_NextDataItems.owl#TestItem">
+    <rdfs:label>TestItem</rdfs:label>
+    <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://www.w3.org/2001/XMLSchema#string</process:parameterType>
+  </j.1:NextDataItem>
+  <j.1:NextDataItem rdf:about="http://www.ifi.unizh.ch/ddis/ont/next/kb/DataItemLibrary/DA_NextDataItems.owl#Date">
+    <rdfs:comment>A date</rdfs:comment>
+    <rdfs:label>Date</rdfs:label>
+    <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >
+			http://www.w3.org/2001/XMLSchema#string
+		</process:parameterType>
+    <j.1:hasAuthor rdf:resource="http://www.ifi.unizh.ch/ddis/ont/next/model/instances/MI_NextAuthors.owl#MichaelDaenzer"/>
+    <j.1:versionShort>1.0</j.1:versionShort>
+    <j.1:versionLong>1.0 final</j.1:versionLong>
+    <j.1:versionDate>2006-09-05</j.1:versionDate>
+    <j.1:ipDisclaimer>copyright by Michael Daenzer and the University of Zurich. licensed under GPL</j.1:ipDisclaimer>
+  </j.1:NextDataItem>
+  <owl:Ontology rdf:about="http://www.ifi.unizh.ch/ddis/ont/next/kb/DataItemLibrary/DA_NextDataItems.owl#NextDataItems">
+    <rdfs:comment>Concrete data items for cooking domain</rdfs:comment>
+    <owl:versionInfo>DA_NextDataItems.owl v1.1, 2006-03-06</owl:versionInfo>
+    <j.0:creator>Michael Daenzer</j.0:creator>
+    <j.0:date>2006-03-06</j.0:date>
+    <j.0:rights>copyright 2006 by Michael Daenzer, University of Zurich</j.0:rights>
+    <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#"/>
+    <owl:imports rdf:resource="http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextDataModel.owl#"/>
+    <owl:imports rdf:resource="http://www.ifi.unizh.ch/ddis/ont/next/model/instances/MI_NextAuthors.owl#"/>
+  </owl:Ontology>
+  <j.1:NextDataItem rdf:about="http://www.ifi.unizh.ch/ddis/ont/next/kb/DataItemLibrary/DA_NextDataItems.owl#NumberOfPersons">
+    <rdfs:comment>The number of persons for which the flight should be booked</rdfs:comment>
+    <rdfs:label>Number of persons</rdfs:label>
+    <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >
+			http://www.w3.org/2001/XMLSchema#string
+		</process:parameterType>
+    <j.1:hasAuthor rdf:resource="http://www.ifi.unizh.ch/ddis/ont/next/model/instances/MI_NextAuthors.owl#MichaelDaenzer"/>
+    <j.1:versionShort>1.0</j.1:versionShort>
+    <j.1:versionLong>1.0 final</j.1:versionLong>
+    <j.1:versionDate>2006-09-05</j.1:versionDate>
+    <j.1:ipDisclaimer>copyright by Michael Daenzer and the University of Zurich. licensed under GPL</j.1:ipDisclaimer>
+  </j.1:NextDataItem>
+  <j.1:NextDataItem rdf:about="http://www.ifi.unizh.ch/ddis/ont/next/kb/DataItemLibrary/DA_NextDataItems.owl#FlightNumber">
+    <rdfs:comment>The number of a flight</rdfs:comment>
+    <rdfs:label>Flight Number</rdfs:label>
+    <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >
+			http://www.w3.org/2001/XMLSchema#string
+		</process:parameterType>
+    <j.1:hasAuthor rdf:resource="http://www.ifi.unizh.ch/ddis/ont/next/model/instances/MI_NextAuthors.owl#MichaelDaenzer"/>
+    <j.1:versionShort>1.0</j.1:versionShort>
+    <j.1:versionLong>1.0 final</j.1:versionLong>
+    <j.1:versionDate>2006-09-05</j.1:versionDate>
+    <j.1:ipDisclaimer>copyright by Michael Daenzer and the University of Zurich. licensed under GPL</j.1:ipDisclaimer>
+  </j.1:NextDataItem>
+  <j.1:NextDataItem rdf:about="http://www.ifi.unizh.ch/ddis/ont/next/kb/DataItemLibrary/DA_NextDataItems.owl#Price">
+    <rdfs:comment>The price for the flight for all participants</rdfs:comment>
+    <rdfs:label>Price</rdfs:label>
+    <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >
+			http://www.w3.org/2001/XMLSchema#string
+		</process:parameterType>
+    <j.1:hasAuthor rdf:resource="http://www.ifi.unizh.ch/ddis/ont/next/model/instances/MI_NextAuthors.owl#MichaelDaenzer"/>
+    <j.1:versionShort>1.0</j.1:versionShort>
+    <j.1:versionLong>1.0 final</j.1:versionLong>
+    <j.1:versionDate>2006-09-05</j.1:versionDate>
+    <j.1:ipDisclaimer>copyright by Michael Daenzer and the University of Zurich. licensed under GPL</j.1:ipDisclaimer>
+  </j.1:NextDataItem>
+  <j.1:NextDataItem rdf:about="http://www.ifi.unizh.ch/ddis/ont/next/kb/DataItemLibrary/DA_NextDataItems.owl#SourceAirport">
+    <rdfs:comment>The source airport for the flight</rdfs:comment>
+    <rdfs:label>Source Airport</rdfs:label>
+    <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >
+			http://www.w3.org/2001/XMLSchema#string
+		</process:parameterType>
+    <j.1:hasAuthor rdf:resource="http://www.ifi.unizh.ch/ddis/ont/next/model/instances/MI_NextAuthors.owl#MichaelDaenzer"/>
+    <j.1:versionShort>1.0</j.1:versionShort>
+    <j.1:versionLong>1.0 final</j.1:versionLong>
+    <j.1:versionDate>2006-09-05</j.1:versionDate>
+    <j.1:ipDisclaimer>copyright by Michael Daenzer and the University of Zurich. licensed under GPL</j.1:ipDisclaimer>
+  </j.1:NextDataItem>
+  <owl:Ontology>
+    <owl:imports rdf:resource="http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextAuthorModel.owl"/>
+    <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl"/>
+    <owl:imports rdf:resource="http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextGeneralModel.owl"/>
+    <owl:imports rdf:resource="http://www.ifi.unizh.ch/ddis/ont/next/model/instances/MI_NextAuthors.owl"/>
+    <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Service.owl"/>
+    <owl:imports rdf:resource="http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextDataModel.owl"/>
+    <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl"/>
+    <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl"/>
+  </owl:Ontology>
+  <j.1:NextDataItem rdf:about="http://www.ifi.unizh.ch/ddis/ont/next/kb/DataItemLibrary/DA_NextDataItems.owl#DestinationAirport">
+    <rdfs:comment>The destination airport for the flight</rdfs:comment>
+    <rdfs:label>Destination Airport</rdfs:label>
+    <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >
+			http://www.w3.org/2001/XMLSchema#string
+		</process:parameterType>
+    <j.1:hasAuthor rdf:resource="http://www.ifi.unizh.ch/ddis/ont/next/model/instances/MI_NextAuthors.owl#MichaelDaenzer"/>
+    <j.1:versionShort>1.0</j.1:versionShort>
+    <j.1:versionLong>1.0 final</j.1:versionLong>
+    <j.1:versionDate>2006-09-05</j.1:versionDate>
+    <j.1:ipDisclaimer>copyright by Michael Daenzer and the University of Zurich. licensed under GPL</j.1:ipDisclaimer>
+  </j.1:NextDataItem>
+  <j.1:NextDataItem rdf:about="http://www.ifi.unizh.ch/ddis/ont/next/kb/DataItemLibrary/DA_NextDataItems.owl#FlightClass">
+    <rdfs:comment>The type of class in the airplane (allowed values are "First", "Business" and "Economy")</rdfs:comment>
+    <rdfs:label>Flight Class</rdfs:label>
+    <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >
+			http://www.w3.org/2001/XMLSchema#string
+		</process:parameterType>
+    <j.1:hasAuthor rdf:resource="http://www.ifi.unizh.ch/ddis/ont/next/model/instances/MI_NextAuthors.owl#MichaelDaenzer"/>
+    <j.1:versionShort>1.0</j.1:versionShort>
+    <j.1:versionLong>1.0 final</j.1:versionLong>
+    <j.1:versionDate>2006-09-05</j.1:versionDate>
+    <j.1:ipDisclaimer>copyright by Michael Daenzer and the University of Zurich. licensed under GPL</j.1:ipDisclaimer>
+  </j.1:NextDataItem>
+</rdf:RDF>
