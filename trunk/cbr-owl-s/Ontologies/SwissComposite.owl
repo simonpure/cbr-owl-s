@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE uridef [
+	<!ENTITY rdf 		"http://www.w3.org/1999/02/22-rdf-syntax-ns">
+	<!ENTITY rdfs 		"http://www.w3.org/2000/01/rdf-schema">
+	<!ENTITY owl 		"http://www.w3.org/2002/07/owl">
+	<!ENTITY xsd 		"http://www.w3.org/2001/XMLSchema">
+	<!ENTITY service 	"http://www.daml.org/services/owl-s/1.1/Service.owl">
+	<!ENTITY profile 	"http://www.daml.org/services/owl-s/1.1/Profile.owl">
+	<!ENTITY process 	"http://www.daml.org/services/owl-s/1.1/Process.owl">
+	<!ENTITY grounding 	"http://www.daml.org/services/owl-s/1.1/Grounding.owl">
+	<!ENTITY list		"http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl">
+	<!ENTITY dc			"http://purl.org/dc/elements/1.1.owl">	
+	<!ENTITY myGroundings "http://www.ifi.unizh.ch/ddis/ont/owl-s/MoreGroundings.owl">
+	<!ENTITY nextProc   "http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextProcessModel.owl">
+	<!ENTITY nextData   "http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextDataModel.owl">	
+	<!ENTITY nextAuthors "http://www.ifi.unizh.ch/ddis/ont/next/model/instances/MI_NextAuthors.owl">
+	<!ENTITY nextVar	"http://www.ifi.unizh.ch/ddis/ont/next/kb/DataItemLibrary/DA_NextDataItems.owl">	
+	<!ENTITY swissSearch "http://www.ifi.unizh.ch/ddis/ont/next/kb/ProcessLibrary/processes/SwissFlightSearch.owl">	
+	<!ENTITY swissRes "http://www.ifi.unizh.ch/ddis/ont/next/kb/ProcessLibrary/processes/SwissReservation.owl">	
+]>
+<rdf:RDF
+    xmlns:rdf =		"&rdf;#" 
+    xmlns:rdfs =	"&rdfs;#" 
+    xmlns:owl =		"&owl;#" 
+    xmlns:xsd =		"&xsd;#" 
+    xmlns:service =	"&service;#" 
+    xmlns:profile =	"&profile;#" 
+    xmlns:process =	"&process;#" 
+    xmlns:grounding="&grounding;#" 
+	xmlns:list=		"&list;#"
+  	xmlns:dc=	    "&dc;#"
+	xmlns:myGroundings=	"&myGroundings;#"
+	xmlns:nextProc=	"&nextProc;#"
+	xmlns:nextData=	"&nextData;#"	
+	xmlns:nextAuthors= "&nextAuthors;#"
+	xmlns:nextVar=	"&nextVar;#"
+	xmlns:swissSearch= "&swissSearch;#"
+	xmlns:swissRes= "&swissRes;#"
+   	xml:base=		"http://www.ifi.unizh.ch/ddis/ont/next/kb/ProcessLibrary/templates/SwissComposite.owl"
+> 
+	<owl:Ontology rdf:ID="SwissComposite">
+		<owl:versionInfo>SwissComposite.owl v1, 2006-03-06</owl:versionInfo> 
+		<dc:creator>Michael Daenzer</dc:creator>
+		<dc:date>2006-03-06</dc:date>
+		<dc:rights>copyright 2006 by Michael Daenzer, University of Zurich</dc:rights> 
+		
+		<owl:imports rdf:resource="&process;#"/>
+		
+		<owl:imports rdf:resource="&nextProc;#"/>
+		<owl:imports rdf:resource="&nextData;#"/>
+		<owl:imports rdf:resource="&myGroundings;#"/>
+		
+		<owl:imports rdf:resource="&nextVar;#"/>
+		
+		<owl:imports rdf:resource="&swissSearch;#"/>
+		<owl:imports rdf:resource="&swissRes;#"/>
+ 	</owl:Ontology>
+ 	
+ 	<!-- Service Description -->
+ 	<nextProc:NextProcess rdf:ID="SwissCompositeService">
+		<service:presents rdf:resource="#SwissCompositeProfile"/>
+		<service:describedBy rdf:resource="#SwissCompositeProcess"/>
+		<service:supports rdf:resource="#SwissCompositeGrounding"/>
+		
+		<nextProc:specifity rdf:datatype="&xsd;#float">1</nextProc:specifity>
+	</nextProc:NextProcess>  
+	 
+	<!-- Profile -->
+	<profile:Profile rdf:ID="SwissCompositeProfile">
+		<service:presentedBy rdf:resource="#SwissCompositeService"/>
+	  
+		<profile:serviceName xml:lang="en">search for a flight with Hotel</profile:serviceName>
+		<profile:textDescription xml:lang="en">
+			searches a flight with Hotel from the given source to the given destination at the given date
+		</profile:textDescription>
+		<profile:contactInformation rdf:resource="&nextAuthors;#MichaelDaenzer"/>
+      					
+		<profile:hasInput rdf:resource="#CP_SourceAirport"/>
+		<profile:hasInput rdf:resource="#CP_DestinationAirport"/>
+		<profile:hasInput rdf:resource="#CP_Date"/>	
+		<profile:hasInput rdf:resource="#CP_FlightClass"/>
+		<profile:hasInput rdf:resource="#CP_NumberOfPersons"/>		
+		
+		<profile:hasOutput rdf:resource="#CP_Price"/>		
+	</profile:Profile> 
+
+	<!-- Process -->
+ 	<process:CompositeProcess rdf:ID="SwissCompositeProcess">	
+		<service:describes rdf:resource="#SwissCompositeService"/>	
+
+		<process:composedOf>
+			<process:Sequence>
+				<process:components>
+					<process:ControlConstructList>
+						<list:first rdf:resource="#PerformSwissFlightSearch"/>
+						<list:rest>
+							<process:ControlConstructList>
+								<list:first rdf:resource="#PerformSwissReservation"/>
+								<list:rest rdf:resource="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#nil"/>
+							</process:ControlConstructList>
+						</list:rest>
+					</process:ControlConstructList>
+				</process:components>
+			</process:Sequence>
+		</process:composedOf>
+		
+		<process:hasInput rdf:resource="#CP_SourceAirport"/>
+		<process:hasInput rdf:resource="#CP_DestinationAirport"/>
+		<process:hasInput rdf:resource="#CP_Date"/>	
+		<process:hasInput rdf:resource="#CP_FlightClass"/>
+		<process:hasInput rdf:resource="#CP_NumberOfPersons"/>	
+	
+		<process:hasOutput rdf:resource="#CP_Price"/>	
+		
+		<process:hasResult>
+			<process:Result>
+				<process:withOutput>
+					<process:OutputBinding>
+						<process:toParam rdf:resource="#CP_Price"/>
+						<process:valueSource>
+							<process:ValueOf>
+								<process:fromProcess rdf:resource="#PerformSwissReservation"/>
+								<process:theVar rdf:resource="&swissRes;#Price"/>
+							</process:ValueOf>
+						</process:valueSource>
+					</process:OutputBinding>
+				</process:withOutput>
+			</process:Result>
+		</process:hasResult>
+		
+	</process:CompositeProcess>	 	   
+	
+	<process:Perform rdf:ID="PerformSwissFlightSearch">
+		<process:process rdf:resource="&swissSearch;#SwissFlightSearchProcess"/>
+		<process:hasDataFrom>
+			<process:InputBinding>
+				<process:toParam rdf:resource="&swissSearch;#SourceAirport"/>
+				<process:valueSource>
+					<process:ValueOf>
+						<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+						<process:theVar rdf:resource="#CP_SourceAirport"/>
+					</process:ValueOf>
+				</process:valueSource>
+			</process:InputBinding>
+		</process:hasDataFrom>
+		<process:hasDataFrom>
+			<process:InputBinding>
+				<process:toParam rdf:resource="&swissSearch;#DestinationAirport"/>
+				<process:valueSource>
+					<process:ValueOf>
+						<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+						<process:theVar rdf:resource="#CP_DestinationAirport"/>
+					</process:ValueOf>
+				</process:valueSource>
+			</process:InputBinding>
+		</process:hasDataFrom>
+		<process:hasDataFrom>
+			<process:InputBinding>
+				<process:toParam rdf:resource="&swissSearch;#Date"/>
+				<process:valueSource>
+					<process:ValueOf>
+						<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+						<process:theVar rdf:resource="#CP_Date"/>
+					</process:ValueOf>
+				</process:valueSource>
+			</process:InputBinding>
+		</process:hasDataFrom>			
+	</process:Perform>
+	
+	<process:Perform rdf:ID="PerformSwissReservation">
+		<process:process rdf:resource="&swissRes;#SwissReservationProcess"/>
+		<process:hasDataFrom>
+			<process:InputBinding>
+				<process:toParam rdf:resource="&swissRes;#FlightClass"/>
+				<process:valueSource>
+					<process:ValueOf>
+						<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+						<process:theVar rdf:resource="#CP_FlightClass"/>
+					</process:ValueOf>
+				</process:valueSource>
+			</process:InputBinding>
+		</process:hasDataFrom>
+		<process:hasDataFrom>
+			<process:InputBinding>
+				<process:toParam rdf:resource="&swissRes;#NumberOfPersons"/>
+				<process:valueSource>
+					<process:ValueOf>
+						<process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+						<process:theVar rdf:resource="#CP_NumberOfPersons"/>
+					</process:ValueOf>
+				</process:valueSource>
+			</process:InputBinding>
+		</process:hasDataFrom>
+		<process:hasDataFrom>
+			<process:InputBinding>
+				<process:toParam rdf:resource="&swissRes;#TheFlightNumber"/>
+				<process:valueSource>
+					<process:ValueOf>
+						<process:fromProcess rdf:resource="#PerformSwissFlightSearch"/>
+						<process:theVar rdf:resource="&swissSearch;#FlightNumber"/>
+					</process:ValueOf>
+				</process:valueSource>
+			</process:InputBinding>
+		</process:hasDataFrom>			
+	</process:Perform>
+	
+	<process:Input rdf:ID="CP_SourceAirport">			
+		<nextData:hasNextDataItem rdf:resource="&nextVar;#SourceAirport"/>
+		<process:parameterType rdf:datatype="xsd#anyURI">&xsd;#string</process:parameterType>
+	</process:Input>
+		
+	<process:Input rdf:ID="CP_DestinationAirport">
+		<nextData:hasNextDataItem rdf:resource="&nextVar;#DestinationAirport"/>
+		<process:parameterType rdf:datatype="xsd#anyURI">&xsd;#string</process:parameterType>
+	</process:Input>
+	
+	<process:Input rdf:ID="CP_Date">
+		<nextData:hasNextDataItem rdf:resource="&nextVar;#Date"/>
+		<process:parameterType rdf:datatype="xsd#anyURI">&xsd;#string</process:parameterType>
+	</process:Input>	
+
+	<process:Input rdf:ID="CP_FlightClass">
+		<nextData:hasNextDataItem rdf:resource="&nextVar;#City"/>
+		<process:parameterType rdf:datatype="xsd#anyURI">&xsd;#string</process:parameterType>
+	</process:Input>
+	
+	<process:Input rdf:ID="CP_NumberOfPersons">
+		<nextData:hasNextDataItem rdf:resource="&nextVar;#NumberOfPersons"/>
+		<process:parameterType rdf:datatype="xsd#anyURI">&xsd;#nonNegativeInteger</process:parameterType>
+	</process:Input>	
+	
+	<process:Output rdf:ID="CP_Price">
+		<nextData:hasNextDataItem rdf:resource="&nextVar;#Price"/>
+		<process:parameterType rdf:datatype="xsd#anyURI">&xsd;#double</process:parameterType>
+	</process:Output>
+ 
+</rdf:RDF>

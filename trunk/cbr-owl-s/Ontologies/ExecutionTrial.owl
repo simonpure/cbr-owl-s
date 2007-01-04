@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:expression="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
+    xmlns:process="http://www.daml.org/services/owl-s/1.1/Process.owl#"
+    xmlns:list="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#"
+    xmlns:service="http://www.daml.org/services/owl-s/1.1/Service.owl#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:grounding="http://www.daml.org/services/owl-s/1.1/Grounding.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns="http://www.ifi.unizh.ch/ddis/ont/owl-s/ExecutionTrial.owl#"
+    xmlns:profile="http://www.daml.org/services/owl-s/1.1/Profile.owl#"
+  xml:base="http://www.ifi.unizh.ch/ddis/ont/owl-s/ExecutionTrial.owl#">
+  <service:Service rdf:ID="TestService">
+    <service:presents>
+      <profile:Profile rdf:ID="TestProfile"/>
+    </service:presents>
+    <service:describedBy>
+      <process:CompositeProcess rdf:ID="TestProcess"/>
+    </service:describedBy>
+  </service:Service>
+  <profile:Profile rdf:about="#TestProfile">
+    <service:presentedBy rdf:resource="#TestService"/>
+    <profile:hasInput>
+      <process:Input rdf:about="#City%20of%20Glass">
+        <rdfs:label>Book Name</rdfs:label>
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.w3.org/2001/XMLSchema#string</process:parameterType>
+        <process:valueData>City of Glass</process:valueData>
+      </process:Input>
+    </profile:hasInput>
+    <profile:hasOutput>
+      <process:Output rdf:about="#Anonymous%20(64dd2dff:10f6c8e108a:-7e4e)">
+        <rdfs:label>Book Info</rdfs:label>
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://purl.org/net/nknouf/ns/bibtex#Book</process:parameterType>
+        <process:valueData>
+  <j.0:Book>
+    <j.0:hasMonth>April</j.0:hasMonth>
+    <j.0:hasYear rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1990</j.0:hasYear>
+    <j.0:hasTitle>The New York Trilogy: City of Glass; Ghosts; The Locked Room  (Contemporary American Fiction Series)</j.0:hasTitle>
+    <j.0:hasPublisher>Penguin (Non-Classics)</j.0:hasPublisher>
+    <j.0:hasAuthor>Paul Auster</j.0:hasAuthor>
+    <j.0:hasISBN>0140131558</j.0:hasISBN>
+  </j.0:Book>
+</process:valueData>
+      </process:Output>
+    </profile:hasOutput>
+    <rdfs:label>[null + null + null]</rdfs:label>
+    <profile:textDescription>[null + null + null]</profile:textDescription>
+  </profile:Profile>
+  <process:CompositeProcess rdf:about="#TestProcess">
+    <service:describes rdf:resource="#TestService"/>
+    <process:composedOf>
+      <process:Sequence>
+        <process:components>
+          <process:ControlConstructList>
+            <list:first>
+              <process:Perform rdf:nodeID="A0"/>
+            </list:first>
+            <list:rest>
+              <process:ControlConstructList>
+                <list:first>
+                  <process:Perform rdf:nodeID="A1"/>
+                </list:first>
+                <list:rest>
+                  <process:ControlConstructList>
+                    <list:first>
+                      <process:Perform>
+                        <process:process rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/AmazonBookPrice.owl#AmazonPriceProcess"/>
+                        <process:hasDataFrom>
+                          <process:InputBinding>
+                            <process:toParam rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/AmazonBookPrice.owl#BookInfo"/>
+                            <process:valueSource>
+                              <process:ValueOf>
+                                <process:fromProcess>
+                                  <process:Perform rdf:nodeID="A1"/>
+                                </process:fromProcess>
+                                <process:theVar rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/AmazonBookPrice.owl#BookInfo"/>
+                              </process:ValueOf>
+                            </process:valueSource>
+                          </process:InputBinding>
+                        </process:hasDataFrom>
+                      </process:Perform>
+                    </list:first>
+                    <list:rest rdf:resource="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#nil"/>
+                  </process:ControlConstructList>
+                </list:rest>
+              </process:ControlConstructList>
+            </list:rest>
+          </process:ControlConstructList>
+        </process:components>
+      </process:Sequence>
+    </process:composedOf>
+    <process:hasInput rdf:resource="#City%20of%20Glass"/>
+    <process:hasOutput rdf:resource="#Anonymous%20(64dd2dff:10f6c8e108a:-7e4e)"/>
+  </process:CompositeProcess>
+  <process:Perform rdf:nodeID="A1">
+    <process:process rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/BNPrice.owl#BNPriceProcess"/>
+    <process:hasDataFrom>
+      <process:InputBinding>
+        <process:toParam rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/BNPrice.owl#BookInfo"/>
+        <process:valueSource>
+          <process:ValueOf>
+            <process:fromProcess>
+              <process:Perform rdf:nodeID="A0"/>
+            </process:fromProcess>
+            <process:theVar rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/BNPrice.owl#BookInfo"/>
+          </process:ValueOf>
+        </process:valueSource>
+      </process:InputBinding>
+    </process:hasDataFrom>
+  </process:Perform>
+  <process:Perform rdf:nodeID="A0">
+    <process:process rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/BookFinder.owl#BookFinderProcess"/>
+    <process:hasDataFrom>
+      <process:InputBinding>
+        <process:toParam rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/BookFinder.owl#BookName"/>
+        <process:valueSource>
+          <process:ValueOf>
+            <process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+            <process:theVar rdf:resource="#City%20of%20Glass"/>
+          </process:ValueOf>
+        </process:valueSource>
+      </process:InputBinding>
+    </process:hasDataFrom>
+  </process:Perform>
+</rdf:RDF>

@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:process="http://www.daml.org/services/owl-s/1.1/Process.owl#"
+    xmlns:list="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:j.0="http://www.ifi.unizh.ch/ddis/ont/owl-s/MoreGroundings.owl#"
+    xmlns:expression="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
+    xmlns:j.1="http://www.ifi.unizh.ch/ddis/ont/owl-s/OWLSExtensions.owl#"
+    xmlns:service="http://www.daml.org/services/owl-s/1.1/Service.owl#"
+    xmlns:grounding="http://www.daml.org/services/owl-s/1.1/Grounding.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns:profile="http://www.daml.org/services/owl-s/1.1/Profile.owl#">
+  <service:Service rdf:about="http://www.ifi.unizh.ch/ddis/ont/owl-s/MyTestService#MyService">
+    <service:describedBy>
+      <process:AtomicProcess rdf:about="http://www.ifi.unizh.ch/ddis/ont/owl-s/MyTestService#MyProcess"/>
+    </service:describedBy>
+    <service:supports>
+      <j.0:JavaGrounding rdf:about="http://www.ifi.unizh.ch/ddis/ont/owl-s/MyTestService#MyJGrounding">
+        <grounding:hasAtomicProcessGrounding>
+          <j.0:JavaAtomicProcessGrounding rdf:about="http://www.ifi.unizh.ch/ddis/ont/owl-s/MyTestService#MyJAtomGround">
+            <j.0:javaOutput>
+              <j.0:JavaVariable rdf:about="http://www.ifi.unizh.ch/ddis/ont/owl-s/MyTestService#JPar1">
+                <j.0:javaType>java.lang.String</j.0:javaType>
+                <j.0:owlsParameter>
+                  <process:Output rdf:about="http://www.ifi.unizh.ch/ddis/ont/owl-s/MyTestService#myOutput">
+                    <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                    >http://www.w3.org/2001/XMLSchema#nonNegativeInteger</process:parameterType>
+                  </process:Output>
+                </j.0:owlsParameter>
+              </j.0:JavaVariable>
+            </j.0:javaOutput>
+            <j.0:hasJavaParameter>
+              <j.0:JavaParameter rdf:about="http://www.ifi.unizh.ch/ddis/ont/owl-s/MyTestService#JIn1">
+                <j.0:javaType>int</j.0:javaType>
+                <j.0:owlsParameter>
+                  <process:Input rdf:about="http://www.ifi.unizh.ch/ddis/ont/owl-s/MyTestService#myInput1">
+                    <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                    >http://www.w3.org/2001/XMLSchema#nonNegativeInteger</process:parameterType>
+                    <rdfs:label>Input1</rdfs:label>
+                  </process:Input>
+                </j.0:owlsParameter>
+                <j.0:paramIndex>1</j.0:paramIndex>
+              </j.0:JavaParameter>
+            </j.0:hasJavaParameter>
+            <j.0:hasJavaParameter>
+              <j.0:JavaParameter rdf:about="http://www.ifi.unizh.ch/ddis/ont/owl-s/MyTestService#JIn2">
+                <j.0:javaType>java.lang.Double</j.0:javaType>
+                <j.0:owlsParameter>
+                  <process:Input rdf:about="http://www.ifi.unizh.ch/ddis/ont/owl-s/MyTestService#myInput2">
+                    <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                    >http://www.w3.org/2001/XMLSchema#nonNegativeInteger</process:parameterType>
+                    <rdfs:label>Input2</rdfs:label>
+                  </process:Input>
+                </j.0:owlsParameter>
+                <j.0:paramIndex>2</j.0:paramIndex>
+              </j.0:JavaParameter>
+            </j.0:hasJavaParameter>
+            <j.0:javaClass>examples.CreateJavaGrounding</j.0:javaClass>
+            <j.0:javaMethod>testIt</j.0:javaMethod>
+            <grounding:owlsProcess>
+              <process:AtomicProcess rdf:about="http://www.ifi.unizh.ch/ddis/ont/owl-s/MyTestService#MyProcess"/>
+            </grounding:owlsProcess>
+          </j.0:JavaAtomicProcessGrounding>
+        </grounding:hasAtomicProcessGrounding>
+        <service:supportedBy rdf:resource="http://www.ifi.unizh.ch/ddis/ont/owl-s/MyTestService#MyService"/>
+      </j.0:JavaGrounding>
+    </service:supports>
+  </service:Service>
+  <process:AtomicProcess rdf:about="http://www.ifi.unizh.ch/ddis/ont/owl-s/MyTestService#MyProcess">
+    <service:describes rdf:resource="http://www.ifi.unizh.ch/ddis/ont/owl-s/MyTestService#MyService"/>
+    <process:hasInput rdf:resource="http://www.ifi.unizh.ch/ddis/ont/owl-s/MyTestService#myInput1"/>
+    <process:hasInput rdf:resource="http://www.ifi.unizh.ch/ddis/ont/owl-s/MyTestService#myInput2"/>
+    <process:hasOutput rdf:resource="http://www.ifi.unizh.ch/ddis/ont/owl-s/MyTestService#myOutput"/>
+      <process:Perform>
+        <process:hasDataFrom>
+          <process:InputBinding>
+            <process:toParam rdf:resource="http://www.ifi.unizh.ch/ddis/ont/owl-s/MyTestService#myInput1"/>
+            <process:valueSource>
+              <process:ValueOf>
+                <process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+                <process:theVar rdf:resource="http://www.ifi.unizh.ch/ddis/ont/owl-s/MyTestService#myOutput"/>
+              </process:ValueOf>
+            </process:valueSource>
+          </process:InputBinding>
+        </process:hasDataFrom>
+        <process:hasDataFrom>
+          <process:InputBinding>
+            <process:toParam rdf:resource="http://www.ifi.unizh.ch/ddis/ont/owl-s/MyTestService#myInput2"/>
+            <process:valueSource>
+              <process:ValueOf>
+                <process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+                <process:theVar rdf:resource="http://www.ifi.unizh.ch/ddis/ont/owl-s/MyTestService#myOutput"/>
+              </process:ValueOf>
+            </process:valueSource>
+          </process:InputBinding>
+        </process:hasDataFrom>
+        <process:process rdf:resource="http://www.ifi.unizh.ch/ddis/ont/owl-s/MyTestService#MyProcess"/>
+      </process:Perform>
+  </process:AtomicProcess>
+</rdf:RDF>

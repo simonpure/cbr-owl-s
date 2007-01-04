@@ -1,0 +1,496 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:process="http://www.daml.org/services/owl-s/1.1/Process.owl#"
+    xmlns:list="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://www.ifi.unizh.ch/ddis/ont/owl-s/trails/ExecutionTrail-1167771539969.owl#"
+    xmlns:expression="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
+    xmlns:j.0="http://www.ifi.unizh.ch/ddis/ont/owl-s/OWLSExtensions.owl#"
+    xmlns:service="http://www.daml.org/services/owl-s/1.1/Service.owl#"
+    xmlns:grounding="http://www.daml.org/services/owl-s/1.1/Grounding.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns:profile="http://www.daml.org/services/owl-s/1.1/Profile.owl#"
+  xml:base="http://www.ifi.unizh.ch/ddis/ont/owl-s/trails/ExecutionTrail-1167771539969.owl#">
+  <service:Service rdf:ID="ExecutionTrailService">
+    <rdfs:label>http://www.example.org/FindCheaperBook.owl#TestService</rdfs:label>
+    <service:presents>
+      <profile:Profile rdf:ID="ExecutionTrailProfile"/>
+    </service:presents>
+    <service:describedBy>
+      <process:CompositeProcess rdf:ID="ExecutionTrailProcess"/>
+    </service:describedBy>
+  </service:Service>
+  <profile:Profile rdf:about="#ExecutionTrailProfile">
+    <profile:hasOutput>
+      <process:Output rdf:ID="Output2">
+        <rdfs:label>http://www.example.org/FindCheaperBook.owl#Bookstore</rdfs:label>
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.w3.org/2001/XMLSchema#string</process:parameterType>
+        <process:valueData>BN</process:valueData>
+      </process:Output>
+    </profile:hasOutput>
+    <service:presentedBy rdf:resource="#ExecutionTrailService"/>
+    <profile:hasInput>
+      <process:Input rdf:ID="Input1">
+        <rdfs:label>http://www.example.org/FindCheaperBook.owl#BookName</rdfs:label>
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.w3.org/2001/XMLSchema#string</process:parameterType>
+        <process:valueData>City of Glass</process:valueData>
+      </process:Input>
+    </profile:hasInput>
+    <profile:hasOutput>
+      <process:Output rdf:ID="Output1">
+        <rdfs:label>http://www.example.org/FindCheaperBook.owl#BookPrice</rdfs:label>
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.mindswap.org/2004/owl-s/concepts.owl#Price</process:parameterType>
+        <process:valueData>
+  &lt;j.0:Price>
+    &lt;j.0:amount rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >14.95&lt;/j.0:amount>
+    &lt;j.0:currency rdf:resource="http://www.daml.ecs.soton.ac.uk/ont/currency.owl#USD"/>
+  &lt;/j.0:Price>
+</process:valueData>
+      </process:Output>
+    </profile:hasOutput>
+    <rdfs:label>[null + null + null + null + ]</rdfs:label>
+    <profile:textDescription>[null + null + null + null + ]</profile:textDescription>
+  </profile:Profile>
+  <process:AtomicProcess rdf:ID="Process2">
+    <rdfs:label>http://www.mindswap.org/2004/owl-s/1.1/BookFinder.owl#BookFinderProcess</rdfs:label>
+    <j.0:hasPerform>
+      <process:Perform rdf:ID="Perform2"/>
+    </j.0:hasPerform>
+    <process:hasInput>
+      <process:Input rdf:ID="Input2">
+        <rdfs:label>http://www.mindswap.org/2004/owl-s/1.1/BookFinder.owl#BookName</rdfs:label>
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.w3.org/2001/XMLSchema#string</process:parameterType>
+        <process:valueData>City of Glass</process:valueData>
+      </process:Input>
+    </process:hasInput>
+    <process:hasOutput>
+      <process:Output rdf:ID="Output3">
+        <rdfs:label>http://www.mindswap.org/2004/owl-s/1.1/BookFinder.owl#BookInfo</rdfs:label>
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://purl.org/net/nknouf/ns/bibtex#Book</process:parameterType>
+        <process:valueData>
+  &lt;j.0:Book>
+    &lt;j.0:hasMonth>April&lt;/j.0:hasMonth>
+    &lt;j.0:hasYear rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1990&lt;/j.0:hasYear>
+    &lt;j.0:hasTitle>The New York Trilogy: City of Glass; Ghosts; The Locked Room  (Contemporary American Fiction Series)&lt;/j.0:hasTitle>
+    &lt;j.0:hasPublisher>Penguin (Non-Classics)&lt;/j.0:hasPublisher>
+    &lt;j.0:hasAuthor>Paul Auster&lt;/j.0:hasAuthor>
+    &lt;j.0:hasISBN>0140131558&lt;/j.0:hasISBN>
+  &lt;/j.0:Book>
+</process:valueData>
+      </process:Output>
+    </process:hasOutput>
+    <process:hasResult>
+      <process:Result rdf:ID="Result3">
+        <process:withOutput>
+          <process:OutputBinding>
+            <process:toParam rdf:resource="#Output3"/>
+            <process:valueSource>
+              <process:ValueOf>
+                <process:fromProcess>
+                  <process:Perform rdf:about="#Perform2"/>
+                </process:fromProcess>
+                <process:theVar rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/BookFinder.owl#BookInfo"/>
+              </process:ValueOf>
+            </process:valueSource>
+          </process:OutputBinding>
+        </process:withOutput>
+      </process:Result>
+    </process:hasResult>
+  </process:AtomicProcess>
+  <process:AtomicProcess rdf:ID="Process4">
+    <rdfs:label>http://www.mindswap.org/2004/owl-s/1.1/BNPrice.owl#BNPriceProcess</rdfs:label>
+    <j.0:hasPerform>
+      <process:Perform rdf:ID="Perform4"/>
+    </j.0:hasPerform>
+    <process:hasInput>
+      <process:Input rdf:ID="Input4">
+        <rdfs:label>http://www.mindswap.org/2004/owl-s/1.1/BNPrice.owl#BookInfo</rdfs:label>
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://purl.org/net/nknouf/ns/bibtex#Book</process:parameterType>
+        <process:valueData>
+  &lt;j.0:Book>
+    &lt;j.0:hasMonth>April&lt;/j.0:hasMonth>
+    &lt;j.0:hasYear rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1990&lt;/j.0:hasYear>
+    &lt;j.0:hasTitle>The New York Trilogy: City of Glass; Ghosts; The Locked Room  (Contemporary American Fiction Series)&lt;/j.0:hasTitle>
+    &lt;j.0:hasPublisher>Penguin (Non-Classics)&lt;/j.0:hasPublisher>
+    &lt;j.0:hasAuthor>Paul Auster&lt;/j.0:hasAuthor>
+    &lt;j.0:hasISBN>0140131558&lt;/j.0:hasISBN>
+  &lt;/j.0:Book>
+</process:valueData>
+      </process:Input>
+    </process:hasInput>
+    <process:hasOutput>
+      <process:Output rdf:ID="Output5">
+        <rdfs:label>http://www.mindswap.org/2004/owl-s/1.1/BNPrice.owl#BookPrice</rdfs:label>
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.mindswap.org/2004/owl-s/concepts.owl#Price</process:parameterType>
+        <process:valueData>
+  &lt;j.0:Price>
+    &lt;j.0:amount rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >14.95&lt;/j.0:amount>
+    &lt;j.0:currency rdf:resource="http://www.daml.ecs.soton.ac.uk/ont/currency.owl#USD"/>
+  &lt;/j.0:Price>
+</process:valueData>
+      </process:Output>
+    </process:hasOutput>
+    <process:hasResult>
+      <process:Result rdf:ID="Result5">
+        <process:withOutput>
+          <process:OutputBinding>
+            <process:toParam rdf:resource="#Output5"/>
+            <process:valueSource>
+              <process:ValueOf>
+                <process:fromProcess>
+                  <process:Perform rdf:about="#Perform4"/>
+                </process:fromProcess>
+                <process:theVar rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/BNPrice.owl#BookPrice"/>
+              </process:ValueOf>
+            </process:valueSource>
+          </process:OutputBinding>
+        </process:withOutput>
+      </process:Result>
+    </process:hasResult>
+  </process:AtomicProcess>
+  <process:AtomicProcess rdf:ID="Process3">
+    <rdfs:label>http://www.mindswap.org/2004/owl-s/1.1/AmazonBookPrice.owl#AmazonPriceProcess</rdfs:label>
+    <j.0:hasPerform>
+      <process:Perform rdf:ID="Perform3"/>
+    </j.0:hasPerform>
+    <process:hasInput>
+      <process:Input rdf:ID="Input3">
+        <rdfs:label>http://www.mindswap.org/2004/owl-s/1.1/AmazonBookPrice.owl#BookInfo</rdfs:label>
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://purl.org/net/nknouf/ns/bibtex#Book</process:parameterType>
+        <process:valueData>
+  &lt;j.0:Book>
+    &lt;j.0:hasMonth>April&lt;/j.0:hasMonth>
+    &lt;j.0:hasYear rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    >1990&lt;/j.0:hasYear>
+    &lt;j.0:hasTitle>The New York Trilogy: City of Glass; Ghosts; The Locked Room  (Contemporary American Fiction Series)&lt;/j.0:hasTitle>
+    &lt;j.0:hasPublisher>Penguin (Non-Classics)&lt;/j.0:hasPublisher>
+    &lt;j.0:hasAuthor>Paul Auster&lt;/j.0:hasAuthor>
+    &lt;j.0:hasISBN>0140131558&lt;/j.0:hasISBN>
+  &lt;/j.0:Book>
+</process:valueData>
+      </process:Input>
+    </process:hasInput>
+    <process:hasOutput>
+      <process:Output rdf:ID="Output4">
+        <rdfs:label>http://www.mindswap.org/2004/owl-s/1.1/AmazonBookPrice.owl#BookPrice</rdfs:label>
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.mindswap.org/2004/owl-s/concepts.owl#Price</process:parameterType>
+        <process:valueData>
+  &lt;j.0:Price>
+    &lt;j.0:amount rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >NaN&lt;/j.0:amount>
+    &lt;j.0:currency rdf:resource="http://www.daml.ecs.soton.ac.uk/ont/currency.owl#USD"/>
+  &lt;/j.0:Price>
+</process:valueData>
+      </process:Output>
+    </process:hasOutput>
+    <process:hasResult>
+      <process:Result rdf:ID="Result4">
+        <process:withOutput>
+          <process:OutputBinding>
+            <process:toParam rdf:resource="#Output4"/>
+            <process:valueSource>
+              <process:ValueOf>
+                <process:fromProcess>
+                  <process:Perform rdf:about="#Perform3"/>
+                </process:fromProcess>
+                <process:theVar rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/AmazonBookPrice.owl#BookPrice"/>
+              </process:ValueOf>
+            </process:valueSource>
+          </process:OutputBinding>
+        </process:withOutput>
+      </process:Result>
+    </process:hasResult>
+  </process:AtomicProcess>
+  <process:CompositeProcess rdf:about="#ExecutionTrailProcess">
+    <service:describes rdf:resource="#ExecutionTrailService"/>
+    <process:composedOf>
+      <process:Sequence rdf:ID="Sequence1">
+        <process:components>
+          <process:ControlConstructList>
+            <list:first>
+              <process:Perform rdf:ID="Perform1"/>
+            </list:first>
+            <list:rest rdf:resource="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#nil"/>
+          </process:ControlConstructList>
+        </process:components>
+      </process:Sequence>
+    </process:composedOf>
+    <process:hasInput rdf:resource="#Input1"/>
+    <process:hasOutput rdf:resource="#Output1"/>
+    <process:hasOutput rdf:resource="#Output2"/>
+    <process:hasResult>
+      <process:Result rdf:ID="Result2">
+        <process:withOutput>
+          <process:OutputBinding>
+            <process:toParam rdf:resource="#Output2"/>
+            <process:valueSource>
+              <process:ValueOf>
+                <process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+                <process:theVar rdf:resource="http://www.example.org/FindCheaperBook.owl#Bookstore"/>
+              </process:ValueOf>
+            </process:valueSource>
+          </process:OutputBinding>
+        </process:withOutput>
+      </process:Result>
+    </process:hasResult>
+  </process:CompositeProcess>
+  <process:CompositeProcess rdf:ID="Process1">
+    <process:hasInput>
+      <process:Input rdf:ID="Input6">
+        <rdfs:label>http://www.example.org/FindCheaperBook.owl#CP_BNPrice</rdfs:label>
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.mindswap.org/2004/owl-s/concepts.owl#Price</process:parameterType>
+        <process:valueData>
+  &lt;j.0:Price>
+    &lt;j.0:amount rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >14.95&lt;/j.0:amount>
+    &lt;j.0:currency rdf:resource="http://www.daml.ecs.soton.ac.uk/ont/currency.owl#USD"/>
+  &lt;/j.0:Price>
+</process:valueData>
+      </process:Input>
+    </process:hasInput>
+    <process:hasResult>
+      <process:Result rdf:ID="Result8">
+        <process:withOutput>
+          <process:OutputBinding>
+            <process:toParam>
+              <process:Output rdf:ID="Output7">
+                <rdfs:label>http://www.example.org/FindCheaperBook.owl#CP_OutputPrice</rdfs:label>
+                <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://www.mindswap.org/2004/owl-s/concepts.owl#Price</process:parameterType>
+                <process:valueData>
+  &lt;j.0:Price>
+    &lt;j.0:amount rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >14.95&lt;/j.0:amount>
+    &lt;j.0:currency rdf:resource="http://www.daml.ecs.soton.ac.uk/ont/currency.owl#USD"/>
+  &lt;/j.0:Price>
+</process:valueData>
+              </process:Output>
+            </process:toParam>
+            <process:valueSource>
+              <process:ValueOf>
+                <process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+                <process:theVar rdf:resource="http://www.example.org/FindCheaperBook.owl#CP_OutputPrice"/>
+              </process:ValueOf>
+            </process:valueSource>
+          </process:OutputBinding>
+        </process:withOutput>
+      </process:Result>
+    </process:hasResult>
+    <process:hasOutput>
+      <process:Output rdf:ID="Output6">
+        <rdfs:label>http://www.example.org/FindCheaperBook.owl#CP_Bookstore</rdfs:label>
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.w3.org/2001/XMLSchema#string</process:parameterType>
+        <process:valueData>BN</process:valueData>
+      </process:Output>
+    </process:hasOutput>
+    <rdfs:label>http://www.example.org/FindCheaperBook.owl#TestProcess</rdfs:label>
+    <process:hasOutput rdf:resource="#Output7"/>
+    <process:hasOutput rdf:resource="#Output5"/>
+    <process:hasInput rdf:resource="#Input2"/>
+    <j.0:hasPerform>
+      <process:Perform rdf:about="#Perform1"/>
+    </j.0:hasPerform>
+    <process:hasInput>
+      <process:Input rdf:ID="Input5">
+        <rdfs:label>http://www.example.org/FindCheaperBook.owl#CP_AmazonPrice</rdfs:label>
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.mindswap.org/2004/owl-s/concepts.owl#Price</process:parameterType>
+        <process:valueData>
+  &lt;j.0:Price>
+    &lt;j.0:amount rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+    >NaN&lt;/j.0:amount>
+    &lt;j.0:currency rdf:resource="http://www.daml.ecs.soton.ac.uk/ont/currency.owl#USD"/>
+  &lt;/j.0:Price>
+</process:valueData>
+      </process:Input>
+    </process:hasInput>
+    <process:composedOf>
+      <process:Sequence rdf:ID="Sequence2">
+        <process:components>
+          <process:ControlConstructList>
+            <list:first>
+              <process:Perform rdf:about="#Perform2"/>
+            </list:first>
+            <list:rest>
+              <process:ControlConstructList>
+                <list:first>
+                  <process:Perform rdf:about="#Perform3"/>
+                </list:first>
+                <list:rest>
+                  <process:ControlConstructList>
+                    <list:first>
+                      <process:Perform rdf:about="#Perform4"/>
+                    </list:first>
+                    <list:rest>
+                      <process:ControlConstructList>
+                        <list:first>
+                          <process:Perform rdf:ID="Perform5"/>
+                        </list:first>
+                        <list:rest rdf:resource="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#nil"/>
+                      </process:ControlConstructList>
+                    </list:rest>
+                  </process:ControlConstructList>
+                </list:rest>
+              </process:ControlConstructList>
+            </list:rest>
+          </process:ControlConstructList>
+        </process:components>
+      </process:Sequence>
+    </process:composedOf>
+  </process:CompositeProcess>
+  <process:CompositeProcess rdf:ID="Process5">
+    <rdfs:label>http://www.example.org/FindCheaperBook.owl#ComparePricesProcess</rdfs:label>
+    <j.0:hasPerform>
+      <process:Perform rdf:about="#Perform5"/>
+    </j.0:hasPerform>
+  </process:CompositeProcess>
+  <process:Perform rdf:about="#Perform5">
+    <process:process rdf:resource="#Process5"/>
+    <process:hasDataFrom>
+      <process:InputBinding>
+        <process:toParam rdf:resource="#Input5"/>
+        <process:valueSource>
+          <process:ValueOf>
+            <process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+            <process:theVar rdf:resource="http://www.example.org/FindCheaperBook.owl#CP_AmazonPrice"/>
+          </process:ValueOf>
+        </process:valueSource>
+      </process:InputBinding>
+    </process:hasDataFrom>
+    <process:hasDataFrom>
+      <process:InputBinding>
+        <process:toParam rdf:resource="#Input6"/>
+        <process:valueSource>
+          <process:ValueOf>
+            <process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+            <process:theVar rdf:resource="http://www.example.org/FindCheaperBook.owl#CP_BNPrice"/>
+          </process:ValueOf>
+        </process:valueSource>
+      </process:InputBinding>
+    </process:hasDataFrom>
+  </process:Perform>
+  <process:Perform rdf:about="#Perform2">
+    <process:process rdf:resource="#Process2"/>
+    <process:hasDataFrom>
+      <process:InputBinding>
+        <process:toParam rdf:resource="#Input2"/>
+        <process:valueSource>
+          <process:ValueOf>
+            <process:fromProcess rdf:resource="#Perform2"/>
+            <process:theVar rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/BookFinder.owl#BookName"/>
+          </process:ValueOf>
+        </process:valueSource>
+      </process:InputBinding>
+    </process:hasDataFrom>
+    <process:hasDataFrom>
+      <process:InputBinding>
+        <process:toParam rdf:resource="#Input2"/>
+        <process:valueSource>
+          <process:ValueOf>
+            <process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+            <process:theVar rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/BookFinder.owl#BookName"/>
+          </process:ValueOf>
+        </process:valueSource>
+      </process:InputBinding>
+    </process:hasDataFrom>
+  </process:Perform>
+  <process:Perform rdf:about="#Perform4">
+    <process:process rdf:resource="#Process4"/>
+    <process:hasDataFrom>
+      <process:InputBinding>
+        <process:toParam rdf:resource="#Input4"/>
+        <process:valueSource>
+          <process:ValueOf>
+            <process:fromProcess rdf:resource="#Perform4"/>
+            <process:theVar rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/BNPrice.owl#BookInfo"/>
+          </process:ValueOf>
+        </process:valueSource>
+      </process:InputBinding>
+    </process:hasDataFrom>
+  </process:Perform>
+  <process:Perform rdf:about="#Perform1">
+    <process:process rdf:resource="#Process1"/>
+    <process:hasDataFrom>
+      <process:InputBinding>
+        <process:toParam rdf:resource="#Input1"/>
+        <process:valueSource>
+          <process:ValueOf>
+            <process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+            <process:theVar rdf:resource="http://www.example.org/FindCheaperBook.owl#BookName"/>
+          </process:ValueOf>
+        </process:valueSource>
+      </process:InputBinding>
+    </process:hasDataFrom>
+  </process:Perform>
+  <process:Perform rdf:about="#Perform3">
+    <process:process rdf:resource="#Process3"/>
+    <process:hasDataFrom>
+      <process:InputBinding>
+        <process:toParam rdf:resource="#Input3"/>
+        <process:valueSource>
+          <process:ValueOf>
+            <process:fromProcess rdf:resource="#Perform3"/>
+            <process:theVar rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/AmazonBookPrice.owl#BookInfo"/>
+          </process:ValueOf>
+        </process:valueSource>
+      </process:InputBinding>
+    </process:hasDataFrom>
+  </process:Perform>
+  <process:Result rdf:ID="Result7">
+    <process:withOutput>
+      <process:OutputBinding>
+        <process:toParam rdf:resource="#Output6"/>
+        <process:valueSource>
+          <process:ValueOf>
+            <process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+            <process:theVar rdf:resource="http://www.example.org/FindCheaperBook.owl#CP_Bookstore"/>
+          </process:ValueOf>
+        </process:valueSource>
+      </process:OutputBinding>
+    </process:withOutput>
+  </process:Result>
+  <process:Result rdf:ID="Result6">
+    <process:withOutput>
+      <process:OutputBinding>
+        <process:toParam rdf:resource="#Output5"/>
+        <process:valueSource>
+          <process:ValueOf>
+            <process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+            <process:theVar rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/BNPrice.owl#BookPrice"/>
+          </process:ValueOf>
+        </process:valueSource>
+      </process:OutputBinding>
+    </process:withOutput>
+  </process:Result>
+  <process:Result rdf:ID="Result1">
+    <process:withOutput>
+      <process:OutputBinding>
+        <process:toParam rdf:resource="#Output1"/>
+        <process:valueSource>
+          <process:ValueOf>
+            <process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+            <process:theVar rdf:resource="http://www.example.org/FindCheaperBook.owl#BookPrice"/>
+          </process:ValueOf>
+        </process:valueSource>
+      </process:OutputBinding>
+    </process:withOutput>
+  </process:Result>
+</rdf:RDF>

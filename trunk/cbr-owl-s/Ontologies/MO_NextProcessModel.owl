@@ -1,0 +1,157 @@
+<?xml version='1.0'?>
+<!DOCTYPE uridef [
+	<!ENTITY rdf 		"http://www.w3.org/1999/02/22-rdf-syntax-ns">
+	<!ENTITY rdfs 		"http://www.w3.org/2000/01/rdf-schema">
+	<!ENTITY owl 		"http://www.w3.org/2002/07/owl">
+	<!ENTITY xsd 		"http://www.w3.org/2001/XMLSchema">
+	<!ENTITY service 	"http://www.daml.org/services/owl-s/1.1/Service.owl">
+	<!ENTITY profile 	"http://www.daml.org/services/owl-s/1.1/Profile.owl">
+	<!ENTITY process 	"http://www.daml.org/services/owl-s/1.1/Process.owl">
+	<!ENTITY dc			"http://purl.org/dc/elements/1.1.owl">
+	<!ENTITY nextGeneral "http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextGeneralModel.owl">
+	<!ENTITY nextData   "http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextDataModel.owl">	
+]>
+
+<rdf:RDF
+    xmlns:rdf =		"&rdf;#" 
+    xmlns:rdfs =	"&rdfs;#" 
+    xmlns:owl =		"&owl;#" 
+    xmlns:xsd =		"&xsd;#" 
+    xmlns:service =	"&service;#" 
+    xmlns:profile =	"&profile;#" 
+    xmlns:process =	"&process;#" 
+  	xmlns:dc=	    "&dc;#"	
+	xmlns:nextGeneral="&nextGeneral;#"
+	xmlns:nextData=	"&nextData;#"
+   	xml:base=		"http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextProcessModel.owl"
+> 
+	<owl:Ontology rdf:ID="NExTProcessModel">
+		<rdfs:comment>
+			Upper-Level Ontology to describe abstract NExT processes, which can be subclassed for domain specific purposes.
+		</rdfs:comment>
+		<owl:versionInfo>MO_NextProcessModel.owl v1.2, 2006-03-06</owl:versionInfo> 
+		<dc:creator>Michael Daenzer</dc:creator>
+		<dc:contributor>Konstantin Pervushin</dc:contributor>
+		<dc:contributor>Peter Vorburger</dc:contributor>
+		<dc:contributor>Abraham Bernstein</dc:contributor>
+		<dc:date>2006-03-06</dc:date>
+		<dc:rights>copyright 2006 by Michael Daenzer</dc:rights> 				
+		
+		<owl:imports rdf:resource="&process;#"/>
+		<owl:imports rdf:resource="&service;#"/>
+		<owl:imports rdf:resource="&profile;#"/>
+		<owl:imports rdf:resource="&nextGeneral;#"/>
+		<owl:imports rdf:resource="&nextData;#"/>			
+	</owl:Ontology>
+	
+	<owl:Class rdf:ID="NextProcess">
+		<rdfs:comment>The base class for a Next processes</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="&service;#Service"/>
+		<rdfs:subClassOf>
+	    	<owl:Restriction>
+		        <owl:onProperty rdf:resource="#specifity"/>
+		        <owl:cardinality rdf:datatype="&xsd;#nonNegativeInteger">1</owl:cardinality>  
+			</owl:Restriction>
+	   </rdfs:subClassOf>
+	</owl:Class>
+	
+	<owl:Class rdf:ID="NullProcess"/>
+	
+	<owl:Class rdf:ID="NextProfile">
+	    <rdfs:label>Subclass of Profile to publish additional annotations</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://www.daml.org/services/owl-s/1.1/Profile.owl#Profile"/> 
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:ID="specifity">
+		<rdfs:comment>
+			The specifity of a Next process interpreted as int between 0 (unspecified) and 1 (fully specified)
+		</rdfs:comment>
+		<rdfs:domain rdf:resource="&profile;#Profile"/>
+		<rdfs:range rdf:resource="&xsd;#double"/>
+	</owl:DatatypeProperty>	
+
+	<owl:DatatypeProperty rdf:ID="state">
+		<rdfs:comment>
+			The state of a Next process as a string. correct values are "in_creation", "in_execution", "in_pause" and "completed"
+		</rdfs:comment>
+		<rdfs:domain rdf:resource="#NextProcess"/>
+		<rdfs:range rdf:resource="&xsd;#string"/>
+	</owl:DatatypeProperty>		
+	
+	<!-- Execution -->
+	<owl:ObjectProperty rdf:ID="hasExecution">
+		<rdfs:comment>relates a NExT project with its execution</rdfs:comment>
+		<rdfs:domain rdf:resource="#NextProcess"/>
+		<rdfs:range rdf:resource="#Execution"/>
+	</owl:ObjectProperty>
+	
+	<owl:Class rdf:ID="Execution">
+		<rdfs:comment>
+			The execution part of the process for the NExT project
+		</rdfs:comment>		   
+	</owl:Class>
+	
+	<owl:ObjectProperty rdf:ID="hasExecutionTrail">
+		<rdfs:comment>relates a NExT project with the pathway trough the process plan</rdfs:comment>
+		<rdfs:domain rdf:resource="#Execution"/>
+		<rdfs:range rdf:resource="#ExecutionTrail"/>
+	</owl:ObjectProperty>
+	
+	<owl:Class rdf:ID="ExecutionTrail">
+		<rdfs:comment>
+			The execution trail of the process for the NExT project
+		</rdfs:comment>		
+		<rdfs:subClassOf rdf:resource="&service;#Service"/>	    
+	</owl:Class>
+	
+	<owl:DatatypeProperty rdf:ID="executionDuration">		
+		<rdfs:comment>The date of the execution</rdfs:comment>
+		<rdfs:domain rdf:resource="#Execution"/>
+		<rdfs:range rdf:resource="&xsd;#anyURI"/>
+	</owl:DatatypeProperty>	
+	
+	<owl:DatatypeProperty rdf:ID="success">		
+		<rdfs:comment>Was the Case succesful or a failure?</rdfs:comment>
+		<rdfs:domain rdf:resource="#Execution"/>
+		<rdfs:range rdf:resource="&xsd;#anyURI"/>
+	</owl:DatatypeProperty>	
+	
+	
+	<!-- Inputs and Outputs -->
+	<owl:Class rdf:ID="NextInput">
+		<rdfs:subClassOf rdf:resource="&process;#Input"/>
+		<rdfs:subClassOf rdf:resource="&nextData;#NextDataItem"/>
+	</owl:Class>
+	
+	<owl:Class rdf:ID="NextOutput">
+		<rdfs:subClassOf rdf:resource="&process;#Output"/>
+		<rdfs:subClassOf rdf:resource="&nextData;#NextDataItem"/>
+	</owl:Class>
+	
+	<!-- Annotations -->
+	<owl:ObjectProperty rdf:about="&nextGeneral;#hasAuthor">		
+		<rdfs:comment>Binds an author to the NextProcess</rdfs:comment>
+		<rdfs:domain rdf:resource="#NextProfile"/>		
+	</owl:ObjectProperty>
+	
+	<owl:DatatypeProperty rdf:about="&nextGeneral;#versionShort">
+		<rdfs:comment>Binds a version number to the NextProcess</rdfs:comment>
+		<rdfs:domain rdf:resource="#NextProfile"/>
+	</owl:DatatypeProperty>
+	
+	<owl:DatatypeProperty rdf:about="&nextGeneral;#versionLong">
+		<rdfs:comment>Binds a version text to the NextProcess</rdfs:comment>
+		<rdfs:domain rdf:resource="#NextProfile"/>
+	</owl:DatatypeProperty>
+
+	<owl:DatatypeProperty rdf:about="&nextGeneral;#versionDate">
+		<rdfs:comment>Binds a version date to the NextProcess</rdfs:comment>
+		<rdfs:domain rdf:resource="#NextProfile"/>
+	</owl:DatatypeProperty>
+
+	<owl:DatatypeProperty rdf:about="&nextGeneral;#ipDisclaimer">
+		<rdfs:comment>Binds an IP disclaimer to the NextProcess</rdfs:comment>
+		<rdfs:domain rdf:resource="#NextProfile"/>
+	</owl:DatatypeProperty>	
+	
+</rdf:RDF>

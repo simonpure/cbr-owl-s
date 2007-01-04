@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<rdf:RDF
+    xmlns:process="http://www.daml.org/services/owl-s/1.1/Process.owl#"
+    xmlns:list="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:j.0="http://www.ifi.unizh.ch/ddis/ont/owl-s/MoreGroundings.owl#"
+    xmlns:expression="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
+    xmlns:service="http://www.daml.org/services/owl-s/1.1/Service.owl#"
+    xmlns:grounding="http://www.daml.org/services/owl-s/1.1/Grounding.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns="http://www.ifi.unizh.ch/ddis/ont/next/ProcessSpace/ProjectTest15Service21.owl"
+    xmlns:j.1="http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextProcessModel.owl#"
+    xmlns:profile="http://www.daml.org/services/owl-s/1.1/Profile.owl#"
+  xml:base="http://www.ifi.unizh.ch/ddis/ont/next/ProcessSpace/ProjectTest15Service21.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="../model/MO_NextProcessModel.owl"/>
+  </owl:Ontology>
+  <process:AtomicProcess rdf:ID="MultiplyProcess">
+    <process:hasOutput>
+      <process:Output rdf:ID="MultiplyOutput">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.w3.org/2001/XMLSchema#string</process:parameterType>
+      </process:Output>
+    </process:hasOutput>
+    <process:hasInput>
+      <process:Input rdf:ID="MultiplyInput1">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.w3.org/2001/XMLSchema#string</process:parameterType>
+        <rdf:type rdf:resource="/ddis/ont/owl-s/MoreGroundings.owl#JavaParameter"/>
+        <j.0:javaType>java.lang.String</j.0:javaType>
+        <j.0:owlsParameter rdf:resource="#MultiplyInput1"/>
+        <j.0:paramIndex>1</j.0:paramIndex>
+      </process:Input>
+    </process:hasInput>
+    <process:hasInput>
+      <process:Input rdf:ID="MultiplyInput2">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.w3.org/2001/XMLSchema#string</process:parameterType>
+        <rdf:type rdf:resource="/ddis/ont/owl-s/MoreGroundings.owl#JavaParameter"/>
+        <j.0:javaType>java.lang.String</j.0:javaType>
+        <j.0:owlsParameter rdf:resource="#MultiplyInput2"/>
+        <j.0:paramIndex>2</j.0:paramIndex>
+      </process:Input>
+    </process:hasInput>
+  </process:AtomicProcess>
+  <j.0:JavaAtomicProcessGrounding rdf:ID="MultiplyAtomicGrounding">
+    <j.0:javaClass>ch.unizh.ifi.next.model.grounding.TestGroundings</j.0:javaClass>
+    <j.0:javaMethod>multiply</j.0:javaMethod>
+    <grounding:owlsProcess rdf:resource="#MultiplyProcess"/>
+    <j.0:javaOutput>
+      <j.0:JavaVariable rdf:ID="owlsMultiplyOutput">
+        <j.0:javaType>java.lang.String</j.0:javaType>
+        <j.0:owlsParameter rdf:resource="#MultiplyOutput"/>
+      </j.0:JavaVariable>
+    </j.0:javaOutput>
+    <j.0:hasJavaParameter rdf:resource="#MultiplyInput1"/>
+    <j.0:hasJavaParameter rdf:resource="#MultiplyInput2"/>
+  </j.0:JavaAtomicProcessGrounding>
+  <j.1:NextProcess rdf:ID="Test15Service21">
+    <j.1:hasExecutionTrail>
+      <j.1:ExecutionTrail rdf:about="TrailTest15Service21"/>
+    </j.1:hasExecutionTrail>
+    <service:presents>
+      <j.1:NextProfile rdf:ID="MultiplyProfile"/>
+    </service:presents>
+    <service:describedBy rdf:resource="#MultiplyProcess"/>
+    <service:supports>
+      <j.0:JavaGrounding rdf:ID="MultiplyGrounding">
+        <grounding:hasAtomicProcessGrounding rdf:resource="#MultiplyAtomicGrounding"/>
+      </j.0:JavaGrounding>
+    </service:supports>
+    <j.1:hasExecution>
+      <j.1:Execution/>
+    </j.1:hasExecution>
+    <j.1:state>completed</j.1:state>
+  </j.1:NextProcess>
+  <j.1:NextProfile rdf:ID="Test15Service21Profile"/>
+</rdf:RDF>

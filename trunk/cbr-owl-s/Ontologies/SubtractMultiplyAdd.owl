@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<rdf:RDF
+    xmlns:process="http://www.daml.org/services/owl-s/1.1/Process.owl#"
+    xmlns:j.0="http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextGeneralModel.owl#"
+    xmlns:j.1="http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextAuthorModel.owl#"
+    xmlns:list="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#"
+    xmlns="http://www.ifi.unizh.ch/ddis/ont/next/kb/ProcessLibrary/processes/SubtractMultiplyAdd.owl"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:expression="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
+    xmlns:service="http://www.daml.org/services/owl-s/1.1/Service.owl#"
+    xmlns:grounding="http://www.daml.org/services/owl-s/1.1/Grounding.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns:j.2="http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextProcessModel.owl#"
+    xmlns:profile="http://www.daml.org/services/owl-s/1.1/Profile.owl#"
+  xml:base="http://www.ifi.unizh.ch/ddis/ont/next/kb/ProcessLibrary/ProcessTemplates/SubtractMultiplyAdd.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="/ddis/ont/next/kb/ProcessLibrary/AtomicProcesses/Subtract.owl"/>
+    <owl:imports rdf:resource="/ddis/ont/next/kb/ProcessLibrary/AtomicProcesses/Multiply.owl"/>
+    <owl:imports rdf:resource="/ddis/ont/next/kb/ProcessLibrary/AtomicProcesses/Add.owl"/>
+    <owl:imports rdf:resource="/ddis/ont/next/model/MO_NextProcessModel.owl"/>
+  </owl:Ontology>
+  <process:CompositeProcess rdf:ID="TestCompProcess">
+    <process:hasInput>
+      <process:Input rdf:ID="TestFrontInput1">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.w3.org/2001/XMLSchema#string</process:parameterType>
+      </process:Input>
+    </process:hasInput>
+    <process:hasInput>
+      <process:Input rdf:ID="TestFrontInput2">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.w3.org/2001/XMLSchema#string</process:parameterType>
+      </process:Input>
+    </process:hasInput>
+    <process:hasOutput>
+      <process:Output rdf:ID="TestBackOutput">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.w3.org/2001/XMLSchema#string</process:parameterType>
+      </process:Output>
+    </process:hasOutput>
+    <process:hasResult>
+      <process:Result>
+        <process:withOutput>
+          <process:OutputBinding>
+            <process:toParam rdf:resource="#TestBackOutput"/>
+            <process:valueSource>
+              <process:ValueOf>
+                <process:fromProcess>
+                  <process:Perform rdf:ID="TestPerform3"/>
+                </process:fromProcess>
+                <process:theVar rdf:resource="/ddis/ont/next/kb/ProcessLibrary/AtomicProcesses/Add.owl#AddOutput"/>
+              </process:ValueOf>
+            </process:valueSource>
+          </process:OutputBinding>
+        </process:withOutput>
+      </process:Result>
+    </process:hasResult>
+    <process:hasPrecondition>
+      <expression:SWRL-Condition>
+        <expression:expressionBody rdf:parseType="Literal">
+  <swrl:AtomList xmlns:swrl="http://www.w3.org/2003/11/swrl#">
+    <rdf:first xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <swrl:BuiltinAtom>
+        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"></swrl:builtin>
+        <swrl:arguments>
+          <rdf:List>
+            <rdf:first rdf:resource="http://www.ifi.unizh.ch/ddis/ont/next/kb/ProcessLibrary/ProcessTemplates/SubtractMultiplyAdd.owl#TestFrontInput1"></rdf:first>
+            <rdf:rest>
+              <rdf:List>
+                <rdf:first rdf:resource="http://www.ifi.unizh.ch/ddis/ont/next/kb/ProcessLibrary/ProcessTemplates/SubtractMultiplyAdd.owl#TestFrontInput2"></rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></rdf:rest>
+              </rdf:List>
+            </rdf:rest>
+          </rdf:List>
+        </swrl:arguments>
+      </swrl:BuiltinAtom>
+    </rdf:first>
+    <rdf:rest xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></rdf:rest>
+  </swrl:AtomList>
+</expression:expressionBody>
+      </expression:SWRL-Condition>
+    </process:hasPrecondition>
+    <process:composedOf>
+      <process:Sequence rdf:ID="TestSequence">
+        <process:components>
+          <process:ControlConstructList>
+            <list:first>
+              <process:Perform rdf:ID="TestPerform1"/>
+            </list:first>
+            <list:rest>
+              <process:ControlConstructList>
+                <list:first>
+                  <process:Perform rdf:ID="TestPerform2"/>
+                </list:first>
+                <list:rest>
+                  <process:ControlConstructList>
+                    <list:first>
+                      <process:Perform rdf:about="#TestPerform3"/>
+                    </list:first>
+                    <list:rest rdf:resource="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#nil"/>
+                  </process:ControlConstructList>
+                </list:rest>
+              </process:ControlConstructList>
+            </list:rest>
+          </process:ControlConstructList>
+        </process:components>
+      </process:Sequence>
+    </process:composedOf>
+  </process:CompositeProcess>
+  <process:Perform rdf:about="#TestPerform3">
+    <process:process rdf:resource="/ddis/ont/next/kb/ProcessLibrary/AtomicProcesses/Add.owl#AddProcess"/>
+    <process:hasDataFrom>
+      <process:InputBinding>
+        <process:toParam rdf:resource="/ddis/ont/next/kb/ProcessLibrary/AtomicProcesses/Add.owl#AddInput1"/>
+        <process:valueSource>
+          <process:ValueOf>
+            <process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+            <process:theVar rdf:resource="#TestFrontInput2"/>
+          </process:ValueOf>
+        </process:valueSource>
+      </process:InputBinding>
+    </process:hasDataFrom>
+    <process:hasDataFrom>
+      <process:InputBinding>
+        <process:toParam rdf:resource="/ddis/ont/next/kb/ProcessLibrary/AtomicProcesses/Add.owl#AddInput2"/>
+        <process:valueSource>
+          <process:ValueOf>
+            <process:fromProcess>
+              <process:Perform rdf:about="#TestPerform2"/>
+            </process:fromProcess>
+            <process:theVar rdf:resource="/ddis/ont/next/kb/ProcessLibrary/AtomicProcesses/Multiply.owl#MultiplyOutput"/>
+          </process:ValueOf>
+        </process:valueSource>
+      </process:InputBinding>
+    </process:hasDataFrom>
+  </process:Perform>
+  <process:Perform rdf:about="#TestPerform2">
+    <process:process rdf:resource="/ddis/ont/next/kb/ProcessLibrary/AtomicProcesses/Multiply.owl#MultiplyProcess"/>
+    <process:hasDataFrom>
+      <process:InputBinding>
+        <process:toParam rdf:resource="/ddis/ont/next/kb/ProcessLibrary/AtomicProcesses/Multiply.owl#MultiplyInput1"/>
+        <process:valueSource>
+          <process:ValueOf>
+            <process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+            <process:theVar rdf:resource="#TestFrontInput1"/>
+          </process:ValueOf>
+        </process:valueSource>
+      </process:InputBinding>
+    </process:hasDataFrom>
+    <process:hasDataFrom>
+      <process:InputBinding>
+        <process:toParam rdf:resource="/ddis/ont/next/kb/ProcessLibrary/AtomicProcesses/Multiply.owl#MultiplyInput2"/>
+        <process:valueSource>
+          <process:ValueOf>
+            <process:fromProcess>
+              <process:Perform rdf:about="#TestPerform1"/>
+            </process:fromProcess>
+            <process:theVar rdf:resource="/ddis/ont/next/kb/ProcessLibrary/AtomicProcesses/Subtract.owl#SubtractOutput"/>
+          </process:ValueOf>
+        </process:valueSource>
+      </process:InputBinding>
+    </process:hasDataFrom>
+    <process:hasDataFrom>
+      <process:InputBinding>
+        <process:toParam rdf:resource="/ddis/ont/next/kb/ProcessLibrary/AtomicProcesses/Multiply.owl#MultiplyInput2"/>
+        <process:valueSource>
+          <process:ValueOf>
+            <process:fromProcess>
+              <process:Perform rdf:about="#TestPerform1"/>
+            </process:fromProcess>
+            <process:theVar rdf:resource="/ddis/ont/next/kb/ProcessLibrary/AtomicProcesses/Subtract.owl#SubtractOutput"/>
+          </process:ValueOf>
+        </process:valueSource>
+      </process:InputBinding>
+    </process:hasDataFrom>
+  </process:Perform>
+  <process:Perform rdf:about="#TestPerform1">
+    <process:process rdf:resource="/ddis/ont/next/kb/ProcessLibrary/AtomicProcesses/Subtract.owl#SubtractProcess"/>
+    <process:hasDataFrom>
+      <process:InputBinding>
+        <process:toParam rdf:resource="/ddis/ont/next/kb/ProcessLibrary/AtomicProcesses/Subtract.owl#SubtractInput1"/>
+        <process:valueSource>
+          <process:ValueOf>
+            <process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+            <process:theVar rdf:resource="#TestFrontInput1"/>
+          </process:ValueOf>
+        </process:valueSource>
+      </process:InputBinding>
+    </process:hasDataFrom>
+    <process:hasDataFrom>
+      <process:InputBinding>
+        <process:toParam rdf:resource="/ddis/ont/next/kb/ProcessLibrary/AtomicProcesses/Subtract.owl#SubtractInput2"/>
+        <process:valueSource>
+          <process:ValueOf>
+            <process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+            <process:theVar rdf:resource="#TestFrontInput2"/>
+          </process:ValueOf>
+        </process:valueSource>
+      </process:InputBinding>
+    </process:hasDataFrom>
+  </process:Perform>
+  <rdf:Description rdf:about="/ddis/ont/next/model/instances/PeterBichsel.owl#PeterBichsel">
+    <j.1:lastName>Dänzer</j.1:lastName>
+    <j.1:middleName>Bruno</j.1:middleName>
+    <j.1:street>Kalkbreitestr. 88</j.1:street>
+    <j.1:zip>8003</j.1:zip>
+    <j.1:city>Zürich</j.1:city>
+    <j.1:email>mailto:mdaenzer@gmx.net</j.1:email>
+    <j.1:phoneNumber>01 452 25 66</j.1:phoneNumber>
+  </rdf:Description>
+  <j.2:NextProcess rdf:ID="TestService">
+    <service:presents>
+      <j.2:NextProfile rdf:ID="TestProfile">
+        <rdfs:comment>This is a test description</rdfs:comment>
+        <j.0:versionShort>1.0</j.0:versionShort>
+        <j.0:versionLong>Version 1</j.0:versionLong>
+        <j.0:versionDate>1.10.2006</j.0:versionDate>
+        <j.0:ipDisclaimer>This is an IP disclaimer</j.0:ipDisclaimer>
+        <j.0:hasAuthor rdf:resource="/ddis/ont/next/model/instances/PeterBichsel.owl#PeterBichsel"/>
+      </j.2:NextProfile>
+    </service:presents>
+    <service:describedBy rdf:resource="#TestCompProcess"/>
+  </j.2:NextProcess>
+</rdf:RDF>

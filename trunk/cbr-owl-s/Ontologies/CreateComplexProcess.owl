@@ -1,0 +1,390 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:process="http://www.daml.org/services/owl-s/1.1/Process.owl#"
+    xmlns:list="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:expression="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
+    xmlns:j.0="http://www.ifi.unizh.ch/ddis/ont/owl-s/OWLSExtensions.owl#"
+    xmlns="http://www.example.org/FindCheaperBook.owl#"
+    xmlns:service="http://www.daml.org/services/owl-s/1.1/Service.owl#"
+    xmlns:grounding="http://www.daml.org/services/owl-s/1.1/Grounding.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns:profile="http://www.daml.org/services/owl-s/1.1/Profile.owl#"
+  xml:base="http://www.example.org/FindCheaperBook.owl#">
+  <service:Service rdf:ID="TestService">
+    <service:presents>
+      <profile:Profile rdf:ID="TestProfile"/>
+    </service:presents>
+    <service:describedBy>
+      <process:CompositeProcess rdf:ID="TestProcess"/>
+    </service:describedBy>
+    <service:supports>
+      <grounding:WsdlGrounding rdf:ID="TestGrounding"/>
+    </service:supports>
+  </service:Service>
+  <profile:Profile rdf:about="#TestProfile">
+    <rdfs:label>Cheaper Book Finder</rdfs:label>
+    <profile:textDescription>Find the price of book in Amazon and Barnes &amp; Nobles and return the cheaper price</profile:textDescription>
+    <profile:hasInput>
+      <process:Input rdf:ID="BookName">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.w3.org/2001/XMLSchema#string</process:parameterType>
+      </process:Input>
+    </profile:hasInput>
+    <profile:hasOutput>
+      <process:Output rdf:ID="BookPrice">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.mindswap.org/2004/owl-s/concepts.owl#Price</process:parameterType>
+      </process:Output>
+    </profile:hasOutput>
+    <profile:hasOutput>
+      <process:Output rdf:ID="Bookstore">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.w3.org/2001/XMLSchema#string</process:parameterType>
+      </process:Output>
+    </profile:hasOutput>
+    <service:presentedBy rdf:resource="#TestService"/>
+  </profile:Profile>
+  <process:CompositeProcess rdf:about="#TestProcess">
+    <process:hasInput rdf:resource="#BookName"/>
+    <process:hasOutput rdf:resource="#Bookstore"/>
+    <process:hasOutput rdf:resource="#BookPrice"/>
+    <process:composedOf>
+      <process:Sequence>
+        <process:components>
+          <process:ControlConstructList>
+            <list:first>
+              <process:Perform rdf:ID="FindBookInfo"/>
+            </list:first>
+            <list:rest>
+              <process:ControlConstructList>
+                <list:first>
+                  <process:Split-Join>
+                    <process:components>
+                      <process:ControlConstructBag>
+                        <list:first>
+                          <process:Perform rdf:ID="FindAmazonPrice"/>
+                        </list:first>
+                        <list:rest>
+                          <process:ControlConstructBag>
+                            <list:first>
+                              <process:Perform rdf:ID="FindBNPrice"/>
+                            </list:first>
+                            <list:rest rdf:resource="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#nil"/>
+                          </process:ControlConstructBag>
+                        </list:rest>
+                      </process:ControlConstructBag>
+                    </process:components>
+                  </process:Split-Join>
+                </list:first>
+                <list:rest>
+                  <process:ControlConstructList>
+                    <list:first>
+                      <process:Perform rdf:ID="ComparePrices"/>
+                    </list:first>
+                    <list:rest rdf:resource="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#nil"/>
+                  </process:ControlConstructList>
+                </list:rest>
+              </process:ControlConstructList>
+            </list:rest>
+          </process:ControlConstructList>
+        </process:components>
+      </process:Sequence>
+    </process:composedOf>
+    <process:hasResult>
+      <process:Result>
+        <process:withOutput>
+          <process:OutputBinding>
+            <process:toParam rdf:resource="#Bookstore"/>
+            <process:valueSource>
+              <process:ValueOf>
+                <process:fromProcess>
+                  <process:Perform rdf:about="#ComparePrices"/>
+                </process:fromProcess>
+                <process:theVar>
+                  <process:Output rdf:ID="CP_Bookstore">
+                    <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                    >http://www.w3.org/2001/XMLSchema#string</process:parameterType>
+                  </process:Output>
+                </process:theVar>
+              </process:ValueOf>
+            </process:valueSource>
+          </process:OutputBinding>
+        </process:withOutput>
+        <process:withOutput>
+          <process:OutputBinding>
+            <process:toParam rdf:resource="#BookPrice"/>
+            <process:valueSource>
+              <process:ValueOf>
+                <process:fromProcess>
+                  <process:Perform rdf:about="#ComparePrices"/>
+                </process:fromProcess>
+                <process:theVar>
+                  <process:Output rdf:ID="CP_OutputPrice">
+                    <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                    >http://www.mindswap.org/2004/owl-s/concepts.owl#Price</process:parameterType>
+                  </process:Output>
+                </process:theVar>
+              </process:ValueOf>
+            </process:valueSource>
+          </process:OutputBinding>
+        </process:withOutput>
+      </process:Result>
+    </process:hasResult>
+    <service:describes rdf:resource="#TestService"/>
+  </process:CompositeProcess>
+  <process:CompositeProcess rdf:ID="ComparePricesProcess">
+    <process:hasPrecondition>
+      <expression:SWRL-Condition>
+        <expression:expressionBody rdf:parseType="Literal">
+  <swrl:AtomList xmlns:swrl="http://www.w3.org/2003/11/swrl#">
+    <rdf:first xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <swrl:DatavaluedPropertyAtom>
+        <swrl:argument1 rdf:resource="http://www.example.org/FindCheaperBook.owl#CP_BNPrice"></swrl:argument1>
+        <swrl:propertyPredicate rdf:resource="http://www.mindswap.org/2004/owl-s/concepts.owl#amount"></swrl:propertyPredicate>
+        <swrl:argument2 rdf:resource="http://www.example.org/FindCheaperBook.owl#CP_BNPriceAmount"></swrl:argument2>
+      </swrl:DatavaluedPropertyAtom>
+    </rdf:first>
+    <rdf:rest xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></rdf:rest>
+  </swrl:AtomList>
+</expression:expressionBody>
+      </expression:SWRL-Condition>
+    </process:hasPrecondition>
+    <process:hasLocal>
+      <process:Local rdf:ID="CP_BNPriceAmount">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.w3.org/2001/XMLSchema#float</process:parameterType>
+      </process:Local>
+    </process:hasLocal>
+    <j.0:hasPerform>
+      <process:Perform rdf:about="#ComparePrices"/>
+    </j.0:hasPerform>
+    <process:hasInput>
+      <process:Input rdf:ID="CP_BNPrice">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.mindswap.org/2004/owl-s/concepts.owl#Price</process:parameterType>
+      </process:Input>
+    </process:hasInput>
+    <process:hasPrecondition>
+      <expression:SWRL-Condition>
+        <expression:expressionBody rdf:parseType="Literal">
+  <swrl:AtomList xmlns:swrl="http://www.w3.org/2003/11/swrl#">
+    <rdf:first xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <swrl:DatavaluedPropertyAtom>
+        <swrl:argument1 rdf:resource="http://www.example.org/FindCheaperBook.owl#CP_AmazonPrice"></swrl:argument1>
+        <swrl:propertyPredicate rdf:resource="http://www.mindswap.org/2004/owl-s/concepts.owl#amount"></swrl:propertyPredicate>
+        <swrl:argument2 rdf:resource="http://www.example.org/FindCheaperBook.owl#CP_AmazonPriceAmount"></swrl:argument2>
+      </swrl:DatavaluedPropertyAtom>
+    </rdf:first>
+    <rdf:rest xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></rdf:rest>
+  </swrl:AtomList>
+</expression:expressionBody>
+      </expression:SWRL-Condition>
+    </process:hasPrecondition>
+    <process:hasOutput rdf:resource="#CP_Bookstore"/>
+    <process:hasInput>
+      <process:Input rdf:ID="CP_AmazonPrice">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.mindswap.org/2004/owl-s/concepts.owl#Price</process:parameterType>
+      </process:Input>
+    </process:hasInput>
+    <process:hasLocal>
+      <process:Local rdf:ID="CP_AmazonPriceAmount">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.w3.org/2001/XMLSchema#float</process:parameterType>
+      </process:Local>
+    </process:hasLocal>
+    <process:composedOf>
+      <process:If-Then-Else>
+        <process:ifCondition>
+          <expression:SWRL-Condition>
+            <expression:expressionBody rdf:parseType="Literal"
+            >
+  <swrl:AtomList xmlns:swrl="http://www.w3.org/2003/11/swrl#">
+    <rdf:first xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <swrl:BuiltinAtom>
+        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#lessThan"></swrl:builtin>
+        <swrl:arguments>
+          <rdf:List>
+            <rdf:first rdf:resource="http://www.example.org/FindCheaperBook.owl#CP_BNPriceAmount"></rdf:first>
+            <rdf:rest>
+              <rdf:List>
+                <rdf:first rdf:resource="http://www.example.org/FindCheaperBook.owl#CP_AmazonPriceAmount"></rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></rdf:rest>
+              </rdf:List>
+            </rdf:rest>
+          </rdf:List>
+        </swrl:arguments>
+      </swrl:BuiltinAtom>
+    </rdf:first>
+    <rdf:rest xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"></rdf:rest>
+  </swrl:AtomList>
+</expression:expressionBody>
+          </expression:SWRL-Condition>
+        </process:ifCondition>
+        <process:then>
+          <process:Sequence>
+            <process:components>
+              <process:ControlConstructList>
+                <list:first>
+                  <process:Produce rdf:ID="ProduceBNPrice">
+                    <process:producedBinding>
+                      <process:OutputBinding>
+                        <process:toParam rdf:resource="#CP_OutputPrice"/>
+                        <process:valueSource>
+                          <process:ValueOf>
+                            <process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+                            <process:theVar rdf:resource="#CP_BNPrice"/>
+                          </process:ValueOf>
+                        </process:valueSource>
+                      </process:OutputBinding>
+                    </process:producedBinding>
+                  </process:Produce>
+                </list:first>
+                <list:rest>
+                  <process:ControlConstructList>
+                    <list:first>
+                      <process:Produce rdf:ID="ProduceBNName">
+                        <process:producedBinding>
+                          <process:OutputBinding>
+                            <process:toParam rdf:resource="#CP_Bookstore"/>
+                            <process:valueData>BN</process:valueData>
+                          </process:OutputBinding>
+                        </process:producedBinding>
+                      </process:Produce>
+                    </list:first>
+                    <list:rest rdf:resource="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#nil"/>
+                  </process:ControlConstructList>
+                </list:rest>
+              </process:ControlConstructList>
+            </process:components>
+          </process:Sequence>
+        </process:then>
+        <process:else>
+          <process:Sequence>
+            <process:components>
+              <process:ControlConstructList>
+                <list:first>
+                  <process:Produce rdf:ID="ProduceAmazonPrice">
+                    <process:producedBinding>
+                      <process:OutputBinding>
+                        <process:toParam rdf:resource="#CP_OutputPrice"/>
+                        <process:valueSource>
+                          <process:ValueOf>
+                            <process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+                            <process:theVar rdf:resource="#CP_AmazonPrice"/>
+                          </process:ValueOf>
+                        </process:valueSource>
+                      </process:OutputBinding>
+                    </process:producedBinding>
+                  </process:Produce>
+                </list:first>
+                <list:rest>
+                  <process:ControlConstructList>
+                    <list:first>
+                      <process:Produce rdf:ID="ProduceAmazonName">
+                        <process:producedBinding>
+                          <process:OutputBinding>
+                            <process:toParam rdf:resource="#CP_Bookstore"/>
+                            <process:valueData>Amazon</process:valueData>
+                          </process:OutputBinding>
+                        </process:producedBinding>
+                      </process:Produce>
+                    </list:first>
+                    <list:rest rdf:resource="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#nil"/>
+                  </process:ControlConstructList>
+                </list:rest>
+              </process:ControlConstructList>
+            </process:components>
+          </process:Sequence>
+        </process:else>
+      </process:If-Then-Else>
+    </process:composedOf>
+    <process:hasOutput rdf:resource="#CP_OutputPrice"/>
+  </process:CompositeProcess>
+  <process:Perform rdf:about="#ComparePrices">
+    <process:process rdf:resource="#ComparePricesProcess"/>
+    <process:hasDataFrom>
+      <process:InputBinding>
+        <process:toParam rdf:resource="#CP_AmazonPrice"/>
+        <process:valueSource>
+          <process:ValueOf>
+            <process:fromProcess>
+              <process:Perform rdf:about="#FindAmazonPrice"/>
+            </process:fromProcess>
+            <process:theVar rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/AmazonBookPrice.owl#BookPrice"/>
+          </process:ValueOf>
+        </process:valueSource>
+      </process:InputBinding>
+    </process:hasDataFrom>
+    <process:hasDataFrom>
+      <process:InputBinding>
+        <process:toParam rdf:resource="#CP_BNPrice"/>
+        <process:valueSource>
+          <process:ValueOf>
+            <process:fromProcess>
+              <process:Perform rdf:about="#FindBNPrice"/>
+            </process:fromProcess>
+            <process:theVar rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/BNPrice.owl#BookPrice"/>
+          </process:ValueOf>
+        </process:valueSource>
+      </process:InputBinding>
+    </process:hasDataFrom>
+  </process:Perform>
+  <process:Perform rdf:about="#FindBookInfo">
+    <process:process rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/BookFinder.owl#BookFinderProcess"/>
+    <process:hasDataFrom>
+      <process:InputBinding>
+        <process:toParam rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/BookFinder.owl#BookName"/>
+        <process:valueSource>
+          <process:ValueOf>
+            <process:fromProcess rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#TheParentPerform"/>
+            <process:theVar rdf:resource="#BookName"/>
+          </process:ValueOf>
+        </process:valueSource>
+      </process:InputBinding>
+    </process:hasDataFrom>
+  </process:Perform>
+  <process:Perform rdf:about="#FindBNPrice">
+    <process:process rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/BNPrice.owl#BNPriceProcess"/>
+    <process:hasDataFrom>
+      <process:InputBinding>
+        <process:toParam rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/BNPrice.owl#BookInfo"/>
+        <process:valueSource>
+          <process:ValueOf>
+            <process:fromProcess rdf:resource="#FindBookInfo"/>
+            <process:theVar rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/BookFinder.owl#BookInfo"/>
+          </process:ValueOf>
+        </process:valueSource>
+      </process:InputBinding>
+    </process:hasDataFrom>
+  </process:Perform>
+  <process:Perform rdf:about="#FindAmazonPrice">
+    <process:process rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/AmazonBookPrice.owl#AmazonPriceProcess"/>
+    <process:hasDataFrom>
+      <process:InputBinding>
+        <process:toParam rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/AmazonBookPrice.owl#BookInfo"/>
+        <process:valueSource>
+          <process:ValueOf>
+            <process:fromProcess rdf:resource="#FindBookInfo"/>
+            <process:theVar rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/BookFinder.owl#BookInfo"/>
+          </process:ValueOf>
+        </process:valueSource>
+      </process:InputBinding>
+    </process:hasDataFrom>
+  </process:Perform>
+  <grounding:WsdlGrounding rdf:about="#TestGrounding">
+    <grounding:hasAtomicProcessGrounding rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/BookFinder.owl#BookFinderProcessGrounding"/>
+    <grounding:hasAtomicProcessGrounding rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/AmazonBookPrice.owl#AmazonPriceProcessGrounding"/>
+    <grounding:hasAtomicProcessGrounding rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/BNPrice.owl#BNPriceProcessGrounding"/>
+    <service:supportedBy rdf:resource="#TestService"/>
+  </grounding:WsdlGrounding>
+  <owl:Ontology rdf:about="#">
+    <owl:imports rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/BNPrice.owl"/>
+    <owl:imports rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/AmazonBookPrice.owl"/>
+    <owl:imports rdf:resource="http://www.mindswap.org/2004/owl-s/1.1/BookFinder.owl"/>
+  </owl:Ontology>
+</rdf:RDF>

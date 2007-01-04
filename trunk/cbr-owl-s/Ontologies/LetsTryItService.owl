@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<rdf:RDF
+    xmlns:process="http://www.daml.org/services/owl-s/1.1/Process.owl#"
+    xmlns:list="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns="http://www.ifi.unizh.ch/ddis/ont/next/kb/ProcessLibrary/AtomicProcesses/LetsTryItService.owl"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:expression="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
+    xmlns:service="http://www.daml.org/services/owl-s/1.1/Service.owl#"
+    xmlns:grounding="http://www.daml.org/services/owl-s/1.1/Grounding.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns:j.0="http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextProcessModel.owl#"
+    xmlns:profile="http://www.daml.org/services/owl-s/1.1/Profile.owl#"
+  xml:base="http://www.ifi.unizh.ch/ddis/ont/next/kb/ProcessLibrary/AtomicProcesses/LetsTryItService.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="/ddis/ont/next/model/MO_NextProcessModel.owl"/>
+  </owl:Ontology>
+  <j.0:NextProcess rdf:about="LetsTryIt.owl#LetsTryItService">
+    <j.0:state>in_creation</j.0:state>
+    <service:presents>
+      <j.0:NextProfile rdf:about="LetsTryIt.owl#LetsTryItServiceProfile"/>
+    </service:presents>
+  </j.0:NextProcess>
+</rdf:RDF>

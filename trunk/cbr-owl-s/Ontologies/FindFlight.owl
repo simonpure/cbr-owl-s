@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE uridef [
+	<!ENTITY rdf 		"http://www.w3.org/1999/02/22-rdf-syntax-ns">
+	<!ENTITY rdfs 		"http://www.w3.org/2000/01/rdf-schema">
+	<!ENTITY owl 		"http://www.w3.org/2002/07/owl">
+	<!ENTITY xsd 		"http://www.w3.org/2001/XMLSchema">
+	<!ENTITY service 	"http://www.daml.org/services/owl-s/1.1/Service.owl">
+	<!ENTITY profile 	"http://www.daml.org/services/owl-s/1.1/Profile.owl">
+	<!ENTITY process 	"http://www.daml.org/services/owl-s/1.1/Process.owl">
+	<!ENTITY grounding 	"http://www.daml.org/services/owl-s/1.1/Grounding.owl">
+	<!ENTITY list	 	"http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl">
+	<!ENTITY expr		"http://www.daml.org/services/owl-s/1.1/generic/Expression.owl">
+	<!ENTITY swrl 		"http://www.w3.org/2003/11/swrl">
+	<!ENTITY swrlb 		"http://www.w3.org/2003/11/swrlb">	
+	<!ENTITY dc			"http://purl.org/dc/elements/1.1.owl">
+	<!ENTITY nextData 	"http://bai-hu.ethz.ch/next/model/MO_NextDataModel.owl">	
+	<!ENTITY nextVar	"http://bai-hu.ethz.ch/next/kb/NMRDataItemLibrary/DA_NextNMRDataItems.owl">
+	<!ENTITY nextProc 	"http://bai-hu.ethz.ch/next/model/MO_NextProcessModel.owl">	
+	<!ENTITY nextAuthors "http://bai-hu.ethz.ch/next/model/instances/MI_NextAuthors.owl">
+	<!ENTITY owlsext 	 "http://bai-hu.ethz.ch/next/model/MO_OWLSExtensions.owl">	
+	<!ENTITY swissSearch "http://bai-hu.ethz.ch/next/kb/ProcessLibrary/Processes/SwissFlightSearch.owl">
+	<!ENTITY swissRes    "http://bai-hu.ethz.ch/next/kb/ProcessLibrary/Processes/SwissReservation.owl">
+	<!ENTITY baSearch 	 "http://bai-hu.ethz.ch/next/kb/ProcessLibrary/Processes/BAFlightSearch.owl">
+	<!ENTITY baRes    	 "http://bai-hu.ethz.ch/next/kb/ProcessLibrary/Processes/BAReservation.owl">	
+]>
+
+<rdf:RDF
+    xmlns:rdf =		"&rdf;#" 
+    xmlns:rdfs =	"&rdfs;#" 
+    xmlns:owl =		"&owl;#" 
+    xmlns:xsd =		"&xsd;#" 
+    xmlns:service =	"&service;#" 
+    xmlns:profile =	"&profile;#" 
+    xmlns:process =	"&process;#" 
+    xmlns:grounding="&grounding;#" 
+	xmlns:list=		"&list;#"
+	xmlns:expr=		"&expr;#"
+	xmlns:swrl=		"&swrl;#"
+	xmlns:swrlb=	"&swrlb;#"
+  	xmlns:dc=	    "&dc;#"
+	xmlns:owlsext=	"&owlsext;#"
+	xmlns:nextData=	"&nextData;#"  	
+	xmlns:nextVar=	"&nextVar;#"  	
+	xmlns:nextProc=	"&nextProc;#"
+	xmlns:nextAuthors= "&nextAuthors;#"	
+	xmlns:swissSearch="&swissSearch;#"
+	xmlns:swissRes="&swissRes;#"
+	xmlns:baSearch= "&baSearch;#"	
+	xmlns:baRes= "&baRes;#"	
+   	xml:base=		"http://bai-hu.ethz.ch/next/kb/ProcessLibrary/ProcessTemplates/PT_PrepareSample.owl"
+> 
+	<owl:Ontology rdf:ID="PrepareSample">
+		<owl:versionInfo>PrepareSample.owl v0.1, 2005-03-03</owl:versionInfo>
+		
+		<dc:creator>Michael Daenzer</dc:creator>
+		<dc:contributor>Konstantin Pervushin</dc:contributor>
+		<dc:contributor>Peter Vorburger</dc:contributor>
+		<dc:contributor>Avi Bernstein</dc:contributor>
+		<dc:date>2005-03-02</dc:date>
+		<dc:rights>copyright 2005 by Michael Daenzer</dc:rights> 
+		
+		<owl:imports rdf:resource="http://bai-hu.ethz.ch/next/model/MO_NextProcessModel.owl"/>	
+		<owl:imports rdf:resource="http://bai-hu.ethz.ch/next/kb/NMRDataItemLibrary/DA_NextNMRDataItems.owl"/>
+		<owl:imports rdf:resource="http://bai-hu.ethz.ch/next/model/MO_OWLSExtensions.owl"/>
+		<owl:imports rdf:resource="http://bai-hu.ethz.ch/next/kb/ProcessLibrary/ExperimentalSteps/ES_DissectSample.owl"/>
+		<owl:imports rdf:resource="http://bai-hu.ethz.ch/next/kb/ProcessLibrary/ExperimentalSteps/ES_LabelSample.owl"/>
+		<owl:imports rdf:resource="http://bai-hu.ethz.ch/next/kb/ProcessLibrary/ExperimentalSteps/ES_GetSampleCode.owl"/>
+		<owl:imports rdf:resource="http://bai-hu.ethz.ch/next/kb/ProcessLibrary/ExperimentalSteps/ES_InsertSample.owl"/>	  
+		<owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl"/>		
+ 	</owl:Ontology>
+ 	
+ 	<!-- Service Description -->
+ 	<nextProc:NextProcess rdf:ID="PrepareSampleService"> 	
+		<service:presents rdf:resource="#PrepareSampleProfile"/>
+		<service:describedBy rdf:resource="#PrepareSampleProcess"/>
+		<service:supports rdf:resource="#PrepareSampleGrounding"/>	
+		
+		<nextProc:specifity rdf:datatype="&xsd;#float">1</nextProc:specifity> 
+	</nextProc:NextProcess> 
+	
+	<!-- Profile -->
+	<profile:Profile rdf:ID="PrepareSampleProfile">
+		<service:isPresentedBy rdf:resource="#PrepareSampleService"/>
+	  
+		<profile:serviceName xml:lang="en">Service for setting up the protein Sample</profile:serviceName>
+		<profile:textDescription xml:lang="en">to be done later</profile:textDescription>
+		<profile:contactInformation rdf:resource="&nextAuthors;#MichaelDaenzer"/>			  	
+
+		<profile:hasInput rdf:resource="#LocalIsSampleChanged"/>
+	</profile:Profile>
+	
+	<process:Input rdf:ID="LocalIsSampleChanged">
+		<process:parameterType rdf:datatype="xsd#anyURI">&xsd;#string</process:parameterType>
+	</process:Input>
+		
+	<process:CompositeProcess rdf:ID="PrepareSampleProcess">
+		<service:describes rdf:resource="#PrepareSampleService"/>		
+				
+		<process:hasInput rdf:resource="#LocalIsSampleChanged"/>		
+		
+		<process:composedOf>
+			<process:If-Then-Else>
+				<process:ifCondition>
+					<expr:SWRL-Condition>
+						<expr:expressionLanguage rdf:resource="&expr;#SWRL"/>
+						<expr:expressionBody rdf:parseType="Literal">
+							<swrl:AtomList>
+								<rdf:first>
+									<swrl:BuiltinAtom>
+										<swrl:builtin rdf:resource="&swrlb;#equal"/>
+										<swrl:arguments>
+											<rdf:List>
+												<rdf:first rdf:resource="#LocalIsSampleChanged"/>
+												<rdf:rest>
+													<rdf:List>
+														<rdf:first rdf:datatype="&xsd;#string">TRUE</rdf:first>
+														<rdf:rest rdf:resource="&list;#nil"/>
+													</rdf:List>
+												</rdf:rest>		
+											</rdf:List>
+										</swrl:arguments>
+									</swrl:BuiltinAtom>
+								</rdf:first>
+								<rdf:rest rdf:resource="&rdf;#nil"/>
+							</swrl:AtomList>
+						</expr:expressionBody>
+					</expr:SWRL-Condition>
+				</process:ifCondition>
+				<process:then>																
+					<process:Sequence>
+						<process:components>
+							<process:ControlConstructList>
+								<list:first rdf:resource="#PerformDissectSample"/>
+								<list:rest>
+									<process:ControlConstructList>
+										<list:first rdf:resource="#PerformLabelSample"/>
+										<list:rest>
+											<process:ControlConstructList>
+												<list:first rdf:resource="#PerformGetSampleCode"/>
+												<list:rest>
+													<process:ControlConstructList>
+														<list:first rdf:resource="#PerformInsertSample"/>
+														<list:rest rdf:resource="&list;#nil"/>
+													</process:ControlConstructList>
+												</list:rest>
+											</process:ControlConstructList>
+										</list:rest>
+									</process:ControlConstructList>								
+								</list:rest>
+							</process:ControlConstructList>
+						</process:components>				
+					</process:Sequence>		
+				</process:then>
+			</process:If-Then-Else>
+		</process:composedOf>								
+	</process:CompositeProcess>			     	      				    	
+	
+	<process:Perform rdf:ID="PerformDissectSample">
+		<process:process rdf:resource="&dissectSample;#DissectSampleProcess"/>		
+	</process:Perform>
+ 	
+	 <process:Perform rdf:ID="PerformLabelSample">
+		<process:process rdf:resource="&labelSample;#LabelSampleProcess"/>					
+	</process:Perform>
+
+	 <process:Perform rdf:ID="PerformGetSampleCode">
+		<process:process rdf:resource="&getPCode;#GetSampleCodeProcess"/>	
+	</process:Perform>
+	
+	<process:Perform rdf:ID="PerformInsertSample">
+		<process:process rdf:resource="&insSample;#InsertSampleProcess"/>
+	</process:Perform>
+		
+<process:hasDataFrom>
+            <process:InputBinding>
+                <process:toParam rdf:resource="&prepSample;#IsSampleChanged"/>
+				<process:valueSource>
+					<process:ValueOf>
+						<process:fromProcess rdf:resource="#PerformChangeSample"/>
+						<process:theVar rdf:resource="&chgSample;#IsSampleChanged"/>
+					</process:ValueOf>
+				</process:valueSource>
+			</process:InputBinding>
+		</process:hasDataFrom>		
+		
+		<!-- Groundings -->
+    <owlsext:JavaGrounding rdf:ID="PrepareSampleGrounding">
+		<service:supportedBy rdf:resource="#PrepareSampleService"/>		
+		<grounding:hasAtomicProcessGrounding rdf:resource="&dissectSample;#DissectSampleGrounding"/>
+		<grounding:hasAtomicProcessGrounding rdf:resource="&labelSample;#LabelSampleGrounding"/>
+		<grounding:hasAtomicProcessGrounding rdf:resource="&getPCode;#GetSampleCodeGrounding"/>
+		<grounding:hasAtomicProcessGrounding rdf:resource="&insSample;#InsertSampleGrounding"/>
+    </owlsext:JavaGrounding>
+</rdf:RDF>	

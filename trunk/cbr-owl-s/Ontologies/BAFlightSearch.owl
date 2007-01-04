@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE uridef [
+	<!ENTITY rdf 		"http://www.w3.org/1999/02/22-rdf-syntax-ns">
+	<!ENTITY rdfs 		"http://www.w3.org/2000/01/rdf-schema">
+	<!ENTITY owl 		"http://www.w3.org/2002/07/owl">
+	<!ENTITY xsd 		"http://www.w3.org/2001/XMLSchema">
+	<!ENTITY service 	"http://www.daml.org/services/owl-s/1.1/Service.owl">
+	<!ENTITY profile 	"http://www.daml.org/services/owl-s/1.1/Profile.owl">
+	<!ENTITY process 	"http://www.daml.org/services/owl-s/1.1/Process.owl">
+	<!ENTITY grounding 	"http://www.daml.org/services/owl-s/1.1/Grounding.owl">
+	<!ENTITY dc			"http://purl.org/dc/elements/1.1.owl">	
+	<!ENTITY owlsext 	"http://www.ifi.unizh.ch/ddis/ont/owl-s/MoreGroundings.owl">
+	<!ENTITY nextProc   "http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextProcessModel.owl">
+	<!ENTITY nextData   "http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextDataModel.owl">	
+	<!ENTITY nextAuthors "http://www.ifi.unizh.ch/ddis/ont/next/model/instances/MI_NextAuthors.owl">
+	<!ENTITY nextVar	"http://www.ifi.unizh.ch/ddis/ont/next/kb/DataItemLibrary/DA_NextDataItems.owl">		
+]>
+<rdf:RDF
+    xmlns:rdf =		"&rdf;#" 
+    xmlns:rdfs =	"&rdfs;#" 
+    xmlns:owl =		"&owl;#" 
+    xmlns:xsd =		"&xsd;#" 
+    xmlns:service =	"&service;#" 
+    xmlns:profile =	"&profile;#" 
+    xmlns:process =	"&process;#" 
+    xmlns:grounding="&grounding;#" 
+  	xmlns:dc=	    "&dc;#"
+	xmlns:owlsext=	"&owlsext;#"
+	xmlns:nextProc=	"&nextProc;#"
+	xmlns:nextData=	"&nextData;#"	
+	xmlns:nextAuthors= "&nextAuthors;#"
+	xmlns:nextVar=	"&nextVar;#"
+   	xml:base=		"http://www.ifi.unizh.ch/ddis/ont/next/kb/ProcessLibrary/Processes/BAFlightSearch.owl"
+> 
+	<owl:Ontology rdf:ID="BAFlightSearch">
+		<owl:versionInfo>BAFlightSearch.owl v1, 2006-03-06</owl:versionInfo> 
+		<dc:creator>Michael Daenzer</dc:creator>
+		<dc:date>2006-03-06</dc:date>
+		<dc:rights>copyright 2005 by Michael Daenzer, University of Zurich</dc:rights> 
+		
+		<owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl"/>
+		<owl:imports rdf:resource="http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextProcessModel.owl"/>
+		<owl:imports rdf:resource="http://www.ifi.unizh.ch/ddis/ont/next/model/MO_NextDataModel.owl"/>
+		<owl:imports rdf:resource="http://www.ifi.unizh.ch/ddis/ont/owl-s/MoreGroundings.owl"/>
+		<owl:imports rdf:resource="http://www.ifi.unizh.ch/ddis/ont/next/kb/DataItemLibrary/DA_NextDataItems.owl"/>
+ 	</owl:Ontology>
+ 	
+ 	<!-- Service Description -->
+ 	<nextProc:NextProcess rdf:ID="BAFlightSearchService">
+		<service:presents rdf:resource="#BAFlightSearchProfile"/>
+		<service:describedBy rdf:resource="#BAFlightSearchProcess"/>
+		<service:supports rdf:resource="#BAFlightSearchGrounding"/>
+		
+		<nextProc:specifity rdf:datatype="&xsd;#float">1</nextProc:specifity>
+	</nextProc:NextProcess>  
+	 
+	<!-- Profile -->
+	<profile:Profile rdf:ID="BAFlightSearchProfile">
+		<service:presentedBy rdf:resource="#BAFlightSearchService"/>
+	  
+		<profile:serviceName xml:lang="en">search for a flight with BA</profile:serviceName>
+		<profile:textDescription xml:lang="en">
+			searches a flight with BA from the given source to the given destination at the given date
+		</profile:textDescription>
+		<profile:contactInformation rdf:resource="&nextAuthors;#MichaelDaenzer"/>
+      		
+		<profile:hasInput rdf:resource="&nextVar;#SourceAirport"/>
+		<profile:hasInput rdf:resource="&nextVar;#DestinationAirport"/>
+		<profile:hasInput rdf:resource="&nextVar;#Date"/>		
+		<profile:hasOutput rdf:resource="&nextVar;#FlightNumber"/>		
+	</profile:Profile> 
+
+	<!-- Process -->
+ 	<process:AtomicProcess rdf:ID="BAFlightSearchProcess">	
+		<service:describes rdf:resource="#BAFlightSearchService"/>	
+
+		<process:hasInput rdf:resource="&nextVar;#SourceAirport"/>
+		<process:hasInput rdf:resource="&nextVar;#DestinationAirport"/>
+		<process:hasInput rdf:resource="&nextVar;#Date"/>	
+		
+		<process:hasOutput rdf:resource="&nextVar;#FlightNumber"/>		    	
+	</process:AtomicProcess>
+	 	      
+    <!-- Grounding -->
+    <owlsext:JavaGrounding rdf:ID="BAFlightSearchGrounding">
+		<service:supportedBy rdf:resource="#BAFlightSearchService"/>
+		<owlsext:hasJavaAtomicProcessGrounding rdf:resource="#BAFlightSearchAtomicGrounding"/>
+    </owlsext:JavaGrounding>
+    
+    <!-- AtomicProcessGrounding  -->
+	<owlsext:JavaAtomicProcessGrounding rdf:ID="BAFlightSearchAtomicGrounding">
+		<owlsext:hasOwlsProcess rdf:resource="#BAFlightSearchProcess"/>
+		<owlsext:javaClass>ch.unizh.ifi.next.model.grounding.BA</owlsext:javaClass>
+		<owlsext:javaMethod>flightSearch</owlsext:javaMethod>
+		
+		<owlsext:hasJavaParameter>
+			<owlsext:JavaParameter rdf:ID="JavaSourceAirport">
+				<owlsext:javaType>String</owlsext:javaType>
+				<owlsext:owlsParameter rdf:resource="&nextVar;#SourceAirport"/>
+				<owlsext:paramIndex>1</owlsext:paramIndex>
+			</owlsext:JavaParameter>
+		</owlsext:hasJavaParameter>
+		<owlsext:hasJavaParameter>
+			<owlsext:JavaParameter rdf:ID="JavaDestinationAirport">
+				<owlsext:javaType>String</owlsext:javaType>
+				<owlsext:owlsParameter rdf:resource="&nextVar;#DestinationAirport"/>
+				<owlsext:paramIndex>2</owlsext:paramIndex>
+			</owlsext:JavaParameter>
+		</owlsext:hasJavaParameter>
+		<owlsext:hasJavaParameter>
+			<owlsext:JavaParameter rdf:ID="JavaFlightDate">
+				<owlsext:javaType>String</owlsext:javaType>
+				<owlsext:owlsParameter rdf:resource="&nextVar;#Date"/>
+				<owlsext:paramIndex>3</owlsext:paramIndex>
+			</owlsext:JavaParameter>
+		</owlsext:hasJavaParameter>
+		
+		<owlsext:javaOutput>
+			<owlsext:JavaVariable rdf:ID="JavaFlightNumber">
+				<owlsext:javaType>String</owlsext:javaType>
+				<owlsext:owlsParameter rdf:resource="&nextVar;#FlightNumber"/>
+			</owlsext:JavaVariable>
+		</owlsext:javaOutput>
+    </owlsext:JavaAtomicProcessGrounding> 
+</rdf:RDF>

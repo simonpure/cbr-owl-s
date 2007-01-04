@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:expression="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
+    xmlns:process="http://www.daml.org/services/owl-s/1.1/Process.owl#"
+    xmlns:list="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#"
+    xmlns:service="http://www.daml.org/services/owl-s/1.1/Service.owl#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:grounding="http://www.daml.org/services/owl-s/1.1/Grounding.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:daml="http://www.daml.org/2001/03/daml+oil#"
+    xmlns:profile="http://www.daml.org/services/owl-s/1.1/Profile.owl#">
+  <owl:Ontology rdf:about="http://www.ifi.unizh.ch/ddis/ont/owl-s/trails/TrailList">
+    <owl:imports rdf:resource="http://www.ifi.unizh.ch/ddis/ont/owl-s/trails/ExecutionTrail-1167215985364.owl"/>
+    <owl:imports rdf:resource="http://www.ifi.unizh.ch/ddis/ont/owl-s/trails/ExecutionTrail-1167165220043.owl"/>
+    <owl:imports rdf:resource="http://www.ifi.unizh.ch/ddis/ont/owl-s/trails/ExecutionTrail-1167226213892.owl"/>
+    <owl:imports rdf:resource="http://www.ifi.unizh.ch/ddis/ont/owl-s/trails/ExecutionTrail-1167304662236.owl"/>
+  </owl:Ontology>
+</rdf:RDF>
