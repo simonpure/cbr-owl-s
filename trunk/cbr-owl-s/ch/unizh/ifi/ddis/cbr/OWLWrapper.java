@@ -56,9 +56,10 @@ public class OWLWrapper {
 
 	public OWLWrapper(OWLOntology ont) throws FileNotFoundException, URISyntaxException {
 		this.ont = ont;
+		System.out.println(ont.getURI());
 		isTrail = (ont.getURI().toString().indexOf(TRAILURL)==0);
 		populateGraph();
-		//System.out.println(ont.getURI());
+		
 		//ont.write(System.out);
 	}
 
@@ -79,6 +80,9 @@ public class OWLWrapper {
 		if(isTrail) {
 			service = ont.getService();
 			String uri = service.getLabel();
+			// MyTestService Hack
+			if(uri.indexOf("http://www.ifi.unizh.ch/ddis/ont/owl-s/MyTestService.owl") == 0) uri = "http://www.ifi.unizh.ch/ddis/ont/owl-s/MyTestService.owl";
+			
 			//logger.info("service::" + uri);
 			service = kb.readService(uri);
 		} else {
@@ -101,6 +105,7 @@ public class OWLWrapper {
 
 	public String [] getProcessNamesLabel() {
 		ProcessList processes = getProcesses();
+		//logger.info(processes.size());
 		String [] names = new String [processes.size()];
 		Iterator i = processes.iterator();
 		int j = 0;
@@ -109,12 +114,18 @@ public class OWLWrapper {
 		while(i.hasNext()) {
 			process = (Process) i.next();
 			if(isTrail) {
-				name = process.getLabel();
+				try {
+					name = process.getLabel();	
+				} catch (Exception e) {
+					name = "";
+				}
+				
 			} else {
 				name = process.getURI().toString();
 			}
 			names[j] = name; 
 		}
+		//logger.info(names);
 		return names;
 	}
 
@@ -146,13 +157,14 @@ public class OWLWrapper {
 		Service service = ont.getService(getServiceURI());
 		//service = ont.getService(ont.getURI());
 		//System.out.println("service URI::"+service.getURI());
-		//logger.info("service URI::"+service.getURI());
+		//logger.info("service URI::"+service);
 		
 		Process process = service.getProcess();
 		ProcessListImpl processes = new ProcessListImpl();
 		processes.add(process);
 		ProcessList pl = getAllProcesses(processes);
-		return pl;
+		//logger.info(pl + " :: " + processes);
+		return (pl == null ? processes : pl);
 
 	}
 
@@ -168,7 +180,7 @@ public class OWLWrapper {
 			if (process.canCastTo(CompositeProcess.class)) {
 				CompositeProcess cp = (CompositeProcess) process.castTo(CompositeProcess.class);
 				ControlConstruct cc = cp.getComposedOf();
-				pl = (ProcessListImpl) cc.getAllProcesses(true);
+				pl = (ProcessListImpl) cc.getAllProcesses();
 				temp.addAll(getAllProcesses(pl));
 			}
 		}
@@ -406,17 +418,20 @@ public class OWLWrapper {
 	// get the service associated with this ontology
 	//
 	private URI getServiceURI() {
+		//logger.info(ont.getURI());
 		Iterator i = ont.getServices().iterator();
 		Service service;
 		URI uri;
 		while(i.hasNext()) {
 			service = (Service) i.next();
 			uri = service.getURI();
+			//logger.info("uri::" + uri);
 			if(uri.toString().indexOf(ont.getURI().toString()) == 0) {
 				return uri;
 			}
 		}
 		return ont.getService().getURI();
+		
 	}
 
 	public boolean isTrail() {
@@ -443,5 +458,17 @@ public class OWLWrapper {
 		 
 		return s;
 	}
+	
+	// testing
+	
+	public void printProcessList() {
+		   Iterator i = getProcesses().iterator();
+		   Process p;
+		   while(i.hasNext()) {
+			   p = (Process) i.next();
+			   logger.info("P::" + p.getURI());
+		   }
+	}
+	
 	
 }

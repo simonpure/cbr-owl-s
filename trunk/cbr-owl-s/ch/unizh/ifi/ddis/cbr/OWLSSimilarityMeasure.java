@@ -8,6 +8,7 @@ import impl.owls.process.OutputListImpl;
 import impl.owls.process.ProcessListImpl;
 
 import java.lang.reflect.Constructor;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -37,6 +38,7 @@ public class OWLSSimilarityMeasure {
 	private Logger logger = Logger.getLogger(this.getClass().getName());
 	private OWLWrapper oldCase;
 	private OWLWrapper newCase;
+	//private OWLWrapper combinedCase;
 
 	// state of calculation
 	private boolean calculated = false;
@@ -64,6 +66,9 @@ public class OWLSSimilarityMeasure {
     public static int SUBSUME = 1;
     public static int RELAXED = 2;
     public static int FAIL    = 3; 
+
+    // NIL
+    private URI NIL = URI.create("http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#nil");
     
 	// similarity methods for syntactic measures
 	// must extend simpack.api.impl.SimilarityMeasure 
@@ -262,7 +267,7 @@ public class OWLSSimilarityMeasure {
 					similaritymeasure = (SimilarityMeasure) con.newInstance(s1, s2);
 				} catch (NoSuchMethodException e1) {
 					// hmmm.. shouldn't happen
-					similarity = -1;
+					similarity = 0;
 				}
 			}
 			similarity = similaritymeasure.getSimilarity();
@@ -506,20 +511,24 @@ public class OWLSSimilarityMeasure {
 		if (match == -1) {
 			match = 0;
 			Iterator i = oldProcesses.iterator();
-			ProcessListImpl processes = new ProcessListImpl();
+			//ProcessListImpl processes = new ProcessListImpl();
 			Process oldProcess;
 			Process newProcess;
 			while(i.hasNext()) {
 				oldProcess = (Process) i.next();
-				OWLType oldProcessType = oldProcess.getType();
+				//OWLType oldProcessType = oldProcess.getType();
 
 				Iterator j = newProcesses.iterator();
 				while(j.hasNext()) {
 					newProcess = (Process) j.next();
-					OWLType newProcessType = newProcess.getType();
-					if(getMatchType(oldProcessType, newProcessType)<3) {
-						processes.add(oldProcess);
+					//OWLType newProcessType = newProcess.getType();
+					//if(getMatchType(oldProcessType, newProcessType)<3) {
+					//logger.info("Process::" + oldProcess.getLabel());
+					if(oldProcess.getLabel() != null) {
+					if(oldProcess.getLabel().equals(newProcess.getURI().toString()) || newProcess.getURI().equals(NIL)) {
+						//processes.add(oldProcess);
 						match++;
+					}
 					}
 				}
 			}
@@ -529,15 +538,29 @@ public class OWLSSimilarityMeasure {
 	}
 	
 	   private int getMatchType(OWLType oldCaseType, OWLType newCaseType) {
-		   //logger.info("match type::" + oldCaseType + " " + newCaseType);
+		   int matchtype = 3;
 	        if(oldCaseType.isEquivalent(newCaseType))
-	           return EXACT;
+	           matchtype = EXACT;
 	        else if(newCaseType.isSubTypeOf(oldCaseType))
-	           return SUBSUME;        
+	        	matchtype = SUBSUME;        
 	        else if(oldCaseType.isSubTypeOf(newCaseType)) 
-	            return RELAXED;
+	        	matchtype = RELAXED;
+	        else if(newCaseType.getURI().equals(NIL))
+	        	matchtype = EXACT;
 	        else
-	            return FAIL;
+	        	matchtype = FAIL;
+	        logger.info("match type::" + matchtype+ "::" + oldCaseType + " " + newCaseType);
+	        return matchtype;
 	    }
+	   
+	   public OWLWrapper getCombinedCase() {
+		   Iterator i = oldCase.getProcesses().iterator();
+		   Process p;
+		   while(i.hasNext()) {
+			   p = (Process) i.next();
+			   logger.info("P::" + p.getURI());
+		   }
+		   return null;
+	   }
 	
 }

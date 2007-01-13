@@ -9,7 +9,9 @@
 package ch.unizh.ifi.ddis.cbr.record;
 
 import impl.owls.process.InputImpl;
+import impl.owls.process.InputListImpl;
 import impl.owls.process.OutputImpl;
+import impl.owls.process.OutputListImpl;
 import impl.owls.process.ParameterImpl;
 import impl.owls.process.ProcessListImpl;
 
@@ -30,6 +32,7 @@ import org.mindswap.owl.OWLDataProperty;
 import org.mindswap.owl.OWLDataValue;
 import org.mindswap.owl.OWLFactory;
 import org.mindswap.owl.OWLIndividual;
+import org.mindswap.owl.OWLIndividualList;
 import org.mindswap.owl.OWLKnowledgeBase;
 import org.mindswap.owl.OWLOntology;
 import org.mindswap.owl.OWLValue;
@@ -50,7 +53,9 @@ import org.mindswap.owls.process.Perform;
 import org.mindswap.owls.process.Process;
 import org.mindswap.owls.process.ProcessList;
 import org.mindswap.owls.process.Result;
+import org.mindswap.owls.process.ResultList;
 import org.mindswap.owls.process.Sequence;
+import org.mindswap.owls.process.ValueOf;
 import org.mindswap.owls.process.execution.ProcessExecutionEngine;
 import org.mindswap.owls.profile.Profile;
 import org.mindswap.owls.service.Service;
@@ -58,6 +63,8 @@ import org.mindswap.owls.vocabulary.OWLS;
 import org.mindswap.query.ValueMap;
 import org.mindswap.swrl.Variable;
 import org.mindswap.utils.URIUtils;
+
+import sun.awt.geom.AreaOp.AddOp;
 
 public class ExecutionTrail {
 	private Logger logger = Logger.getLogger(this.getClass().getName());
@@ -96,6 +103,11 @@ public class ExecutionTrail {
 	private static final String TRAILONTOLOGY = "ExecutionTrail";
 	private static final String TRAILPROCESS = "ExecutionTrailProcess", TRAILSERVICE = "ExecutionTrailService", TRAILPROFILE = "ExecutionTrailProfile";
 	
+	public ExecutionTrail(OWLKnowledgeBase kb) {
+		this.kb = kb;
+		baseURI = URI.create(TRAILURL + TRAILONTOLOGY + "-" + createTimeStamp() + ".owl#");
+	}
+
 	public ExecutionTrail(OWLKnowledgeBase kb, ProcessExecutionEngine exec) {
 		this.kb = kb;
 		this.exec = exec;
@@ -228,9 +240,9 @@ public class ExecutionTrail {
 		ExecutionRecord executionrecord;
 		while(i.hasNext()) {
 			executionrecord = (ExecutionRecord) i.next();
-		//	logger.info("ER::"+executionrecord.toString());
+			//logger.info("ER::"+executionrecord.toString());
 			if(executionrecord.getProcess().equals(p)) {
-			//	logger.info("match!");
+			//logger.info("match!");
 				return executionrecord;
 			}
 		}
@@ -305,19 +317,20 @@ public class ExecutionTrail {
 		try {
 			ont = kb.createOntology(true);
 		} catch (Exception e) {
-			System.out.println("create ont" + e.toString());
+			System.out.println("create ont " + e.toString());
 		}
-		ExecutionRecord er = (ExecutionRecord) executionrecords.get(0);
-		Process p = er.getProcess();
 
 //		OWLOntology base = kb.read(p.getOntology().getFileURI());
 //		logger.info(base);
 //		ont.addImport(base);
 		
 		Service service = ont.createService(URIUtils.createURI(baseURI, TRAILSERVICE));
-		CompositeProcess process = ont.createCompositeProcess(URIUtils.createURI(baseURI, TRAILPROCESS));
 		Profile profile = ont.createProfile(URIUtils.createURI(baseURI, TRAILPROFILE));
-		
+		//CompositeProcess process = ont.createCompositeProcess(URIUtils.createURI(baseURI, TRAILPROCESS));
+
+		ExecutionRecord er = (ExecutionRecord) executionrecords.get(0);
+		Process p = er.getProcess();
+
 		try {
 			service.setLabel(p.getService().getURI().toString());
 		} catch(Exception e) {
@@ -328,29 +341,30 @@ public class ExecutionTrail {
 		} catch(Exception e) {
 			// null pointer
 		}
-		
-		
-		
-		//logger.info("Ontology::" + p.getOntology().getURI());
-		
-		// we don't need a grounding
-		// Grounding grounding = ont.createGrounding(URIUtils.createURI(baseURI,
-		// "TestGrounding"));
-		
-		// set profile and process of the trail
-		service.setProfile(profile);
-		service.setProcess(process);
 
-		// service.setGrounding(grounding);
-
-		//logger.info("sequence starting");
-//		createSequenceProcess(process, processes);
-		process = createSequenceProcess(process, executionrecords);
+		/*
+		Process trailProcess;
+		if(p.canCastTo(CompositeProcess.class)) {
+			trailProcess = (CompositeProcess) ont.createCompositeProcess(URIUtils.createURI(baseURI, TRAILPROCESS));
+		} else {
+			trailProcess = (AtomicProcess) ont.createAtomicProcess(URIUtils.createURI(baseURI, TRAILPROCESS));
+		}
+		 */
+		
+		Process trailProcess = createSequenceProcess(p);
+		
+		System.out.println("trailprocess::" + trailProcess);
+		
+		createBindings(p, trailProcess);
 
 		//logger.info("sequence ending");
 
+		// set profile and process of the trail
+		service.setProfile(profile);
+		service.setProcess(trailProcess);
+
 		//logger.info("profile starting");
-		createProfile(profile, process);
+		createProfile(profile, trailProcess);
 		//logger.info("profile ending");
 
 		//logger.info("label starting");
@@ -362,7 +376,7 @@ public class ExecutionTrail {
 		profile.setTextDescription(profile.getLabel());
 
 		service.setProfile(profile);
-		service.setProcess(process);
+		service.setProcess(trailProcess);
 		//service.setLabel(saveService);
 		//profile.setLabel(saveProfile);
 		
@@ -445,32 +459,255 @@ public class ExecutionTrail {
 	}
 
 
-	/*
-	 * get control constructs
-	 */
-	private ProcessList getConstructs(ControlConstruct cc) {
-		if(cc instanceof Sequence) {
-			return cc.getAllProcesses(true);
-		}
-		
-		ProcessListImpl temp = new ProcessListImpl();
 
-		List constructs = cc.getConstructs();
-		//logger.info(constructs + " size::" + constructs.size());
-		ControlConstruct controlconstruct;
-		Iterator iterator = constructs.iterator();
-		while(iterator.hasNext()) {
-			controlconstruct = (ControlConstruct) iterator.next();
-			temp.addAll(getConstructs(controlconstruct));
+	private void createBindings(Process oldProcess, Process trailProcess) {
+		ProcessList pl = getProcesses(oldProcess, true);
+		Iterator i = pl.iterator();
+		Process process;
+		while(i.hasNext()) {
+			process = (Process) i.next();
+			System.out.println("binding for process::" + process.getURI());
+			addInbutBindings(process, trailProcess);
+			addResultBindings(process, trailProcess);			
+		}
+	}
+	
+	private void addResultBindings(Process oldProcess, Process trailProcess) {
+		//System.out.println("output bindings::" + oldProcess.getURI());
+
+	   	Process newProcess = getProcess(trailProcess, oldProcess.getURI());
+
+    	ResultList rl = oldProcess.getResults();
+    	
+    	if(rl.size() == 0) System.out.println("no results");
+    	
+    	Iterator l = rl.iterator();
+    	Result result;
+    	while(l.hasNext()) {
+    		result = (Result) l.next();
+    		//System.out.println("result::" + result.toRDF());
+    		OWLIndividualList withOutputs = result.getProperties(OWLS.Process.withOutput);
+	    	Iterator k = withOutputs.iterator();
+	    	OWLIndividual hasDataFrom;
+	    	while(k.hasNext()) {
+	    		hasDataFrom = (OWLIndividual) k.next();
+		    	OWLIndividual valueSource = hasDataFrom.getProperty(OWLS.Process.valueSource);
+		    	OWLIndividual outputBinding = hasDataFrom.getProperty(OWLS.Process.toParam);
+		    	
+		    	Output output = (Output) outputBinding.castTo(Output.class);
+		    	ValueOf vo = (ValueOf) valueSource.castTo(ValueOf.class);
+    		
+		    	Perform fromProcess = vo.getPerform();
+		    	URI uriProcess = null;
+		    	if(fromProcess.getProcess() != null) {
+		    		Process performProcess = (Process) fromProcess.getAllProcesses().get(0);
+		    		uriProcess = performProcess.getURI();
+		    	} else {
+		    		uriProcess = fromProcess.getURI();
+		    	}
+		    	
+		    	Output newOutput = getOutput(trailProcess, output.getURI());
+		    	Process newPerformProcess = getProcess(trailProcess, uriProcess);
+		    	Parameter newParameter = (Parameter) getParameter(trailProcess, vo.getParameter().getURI());
+				
+		    	Result newResult = ont.createResult(createIdentifier(RESULT));
+				
+				Perform performProcess = newPerformProcess.getPerform();
+		    	if(uriProcess.equals(Perform.TheParentPerform.getURI())) performProcess = Perform.TheParentPerform;
+		    	
+				result.addBinding(newOutput, performProcess, newParameter);
+				newProcess.setResult(newResult);
+				
+		    	System.out.println("output::" + output + "->" + newOutput);
+		    	System.out.println("fromProcess::" + uriProcess + "->" + performProcess);
+		    	System.out.println("theVar::" + vo.getParameter() + "->" + newParameter);
+	    	}
+    		
+    	}
+	}
+
+	private void addInbutBindings(Process oldProcess, Process trailProcess) {
+		//System.out.println("input bindings::" + oldProcess.getURI());
+		Perform perform = oldProcess.getPerform();
+    	if(perform == null) {
+    		System.out.println("no perfom");
+    		return;
+    	}
+    	
+    	Process newProcess = getProcess(trailProcess, oldProcess.getURI());
+    	
+    	//System.out.println("properties::" + perform.getProperty(OWLS.Process.fromProcess).toRDF());
+    	
+    	//OWLIndividual hasDataFrom = perform.getProperty(OWLS.Process.hasDataFrom);
+    	
+    	OWLIndividualList froms = perform.getProperties(OWLS.Process.hasDataFrom);
+    	Iterator k = froms.iterator();
+    	OWLIndividual hasDataFrom;
+    	while(k.hasNext()) {
+    		hasDataFrom = (OWLIndividual) k.next();
+	    	OWLIndividual valueSource = hasDataFrom.getProperty(OWLS.Process.valueSource);
+	    	OWLIndividual inputBinding = hasDataFrom.getProperty(OWLS.Process.toParam);
+	    	
+	    	Input input = (Input) inputBinding.castTo(Input.class);
+	    	ValueOf vo = (ValueOf) valueSource.castTo(ValueOf.class);
+	    	
+	    	Perform fromProcess = vo.getPerform();
+	    	URI uriProcess = null;
+	    	if(fromProcess.getProcess() != null) {
+	    		Process performProcess = (Process) fromProcess.getAllProcesses().get(0);
+	    		uriProcess = performProcess.getURI();
+	    	} else {
+	    		uriProcess = fromProcess.getURI();
+	    	}
+
+	    	System.out.println("input::" + input);
+	    	System.out.println("fromProcess::" + uriProcess);
+	    	System.out.println("theVar::" + vo.getParameter());
+
+	    	Input newInput = getInput(trailProcess, input.getURI());
+	    	Process newPerformProcess = getProcess(trailProcess, uriProcess);
+	    	Parameter newParameter = (Parameter) getParameter(trailProcess, vo.getParameter().getURI());
+
+	    	
+	    	Perform performProcess = newPerformProcess.getPerform();
+	    	if(uriProcess.equals(Perform.TheParentPerform.getURI())) performProcess = Perform.TheParentPerform;
+	    	
+			Perform newPerform = newProcess.getPerform();
+			newPerform.addBinding(newInput, performProcess, newParameter);			
+
+    	}
+    	
+	}
+
+	public Parameter getParameter(Process newProcess, URI uri) {
+		Parameter parameter = (Parameter) getInput(newProcess, uri);
+		if(parameter.getLabel().equals(uri)) return parameter;
+		parameter = (Parameter) getOutput(newProcess, uri);
+		return parameter;
+	}
+	
+	public Input getInput(Process newProcess, URI uri) {
+		InputList il = getInputs(newProcess);
+		Iterator i = il.iterator();
+		Input input = null;
+		while(i.hasNext()) {
+			input = (Input) i.next();
+			if(input.getLabel().equals(uri.toString())) break;
+		}
+		return input;
+	}
+	
+	public InputList getInputs(Process originalProcess) {
+		ProcessList pl = getProcesses(originalProcess, true);
+		Iterator i = pl.iterator();
+		Process process;
+		InputListImpl il = new InputListImpl();
+		while(i.hasNext()) {
+			process = (Process) i.next();
+			getAllInputs(process, il);
+			//il.addAll(getAllInputs(process));
+		}
+		return (InputList) il;
+	}
+
+	private void getAllInputs(Process process, InputList temp) {
+		InputList il = process.getInputs();
+		Iterator i = il.iterator();
+		Input input;
+		while(i.hasNext()) {
+			input = (Input) i.next();
+			if(!temp.contains(input)) {
+				temp.add(input);
+			}
+		}
+	}
+
+	public Output getOutput(Process newProcess, URI uri) {
+		OutputList ol = getOutputs(newProcess);
+		Iterator i = ol.iterator();
+		Output output = null;
+		while(i.hasNext()) {
+			output = (Output) i.next();
+			if(output.getLabel().equals(uri.toString())) break;
+		}
+		return output;
+	}
+
+	public OutputList getOutputs(Process originalProcess) {
+		ProcessList pl = getProcesses(originalProcess, true);
+		Iterator i = pl.iterator();
+		Process process;
+		OutputListImpl ol = new OutputListImpl();
+		while(i.hasNext()) {
+			process = (Process) i.next();
+			getAllOutputs(process, ol);
+		}
+		return (OutputList) ol;
+		
+	}
+	
+	private void getAllOutputs(Process process, OutputList temp) {
+		OutputList ol = process.getOutputs();
+		Iterator i = ol.iterator();
+		Output output;
+		while(i.hasNext()) {
+			output = (Output) i.next();
+			if(!temp.contains(output)) {
+				temp.add(output);
+			}
+		}
+	}
+	
+	private Process getProcess(Process originalProcess, URI uri) {
+		ProcessList pl = getProcesses(originalProcess, true);
+		Iterator i = pl.iterator();
+		Process process = null;
+		while(i.hasNext()) {
+			process = (Process) i.next();
+			if(process.getLabel().equals(uri.toString())) break;
+		}
+		return process;
+	}
+	
+	public ProcessList getProcesses(Process process, boolean first) {
+		ProcessListImpl processes = new ProcessListImpl();
+		processes.add(process);
+		ProcessList pl = getAllProcesses(processes);
+		//logger.info("done");
+		if (!first) pl.remove(0);
+		return pl;
+	}
+
+	private ProcessList getAllProcesses(ProcessList pl) {
+		ProcessListImpl temp = new ProcessListImpl();
+		Iterator i = pl.iterator();
+		Process process;
+		while(i.hasNext()) {
+			process = (Process) i.next();
+			//System.out.println(process.getURI());
+			
+			temp.add(process);
+			if (process.canCastTo(CompositeProcess.class)) {
+				CompositeProcess cp = (CompositeProcess) process.castTo(CompositeProcess.class);
+				//logger.info(cp);
+				ControlConstruct cc = cp.getComposedOf();
+				if(cc != null) {
+					//logger.info(cc);
+					pl = (ProcessListImpl) cc.getAllProcesses();
+					if(pl != null) {
+						//logger.info(pl.size());
+						temp.addAll(getAllProcesses(pl));	
+					}
+				}
+			}
 		}
 		return temp;
 	}
-
-
+	
 	/**
 	 *  Creates a composite process which wrappes all executed processes
 	 * 
-	 * @version 0.5
+	 * @version 0.9
 	 * @author simonl
 	 * 
 	 * @param composite process
@@ -478,227 +715,101 @@ public class ExecutionTrail {
 	 * @return composite process
 	 * @throws Exception in case something goes wrong
 	 */
-	private CompositeProcess createSequenceProcess(CompositeProcess compositeProcess, List executionrecords) throws Exception {
-		//logger.info("sequence entered");
-		Sequence sequence = ont.createSequence(createIdentifier(SEQUENCE));
-		compositeProcess.setComposedOf(sequence);
-//		logger.info("prepared - name" + compositeProcess.toRDF());
+	private Process createSequenceProcess(Process oldProcess) {
 
-		Perform[] performs = new Perform[getAtomicProcessSize()];
+		if(oldProcess.canCastTo(CompositeProcess.class)) {
+			// Composite Process
+			CompositeProcess cp = (CompositeProcess) oldProcess.castTo(CompositeProcess.class);
+			ExecutionRecord executionrecord = getExecutionRecord(cp);
 		
-		Process p;
-		ExecutionRecord executionrecord;
-		ExecutionRecord prevExecutionrecord = null;
-		for (int i = 0; i < executionrecords.size(); i++) {
+			CompositeProcess newCompositeProcess = ont.createCompositeProcess(createIdentifier(PROCESS));
+			newCompositeProcess.setLabel(cp.getURI().toString());
+		
+			Perform perform = ont.createPerform(createIdentifier(PERFORM));
+			perform.setProcess(newCompositeProcess);
 			
-		//	logger.info("i::" + i + "size::" +  executionrecords.size());
-			//p = (Process) processes.get(i);
-			executionrecord = (ExecutionRecord) executionrecords.get(i);
-		//	logger.info("execution record");
-			
-			if(!executionrecord.isUsed()) {
+			Sequence sequence = ont.createSequence(createIdentifier(SEQUENCE));
+			newCompositeProcess.setComposedOf(sequence);
+		
+			InputList il = cp.getInputs(); 
+			ValueMap vmInput = (ValueMap) executionrecord.getInput();
+	  
+			Iterator iterator = il.iterator(); 
+			Input input;
+			while(iterator.hasNext()) {
+				input = (Input) iterator.next();
+				Input newInput = createInput(input, vmInput);
+				newInput.setProcess(newCompositeProcess);
 				
-			executionrecord.setUsed(true);
-			//p = getAtomicProcess(i);
-			
-		//	logger.info("compsite::" + executionrecord.isComposite());
-			
-			if(executionrecord.isComposite()) {
-				CompositeProcess cp = (CompositeProcess) executionrecord.getProcess();
-				ControlConstruct cc = cp.getComposedOf();
-				
-				//String processName = cp.getLocalName().toString();
-//				logger.info("name::"+processName);
-//				CompositeProcess newCompositeProcess = ont.createCompositeProcess(URIUtils.createURI(baseURI, processName));
-				CompositeProcess newCompositeProcess = ont.createCompositeProcess(createIdentifier(PROCESS));
-				
-				// set the URI of the original composite process to reuse the original ontology
-			//	logger.info("composite process URI" + cp.getURI().toString());
-				newCompositeProcess.setLabel(cp.getURI().toString());
-				
-				// add composite process to composite process
-				Perform perform = ont.createPerform(createIdentifier(PERFORM));
-				perform.setProcess(newCompositeProcess);
-				sequence.addComponent(perform);
-				
-				InputList il = cp.getInputs(); 
-				ValueMap vmInput = (ValueMap) executionrecord.getInput();
-			  
-				Iterator iterator = il.iterator(); 
-				Input input;
-				while(iterator.hasNext()) {
-					input = (Input) iterator.next();
-					Input newInput = createInput(input, vmInput);
-					newInput.setProcess(compositeProcess);
-					//performs[i].addBinding(input, prevPerform, newInput);
-					// TODO not sure we actually need the parent perform
-					// who knows?
-					perform.addBinding(newInput, Perform.TheParentPerform, input);
-				 }
-
-				 OutputList ol = cp.getOutputs();
-				 ValueMap vmOutput = executionrecord.getOutput();
-				 Iterator outputI = ol.iterator();
-				 Output output;
-				 while(outputI.hasNext()){
-					 output = (Output) outputI.next();
-					 OWLValue value = getValue(vmOutput, output);
-					 Output newOutput = createOutput(output, vmOutput);
-					 newOutput.setProcess(compositeProcess);
-					 Result result = ont.createResult(createIdentifier(RESULT));
-					 //
-					 // TODO not sure if we need this really  
-					 // 
-					 result.addBinding(newOutput, Perform.TheParentPerform, output);
-					 compositeProcess.setResult(result);
-				 }
-				 
-			//	logger.info("construct::" + cc.getConstructName());
-			//	logger.info("constructs::" + cc.getConstructs());
-				
-				ProcessList pl = null;
-				//List constructs = cc.getConstructs();
-				pl = getConstructs(cc);
-				
-				// ProcessList pl = cc.getAllProcesses(true);
-//				 logger.info("processlist::"+pl.toString());
-				 List executionrecordsCompositeProcess = getExecutionRecords(pl);
-//				 logger.info("recursive");
-				 if(executionrecordsCompositeProcess.size()>0) {
-					 newCompositeProcess = createSequenceProcess(newCompositeProcess, executionrecordsCompositeProcess);
-				 }
-				
-			} else if (executionrecord.isAtomic()) {
-				
-				p = executionrecord.getProcess();
-				
-				// save original service and description
-				// should always be the same
-				//logger.info(p.getService());
-				//saveService = p.getService().getURI().toString();
-				//saveProfile = p.getProfile().getURI().toString();
-				
-				Process process = ont.createAtomicProcess(createIdentifier(PROCESS));
-				//Process process = ont.createAtomicProcess(p.getURI());
-				process.setLabel(p.getURI().toString());
-			//	logger.info(p.getURI().toString());
-						
-				performs[i] = ont.createPerform(createIdentifier(PERFORM));
-			//
-			// save Perform
-			//	Perform performProcess = p.getPerform();
-//logger.info(performProcess);
-
-			// *BUG*
-			// overrides getPerform().getBindings()
-			// TODO fix setProcess to not override Perform
-			//performs[i].setProcess(p);
-			
-				//TODO new process test
-				performs[i].setProcess(process);
-
-			// reset Perform
-			/*try {
-				p.setPerform(performProcess);
-			} catch (Exception e) {
-				// no perform
+				//performs[i].addBinding(input, prevPerform, newInput);
+				// TODO not sure we actually need the parent perform
+				// who knows?
+				//addInputBindings(cp, input, newCompositeprocess, newInput);
+				//perform.addBinding(newInput, Perform.TheParentPerform, input);
 			}
-*/
-				sequence.addComponent(performs[i]);
-
-				InputList il = p.getInputs(); 
-//			 ValueMap vmInput = (ValueMap) inputs.get(i);
-				ValueMap vmInput = (ValueMap) executionrecord.getInput();
-		  
-				Iterator iterator = il.iterator(); 
-				Input input;
-			  //Output output;
-				while(iterator.hasNext()) {
-		//			logger.info("input");
-					input = (Input) iterator.next();
-		//			logger.info("newinput" + input);
-					Input newInput = createInput(input, vmInput);
-		//			logger.info("newinput" + newInput);
-					// TODO new process test
-					newInput.setProcess(process);
-					
-				//	logger.info("param::"+performProcess.getBindingFor(input).getParameter());
-			//		logger.info("param type::"+performProcess.getBindingFor(input).getParameter().getType());
-					//logger.info("perform::"+performProcess.toRDF());
-					//logger.info(performProcess.getBindingFor(input).toRDF());
-//					performs[i].addBinding(input, prevPerform, performProcess.getBindingFor(input).getParameter());
-
-					// TODO test binding
-					performs[i].addBinding(newInput, performs[i], input);
-					
-						//performs[i].addBinding(input, performs[i], newInput);
-						//	performs[i].addBinding(newInput, performs[i], performProcess.getBindingFor(input).getParameter());
-		//			logger.info("before if");
-
-					if(i == 0) {
-						//newInput = (Input) ont.createInput(URIUtils.createURI(baseURI, inputName));
-						newInput = createInput(input, vmInput);
-						newInput.setProcess(compositeProcess);
-						performs[0].addBinding(newInput, Perform.TheParentPerform,	input);
-					}
-
-					//performs[i].getBindingFor(input).setValue((ParameterValue) value);
-		//			logger.info("prev perf::"+prevPerform);
-			  }
+			
+			OutputList ol = cp.getOutputs();
+			ValueMap vmOutput = executionrecord.getOutput();
+			Iterator outputI = ol.iterator();
+			Output output;
+			while(outputI.hasNext()){
+				output = (Output) outputI.next();
+				OWLValue value = getValue(vmOutput, output);
+				Output newOutput = createOutput(output, vmOutput);
+				newOutput.setProcess(newCompositeProcess);
+				//Result result = ont.createResult(createIdentifier(RESULT));
+				//newCompositeProcess.setResult(result);
+				//
+				// TODO not sure if we need this really  
+				//result.addBinding(newOutput, Perform.TheParentPerform, output);
 				
-//			  logger.info("end inputs");
-			  
-				OutputList ol = p.getOutputs();
+			}
+			
+		    ProcessList pl = getProcesses(cp, false);
+		    //System.out.println("processes::" + pl.size());
+		    Iterator i = pl.iterator();
+		    while(i.hasNext()) {
+		    	Process newProcess = createSequenceProcess((Process) i.next());
+		    	sequence.addComponent(newProcess.getPerform());
+		    }
+		    return newCompositeProcess;
+			
+		} else {
+			// Atomic Process
+			
+			ExecutionRecord executionrecord = getExecutionRecord(oldProcess);
+			
+			Process newProcess = ont.createAtomicProcess(createIdentifier(PROCESS));
+			newProcess.setLabel(oldProcess.getURI().toString());
 
-				ValueMap vmOutput = executionrecord.getOutput();
-			 
-		//		logger.info("output size::"+ol.size());
-
-				Iterator outputI = ol.iterator();
-				Output output;
-				while(outputI.hasNext()){
-					output = (Output) outputI.next();
-					Output newOutput = createOutput(output, vmOutput);
-		//			logger.info("new Output?");
-					//newOutput.setProcess(compositeProcess);
-					// TODO new process test
-					newOutput.setProcess(process);
-					// newOutput.addProperty()
-					// performs[i].addBinding(newOutput, prevPerform, performProcess.getBindingFor(input).getParameter());
-
-					Result result = ont.createResult(createIdentifier(RESULT));
-					result.addBinding(newOutput, performs[i],output);
-					//
-					// TODO where to add result to?
-					//
-					//compositeProcess.setResult(result);
-					//p.setResult(result);
-					process.setResult(result);
-					logger.info("performs.length::" + performs.length);	
-					if(i == (performs.length-1)) {
-						newOutput = createOutput(output, vmOutput);
-						
-						newOutput.setProcess(compositeProcess);
-						result = ont.createResult(createIdentifier(RESULT));
-						result.addBinding(newOutput, Perform.TheParentPerform, output);
-						compositeProcess.setResult(result);
-					}
-				 }
-		//	  logger.info("done output");
-	//		 } // end if
-				//prevProcess = p;
-				prevExecutionrecord = executionrecord;
-		//		logger.info("done atomic process");
-			} // end atomic process
-			} // end isUsed
-		} // end for
-		
-		//logger.info("for done");
-		//logger.info("composite p::"+compositeProcess.debugString());
-		return compositeProcess;
+			Perform newPerform = ont.createPerform(createIdentifier(PERFORM));
+			newPerform.setProcess(newProcess);
+			
+			InputList il = oldProcess.getInputs(); 
+			ValueMap vmInput = (ValueMap) executionrecord.getInput();
+	  
+			Iterator iterator = il.iterator(); 
+			Input input;
+			while(iterator.hasNext()) {
+				input = (Input) iterator.next();
+				Input newInput = createInput(input, vmInput);
+				newInput.setProcess(newProcess);
+			}
+			
+			OutputList ol = oldProcess.getOutputs();
+			ValueMap vmOutput = executionrecord.getOutput();
+			Iterator outputI = ol.iterator();
+			Output output;
+			while(outputI.hasNext()){
+				output = (Output) outputI.next();
+				Output newOutput = createOutput(output, vmOutput);
+				newOutput.setProcess(newProcess);
+			}
+			
+			return newProcess;
+		}
 	}
 
-	
 	/**
 	 * 
 	 * Create a label for the composite service based on the labels of services.
@@ -750,7 +861,7 @@ public class ExecutionTrail {
 	 * @return
 	 */
 	private Profile createProfile(Profile profile, Process process) {
-		logger.info("inputs size profile::"+process.getInputs().size());
+		//logger.info("inputs size profile::"+process.getInputs().size());
 		for (int i = 0; i < process.getInputs().size(); i++) {
 			Input input = process.getInputs().inputAt(i);
 

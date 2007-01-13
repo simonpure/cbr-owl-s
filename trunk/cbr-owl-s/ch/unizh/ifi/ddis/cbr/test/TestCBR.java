@@ -18,12 +18,17 @@ import org.mindswap.owls.process.AtomicProcess;
 import org.mindswap.owls.process.CompositeProcess;
 import org.mindswap.owls.process.ControlConstruct;
 import org.mindswap.owls.process.Input;
+import org.mindswap.owls.process.Output;
 import org.mindswap.owls.process.Perform;
 import org.mindswap.owls.process.Process;
+import org.mindswap.owls.process.Sequence;
+import org.mindswap.owls.profile.Profile;
 import org.mindswap.owls.service.Service;
 
+import ch.unizh.ifi.ddis.cbr.CombinedCase;
 import ch.unizh.ifi.ddis.cbr.OWLSCaseBasedReasoner;
 import ch.unizh.ifi.ddis.cbr.OWLSSimilarityMeasure;
+import ch.unizh.ifi.ddis.cbr.OWLWrapper;
 
 public class TestCBR {
 	
@@ -121,37 +126,93 @@ public class TestCBR {
 		String baseURI = "http://www.example.org/Test.owl";
 		OWLOntology newCase = kb.createOntology(URI.create(baseURI));
 		
-		Service service = newCase.createService(URI.create(baseURI + "#TrailService"));
-		AtomicProcess p = newCase.createAtomicProcess(URI.create(baseURI + "#MyProcess"));
-		Perform perform = newCase.createPerform();
+		Service service = newCase.createService(URI.create(baseURI + "#TestService"));
+		Profile profile = newCase.createProfile(URI.create(baseURI + "#TestProfile"));
+		//AtomicProcess p = newCase.createAtomicProcess(URI.create(baseURI + "#MyProcess"));
+		
+		service.setProfile(profile);
+		
+		CompositeProcess cp = newCase.createCompositeProcess(URI.create(baseURI + "#TestProcess"));
+		
+		//Perform perform = newCase.createPerform();
+		cp.setLabel("Process");
+		
+		service.setProcess(cp);
 
-		service.setProcess(p);
+		Sequence sequence = newCase.createSequence(URI.create(baseURI + "#TestSequence"));
+		cp.setComposedOf(sequence);
+
+		
+		//AtomicProcess p = newCase.createAtomicProcess(URI.create("http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#nil"));
+		AtomicProcess p = newCase.createAtomicProcess(URI.create(baseURI + "#TestProcess1"));
+		
+		Perform perform = newCase.createPerform(URI.create(baseURI + "#TestPerform"));
+		perform.setProcess(p);
+
+		sequence.addComponent(perform);
 		
 		Input input1 = newCase.createInput(URI.create(baseURI + "#myInput1"));
 		input1.setParamType(new OWLDataTypeImpl(XSD.nonNegativeInteger));
 		input1.setProcess(p);
 		input1.setLabel("Input1");
 		//input1.setConstantValue(newCase.createDataValue("3"));
-		
-		
-		
-	    perform.addBinding(input1, Perform.TheParentPerform, input1);
-		perform.setProcess(p);
 
+		Input input2 = newCase.createInput(URI.create(baseURI + "#myInput2"));
+		input2.setParamType(new OWLDataTypeImpl(XSD.nonNegativeInteger));
+		input2.setProcess(p);
+		input2.setLabel("Input2");
+		//input1.setConstantValue(newCase.createDataValue("3"));
+
+		Output output = newCase.createOutput(URI.create("http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#nil"));
+		output.setParamType(new OWLDataTypeImpl(URI.create("http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#nil")));
+		output.setProcess(p);
+		output.setLabel("Output");
+		
+		cp.addInput(input1);
+		cp.addInput(input2);
+		cp.addOutput(output);
+		
+		profile.addInput(input1);
+		profile.addInput(input2);
+		profile.addOutput(output);
+		
+	    //perform.addBinding(input1, Perform.TheParentPerform, output);
+		//perform.setProcess(p);
 
 		newCase.write(System.out);
 		
 
 		OWLSCaseBasedReasoner cbr = new OWLSCaseBasedReasoner();
-		ArrayList bestCases = cbr.getSimilar(newCase);
+		
+/*		
+		ArrayList cases = cbr.getCases();
+		
+		Iterator j = cases.iterator();
+		OWLWrapper oldCase;
+		while(j.hasNext()) {
+			oldCase = (OWLWrapper) j.next();
+			System.out.println("process list:::" + oldCase.getURI());
+			oldCase.printProcessList();
+		}
+		
+		j = cases.iterator();
+		while(j.hasNext()) {
+			oldCase = (OWLWrapper) j.next();
+			System.out.println("process list::");
+			oldCase.printProcessList();
+		}
+	*/	
+		//System.exit(0);
+		
+		ArrayList bestCases = cbr.retrieve(newCase);
 
 		System.out.println("# best cases::" + bestCases.size());
 		Iterator i = bestCases.iterator();
-		OWLSSimilarityMeasure similarity;
+		OWLWrapper oldCase;
 		while(i.hasNext()) {
-			similarity = (OWLSSimilarityMeasure) i.next();
-			System.out.println("match::" + similarity.getSimilarity());
-			System.out.println("case::" + similarity.getOldCase());
+			oldCase = (OWLWrapper) i.next();
+			System.out.println("old case::" + oldCase);
+			//new CombinedCase(similarity).getCombinedCase();
 			
 		}
 		

@@ -36,6 +36,7 @@ public class OWLSGraph extends AbstractGraphAccessor {
     private Hashtable counter = new Hashtable();
 	
 	public OWLSGraph(Service service) {
+		   //System.out.println(service);
 		   serviceNode = addNewNode("Service");
 		   // get the process associated with this service
 		   Process process = service.getProcess();

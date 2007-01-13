@@ -32,6 +32,8 @@ import org.mindswap.owls.process.Process;
 import org.mindswap.owls.process.ProcessList;
 import org.mindswap.owls.service.Service;
 
+import ch.unizh.ifi.ddis.cbr.similarity.Similarity;
+
 import simpack.accessor.string.StringAccessor;
 import simpack.api.ISequenceAccessor;
 import simpack.api.impl.SimilarityMeasure;
@@ -56,21 +58,58 @@ public class OWLSCaseBasedReasoner {
 	private OWLKnowledgeBase kb;
 	private ArrayList cases = new ArrayList();
 
-	// cache directory for OWL Knowledgebase
-	private String cacheDir = "C:\\Hacks\\workspace\\Ontologies\\ont_cache";
 	
 	// Trail List URL
 	private String trailList = "http://www.ifi.unizh.ch/ddis/ont/owl-s/trails/TrailList";
 	
 	// default weighting for matching
 	//
-	private double semanticInputsWeight = 0.6, semanticOutputsWeight = 0.3, semanticProcessWeight = 0.1;
-	private double syntacticInputsWeigth = 0.6, syntacticOutputsWeight = 0.3, syntacticProcessWeight = 0.1;
-	private double semanticWeight = 0.5, syntacticWeight = 0.25, graphWeight = 0.25;
+	private double inputsWeight = 0.6;
+	private double outputsWeight = 0.3;
+	private double processesWeight = 0.2;
+
 	
 	// threshold to add matches
-	private double semanticThreshold = 0.6, syntacticThreshold = 0.7, graphThreshold = 0.8;
+	private double IOPsThreshold = 0.6, graphThreshold = 0.3;
 
+	
+	//Similarity strategies
+	private Similarity[] similarityStrategies;
+	
+	/*
+	 * class to get different similarities break down
+	 */
+	public static class SimilarityMatch {
+        private double inputs;
+        private double outputs;
+        private double processes;
+        private double graph;
+        
+        public SimilarityMatch(double inputs, double outputs, double processes, double graph) {
+            this.inputs = inputs;
+            this.outputs = outputs;
+            this.processes = processes;
+            this.graph = graph;
+        }
+        
+        public double inputs() {
+        	return inputs;
+        }
+        
+        public double outputs() {
+        	return outputs;
+        }
+        
+        public double processes() {
+        	return processes;
+        }
+        
+        public double graph() {
+        	return graph;
+        }
+    }
+   
+	
 	/**
 	 * Constructor for the CBR system  
 	 * @throws URISyntaxException 
@@ -83,13 +122,14 @@ public class OWLSCaseBasedReasoner {
 	// create OWL Knowledge Base, set reasoner and load trails
 	//
 	public void init() throws FileNotFoundException, URISyntaxException {
-		kb = OWLFactory.createKB();
-		kb.setReasoner("Pellet");
 		
-	    if(!cacheDir.equals("")) {
-	    	kb.getReader().getCache().setLocalCacheDirectory(cacheDir);
-	    }
-
+		kb = CBRFactory.getKB();
+	    
+	    loadCaseBase();
+	    loadSimilarityStrategies();
+	}
+	
+	private void loadCaseBase() throws FileNotFoundException, URISyntaxException {
 		List services = kb.readAllServices(trailList);
 		//logger.info("Trails::"+services);
 		Service service;
@@ -106,10 +146,10 @@ public class OWLSCaseBasedReasoner {
 	    logger.info("Initialized Case Base with " + cases.size());
 	}
 	
-	public void setCacheDir(String cacheDir) {
-		this.cacheDir = cacheDir;
+	private void loadSimilarityStrategies() {
+		similarityStrategies = CBRFactory.getSimilarityStrategies();
 	}
-
+	
 	public OWLSCaseBasedReasoner(OWLKnowledgeBase kb) {
 		this.kb = kb;
 	}
@@ -122,28 +162,167 @@ public class OWLSCaseBasedReasoner {
 		return kb;
 	}
 	
-	// allow customization of weights
-	public void setWeights(Double semanticWeight, Double syntacticWeight, Double graphWeight) {
-		// only set values that are != null
-		if(semanticWeight != null) this.semanticWeight = semanticWeight.doubleValue();
-		if(syntacticWeight != null) this.syntacticWeight = syntacticWeight.doubleValue();
-		if(graphWeight != null) this.graphWeight = graphWeight.doubleValue();
+
+	
+	public ArrayList retrieve(OWLOntology ont) throws FileNotFoundException, URISyntaxException {
+		ArrayList retrievedCases = new ArrayList();
+
+		// load ontology to this kb
+		kb.load(ont);
+		OWLWrapper newCase = new OWLWrapper(ont);
+
+		// compare new case against old cases and add matches
+		OWLWrapper oldCase;
+		Iterator i = cases.iterator();
+		SimilarityMatch[] matches;
+		while(i.hasNext()) {
+			oldCase = (OWLWrapper) i.next();
+			logger.info("compare\n new::" + newCase + "\nto old::\n" + oldCase);
+			
+			matches = getSimilarity(oldCase, newCase);
+			
+			for(int j = 0; j < matches.length; j++) {
+				double similarityInputs = matches[j].inputs();
+				double similarityOutputs = matches[j].outputs();
+				double similarityProcesses = matches[j].processes();
+				double similarityGraph = matches[j].graph();
+				
+				double similarityIOPs = (similarityInputs * inputsWeight) + (similarityOutputs * outputsWeight)
+					+ (similarityProcesses * processesWeight);
+				
+				logger.info("IOPs::" + similarityIOPs + " Inputs::" + similarityInputs + " Outputs::" +  similarityOutputs + " p::" 
+						+  similarityProcesses + " g::" + similarityGraph);
+				
+				// check if one of the strategies was successful to consider old case
+				if(similarityGraph >= graphThreshold && similarityIOPs >= IOPsThreshold) {
+					retrievedCases.add(oldCase);
+					break;
+				}
+			}
+		}
+		return retrievedCases;
 	}
 	
-	// allow customization of weights	
-	public void setSemanticWeights(Double semanticInputsWeight, Double semanticOutputsWeight, Double semanticProcessWeight) {
-		if(semanticInputsWeight != null) this.semanticInputsWeight = semanticInputsWeight.doubleValue();
-		if(semanticOutputsWeight != null) this.semanticOutputsWeight = semanticOutputsWeight.doubleValue();
-		if(semanticProcessWeight != null) this.semanticProcessWeight = semanticProcessWeight.doubleValue();
+
+	private SimilarityMatch[] getSimilarity(OWLWrapper oldCase, OWLWrapper newCase) {
+		SimilarityMatch[] matches = new SimilarityMatch[similarityStrategies.length];
+		
+		for(int i = 0; i<similarityStrategies.length; i++) {
+			Similarity similarityStrategy = similarityStrategies[i];
+			double similarityInputs = getSimilarityInputs(similarityStrategy , oldCase, newCase);
+			double similarityOutputs = getSimilarityOutputs(similarityStrategy , oldCase, newCase);
+			double similarityProcesses = getSimilarityProcesses(similarityStrategy , oldCase, newCase);
+			double similarityGraph = getSimilarityGraph(similarityStrategy, oldCase, newCase);
+			SimilarityMatch similarity = new SimilarityMatch(similarityInputs, similarityOutputs, similarityProcesses, similarityGraph);
+			matches[i] = similarity;
+		}
+		
+		return matches;
+	}
+	
+	private double getSimilarityGraph(Similarity strategy, OWLWrapper oldCase, OWLWrapper newCase) {
+		double match = 0;
+		match = strategy.compareGraph(oldCase.getGraph(), newCase.getGraph());
+		return match;
+	}
+	
+	private double getSimilarityInputs(Similarity strategy, OWLWrapper oldCase, OWLWrapper newCase) {
+		double match = -1;
+		InputList oldInputs = oldCase.getInputs();
+		InputList newInputs = newCase.getInputs();
+		if(oldInputs.size() == 0) {
+			// no inputs
+			match = 0;
+		}
+		if (newInputs.size() == 0) {
+			// no inputs in new case, maximum match
+			match = oldCase.getNumberOfInputs();
+		} 
+		if (match == -1) {
+			match = 0;
+			Iterator i = oldInputs.iterator();
+			Iterator j = newInputs.iterator();
+			Input oldInput;
+			Input newInput;
+			while(i.hasNext()) {
+				oldInput = (Input) i.next();
+				
+			    while(j.hasNext()) {
+			    	newInput = (Input) j.next();
+			    	match += strategy.compareInput(oldInput, newInput);
+			    }
+			}
+		}
+		// normalize
+		return (double) (match / (double) oldCase.getNumberOfInputs());
+	}
+	
+	private double getSimilarityOutputs(Similarity strategy, OWLWrapper oldCase, OWLWrapper newCase) {
+		double match = -1;
+		OutputList oldOutputs = oldCase.getOutputs();
+		OutputList newOutputs = newCase.getOutputs();
+		if(oldOutputs.size() == 0) {
+			// no inputs
+			match = 0;
+		}
+		if (newOutputs.size() == 0) {
+			// no inputs in new case, maximum match
+			match = oldCase.getNumberOfOutputs();
+		} 
+		if (match == -1) {
+			match = 0;
+			Iterator i = oldOutputs.iterator();
+			Iterator j = newOutputs.iterator();
+			Output oldOutput;
+			Output newOutput;
+			while(i.hasNext()) {
+				oldOutput = (Output) i.next();
+				
+			    while(j.hasNext()) {
+			    	newOutput = (Output) j.next();
+			    	match += strategy.compareOutput(oldOutput, newOutput);
+			    }
+			}
+		}
+		// normalize
+		return (double) (match / (double) oldCase.getNumberOfOutputs());
 	}
 
-	// allow customization of weights
-	public void setSyntacticWeights(Double syntacticInputsWeigth, Double syntacticOutputsWeight, Double syntacticProcessWeight) {
-		if(syntacticInputsWeigth != null) this.syntacticInputsWeigth = syntacticInputsWeigth.doubleValue();
-		if(syntacticOutputsWeight != null) this.syntacticOutputsWeight = syntacticOutputsWeight.doubleValue();
-		if(syntacticProcessWeight != null) this.syntacticProcessWeight = syntacticProcessWeight.doubleValue();
+	private double getSimilarityProcesses(Similarity strategy, OWLWrapper oldCase, OWLWrapper newCase) {
+		double match = -1;
+		ProcessList oldProcesses = oldCase.getProcesses();
+		ProcessList newProcesses = newCase.getProcesses();
+		
+		if(oldProcesses.size() == 0) {
+			// no Processes in old case
+			match = 0;
+		} 
+		if (newProcesses.size() == 0) {
+			// no Processes in new case equals max match
+			match = oldCase.getNumberOfProcesses();
+		} 
+		if (match == -1) {
+			match = 0;
+			Iterator i = oldProcesses.iterator();
+			//ProcessListImpl processes = new ProcessListImpl();
+			Process oldProcess;
+			Process newProcess;
+			while(i.hasNext()) {
+				oldProcess = (Process) i.next();
+
+				Iterator j = newProcesses.iterator();
+				while(j.hasNext()) {
+					newProcess = (Process) j.next();
+					//logger.info("old:: " + oldProcess + " new:: " + newProcess);
+					match += strategy.compareProcess(oldProcess, newProcess);
+				}
+			}
+		}
+		// normalize
+		return (double) (match / (double) oldCase.getNumberOfProcesses());
 	}
 	
+	/*
 	public ArrayList getSimilar(OWLOntology ont) throws FileNotFoundException, URISyntaxException {
 		ArrayList bestCases = new ArrayList();
 		
@@ -171,6 +350,7 @@ public class OWLSCaseBasedReasoner {
 		
 		return bestCases;
 	}
+	*/
 	
 	private OWLSSimilarityMeasure compare(OWLWrapper newCase, OWLWrapper oldCase) {
 		logger.info("compare\n new::" + newCase + "\nto old::\n" + oldCase);
@@ -193,6 +373,10 @@ public class OWLSCaseBasedReasoner {
 			if(temp.getURI().equals(rc.getURI())) return true;
 		}
 		return false;
+	}
+	
+	public ArrayList getCases() {
+		return cases;
 	}
 	
     // insertion sort
