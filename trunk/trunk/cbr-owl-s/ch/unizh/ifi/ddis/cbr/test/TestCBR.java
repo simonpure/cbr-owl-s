@@ -204,6 +204,7 @@ public class TestCBR {
 	*/	
 		//System.exit(0);
 		
+		/*
 		ArrayList bestCases = cbr.retrieve(newCase);
 
 		System.out.println("# best cases::" + bestCases.size());
@@ -215,6 +216,11 @@ public class TestCBR {
 			//new CombinedCase(similarity).getCombinedCase();
 			
 		}
+
+*/
+		
+		cbr.reuse(newCase);
+		
 		
 /*
  

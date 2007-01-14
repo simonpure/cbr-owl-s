@@ -5,6 +5,7 @@ import java.util.StringTokenizer;
 
 import org.mindswap.owls.process.Input;
 import org.mindswap.owls.process.Output;
+import org.mindswap.owls.process.Parameter;
 import org.mindswap.owls.process.Process;
 
 import ch.unizh.ifi.ddis.cbr.OWLWrapper;
@@ -25,6 +26,20 @@ public class SimilaritySyntactic extends SimilarityDefault {
 			"simpack.measure.external.owlsmx.JensenShannonMeasure"};
 	
 
+	public double compareParameter(Parameter oldParameter, Parameter newParameter) {
+		String oldParameterString = prepareString(oldParameter.getLabel());
+		String newParameterString = prepareString(newParameter.getURI().toString());
+		
+    	double match = 0;
+    	for(int k = 0; k<methods.length; k++) {
+			//logger.info("method::" + methods[k] + " :: " + compareStrings(methods[k], oldParameter, newParameter));
+			match += compareStrings(methods[k], oldParameterString, newParameterString);
+    	}
+    	
+		// normalize match and return
+		return (match / methods.length);
+	}
+	
 	public double compareInput(Input oldInput, Input newInput) {
 		String oldInputString = prepareString(oldInput.getLabel());
 		String newInputString = prepareString(newInput.getURI().toString());

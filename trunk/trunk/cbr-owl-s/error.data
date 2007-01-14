@@ -1,15 +1,11 @@
-Errorlog Sat Jan 13 14:34:14 GMT 2007
-getIDF: stemmed term not in index ch
+Errorlog Sun Jan 14 10:13:25 GMT 2007
+getIDF: stemmed term not in index servic
         Classes: 0
-        term not in index ch
+        term not in index servic
         idf: 1.0
 getIDF: stemmed term not in index ont
         Classes: 0
         term not in index ont
-        idf: 1.0
-getIDF: stemmed term not in index servic
-        Classes: 0
-        term not in index servic
         idf: 1.0
 getIDF: stemmed term not in index input
         Classes: 0
@@ -18,270 +14,6 @@ getIDF: stemmed term not in index input
 getIDF: stemmed term not in index ifi
         Classes: 0
         term not in index ifi
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index unizh
-        Classes: 0
-        term not in index unizh
-        idf: 1.0
-getIDF: stemmed term not in index ddi
-        Classes: 0
-        term not in index ddi
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index ch
-        Classes: 0
-        term not in index ch
-        idf: 1.0
-getIDF: stemmed term not in index ont
-        Classes: 0
-        term not in index ont
-        idf: 1.0
-getIDF: stemmed term not in index servic
-        Classes: 0
-        term not in index servic
-        idf: 1.0
-getIDF: stemmed term not in index input
-        Classes: 0
-        term not in index input
-        idf: 1.0
-getIDF: stemmed term not in index ifi
-        Classes: 0
-        term not in index ifi
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index unizh
-        Classes: 0
-        term not in index unizh
-        idf: 1.0
-getIDF: stemmed term not in index ddi
-        Classes: 0
-        term not in index ddi
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index ch
-        Classes: 0
-        term not in index ch
-        idf: 1.0
-getIDF: stemmed term not in index ont
-        Classes: 0
-        term not in index ont
-        idf: 1.0
-getIDF: stemmed term not in index servic
-        Classes: 0
-        term not in index servic
-        idf: 1.0
-getIDF: stemmed term not in index input
-        Classes: 0
-        term not in index input
-        idf: 1.0
-getIDF: stemmed term not in index ifi
-        Classes: 0
-        term not in index ifi
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index unizh
-        Classes: 0
-        term not in index unizh
-        idf: 1.0
-getIDF: stemmed term not in index ddi
-        Classes: 0
-        term not in index ddi
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index ch
-        Classes: 0
-        term not in index ch
-        idf: 1.0
-getIDF: stemmed term not in index ont
-        Classes: 0
-        term not in index ont
-        idf: 1.0
-getIDF: stemmed term not in index servic
-        Classes: 0
-        term not in index servic
-        idf: 1.0
-getIDF: stemmed term not in index input
-        Classes: 0
-        term not in index input
-        idf: 1.0
-getIDF: stemmed term not in index ifi
-        Classes: 0
-        term not in index ifi
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index unizh
-        Classes: 0
-        term not in index unizh
-        idf: 1.0
-getIDF: stemmed term not in index ddi
-        Classes: 0
-        term not in index ddi
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index ch
-        Classes: 0
-        term not in index ch
-        idf: 1.0
-getIDF: stemmed term not in index ont
-        Classes: 0
-        term not in index ont
-        idf: 1.0
-getIDF: stemmed term not in index servic
-        Classes: 0
-        term not in index servic
-        idf: 1.0
-getIDF: stemmed term not in index input
-        Classes: 0
-        term not in index input
-        idf: 1.0
-getIDF: stemmed term not in index ifi
-        Classes: 0
-        term not in index ifi
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index unizh
-        Classes: 0
-        term not in index unizh
-        idf: 1.0
-getIDF: stemmed term not in index ddi
-        Classes: 0
-        term not in index ddi
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index ch
-        Classes: 0
-        term not in index ch
-        idf: 1.0
-getIDF: stemmed term not in index ont
-        Classes: 0
-        term not in index ont
-        idf: 1.0
-getIDF: stemmed term not in index servic
-        Classes: 0
-        term not in index servic
-        idf: 1.0
-getIDF: stemmed term not in index input
-        Classes: 0
-        term not in index input
-        idf: 1.0
-getIDF: stemmed term not in index ifi
-        Classes: 0
-        term not in index ifi
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index unizh
-        Classes: 0
-        term not in index unizh
-        idf: 1.0
-getIDF: stemmed term not in index ddi
-        Classes: 0
-        term not in index ddi
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index list
-        Classes: 0
-        term not in index list
-        idf: 1.0
-getIDF: stemmed term not in index servic
-        Classes: 0
-        term not in index servic
-        idf: 1.0
-getIDF: stemmed term not in index ont
-        Classes: 0
-        term not in index ont
-        idf: 1.0
-getIDF: stemmed term not in index ifi
-        Classes: 0
-        term not in index ifi
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
         idf: 1.0
 getIDF: stemmed term not in index output
         Classes: 0
@@ -295,29 +27,21 @@ getIDF: stemmed term not in index ddi
         Classes: 0
         term not in index ddi
         idf: 1.0
+getIDF: stemmed term not in index merg
+        Classes: 0
+        term not in index merg
+        idf: 1.0
+getIDF: stemmed term not in index merger
+        Classes: 0
+        term not in index merger
+        idf: 1.0
 getIDF: stemmed term not in index owl
         Classes: 0
         term not in index owl
         idf: 1.0
-getIDF: stemmed term not in index nil
-        Classes: 0
-        term not in index nil
-        idf: 1.0
-getIDF: stemmed term not in index generic
-        Classes: 0
-        term not in index generic
-        idf: 1.0
-getIDF: stemmed term not in index object
-        Classes: 0
-        term not in index object
-        idf: 1.0
 getIDF: stemmed term not in index ch
         Classes: 0
         term not in index ch
-        idf: 1.0
-getIDF: stemmed term not in index daml
-        Classes: 0
-        term not in index daml
         idf: 1.0
 getIDF: stemmed term not in index test
         Classes: 0
@@ -327,10 +51,6 @@ getIDF: stemmed term not in index s
         Classes: 0
         term not in index s
         idf: 1.0
-getIDF: stemmed term not in index list
-        Classes: 0
-        term not in index list
-        idf: 1.0
 getIDF: stemmed term not in index servic
         Classes: 0
         term not in index servic
@@ -339,13 +59,13 @@ getIDF: stemmed term not in index ont
         Classes: 0
         term not in index ont
         idf: 1.0
+getIDF: stemmed term not in index input
+        Classes: 0
+        term not in index input
+        idf: 1.0
 getIDF: stemmed term not in index ifi
         Classes: 0
         term not in index ifi
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
         idf: 1.0
 getIDF: stemmed term not in index output
         Classes: 0
@@ -359,29 +79,21 @@ getIDF: stemmed term not in index ddi
         Classes: 0
         term not in index ddi
         idf: 1.0
+getIDF: stemmed term not in index merg
+        Classes: 0
+        term not in index merg
+        idf: 1.0
+getIDF: stemmed term not in index merger
+        Classes: 0
+        term not in index merger
+        idf: 1.0
 getIDF: stemmed term not in index owl
         Classes: 0
         term not in index owl
         idf: 1.0
-getIDF: stemmed term not in index nil
-        Classes: 0
-        term not in index nil
-        idf: 1.0
-getIDF: stemmed term not in index generic
-        Classes: 0
-        term not in index generic
-        idf: 1.0
-getIDF: stemmed term not in index object
-        Classes: 0
-        term not in index object
-        idf: 1.0
 getIDF: stemmed term not in index ch
         Classes: 0
         term not in index ch
-        idf: 1.0
-getIDF: stemmed term not in index daml
-        Classes: 0
-        term not in index daml
         idf: 1.0
 getIDF: stemmed term not in index test
         Classes: 0
@@ -391,10 +103,6 @@ getIDF: stemmed term not in index s
         Classes: 0
         term not in index s
         idf: 1.0
-getIDF: stemmed term not in index list
-        Classes: 0
-        term not in index list
-        idf: 1.0
 getIDF: stemmed term not in index servic
         Classes: 0
         term not in index servic
@@ -403,13 +111,13 @@ getIDF: stemmed term not in index ont
         Classes: 0
         term not in index ont
         idf: 1.0
+getIDF: stemmed term not in index input
+        Classes: 0
+        term not in index input
+        idf: 1.0
 getIDF: stemmed term not in index ifi
         Classes: 0
         term not in index ifi
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
         idf: 1.0
 getIDF: stemmed term not in index output
         Classes: 0
@@ -423,77 +131,13 @@ getIDF: stemmed term not in index ddi
         Classes: 0
         term not in index ddi
         idf: 1.0
-getIDF: stemmed term not in index owl
+getIDF: stemmed term not in index merg
         Classes: 0
-        term not in index owl
+        term not in index merg
         idf: 1.0
-getIDF: stemmed term not in index nil
+getIDF: stemmed term not in index merger
         Classes: 0
-        term not in index nil
-        idf: 1.0
-getIDF: stemmed term not in index generic
-        Classes: 0
-        term not in index generic
-        idf: 1.0
-getIDF: stemmed term not in index object
-        Classes: 0
-        term not in index object
-        idf: 1.0
-getIDF: stemmed term not in index ch
-        Classes: 0
-        term not in index ch
-        idf: 1.0
-getIDF: stemmed term not in index daml
-        Classes: 0
-        term not in index daml
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index ch
-        Classes: 0
-        term not in index ch
-        idf: 1.0
-getIDF: stemmed term not in index ont
-        Classes: 0
-        term not in index ont
-        idf: 1.0
-getIDF: stemmed term not in index servic
-        Classes: 0
-        term not in index servic
-        idf: 1.0
-getIDF: stemmed term not in index ifi
-        Classes: 0
-        term not in index ifi
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index unizh
-        Classes: 0
-        term not in index unizh
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index ddi
-        Classes: 0
-        term not in index ddi
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
+        term not in index merger
         idf: 1.0
 getIDF: stemmed term not in index owl
         Classes: 0
@@ -503,242 +147,6 @@ getIDF: stemmed term not in index ch
         Classes: 0
         term not in index ch
         idf: 1.0
-getIDF: stemmed term not in index ont
-        Classes: 0
-        term not in index ont
-        idf: 1.0
-getIDF: stemmed term not in index servic
-        Classes: 0
-        term not in index servic
-        idf: 1.0
-getIDF: stemmed term not in index ifi
-        Classes: 0
-        term not in index ifi
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index unizh
-        Classes: 0
-        term not in index unizh
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index ddi
-        Classes: 0
-        term not in index ddi
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index ch
-        Classes: 0
-        term not in index ch
-        idf: 1.0
-getIDF: stemmed term not in index ont
-        Classes: 0
-        term not in index ont
-        idf: 1.0
-getIDF: stemmed term not in index servic
-        Classes: 0
-        term not in index servic
-        idf: 1.0
-getIDF: stemmed term not in index ifi
-        Classes: 0
-        term not in index ifi
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index unizh
-        Classes: 0
-        term not in index unizh
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index ddi
-        Classes: 0
-        term not in index ddi
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index ch
-        Classes: 0
-        term not in index ch
-        idf: 1.0
-getIDF: stemmed term not in index ont
-        Classes: 0
-        term not in index ont
-        idf: 1.0
-getIDF: stemmed term not in index servic
-        Classes: 0
-        term not in index servic
-        idf: 1.0
-getIDF: stemmed term not in index ifi
-        Classes: 0
-        term not in index ifi
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index unizh
-        Classes: 0
-        term not in index unizh
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index ddi
-        Classes: 0
-        term not in index ddi
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index ch
-        Classes: 0
-        term not in index ch
-        idf: 1.0
-getIDF: stemmed term not in index ont
-        Classes: 0
-        term not in index ont
-        idf: 1.0
-getIDF: stemmed term not in index servic
-        Classes: 0
-        term not in index servic
-        idf: 1.0
-getIDF: stemmed term not in index ifi
-        Classes: 0
-        term not in index ifi
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index unizh
-        Classes: 0
-        term not in index unizh
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index ddi
-        Classes: 0
-        term not in index ddi
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index ch
-        Classes: 0
-        term not in index ch
-        idf: 1.0
-getIDF: stemmed term not in index ont
-        Classes: 0
-        term not in index ont
-        idf: 1.0
-getIDF: stemmed term not in index servic
-        Classes: 0
-        term not in index servic
-        idf: 1.0
-getIDF: stemmed term not in index ifi
-        Classes: 0
-        term not in index ifi
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index unizh
-        Classes: 0
-        term not in index unizh
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index ddi
-        Classes: 0
-        term not in index ddi
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index input
-        Classes: 0
-        term not in index input
-        idf: 1.0
-getIDF: stemmed term not in index string
-        Classes: 0
-        term not in index string
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index dictionary
-        Classes: 0
-        term not in index dictionary
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
 getIDF: stemmed term not in index test
         Classes: 0
         term not in index test
@@ -746,1518 +154,6 @@ getIDF: stemmed term not in index test
 getIDF: stemmed term not in index s
         Classes: 0
         term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index input
-        Classes: 0
-        term not in index input
-        idf: 1.0
-getIDF: stemmed term not in index string
-        Classes: 0
-        term not in index string
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index dictionary
-        Classes: 0
-        term not in index dictionary
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index input
-        Classes: 0
-        term not in index input
-        idf: 1.0
-getIDF: stemmed term not in index string
-        Classes: 0
-        term not in index string
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index dictionary
-        Classes: 0
-        term not in index dictionary
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index input
-        Classes: 0
-        term not in index input
-        idf: 1.0
-getIDF: stemmed term not in index string
-        Classes: 0
-        term not in index string
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index dictionary
-        Classes: 0
-        term not in index dictionary
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index input
-        Classes: 0
-        term not in index input
-        idf: 1.0
-getIDF: stemmed term not in index string
-        Classes: 0
-        term not in index string
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index dictionary
-        Classes: 0
-        term not in index dictionary
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index input
-        Classes: 0
-        term not in index input
-        idf: 1.0
-getIDF: stemmed term not in index string
-        Classes: 0
-        term not in index string
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index dictionary
-        Classes: 0
-        term not in index dictionary
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index list
-        Classes: 0
-        term not in index list
-        idf: 1.0
-getIDF: stemmed term not in index servic
-        Classes: 0
-        term not in index servic
-        idf: 1.0
-getIDF: stemmed term not in index output
-        Classes: 0
-        term not in index output
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index nil
-        Classes: 0
-        term not in index nil
-        idf: 1.0
-getIDF: stemmed term not in index generic
-        Classes: 0
-        term not in index generic
-        idf: 1.0
-getIDF: stemmed term not in index object
-        Classes: 0
-        term not in index object
-        idf: 1.0
-getIDF: stemmed term not in index string
-        Classes: 0
-        term not in index string
-        idf: 1.0
-getIDF: stemmed term not in index dictionary
-        Classes: 0
-        term not in index dictionary
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index daml
-        Classes: 0
-        term not in index daml
-        idf: 1.0
-getIDF: stemmed term not in index list
-        Classes: 0
-        term not in index list
-        idf: 1.0
-getIDF: stemmed term not in index servic
-        Classes: 0
-        term not in index servic
-        idf: 1.0
-getIDF: stemmed term not in index output
-        Classes: 0
-        term not in index output
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index nil
-        Classes: 0
-        term not in index nil
-        idf: 1.0
-getIDF: stemmed term not in index generic
-        Classes: 0
-        term not in index generic
-        idf: 1.0
-getIDF: stemmed term not in index object
-        Classes: 0
-        term not in index object
-        idf: 1.0
-getIDF: stemmed term not in index string
-        Classes: 0
-        term not in index string
-        idf: 1.0
-getIDF: stemmed term not in index dictionary
-        Classes: 0
-        term not in index dictionary
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index daml
-        Classes: 0
-        term not in index daml
-        idf: 1.0
-getIDF: stemmed term not in index list
-        Classes: 0
-        term not in index list
-        idf: 1.0
-getIDF: stemmed term not in index servic
-        Classes: 0
-        term not in index servic
-        idf: 1.0
-getIDF: stemmed term not in index output
-        Classes: 0
-        term not in index output
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index nil
-        Classes: 0
-        term not in index nil
-        idf: 1.0
-getIDF: stemmed term not in index generic
-        Classes: 0
-        term not in index generic
-        idf: 1.0
-getIDF: stemmed term not in index object
-        Classes: 0
-        term not in index object
-        idf: 1.0
-getIDF: stemmed term not in index string
-        Classes: 0
-        term not in index string
-        idf: 1.0
-getIDF: stemmed term not in index dictionary
-        Classes: 0
-        term not in index dictionary
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index daml
-        Classes: 0
-        term not in index daml
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index dictionary
-        Classes: 0
-        term not in index dictionary
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index dictionary
-        Classes: 0
-        term not in index dictionary
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index dictionary
-        Classes: 0
-        term not in index dictionary
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index dictionary
-        Classes: 0
-        term not in index dictionary
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index dictionary
-        Classes: 0
-        term not in index dictionary
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index dictionary
-        Classes: 0
-        term not in index dictionary
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index input
-        Classes: 0
-        term not in index input
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index price
-        Classes: 0
-        term not in index price
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index input
-        Classes: 0
-        term not in index input
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index price
-        Classes: 0
-        term not in index price
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index input
-        Classes: 0
-        term not in index input
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index price
-        Classes: 0
-        term not in index price
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index input
-        Classes: 0
-        term not in index input
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index price
-        Classes: 0
-        term not in index price
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index input
-        Classes: 0
-        term not in index input
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index price
-        Classes: 0
-        term not in index price
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index input
-        Classes: 0
-        term not in index input
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index price
-        Classes: 0
-        term not in index price
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index list
-        Classes: 0
-        term not in index list
-        idf: 1.0
-getIDF: stemmed term not in index servic
-        Classes: 0
-        term not in index servic
-        idf: 1.0
-getIDF: stemmed term not in index output
-        Classes: 0
-        term not in index output
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index nil
-        Classes: 0
-        term not in index nil
-        idf: 1.0
-getIDF: stemmed term not in index generic
-        Classes: 0
-        term not in index generic
-        idf: 1.0
-getIDF: stemmed term not in index object
-        Classes: 0
-        term not in index object
-        idf: 1.0
-getIDF: stemmed term not in index price
-        Classes: 0
-        term not in index price
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index daml
-        Classes: 0
-        term not in index daml
-        idf: 1.0
-getIDF: stemmed term not in index list
-        Classes: 0
-        term not in index list
-        idf: 1.0
-getIDF: stemmed term not in index servic
-        Classes: 0
-        term not in index servic
-        idf: 1.0
-getIDF: stemmed term not in index output
-        Classes: 0
-        term not in index output
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index nil
-        Classes: 0
-        term not in index nil
-        idf: 1.0
-getIDF: stemmed term not in index generic
-        Classes: 0
-        term not in index generic
-        idf: 1.0
-getIDF: stemmed term not in index object
-        Classes: 0
-        term not in index object
-        idf: 1.0
-getIDF: stemmed term not in index price
-        Classes: 0
-        term not in index price
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index daml
-        Classes: 0
-        term not in index daml
-        idf: 1.0
-getIDF: stemmed term not in index list
-        Classes: 0
-        term not in index list
-        idf: 1.0
-getIDF: stemmed term not in index servic
-        Classes: 0
-        term not in index servic
-        idf: 1.0
-getIDF: stemmed term not in index output
-        Classes: 0
-        term not in index output
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index nil
-        Classes: 0
-        term not in index nil
-        idf: 1.0
-getIDF: stemmed term not in index generic
-        Classes: 0
-        term not in index generic
-        idf: 1.0
-getIDF: stemmed term not in index object
-        Classes: 0
-        term not in index object
-        idf: 1.0
-getIDF: stemmed term not in index price
-        Classes: 0
-        term not in index price
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index daml
-        Classes: 0
-        term not in index daml
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index price
-        Classes: 0
-        term not in index price
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index price
-        Classes: 0
-        term not in index price
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index price
-        Classes: 0
-        term not in index price
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index price
-        Classes: 0
-        term not in index price
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index price
-        Classes: 0
-        term not in index price
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index price
-        Classes: 0
-        term not in index price
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index finder
-        Classes: 0
-        term not in index finder
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index finder
-        Classes: 0
-        term not in index finder
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index finder
-        Classes: 0
-        term not in index finder
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index finder
-        Classes: 0
-        term not in index finder
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index finder
-        Classes: 0
-        term not in index finder
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index finder
-        Classes: 0
-        term not in index finder
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index bnprice
-        Classes: 0
-        term not in index bnprice
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index bnprice
-        Classes: 0
-        term not in index bnprice
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index bnprice
-        Classes: 0
-        term not in index bnprice
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index bnprice
-        Classes: 0
-        term not in index bnprice
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index bnprice
-        Classes: 0
-        term not in index bnprice
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index bnprice
-        Classes: 0
-        term not in index bnprice
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index ch
-        Classes: 0
-        term not in index ch
-        idf: 1.0
-getIDF: stemmed term not in index ont
-        Classes: 0
-        term not in index ont
-        idf: 1.0
-getIDF: stemmed term not in index servic
-        Classes: 0
-        term not in index servic
-        idf: 1.0
-getIDF: stemmed term not in index input
-        Classes: 0
-        term not in index input
-        idf: 1.0
-getIDF: stemmed term not in index ifi
-        Classes: 0
-        term not in index ifi
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index unizh
-        Classes: 0
-        term not in index unizh
-        idf: 1.0
-getIDF: stemmed term not in index ddi
-        Classes: 0
-        term not in index ddi
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index ch
-        Classes: 0
-        term not in index ch
-        idf: 1.0
-getIDF: stemmed term not in index ont
-        Classes: 0
-        term not in index ont
-        idf: 1.0
-getIDF: stemmed term not in index servic
-        Classes: 0
-        term not in index servic
-        idf: 1.0
-getIDF: stemmed term not in index input
-        Classes: 0
-        term not in index input
-        idf: 1.0
-getIDF: stemmed term not in index ifi
-        Classes: 0
-        term not in index ifi
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index unizh
-        Classes: 0
-        term not in index unizh
-        idf: 1.0
-getIDF: stemmed term not in index ddi
-        Classes: 0
-        term not in index ddi
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index ch
-        Classes: 0
-        term not in index ch
-        idf: 1.0
-getIDF: stemmed term not in index ont
-        Classes: 0
-        term not in index ont
-        idf: 1.0
-getIDF: stemmed term not in index servic
-        Classes: 0
-        term not in index servic
-        idf: 1.0
-getIDF: stemmed term not in index input
-        Classes: 0
-        term not in index input
-        idf: 1.0
-getIDF: stemmed term not in index ifi
-        Classes: 0
-        term not in index ifi
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index unizh
-        Classes: 0
-        term not in index unizh
-        idf: 1.0
-getIDF: stemmed term not in index ddi
-        Classes: 0
-        term not in index ddi
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index ch
-        Classes: 0
-        term not in index ch
-        idf: 1.0
-getIDF: stemmed term not in index ont
-        Classes: 0
-        term not in index ont
-        idf: 1.0
-getIDF: stemmed term not in index servic
-        Classes: 0
-        term not in index servic
-        idf: 1.0
-getIDF: stemmed term not in index input
-        Classes: 0
-        term not in index input
-        idf: 1.0
-getIDF: stemmed term not in index ifi
-        Classes: 0
-        term not in index ifi
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index unizh
-        Classes: 0
-        term not in index unizh
-        idf: 1.0
-getIDF: stemmed term not in index ddi
-        Classes: 0
-        term not in index ddi
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index ch
-        Classes: 0
-        term not in index ch
-        idf: 1.0
-getIDF: stemmed term not in index ont
-        Classes: 0
-        term not in index ont
-        idf: 1.0
-getIDF: stemmed term not in index servic
-        Classes: 0
-        term not in index servic
-        idf: 1.0
-getIDF: stemmed term not in index input
-        Classes: 0
-        term not in index input
-        idf: 1.0
-getIDF: stemmed term not in index ifi
-        Classes: 0
-        term not in index ifi
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index unizh
-        Classes: 0
-        term not in index unizh
-        idf: 1.0
-getIDF: stemmed term not in index ddi
-        Classes: 0
-        term not in index ddi
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index ch
-        Classes: 0
-        term not in index ch
-        idf: 1.0
-getIDF: stemmed term not in index ont
-        Classes: 0
-        term not in index ont
-        idf: 1.0
-getIDF: stemmed term not in index servic
-        Classes: 0
-        term not in index servic
-        idf: 1.0
-getIDF: stemmed term not in index input
-        Classes: 0
-        term not in index input
-        idf: 1.0
-getIDF: stemmed term not in index ifi
-        Classes: 0
-        term not in index ifi
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index unizh
-        Classes: 0
-        term not in index unizh
-        idf: 1.0
-getIDF: stemmed term not in index ddi
-        Classes: 0
-        term not in index ddi
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index list
-        Classes: 0
-        term not in index list
         idf: 1.0
 getIDF: stemmed term not in index servic
         Classes: 0
@@ -2267,13 +163,13 @@ getIDF: stemmed term not in index ont
         Classes: 0
         term not in index ont
         idf: 1.0
+getIDF: stemmed term not in index input
+        Classes: 0
+        term not in index input
+        idf: 1.0
 getIDF: stemmed term not in index ifi
         Classes: 0
         term not in index ifi
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
         idf: 1.0
 getIDF: stemmed term not in index output
         Classes: 0
@@ -2287,29 +183,21 @@ getIDF: stemmed term not in index ddi
         Classes: 0
         term not in index ddi
         idf: 1.0
+getIDF: stemmed term not in index merg
+        Classes: 0
+        term not in index merg
+        idf: 1.0
+getIDF: stemmed term not in index merger
+        Classes: 0
+        term not in index merger
+        idf: 1.0
 getIDF: stemmed term not in index owl
         Classes: 0
         term not in index owl
         idf: 1.0
-getIDF: stemmed term not in index nil
-        Classes: 0
-        term not in index nil
-        idf: 1.0
-getIDF: stemmed term not in index generic
-        Classes: 0
-        term not in index generic
-        idf: 1.0
-getIDF: stemmed term not in index object
-        Classes: 0
-        term not in index object
-        idf: 1.0
 getIDF: stemmed term not in index ch
         Classes: 0
         term not in index ch
-        idf: 1.0
-getIDF: stemmed term not in index daml
-        Classes: 0
-        term not in index daml
         idf: 1.0
 getIDF: stemmed term not in index test
         Classes: 0
@@ -2319,10 +207,6 @@ getIDF: stemmed term not in index s
         Classes: 0
         term not in index s
         idf: 1.0
-getIDF: stemmed term not in index list
-        Classes: 0
-        term not in index list
-        idf: 1.0
 getIDF: stemmed term not in index servic
         Classes: 0
         term not in index servic
@@ -2331,13 +215,13 @@ getIDF: stemmed term not in index ont
         Classes: 0
         term not in index ont
         idf: 1.0
+getIDF: stemmed term not in index input
+        Classes: 0
+        term not in index input
+        idf: 1.0
 getIDF: stemmed term not in index ifi
         Classes: 0
         term not in index ifi
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
         idf: 1.0
 getIDF: stemmed term not in index output
         Classes: 0
@@ -2351,29 +235,21 @@ getIDF: stemmed term not in index ddi
         Classes: 0
         term not in index ddi
         idf: 1.0
+getIDF: stemmed term not in index merg
+        Classes: 0
+        term not in index merg
+        idf: 1.0
+getIDF: stemmed term not in index merger
+        Classes: 0
+        term not in index merger
+        idf: 1.0
 getIDF: stemmed term not in index owl
         Classes: 0
         term not in index owl
         idf: 1.0
-getIDF: stemmed term not in index nil
-        Classes: 0
-        term not in index nil
-        idf: 1.0
-getIDF: stemmed term not in index generic
-        Classes: 0
-        term not in index generic
-        idf: 1.0
-getIDF: stemmed term not in index object
-        Classes: 0
-        term not in index object
-        idf: 1.0
 getIDF: stemmed term not in index ch
         Classes: 0
         term not in index ch
-        idf: 1.0
-getIDF: stemmed term not in index daml
-        Classes: 0
-        term not in index daml
         idf: 1.0
 getIDF: stemmed term not in index test
         Classes: 0
@@ -2383,10 +259,6 @@ getIDF: stemmed term not in index s
         Classes: 0
         term not in index s
         idf: 1.0
-getIDF: stemmed term not in index list
-        Classes: 0
-        term not in index list
-        idf: 1.0
 getIDF: stemmed term not in index servic
         Classes: 0
         term not in index servic
@@ -2395,13 +267,13 @@ getIDF: stemmed term not in index ont
         Classes: 0
         term not in index ont
         idf: 1.0
+getIDF: stemmed term not in index input
+        Classes: 0
+        term not in index input
+        idf: 1.0
 getIDF: stemmed term not in index ifi
         Classes: 0
         term not in index ifi
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
         idf: 1.0
 getIDF: stemmed term not in index output
         Classes: 0
@@ -2415,29 +287,21 @@ getIDF: stemmed term not in index ddi
         Classes: 0
         term not in index ddi
         idf: 1.0
+getIDF: stemmed term not in index merg
+        Classes: 0
+        term not in index merg
+        idf: 1.0
+getIDF: stemmed term not in index merger
+        Classes: 0
+        term not in index merger
+        idf: 1.0
 getIDF: stemmed term not in index owl
         Classes: 0
         term not in index owl
         idf: 1.0
-getIDF: stemmed term not in index nil
-        Classes: 0
-        term not in index nil
-        idf: 1.0
-getIDF: stemmed term not in index generic
-        Classes: 0
-        term not in index generic
-        idf: 1.0
-getIDF: stemmed term not in index object
-        Classes: 0
-        term not in index object
-        idf: 1.0
 getIDF: stemmed term not in index ch
         Classes: 0
         term not in index ch
-        idf: 1.0
-getIDF: stemmed term not in index daml
-        Classes: 0
-        term not in index daml
         idf: 1.0
 getIDF: stemmed term not in index test
         Classes: 0
@@ -2455,37 +319,37 @@ getIDF: stemmed term not in index ont
         Classes: 0
         term not in index ont
         idf: 1.0
-getIDF: stemmed term not in index servic
+getIDF: stemmed term not in index input
         Classes: 0
-        term not in index servic
+        term not in index input
         idf: 1.0
 getIDF: stemmed term not in index ifi
         Classes: 0
         term not in index ifi
         idf: 1.0
-getIDF: stemmed term not in index org
+getIDF: stemmed term not in index output
         Classes: 0
-        term not in index org
+        term not in index output
         idf: 1.0
 getIDF: stemmed term not in index unizh
         Classes: 0
         term not in index unizh
         idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
 getIDF: stemmed term not in index ddi
         Classes: 0
         term not in index ddi
+        idf: 1.0
+getIDF: stemmed term not in index merg
+        Classes: 0
+        term not in index merg
         idf: 1.0
 getIDF: stemmed term not in index s
         Classes: 0
         term not in index s
         idf: 1.0
-getIDF: stemmed term not in index test
+getIDF: stemmed term not in index merger
         Classes: 0
-        term not in index test
+        term not in index merger
         idf: 1.0
 getIDF: stemmed term not in index owl
         Classes: 0
@@ -2499,37 +363,37 @@ getIDF: stemmed term not in index ont
         Classes: 0
         term not in index ont
         idf: 1.0
-getIDF: stemmed term not in index servic
+getIDF: stemmed term not in index input
         Classes: 0
-        term not in index servic
+        term not in index input
         idf: 1.0
 getIDF: stemmed term not in index ifi
         Classes: 0
         term not in index ifi
         idf: 1.0
-getIDF: stemmed term not in index org
+getIDF: stemmed term not in index output
         Classes: 0
-        term not in index org
+        term not in index output
         idf: 1.0
 getIDF: stemmed term not in index unizh
         Classes: 0
         term not in index unizh
         idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
 getIDF: stemmed term not in index ddi
         Classes: 0
         term not in index ddi
+        idf: 1.0
+getIDF: stemmed term not in index merg
+        Classes: 0
+        term not in index merg
         idf: 1.0
 getIDF: stemmed term not in index s
         Classes: 0
         term not in index s
         idf: 1.0
-getIDF: stemmed term not in index test
+getIDF: stemmed term not in index merger
         Classes: 0
-        term not in index test
+        term not in index merger
         idf: 1.0
 getIDF: stemmed term not in index owl
         Classes: 0
@@ -2543,37 +407,37 @@ getIDF: stemmed term not in index ont
         Classes: 0
         term not in index ont
         idf: 1.0
-getIDF: stemmed term not in index servic
+getIDF: stemmed term not in index input
         Classes: 0
-        term not in index servic
+        term not in index input
         idf: 1.0
 getIDF: stemmed term not in index ifi
         Classes: 0
         term not in index ifi
         idf: 1.0
-getIDF: stemmed term not in index org
+getIDF: stemmed term not in index output
         Classes: 0
-        term not in index org
+        term not in index output
         idf: 1.0
 getIDF: stemmed term not in index unizh
         Classes: 0
         term not in index unizh
         idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
 getIDF: stemmed term not in index ddi
         Classes: 0
         term not in index ddi
+        idf: 1.0
+getIDF: stemmed term not in index merg
+        Classes: 0
+        term not in index merg
         idf: 1.0
 getIDF: stemmed term not in index s
         Classes: 0
         term not in index s
         idf: 1.0
-getIDF: stemmed term not in index test
+getIDF: stemmed term not in index merger
         Classes: 0
-        term not in index test
+        term not in index merger
         idf: 1.0
 getIDF: stemmed term not in index owl
         Classes: 0
@@ -2587,37 +451,37 @@ getIDF: stemmed term not in index ont
         Classes: 0
         term not in index ont
         idf: 1.0
-getIDF: stemmed term not in index servic
+getIDF: stemmed term not in index input
         Classes: 0
-        term not in index servic
+        term not in index input
         idf: 1.0
 getIDF: stemmed term not in index ifi
         Classes: 0
         term not in index ifi
         idf: 1.0
-getIDF: stemmed term not in index org
+getIDF: stemmed term not in index output
         Classes: 0
-        term not in index org
+        term not in index output
         idf: 1.0
 getIDF: stemmed term not in index unizh
         Classes: 0
         term not in index unizh
         idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
 getIDF: stemmed term not in index ddi
         Classes: 0
         term not in index ddi
+        idf: 1.0
+getIDF: stemmed term not in index merg
+        Classes: 0
+        term not in index merg
         idf: 1.0
 getIDF: stemmed term not in index s
         Classes: 0
         term not in index s
         idf: 1.0
-getIDF: stemmed term not in index test
+getIDF: stemmed term not in index merger
         Classes: 0
-        term not in index test
+        term not in index merger
         idf: 1.0
 getIDF: stemmed term not in index owl
         Classes: 0
@@ -2631,37 +495,37 @@ getIDF: stemmed term not in index ont
         Classes: 0
         term not in index ont
         idf: 1.0
-getIDF: stemmed term not in index servic
+getIDF: stemmed term not in index input
         Classes: 0
-        term not in index servic
+        term not in index input
         idf: 1.0
 getIDF: stemmed term not in index ifi
         Classes: 0
         term not in index ifi
         idf: 1.0
-getIDF: stemmed term not in index org
+getIDF: stemmed term not in index output
         Classes: 0
-        term not in index org
+        term not in index output
         idf: 1.0
 getIDF: stemmed term not in index unizh
         Classes: 0
         term not in index unizh
         idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
 getIDF: stemmed term not in index ddi
         Classes: 0
         term not in index ddi
+        idf: 1.0
+getIDF: stemmed term not in index merg
+        Classes: 0
+        term not in index merg
         idf: 1.0
 getIDF: stemmed term not in index s
         Classes: 0
         term not in index s
         idf: 1.0
-getIDF: stemmed term not in index test
+getIDF: stemmed term not in index merger
         Classes: 0
-        term not in index test
+        term not in index merger
         idf: 1.0
 getIDF: stemmed term not in index owl
         Classes: 0
@@ -2675,577 +539,37 @@ getIDF: stemmed term not in index ont
         Classes: 0
         term not in index ont
         idf: 1.0
-getIDF: stemmed term not in index servic
+getIDF: stemmed term not in index input
         Classes: 0
-        term not in index servic
+        term not in index input
         idf: 1.0
 getIDF: stemmed term not in index ifi
         Classes: 0
         term not in index ifi
         idf: 1.0
-getIDF: stemmed term not in index org
+getIDF: stemmed term not in index output
         Classes: 0
-        term not in index org
+        term not in index output
         idf: 1.0
 getIDF: stemmed term not in index unizh
         Classes: 0
         term not in index unizh
         idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
 getIDF: stemmed term not in index ddi
         Classes: 0
         term not in index ddi
         idf: 1.0
-getIDF: stemmed term not in index s
+getIDF: stemmed term not in index merg
         Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index input
-        Classes: 0
-        term not in index input
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index finder
-        Classes: 0
-        term not in index finder
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
+        term not in index merg
         idf: 1.0
 getIDF: stemmed term not in index s
         Classes: 0
         term not in index s
         idf: 1.0
-getIDF: stemmed term not in index owl
+getIDF: stemmed term not in index merger
         Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index input
-        Classes: 0
-        term not in index input
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index finder
-        Classes: 0
-        term not in index finder
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index input
-        Classes: 0
-        term not in index input
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index finder
-        Classes: 0
-        term not in index finder
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index input
-        Classes: 0
-        term not in index input
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index finder
-        Classes: 0
-        term not in index finder
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index input
-        Classes: 0
-        term not in index input
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index finder
-        Classes: 0
-        term not in index finder
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index input
-        Classes: 0
-        term not in index input
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index finder
-        Classes: 0
-        term not in index finder
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index list
-        Classes: 0
-        term not in index list
-        idf: 1.0
-getIDF: stemmed term not in index servic
-        Classes: 0
-        term not in index servic
-        idf: 1.0
-getIDF: stemmed term not in index finder
-        Classes: 0
-        term not in index finder
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index nil
-        Classes: 0
-        term not in index nil
-        idf: 1.0
-getIDF: stemmed term not in index generic
-        Classes: 0
-        term not in index generic
-        idf: 1.0
-getIDF: stemmed term not in index info
-        Classes: 0
-        term not in index info
-        idf: 1.0
-getIDF: stemmed term not in index object
-        Classes: 0
-        term not in index object
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index daml
-        Classes: 0
-        term not in index daml
-        idf: 1.0
-getIDF: stemmed term not in index list
-        Classes: 0
-        term not in index list
-        idf: 1.0
-getIDF: stemmed term not in index servic
-        Classes: 0
-        term not in index servic
-        idf: 1.0
-getIDF: stemmed term not in index finder
-        Classes: 0
-        term not in index finder
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index nil
-        Classes: 0
-        term not in index nil
-        idf: 1.0
-getIDF: stemmed term not in index generic
-        Classes: 0
-        term not in index generic
-        idf: 1.0
-getIDF: stemmed term not in index info
-        Classes: 0
-        term not in index info
-        idf: 1.0
-getIDF: stemmed term not in index object
-        Classes: 0
-        term not in index object
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index daml
-        Classes: 0
-        term not in index daml
-        idf: 1.0
-getIDF: stemmed term not in index list
-        Classes: 0
-        term not in index list
-        idf: 1.0
-getIDF: stemmed term not in index servic
-        Classes: 0
-        term not in index servic
-        idf: 1.0
-getIDF: stemmed term not in index finder
-        Classes: 0
-        term not in index finder
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index nil
-        Classes: 0
-        term not in index nil
-        idf: 1.0
-getIDF: stemmed term not in index generic
-        Classes: 0
-        term not in index generic
-        idf: 1.0
-getIDF: stemmed term not in index info
-        Classes: 0
-        term not in index info
-        idf: 1.0
-getIDF: stemmed term not in index object
-        Classes: 0
-        term not in index object
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index daml
-        Classes: 0
-        term not in index daml
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index finder
-        Classes: 0
-        term not in index finder
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index finder
-        Classes: 0
-        term not in index finder
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index finder
-        Classes: 0
-        term not in index finder
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index finder
-        Classes: 0
-        term not in index finder
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index finder
-        Classes: 0
-        term not in index finder
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
-        idf: 1.0
-getIDF: stemmed term not in index owl
-        Classes: 0
-        term not in index owl
-        idf: 1.0
-getIDF: stemmed term not in index org
-        Classes: 0
-        term not in index org
-        idf: 1.0
-getIDF: stemmed term not in index finder
-        Classes: 0
-        term not in index finder
-        idf: 1.0
-getIDF: stemmed term not in index book
-        Classes: 0
-        term not in index book
-        idf: 1.0
-getIDF: stemmed term not in index process
-        Classes: 0
-        term not in index process
-        idf: 1.0
-getIDF: stemmed term not in index mindswap
-        Classes: 0
-        term not in index mindswap
-        idf: 1.0
-getIDF: stemmed term not in index test
-        Classes: 0
-        term not in index test
-        idf: 1.0
-getIDF: stemmed term not in index s
-        Classes: 0
-        term not in index s
+        term not in index merger
         idf: 1.0
 getIDF: stemmed term not in index owl
         Classes: 0
