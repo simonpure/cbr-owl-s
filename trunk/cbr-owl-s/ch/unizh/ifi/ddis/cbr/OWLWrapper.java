@@ -442,6 +442,10 @@ public class OWLWrapper {
 		return ont.getURI();
 	}
 	
+	public OWLOntology getOntology() {
+		return ont;
+	}
+	
 	public OWLSGraph getGraph() {
 		return graph;
 	}
@@ -457,6 +461,10 @@ public class OWLWrapper {
 		}
 		 
 		return s;
+	}
+	
+	public Service getService() {
+		return ont.getService();
 	}
 	
 	// testing

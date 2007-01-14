@@ -7,6 +7,7 @@ import org.mindswap.owl.OWLType;
 import org.mindswap.owl.OWLValue;
 import org.mindswap.owls.process.Input;
 import org.mindswap.owls.process.Output;
+import org.mindswap.owls.process.Parameter;
 import org.mindswap.owls.process.Process;
 
 import ch.unizh.ifi.ddis.cbr.OWLWrapper;
@@ -88,6 +89,19 @@ public class SimilaritySemantic extends SimilarityDefault {
         	matchtype = FAIL;
         //logger.info("match type::" + matchtype+ "::" + oldCaseType + " " + newCaseType);
         return matchtype;
+	}
+
+	public double compareParameter(Parameter oldParameter, Parameter newParameter) {
+		OWLType oldOutputType = oldParameter.getParamType();
+		OWLType newOutputType = newParameter.getParamType();
+		
+		double match = getMatchType(oldOutputType, newOutputType);
+		
+   		if(constants && compareConstants(oldParameter.getConstantValue(), newParameter.getConstantValue())) {
+   			match += 0.25;		
+    	}
+		
+		return match;
 	}
 
 }

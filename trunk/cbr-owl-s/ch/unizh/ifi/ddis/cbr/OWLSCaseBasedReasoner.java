@@ -3,27 +3,15 @@
  */
 package ch.unizh.ifi.ddis.cbr;
 
-import impl.owls.process.InputListImpl;
-import impl.owls.process.OutputListImpl;
-import impl.owls.process.ProcessListImpl;
-
 import java.io.FileNotFoundException;
-import java.lang.reflect.Constructor;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 
 import org.apache.log4j.Logger;
-import org.mindswap.owl.OWLFactory;
 import org.mindswap.owl.OWLKnowledgeBase;
 import org.mindswap.owl.OWLOntology;
-import org.mindswap.owl.OWLType;
-import org.mindswap.owls.process.CompositeProcess;
-import org.mindswap.owls.process.ControlConstruct;
 import org.mindswap.owls.process.Input;
 import org.mindswap.owls.process.InputList;
 import org.mindswap.owls.process.Output;
@@ -32,21 +20,12 @@ import org.mindswap.owls.process.Process;
 import org.mindswap.owls.process.ProcessList;
 import org.mindswap.owls.service.Service;
 
+import ch.unizh.ifi.ddis.cbr.merge.MergerCopy;
+import ch.unizh.ifi.ddis.cbr.merge.MergerInsert;
+import ch.unizh.ifi.ddis.cbr.merge.MergerSimple;
 import ch.unizh.ifi.ddis.cbr.similarity.Similarity;
+import ch.unizh.ifi.ddis.cbr.similarity.SimilarityMatch;
 
-import simpack.accessor.string.StringAccessor;
-import simpack.api.ISequenceAccessor;
-import simpack.api.impl.SimilarityMeasure;
-import simpack.exception.InvalidSimilarityMeasureNameException;
-import simpack.measure.external.owlsmx.CosineSimilarity;
-import simpack.measure.external.owlsmx.ExtendedJaccardMeasure;
-import simpack.measure.external.owlsmx.JensenShannonMeasure;
-import simpack.measure.graph.GraphIsomorphism;
-import simpack.measure.graph.MaxCommonSubgraphIsoValiente;
-import simpack.measure.string.AveragedStringMatching;
-import simpack.tokenizer.SplittedStringTokenizer;
-
-import examples.Matchmaker.Match;
 
 /**
  * @author simonl
@@ -75,40 +54,6 @@ public class OWLSCaseBasedReasoner {
 	
 	//Similarity strategies
 	private Similarity[] similarityStrategies;
-	
-	/*
-	 * class to get different similarities break down
-	 */
-	public static class SimilarityMatch {
-        private double inputs;
-        private double outputs;
-        private double processes;
-        private double graph;
-        
-        public SimilarityMatch(double inputs, double outputs, double processes, double graph) {
-            this.inputs = inputs;
-            this.outputs = outputs;
-            this.processes = processes;
-            this.graph = graph;
-        }
-        
-        public double inputs() {
-        	return inputs;
-        }
-        
-        public double outputs() {
-        	return outputs;
-        }
-        
-        public double processes() {
-        	return processes;
-        }
-        
-        public double graph() {
-        	return graph;
-        }
-    }
-   
 	
 	/**
 	 * Constructor for the CBR system  
@@ -162,14 +107,48 @@ public class OWLSCaseBasedReasoner {
 		return kb;
 	}
 	
+	public OWLOntology reuse(OWLOntology ont1) throws FileNotFoundException, URISyntaxException {
+		//Iterator i = retrievedCases.iterator();
+		newCase = new OWLWrapper(ont1);
+		
+		Iterator i = cases.iterator();
+		OWLWrapper oldCase = null;
+		OWLOntology ont;
+		OWLWrapper mergedCase;
+		while(i.hasNext()) {
+			oldCase = (OWLWrapper) i.next();
+			
+			MergerSimple simple = new MergerSimple();
+			MergerCopy copy = new MergerCopy();
+			MergerInsert insert = new MergerInsert();
+			
+			mergedCase = simple.merge(oldCase, newCase);
+			ont = mergedCase.getOntology();
+			//ont.write(System.out);
 
+			mergedCase = copy.merge(oldCase, newCase);
+			ont = mergedCase.getOntology();
+			ont.write(System.out);
+
+			mergedCase = insert.merge(oldCase, newCase);
+			ont = mergedCase.getOntology();
+			//ont.write(System.out);
+			
+			break;
+
+		}
+		
+		return null;
+	}
+
+	ArrayList retrievedCases = new ArrayList();
+	OWLWrapper newCase = null;
 	
 	public ArrayList retrieve(OWLOntology ont) throws FileNotFoundException, URISyntaxException {
-		ArrayList retrievedCases = new ArrayList();
 
 		// load ontology to this kb
 		kb.load(ont);
-		OWLWrapper newCase = new OWLWrapper(ont);
+		newCase = new OWLWrapper(ont);
 
 		// compare new case against old cases and add matches
 		OWLWrapper oldCase;
@@ -350,7 +329,7 @@ public class OWLSCaseBasedReasoner {
 		
 		return bestCases;
 	}
-	*/
+	
 	
 	private OWLSSimilarityMeasure compare(OWLWrapper newCase, OWLWrapper oldCase) {
 		logger.info("compare\n new::" + newCase + "\nto old::\n" + oldCase);
@@ -360,7 +339,8 @@ public class OWLSCaseBasedReasoner {
 		
 		return similarity;
 	}
-
+*/
+	
 	/*
 	 * helper method to avoid duplicates as the kb returns somehow duplicates
 	 * 
@@ -379,39 +359,5 @@ public class OWLSCaseBasedReasoner {
 		return cases;
 	}
 	
-    // insertion sort
-    // 
-	private Hashtable rankHashtable(Hashtable hashtable) {
-		//ArrayList a = new ArrayList();
-		Hashtable rankedHashtable = new Hashtable();
-		System.out.println("rank hashtable::" + hashtable.size());
-		
-		//a.addAll(hashtable.keySet());
-		
-		int [] a = new int[hashtable.size()];
-		int x = 0;
-		for (Enumeration i = hashtable.keys(); i.hasMoreElements() ;) {
-			Integer match = (Integer) i.nextElement();
-			a[x++] = match.intValue();
-		}
-		
-		for(int i = 1; i < a.length; i++) {
-			int j = i;
-			int temp = a[j];
-			while (j>0 && a[j-1] > temp) {
-				a[j] = a[j-1];
-				j--;
-			}
-			a[j] = temp;
-		}
-		
-		for(int i = 0; i<a.length; i++) {
-			Integer match = new Integer(a[i]);
-			OWLWrapper rc = (OWLWrapper) hashtable.get(match);
-			rankedHashtable.put(match, rc);
-		}
-		
-		return rankedHashtable;
-	}
 
 }
