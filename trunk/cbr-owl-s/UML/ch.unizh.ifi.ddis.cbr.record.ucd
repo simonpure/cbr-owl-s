@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="1421,1607" id="ch.unizh.ifi.ddis.cbr.record" metadata="uml2-1.0" initialized="true" scrolledX="82" tag="10" key="3230303630343131204F574C2D5320434252">
+  <children xsi:type="editmodel:ClassEditModel" name="RunServiceSimple" location="768,50" size="191,283" id="ch.unizh.ifi.ddis.cbr.record/RunServiceSimple" runTimeClassModel="op,RunServiceSimple(),exec,runBookFinder(),values,inValue,profile,service,outValue,main([Ljava.lang.String;),trail,process,s">
+    <children xsi:type="editmodel:CompartmentEditModel" size="168,180">
+      <children xsi:type="editmodel:AttributeEditModel" name="exec" id="ch.unizh.ifi.ddis.cbr.record/RunServiceSimple#exec"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="inValue" id="ch.unizh.ifi.ddis.cbr.record/RunServiceSimple#inValue"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="op" id="ch.unizh.ifi.ddis.cbr.record/RunServiceSimple#op"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="outValue" id="ch.unizh.ifi.ddis.cbr.record/RunServiceSimple#outValue"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="process" id="ch.unizh.ifi.ddis.cbr.record/RunServiceSimple#process"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="profile" id="ch.unizh.ifi.ddis.cbr.record/RunServiceSimple#profile"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="s" id="ch.unizh.ifi.ddis.cbr.record/RunServiceSimple#s"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="service" id="ch.unizh.ifi.ddis.cbr.record/RunServiceSimple#service"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="trail" id="ch.unizh.ifi.ddis.cbr.record/RunServiceSimple#trail"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="values" id="ch.unizh.ifi.ddis.cbr.record/RunServiceSimple#values"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="117,54">
+      <children xsi:type="editmodel:MethodEditModel" name="RunServiceSimple" id="ch.unizh.ifi.ddis.cbr.record/RunServiceSimple#RunServiceSimple()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="main" id="ch.unizh.ifi.ddis.cbr.record/RunServiceSimple#main([Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="runBookFinder" id="ch.unizh.ifi.ddis.cbr.record/RunServiceSimple#runBookFinder()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.record/RunServiceSimple->ch.unizh.ifi.ddis.cbr.record/ExecutionTrail" source="//@children.0" target="//@children.6" targetEnd="//@children.0/@sourceConnections.0/@children.2" label="//@children.0/@sourceConnections.0/@children.0" sourceEnd="//@children.0/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="43,283" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="139,0"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="RunDictionary" location="1213,357" size="131,67" id="ch.unizh.ifi.ddis.cbr.record/RunDictionary" runTimeClassModel="main([Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="52,18">
+      <children xsi:type="editmodel:MethodEditModel" name="main" id="ch.unizh.ifi.ddis.cbr.record/RunDictionary#main([Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.record/RunDictionary->ch.unizh.ifi.ddis.cbr.record/ExecutionTrail" source="//@children.1" target="//@children.6" targetEnd="//@children.1/@sourceConnections.0/@children.2" label="//@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="10,67" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="183,10"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="CreateSequence" location="50,708" size="173,229" id="ch.unizh.ifi.ddis.cbr.record/CreateSequence" runTimeClassModel="createProfile(Lorg.mindswap.owls.profile.Profile;Lorg.mindswap.owls.process.Process;),ont,main([Ljava.lang.String;),CreateSequence(),createSequenceService(Ljava.util.List;),baseURI,trail,createSequenceProcess(Lorg.mindswap.owls.process.CompositeProcess;Ljava.util.List;),runTest(),createLabel(Ljava.util.List;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="109,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="baseURI" id="ch.unizh.ifi.ddis.cbr.record/CreateSequence#baseURI"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="ont" id="ch.unizh.ifi.ddis.cbr.record/CreateSequence#ont"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="trail" id="ch.unizh.ifi.ddis.cbr.record/CreateSequence#trail"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="150,126">
+      <children xsi:type="editmodel:MethodEditModel" name="CreateSequence" id="ch.unizh.ifi.ddis.cbr.record/CreateSequence#CreateSequence()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="createLabel" id="ch.unizh.ifi.ddis.cbr.record/CreateSequence#createLabel(Ljava.util.List;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="createProfile" id="ch.unizh.ifi.ddis.cbr.record/CreateSequence#createProfile(Lorg.mindswap.owls.profile.Profile;Lorg.mindswap.owls.process.Process;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="createSequenceProcess" id="ch.unizh.ifi.ddis.cbr.record/CreateSequence#createSequenceProcess(Lorg.mindswap.owls.process.CompositeProcess;Ljava.util.List;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="createSequenceService" id="ch.unizh.ifi.ddis.cbr.record/CreateSequence#createSequenceService(Ljava.util.List;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="main" id="ch.unizh.ifi.ddis.cbr.record/CreateSequence#main([Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="runTest" id="ch.unizh.ifi.ddis.cbr.record/CreateSequence#runTest()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.record/CreateSequence->ch.unizh.ifi.ddis.cbr.record/ExecutionTrail" source="//@children.2" target="//@children.6" targetEnd="//@children.2/@sourceConnections.0/@children.2" label="//@children.2/@sourceConnections.0/@children.0" sourceEnd="//@children.2/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="173,114" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,156"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="CreateComplexProcess" location="318,1178" size="251,409" id="ch.unizh.ifi.ddis.cbr.record/CreateComplexProcess" runTimeClassModel="xsdFloat,ont,kb,amazonPrice,xsdString,cP_BNPrice,run(),amount,cP_Bookstore,main([Ljava.lang.String;),cP_OutputPrice,concepts,bookFinder,bNPrice,price,baseURI,CreateComplexProcess(),swrl,comparePricesProcess,cP_AmazonPrice">
+    <children xsi:type="editmodel:CompartmentEditModel" size="228,306">
+      <children xsi:type="editmodel:AttributeEditModel" name="amazonPrice" id="ch.unizh.ifi.ddis.cbr.record/CreateComplexProcess#amazonPrice"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="amount" id="ch.unizh.ifi.ddis.cbr.record/CreateComplexProcess#amount"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="bNPrice" id="ch.unizh.ifi.ddis.cbr.record/CreateComplexProcess#bNPrice"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="baseURI" id="ch.unizh.ifi.ddis.cbr.record/CreateComplexProcess#baseURI"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="bookFinder" id="ch.unizh.ifi.ddis.cbr.record/CreateComplexProcess#bookFinder"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="cP_AmazonPrice" id="ch.unizh.ifi.ddis.cbr.record/CreateComplexProcess#cP_AmazonPrice"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="cP_BNPrice" id="ch.unizh.ifi.ddis.cbr.record/CreateComplexProcess#cP_BNPrice"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="cP_Bookstore" id="ch.unizh.ifi.ddis.cbr.record/CreateComplexProcess#cP_Bookstore"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="cP_OutputPrice" id="ch.unizh.ifi.ddis.cbr.record/CreateComplexProcess#cP_OutputPrice"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="comparePricesProcess" id="ch.unizh.ifi.ddis.cbr.record/CreateComplexProcess#comparePricesProcess"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="concepts" id="ch.unizh.ifi.ddis.cbr.record/CreateComplexProcess#concepts"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="kb" id="ch.unizh.ifi.ddis.cbr.record/CreateComplexProcess#kb"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="ont" id="ch.unizh.ifi.ddis.cbr.record/CreateComplexProcess#ont"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="price" id="ch.unizh.ifi.ddis.cbr.record/CreateComplexProcess#price"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="swrl" id="ch.unizh.ifi.ddis.cbr.record/CreateComplexProcess#swrl"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="xsdFloat" id="ch.unizh.ifi.ddis.cbr.record/CreateComplexProcess#xsdFloat"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="xsdString" id="ch.unizh.ifi.ddis.cbr.record/CreateComplexProcess#xsdString"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="143,54">
+      <children xsi:type="editmodel:MethodEditModel" name="CreateComplexProcess" id="ch.unizh.ifi.ddis.cbr.record/CreateComplexProcess#CreateComplexProcess()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="main" id="ch.unizh.ifi.ddis.cbr.record/CreateComplexProcess#main([Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="run" id="ch.unizh.ifi.ddis.cbr.record/CreateComplexProcess#run()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.record/CreateComplexProcess->ch.unizh.ifi.ddis.cbr.record/ExecutionTrail" source="//@children.3" target="//@children.6" targetEnd="//@children.3/@sourceConnections.0/@children.2" label="//@children.3/@sourceConnections.0/@children.0" sourceEnd="//@children.3/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="241,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,507"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="CreateJavaGrounding" location="852,1262" size="181,121" id="ch.unizh.ifi.ddis.cbr.record/CreateJavaGrounding" runTimeClassModel="main([Ljava.lang.String;),baseURI,testIt(ILjava.lang.Double;),run()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="81,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="baseURI" id="ch.unizh.ifi.ddis.cbr.record/CreateJavaGrounding#baseURI"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="53,54">
+      <children xsi:type="editmodel:MethodEditModel" name="main" id="ch.unizh.ifi.ddis.cbr.record/CreateJavaGrounding#main([Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="run" id="ch.unizh.ifi.ddis.cbr.record/CreateJavaGrounding#run()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="testIt" id="ch.unizh.ifi.ddis.cbr.record/CreateJavaGrounding#testIt(ILjava.lang.Double;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.record/CreateJavaGrounding->ch.unizh.ifi.ddis.cbr.record/ExecutionTrail" source="//@children.4" target="//@children.6" targetEnd="//@children.4/@sourceConnections.0/@children.2" label="//@children.4/@sourceConnections.0/@children.0" sourceEnd="//@children.4/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="10,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="183,507"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.6/@sourceConnections.0" name="ExecutionRecord" location="1251,897" size="150,301" id="ch.unizh.ifi.ddis.cbr.record/ExecutionRecord" runTimeClassModel="isAtomic(),ExecutionRecord(Lorg.mindswap.owls.process.Process;Lorg.mindswap.query.ValueMap;),ExecutionRecord(),toString(),setUsed(Z),getProcess(),setProcess(Lorg.mindswap.owls.process.Process;),setOutput(Lorg.mindswap.query.ValueMap;),getOutput(),isComposite(),isUsed(),setInput(Lorg.mindswap.query.ValueMap;),ExecutionRecord(Lorg.mindswap.owls.process.Process;Lorg.mindswap.query.ValueMap;Lorg.mindswap.query.ValueMap;),getInput()">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="112,252">
+      <children xsi:type="editmodel:MethodEditModel" name="ExecutionRecord" id="ch.unizh.ifi.ddis.cbr.record/ExecutionRecord#ExecutionRecord()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="ExecutionRecord" id="ch.unizh.ifi.ddis.cbr.record/ExecutionRecord#ExecutionRecord(Lorg.mindswap.owls.process.Process;Lorg.mindswap.query.ValueMap;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="ExecutionRecord" id="ch.unizh.ifi.ddis.cbr.record/ExecutionRecord#ExecutionRecord(Lorg.mindswap.owls.process.Process;Lorg.mindswap.query.ValueMap;Lorg.mindswap.query.ValueMap;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInput" id="ch.unizh.ifi.ddis.cbr.record/ExecutionRecord#getInput()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getOutput" id="ch.unizh.ifi.ddis.cbr.record/ExecutionRecord#getOutput()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getProcess" id="ch.unizh.ifi.ddis.cbr.record/ExecutionRecord#getProcess()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isAtomic" id="ch.unizh.ifi.ddis.cbr.record/ExecutionRecord#isAtomic()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isComposite" id="ch.unizh.ifi.ddis.cbr.record/ExecutionRecord#isComposite()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isUsed" id="ch.unizh.ifi.ddis.cbr.record/ExecutionRecord#isUsed()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setInput" id="ch.unizh.ifi.ddis.cbr.record/ExecutionRecord#setInput(Lorg.mindswap.query.ValueMap;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setOutput" id="ch.unizh.ifi.ddis.cbr.record/ExecutionRecord#setOutput(Lorg.mindswap.query.ValueMap;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setProcess" id="ch.unizh.ifi.ddis.cbr.record/ExecutionRecord#setProcess(Lorg.mindswap.owls.process.Process;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setUsed" id="ch.unizh.ifi.ddis.cbr.record/ExecutionRecord#setUsed(Z)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toString" id="ch.unizh.ifi.ddis.cbr.record/ExecutionRecord#toString()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.0 //@children.3/@sourceConnections.0 //@children.2/@sourceConnections.0 //@children.8/@sourceConnections.1 //@children.0/@sourceConnections.0 //@children.1/@sourceConnections.0" name="ExecutionTrail" location="672,666" size="183,517" id="ch.unizh.ifi.ddis.cbr.record/ExecutionTrail" runTimeClassModel="setExec(Lorg.mindswap.owls.process.execution.ProcessExecutionEngine;),createOntologyTrail(),ExecutionTrail(Lorg.mindswap.owl.OWLKnowledgeBase;Lorg.mindswap.owls.process.execution.ProcessExecutionEngine;),getAtomicProcessSize(),finished(),getParameter(Lorg.mindswap.owls.process.Process;Ljava.net.URI;),getProcesses(Lorg.mindswap.owls.process.Process;Z),processStarted(Lorg.mindswap.owls.process.Process;Lorg.mindswap.query.ValueMap;),getInputs(Lorg.mindswap.owls.process.Process;),processesFinished(Lorg.mindswap.owls.process.Process;Lorg.mindswap.query.ValueMap;Lorg.mindswap.query.ValueMap;),setFinished(Z),ExecutionTrail(Lorg.mindswap.owl.OWLKnowledgeBase;),failed(),getServiceTrail(),getBaseURI(),getOutputs(Lorg.mindswap.owls.process.Process;),getAtomicProcess(I),ExecutionTrail(Lorg.mindswap.owl.OWLKnowledgeBase;Lorg.mindswap.owls.process.execution.ProcessExecutionEngine;Ljava.lang.String;),getOutput(Lorg.mindswap.owls.process.Process;Ljava.net.URI;),setKB(Lorg.mindswap.owl.OWLKnowledgeBase;),getInput(Lorg.mindswap.owls.process.Process;Ljava.net.URI;),getCompositeProcessSize(),getAtomicExecutionRecord(I),setFailed(Z),setFailed(ZLorg.mindswap.exceptions.ExecutionException;),showExecutionTrail()">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="160,468">
+      <children xsi:type="editmodel:MethodEditModel" name="ExecutionTrail" id="ch.unizh.ifi.ddis.cbr.record/ExecutionTrail#ExecutionTrail(Lorg.mindswap.owl.OWLKnowledgeBase;Lorg.mindswap.owls.process.execution.ProcessExecutionEngine;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="ExecutionTrail" id="ch.unizh.ifi.ddis.cbr.record/ExecutionTrail#ExecutionTrail(Lorg.mindswap.owl.OWLKnowledgeBase;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="ExecutionTrail" id="ch.unizh.ifi.ddis.cbr.record/ExecutionTrail#ExecutionTrail(Lorg.mindswap.owl.OWLKnowledgeBase;Lorg.mindswap.owls.process.execution.ProcessExecutionEngine;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="createOntologyTrail" id="ch.unizh.ifi.ddis.cbr.record/ExecutionTrail#createOntologyTrail()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="failed" id="ch.unizh.ifi.ddis.cbr.record/ExecutionTrail#failed()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="finished" id="ch.unizh.ifi.ddis.cbr.record/ExecutionTrail#finished()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getAtomicExecutionRecord" id="ch.unizh.ifi.ddis.cbr.record/ExecutionTrail#getAtomicExecutionRecord(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getAtomicProcess" id="ch.unizh.ifi.ddis.cbr.record/ExecutionTrail#getAtomicProcess(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getAtomicProcessSize" id="ch.unizh.ifi.ddis.cbr.record/ExecutionTrail#getAtomicProcessSize()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getBaseURI" id="ch.unizh.ifi.ddis.cbr.record/ExecutionTrail#getBaseURI()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCompositeProcessSize" id="ch.unizh.ifi.ddis.cbr.record/ExecutionTrail#getCompositeProcessSize()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInput" id="ch.unizh.ifi.ddis.cbr.record/ExecutionTrail#getInput(Lorg.mindswap.owls.process.Process;Ljava.net.URI;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInputs" id="ch.unizh.ifi.ddis.cbr.record/ExecutionTrail#getInputs(Lorg.mindswap.owls.process.Process;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getOutput" id="ch.unizh.ifi.ddis.cbr.record/ExecutionTrail#getOutput(Lorg.mindswap.owls.process.Process;Ljava.net.URI;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getOutputs" id="ch.unizh.ifi.ddis.cbr.record/ExecutionTrail#getOutputs(Lorg.mindswap.owls.process.Process;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getParameter" id="ch.unizh.ifi.ddis.cbr.record/ExecutionTrail#getParameter(Lorg.mindswap.owls.process.Process;Ljava.net.URI;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getProcesses" id="ch.unizh.ifi.ddis.cbr.record/ExecutionTrail#getProcesses(Lorg.mindswap.owls.process.Process;Z)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getServiceTrail" id="ch.unizh.ifi.ddis.cbr.record/ExecutionTrail#getServiceTrail()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="processStarted" id="ch.unizh.ifi.ddis.cbr.record/ExecutionTrail#processStarted(Lorg.mindswap.owls.process.Process;Lorg.mindswap.query.ValueMap;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="processesFinished" id="ch.unizh.ifi.ddis.cbr.record/ExecutionTrail#processesFinished(Lorg.mindswap.owls.process.Process;Lorg.mindswap.query.ValueMap;Lorg.mindswap.query.ValueMap;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setExec" id="ch.unizh.ifi.ddis.cbr.record/ExecutionTrail#setExec(Lorg.mindswap.owls.process.execution.ProcessExecutionEngine;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setFailed" id="ch.unizh.ifi.ddis.cbr.record/ExecutionTrail#setFailed(Z)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setFailed" id="ch.unizh.ifi.ddis.cbr.record/ExecutionTrail#setFailed(ZLorg.mindswap.exceptions.ExecutionException;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setFinished" id="ch.unizh.ifi.ddis.cbr.record/ExecutionTrail#setFinished(Z)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setKB" id="ch.unizh.ifi.ddis.cbr.record/ExecutionTrail#setKB(Lorg.mindswap.owl.OWLKnowledgeBase;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="showExecutionTrail" id="ch.unizh.ifi.ddis.cbr.record/ExecutionTrail#showExecutionTrail()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.record/ExecutionTrail->ch.unizh.ifi.ddis.cbr.record/ExecutionRecord" source="//@children.6" target="//@children.5" targetEnd="//@children.6/@sourceConnections.0/@children.2" label="//@children.6/@sourceConnections.0/@children.0" sourceEnd="//@children.6/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="183,373" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,142"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.8/@sourceConnections.0" name="DefaultProcessMonitor" location="251,206" size="450,139" id="org.mindswap.owls.process.execution/DefaultProcessMonitor" runTimeClassModel="executionStarted(Lorg.mindswap.owls.process.Process;Lorg.mindswap.query.ValueMap;),executionFinished(),executionFailed(Lorg.mindswap.exceptions.ExecutionException;),executionStarted(),executionFinished(Lorg.mindswap.owls.process.Process;Lorg.mindswap.query.ValueMap;Lorg.mindswap.query.ValueMap;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="117,90">
+      <children xsi:type="editmodel:MethodEditModel" name="executionFailed" id="org.mindswap.owls.process.execution/DefaultProcessMonitor#executionFailed(Lorg.mindswap.exceptions.ExecutionException;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="executionFinished" id="org.mindswap.owls.process.execution/DefaultProcessMonitor#executionFinished()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="executionFinished" id="org.mindswap.owls.process.execution/DefaultProcessMonitor#executionFinished(Lorg.mindswap.owls.process.Process;Lorg.mindswap.query.ValueMap;Lorg.mindswap.query.ValueMap;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="executionStarted" id="org.mindswap.owls.process.execution/DefaultProcessMonitor#executionStarted()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="executionStarted" id="org.mindswap.owls.process.execution/DefaultProcessMonitor#executionStarted(Lorg.mindswap.owls.process.Process;Lorg.mindswap.query.ValueMap;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ExecutionMonitor" location="380,395" size="192,175" id="ch.unizh.ifi.ddis.cbr.record/ExecutionMonitor" runTimeClassModel="intermediateResultsReceived(Lorg.mindswap.query.ValueMap;),ExecutionMonitor(Lch.unizh.ifi.ddis.cbr.record.ExecutionTrail;),executionStarted(Lorg.mindswap.owls.process.Process;Lorg.mindswap.query.ValueMap;),executionFinished(),executionFailed(Lorg.mindswap.exceptions.ExecutionException;),executionStarted(),executionFinished(Lorg.mindswap.owls.process.Process;Lorg.mindswap.query.ValueMap;Lorg.mindswap.query.ValueMap;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="169,126">
+      <children xsi:type="editmodel:MethodEditModel" name="ExecutionMonitor" id="ch.unizh.ifi.ddis.cbr.record/ExecutionMonitor#ExecutionMonitor(Lch.unizh.ifi.ddis.cbr.record.ExecutionTrail;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="executionFailed" id="ch.unizh.ifi.ddis.cbr.record/ExecutionMonitor#executionFailed(Lorg.mindswap.exceptions.ExecutionException;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="executionFinished" id="ch.unizh.ifi.ddis.cbr.record/ExecutionMonitor#executionFinished()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="executionFinished" id="ch.unizh.ifi.ddis.cbr.record/ExecutionMonitor#executionFinished(Lorg.mindswap.owls.process.Process;Lorg.mindswap.query.ValueMap;Lorg.mindswap.query.ValueMap;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="executionStarted" id="ch.unizh.ifi.ddis.cbr.record/ExecutionMonitor#executionStarted()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="executionStarted" id="ch.unizh.ifi.ddis.cbr.record/ExecutionMonitor#executionStarted(Lorg.mindswap.owls.process.Process;Lorg.mindswap.query.ValueMap;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="intermediateResultsReceived" id="ch.unizh.ifi.ddis.cbr.record/ExecutionMonitor#intermediateResultsReceived(Lorg.mindswap.query.ValueMap;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="org.mindswap.owls.process.execution/DefaultProcessMonitor&lt;-ch.unizh.ifi.ddis.cbr.record/ExecutionMonitor" source="//@children.8" target="//@children.7" targetEnd="//@children.8/@sourceConnections.0/@children.1" sourceEnd="//@children.8/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="96,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="225,139"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.record/ExecutionMonitor->ch.unizh.ifi.ddis.cbr.record/ExecutionTrail" source="//@children.8" target="//@children.6" targetEnd="//@children.8/@sourceConnections.1/@children.2" label="//@children.8/@sourceConnections.1/@children.0" sourceEnd="//@children.8/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="182,175" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,10"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=7" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="10,10" gridOrigin="0,0" rulerUnit="pixel">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showInterfaceStereotype="true" showAssociationMember="true"/>
+</editmodel:ClassDiagramEditModel>

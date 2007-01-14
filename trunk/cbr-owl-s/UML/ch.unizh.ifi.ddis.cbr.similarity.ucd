@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="3110,3137" id="ch.unizh.ifi.ddis.cbr.similarity" metadata="uml2-1.0" initialized="true" scrolledX="1108" scrolledY="1144" tag="10" key="3230303630343131204F574C2D5320434252">
+  <children xsi:type="editmodel:ClassEditModel" name="SimilarityMatch" location="50,2972" size="141,139" id="ch.unizh.ifi.ddis.cbr.similarity/SimilarityMatch" runTimeClassModel="processes(),inputs(),graph(),outputs(),SimilarityMatch(DDDD)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="101,90">
+      <children xsi:type="editmodel:MethodEditModel" name="SimilarityMatch" id="ch.unizh.ifi.ddis.cbr.similarity/SimilarityMatch#SimilarityMatch(DDDD)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="graph" id="ch.unizh.ifi.ddis.cbr.similarity/SimilarityMatch#graph()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="inputs" id="ch.unizh.ifi.ddis.cbr.similarity/SimilarityMatch#inputs()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="outputs" id="ch.unizh.ifi.ddis.cbr.similarity/SimilarityMatch#outputs()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="processes" id="ch.unizh.ifi.ddis.cbr.similarity/SimilarityMatch#processes()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.11/@sourceConnections.6 //@children.8/@sourceConnections.2 //@children.8/@sourceConnections.3" name="OWLValue" location="2020,2570" size="243,99" id="org.mindswap.owl/OWLValue" runTimeClassModel="isIndividual(),isDataValue()">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="88,36">
+      <children xsi:type="editmodel:MethodEditModel" name="isDataValue" id="org.mindswap.owl/OWLValue#isDataValue()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isIndividual" id="org.mindswap.owl/OWLValue#isIndividual()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.10/@sourceConnections.8" name="StringAccessor" location="380,1294" size="302,229" id="simpack.accessor.string/StringAccessor" runTimeClassModel="getElementFrequencies(),getTokenAt(I),toString(),getSequence(),StringAccessor(Ljava.lang.String;),StringAccessor(Ljava.lang.String;Lsimpack.api.ITokenizer;),unwrap(),length(),charAt(I),getElementFrequency(Ljava.lang.String;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="142,180">
+      <children xsi:type="editmodel:MethodEditModel" name="StringAccessor" id="simpack.accessor.string/StringAccessor#StringAccessor(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="StringAccessor" id="simpack.accessor.string/StringAccessor#StringAccessor(Ljava.lang.String;Lsimpack.api.ITokenizer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="charAt" id="simpack.accessor.string/StringAccessor#charAt(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getElementFrequencies" id="simpack.accessor.string/StringAccessor#getElementFrequencies()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getElementFrequency" id="simpack.accessor.string/StringAccessor#getElementFrequency(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getSequence" id="simpack.accessor.string/StringAccessor#getSequence()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getTokenAt" id="simpack.accessor.string/StringAccessor#getTokenAt(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="length" id="simpack.accessor.string/StringAccessor#length()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toString" id="simpack.accessor.string/StringAccessor#toString()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="unwrap" id="simpack.accessor.string/StringAccessor#unwrap()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.11/@sourceConnections.1 //@children.4/@sourceConnections.0 //@children.8/@sourceConnections.0" name="OWLType" location="150,2700" size="237,171" id="org.mindswap.owl/OWLType" runTimeClassModel="isDataType(),isClass(),uRI,getURI(),isEquivalent(Lorg.mindswap.owl.OWLType;),isSubTypeOf(Lorg.mindswap.owl.OWLType;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="34,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="uRI" id="org.mindswap.owl/OWLType#uRI"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="93,90">
+      <children xsi:type="editmodel:MethodEditModel" name="getURI" id="org.mindswap.owl/OWLType#getURI()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isClass" id="org.mindswap.owl/OWLType#isClass()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isDataType" id="org.mindswap.owl/OWLType#isDataType()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isEquivalent" id="org.mindswap.owl/OWLType#isEquivalent(Lorg.mindswap.owl.OWLType;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isSubTypeOf" id="org.mindswap.owl/OWLType#isSubTypeOf(Lorg.mindswap.owl.OWLType;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="org.mindswap.owl/OWLType@paramType+org.mindswap.owls.process/Parameter@" source="//@children.3" target="//@children.8" targetEnd="//@children.3/@sourceConnections.0/@children.2" label="//@children.3/@sourceConnections.0/@children.0" sourceEnd="//@children.3/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="paramType" location="237,115" id="org.mindswap.owl/OWLType@paramType+org.mindswap.owls.process/Parameter@|org.mindswap.owl/OWLType#paramType" attachSource="true" multiplicityLabel="//@children.3/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.3/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + paramType" location="394,2794" size="66,14" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="394,2822" size="18,14" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,55" id="org.mindswap.owl/OWLType@paramType+org.mindswap.owls.process/Parameter@|org.mindswap.owls.process/Parameter#"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.12/@sourceConnections.0 //@children.11/@sourceConnections.2 //@children.10/@sourceConnections.5 //@children.8/@sourceConnections.1" name="Process" location="50,1615" size="286,819" id="org.mindswap.owls.process/Process" runTimeClassModel="getInput(Ljava.lang.String;),outputsForReal,getInput(I),createLocal(Ljava.net.URI;Lorg.mindswap.owl.OWLType;),perform,getParameters(),getPerform(),profile,results,inputs,getInputsForReal(),addInput(Lorg.mindswap.owls.process.Input;),getProfile(),getOutputsForReal(),outputs,addResult(Lorg.mindswap.owls.process.Result;),setInputsForReal(Lorg.mindswap.owls.process.InputList;),getResult(),aTOMIC,aNY,getOutput(),createInput(Ljava.net.URI;Lorg.mindswap.owl.OWLType;),setOutputsForReal(Lorg.mindswap.owls.process.OutputList;),result,names,setService(Lorg.mindswap.owls.service.Service;),getNames(),input,getOutput(I),getName(Ljava.lang.String;),getName(),getInputs(),createResult(),getService(),getResults(),setPerform(Lorg.mindswap.owls.process.Perform;),cOMPOSITE,getOutputs(),addOutput(Lorg.mindswap.owls.process.Output;),service,getOutput(Ljava.lang.String;),addLocal(Lorg.mindswap.owls.process.Local;),inputsForReal,getParameter(Ljava.net.URI;),name,parameters,output,getLocals(),createResult(Ljava.net.URI;),createOutput(Ljava.net.URI;Lorg.mindswap.owl.OWLType;),setResult(Lorg.mindswap.owls.process.Result;),locals,sIMPLE,getInput(),addParameter(Lorg.mindswap.owls.process.Parameter;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="94,108">
+      <children xsi:type="editmodel:AttributeEditModel" name="aNY" id="org.mindswap.owls.process/Process#aNY"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="aTOMIC" id="org.mindswap.owls.process/Process#aTOMIC"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="cOMPOSITE" id="org.mindswap.owls.process/Process#cOMPOSITE"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="name" id="org.mindswap.owls.process/Process#name"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="result" id="org.mindswap.owls.process/Process#result"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="sIMPLE" id="org.mindswap.owls.process/Process#sIMPLE"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="120,648">
+      <children xsi:type="editmodel:MethodEditModel" name="addInput" id="org.mindswap.owls.process/Process#addInput(Lorg.mindswap.owls.process.Input;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addLocal" id="org.mindswap.owls.process/Process#addLocal(Lorg.mindswap.owls.process.Local;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addOutput" id="org.mindswap.owls.process/Process#addOutput(Lorg.mindswap.owls.process.Output;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addParameter" id="org.mindswap.owls.process/Process#addParameter(Lorg.mindswap.owls.process.Parameter;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addResult" id="org.mindswap.owls.process/Process#addResult(Lorg.mindswap.owls.process.Result;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="createInput" id="org.mindswap.owls.process/Process#createInput(Ljava.net.URI;Lorg.mindswap.owl.OWLType;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="createLocal" id="org.mindswap.owls.process/Process#createLocal(Ljava.net.URI;Lorg.mindswap.owl.OWLType;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="createOutput" id="org.mindswap.owls.process/Process#createOutput(Ljava.net.URI;Lorg.mindswap.owl.OWLType;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="createResult" id="org.mindswap.owls.process/Process#createResult()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="createResult" id="org.mindswap.owls.process/Process#createResult(Ljava.net.URI;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInput" id="org.mindswap.owls.process/Process#getInput(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInput" id="org.mindswap.owls.process/Process#getInput()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInput" id="org.mindswap.owls.process/Process#getInput(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInputs" id="org.mindswap.owls.process/Process#getInputs()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInputsForReal" id="org.mindswap.owls.process/Process#getInputsForReal()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getLocals" id="org.mindswap.owls.process/Process#getLocals()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getName" id="org.mindswap.owls.process/Process#getName()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getName" id="org.mindswap.owls.process/Process#getName(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNames" id="org.mindswap.owls.process/Process#getNames()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getOutput" id="org.mindswap.owls.process/Process#getOutput(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getOutput" id="org.mindswap.owls.process/Process#getOutput()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getOutput" id="org.mindswap.owls.process/Process#getOutput(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getOutputs" id="org.mindswap.owls.process/Process#getOutputs()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getOutputsForReal" id="org.mindswap.owls.process/Process#getOutputsForReal()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getParameter" id="org.mindswap.owls.process/Process#getParameter(Ljava.net.URI;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getParameters" id="org.mindswap.owls.process/Process#getParameters()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPerform" id="org.mindswap.owls.process/Process#getPerform()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getProfile" id="org.mindswap.owls.process/Process#getProfile()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getResult" id="org.mindswap.owls.process/Process#getResult()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getResults" id="org.mindswap.owls.process/Process#getResults()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getService" id="org.mindswap.owls.process/Process#getService()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setInputsForReal" id="org.mindswap.owls.process/Process#setInputsForReal(Lorg.mindswap.owls.process.InputList;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setOutputsForReal" id="org.mindswap.owls.process/Process#setOutputsForReal(Lorg.mindswap.owls.process.OutputList;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setPerform" id="org.mindswap.owls.process/Process#setPerform(Lorg.mindswap.owls.process.Perform;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setResult" id="org.mindswap.owls.process/Process#setResult(Lorg.mindswap.owls.process.Result;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setService" id="org.mindswap.owls.process/Process#setService(Lorg.mindswap.owls.service.Service;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.mindswap.owls.process/Process->org.mindswap.owl/OWLType" source="//@children.4" target="//@children.3" targetEnd="//@children.4/@sourceConnections.0/@children.2" label="//@children.4/@sourceConnections.0/@children.0" sourceEnd="//@children.4/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="192,819" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="92,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" id="org.mindswap.owls.process/Input@input+org.mindswap.owls.process/Process@" source="//@children.4" target="//@children.7" targetEnd="//@children.4/@sourceConnections.1/@children.2" label="//@children.4/@sourceConnections.1/@children.0" sourceEnd="//@children.4/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="286,819" id="org.mindswap.owls.process/Input@input+org.mindswap.owls.process/Process@|org.mindswap.owls.process/Process#" attachSource="true" roleLabel="//@children.4/@sourceConnections.1/@children.1/@children.0">
+        <children xsi:type="editmodel:LabelEditModel" location="343,2413" size="0,14" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="input" location="20,0" id="org.mindswap.owls.process/Input@input+org.mindswap.owls.process/Process@|org.mindswap.owls.process/Input#input" multiplicityLabel="//@children.4/@sourceConnections.1/@children.2/@children.1" roleLabel="//@children.4/@sourceConnections.1/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + input" location="1707,2359" size="35,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="1675,2359" size="18,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" id="org.mindswap.owls.process/Output@output+org.mindswap.owls.process/Process@" source="//@children.4" target="//@children.9" targetEnd="//@children.4/@sourceConnections.2/@children.2" label="//@children.4/@sourceConnections.2/@children.0" sourceEnd="//@children.4/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="276,809" id="org.mindswap.owls.process/Output@output+org.mindswap.owls.process/Process@|org.mindswap.owls.process/Process#" attachSource="true" roleLabel="//@children.4/@sourceConnections.2/@children.1/@children.0">
+        <children xsi:type="editmodel:LabelEditModel" location="319,2441" size="0,14" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="output" location="0,-1" id="org.mindswap.owls.process/Output@output+org.mindswap.owls.process/Process@|org.mindswap.owls.process/Output#output" multiplicityLabel="//@children.4/@sourceConnections.2/@children.2/@children.1" roleLabel="//@children.4/@sourceConnections.2/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + output" location="981,2237" size="42,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="1037,2209" size="18,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" id="org.mindswap.owls.process/Process@process+org.mindswap.owls.process/Parameter@" source="//@children.4" target="//@children.8" targetEnd="//@children.4/@sourceConnections.3/@children.2" label="//@children.4/@sourceConnections.3/@children.0" sourceEnd="//@children.4/@sourceConnections.3/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="process" location="286,819" id="org.mindswap.owls.process/Process@process+org.mindswap.owls.process/Parameter@|org.mindswap.owls.process/Process#process" attachSource="true" multiplicityLabel="//@children.4/@sourceConnections.3/@children.1/@children.1" roleLabel="//@children.4/@sourceConnections.3/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + process" location="343,2413" size="52,14" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="311,2441" size="18,14" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="20,0" id="org.mindswap.owls.process/Process@process+org.mindswap.owls.process/Parameter@|org.mindswap.owls.process/Parameter#" roleLabel="//@children.4/@sourceConnections.3/@children.2/@children.0">
+        <children xsi:type="editmodel:LabelEditModel" location="1233,2739" size="0,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.mindswap.owls.process/Process->org.mindswap.owls.process/Parameter" source="//@children.4" target="//@children.8" targetEnd="//@children.4/@sourceConnections.4/@children.2" label="//@children.4/@sourceConnections.4/@children.0" sourceEnd="//@children.4/@sourceConnections.4/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="286,809" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="10,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.mindswap.owls.process/Process->org.mindswap.owls.process/Input" source="//@children.4" target="//@children.7" targetEnd="//@children.4/@sourceConnections.5/@children.2" label="//@children.4/@sourceConnections.5/@children.0" sourceEnd="//@children.4/@sourceConnections.5/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="286,792" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,27"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="org.mindswap.owls.process/Process->org.mindswap.owls.process/Output" source="//@children.4" target="//@children.9" targetEnd="//@children.4/@sourceConnections.6/@children.2" label="//@children.4/@sourceConnections.6/@children.0" sourceEnd="//@children.4/@sourceConnections.6/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="286,636" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="49,21"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.10/@sourceConnections.1" name="SimilarityMeasure" location="1060,1110" size="281,103" id="simpack.api.impl/SimilarityMeasure" runTimeClassModel="calculate(),getName(),getSimilarity()">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="87,54">
+      <children xsi:type="editmodel:MethodEditModel" name="calculate" id="simpack.api.impl/SimilarityMeasure#calculate()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getName" id="simpack.api.impl/SimilarityMeasure#getName()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getSimilarity" id="simpack.api.impl/SimilarityMeasure#getSimilarity()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.10/@sourceConnections.3 //@children.10/@sourceConnections.4" name="PorterStemmer" location="2140,1710" size="287,121" id="ch.unizh.ifi.ddis.cbr/PorterStemmer" runTimeClassModel="instanceOf(),PorterStemmer(),stem(Ljava.lang.String;),stemmer">
+    <children xsi:type="editmodel:CompartmentEditModel" size="137,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="stemmer" id="ch.unizh.ifi.ddis.cbr/PorterStemmer#stemmer"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="101,54">
+      <children xsi:type="editmodel:MethodEditModel" name="PorterStemmer" id="ch.unizh.ifi.ddis.cbr/PorterStemmer#PorterStemmer()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="instanceOf" id="ch.unizh.ifi.ddis.cbr/PorterStemmer#instanceOf()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="stem" id="ch.unizh.ifi.ddis.cbr/PorterStemmer#stem(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.12/@sourceConnections.3 //@children.11/@sourceConnections.5 //@children.10/@sourceConnections.6 //@children.4/@sourceConnections.1 //@children.4/@sourceConnections.5" name="Input" location="1680,2380" size="269,81" id="org.mindswap.owls.process/Input" runTimeClassModel="transformInputType()">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="124,18">
+      <children xsi:type="editmodel:MethodEditModel" name="transformInputType" id="org.mindswap.owls.process/Input#transformInputType()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="org.mindswap.owls.process/Parameter&lt;-org.mindswap.owls.process/Input" source="//@children.7" target="//@children.8" targetEnd="//@children.7/@sourceConnections.0/@children.1" sourceEnd="//@children.7/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,71" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="294,0" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.12/@sourceConnections.1 //@children.11/@sourceConnections.3 //@children.10/@sourceConnections.2 //@children.3/@sourceConnections.0 //@children.4/@sourceConnections.3 //@children.4/@sourceConnections.4 //@children.7/@sourceConnections.0 //@children.9/@sourceConnections.0" name="Parameter" location="1220,2760" size="304,207" id="org.mindswap.owls.process/Parameter" runTimeClassModel="setParamType(Lorg.mindswap.owl.OWLType;),paramType,getProcess(),setProcess(Lorg.mindswap.owls.process.Process;),getService(),profile,getConstantValue(),service,getProfile(),process,getParamType(),constantValue,setConstantValue(Lorg.mindswap.owl.OWLValue;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="116,144">
+      <children xsi:type="editmodel:MethodEditModel" name="getConstantValue" id="org.mindswap.owls.process/Parameter#getConstantValue()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getParamType" id="org.mindswap.owls.process/Parameter#getParamType()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getProcess" id="org.mindswap.owls.process/Parameter#getProcess()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getProfile" id="org.mindswap.owls.process/Parameter#getProfile()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getService" id="org.mindswap.owls.process/Parameter#getService()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setConstantValue" id="org.mindswap.owls.process/Parameter#setConstantValue(Lorg.mindswap.owl.OWLValue;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setParamType" id="org.mindswap.owls.process/Parameter#setParamType(Lorg.mindswap.owl.OWLType;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setProcess" id="org.mindswap.owls.process/Parameter#setProcess(Lorg.mindswap.owls.process.Process;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="org.mindswap.owls.process/Parameter->org.mindswap.owl/OWLType" source="//@children.8" target="//@children.3" targetEnd="//@children.8/@sourceConnections.0/@children.2" label="//@children.8/@sourceConnections.0/@children.0" sourceEnd="//@children.8/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,37" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="227,122"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="org.mindswap.owls.process/Parameter->org.mindswap.owls.process/Process" source="//@children.8" target="//@children.4" targetEnd="//@children.8/@sourceConnections.1/@children.2" label="//@children.8/@sourceConnections.1/@children.0" sourceEnd="//@children.8/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,-1" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="276,809"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="org.mindswap.owl/OWLValue@constantValue+org.mindswap.owls.process/Parameter@" source="//@children.8" target="//@children.1" targetEnd="//@children.8/@sourceConnections.2/@children.2" label="//@children.8/@sourceConnections.2/@children.0" sourceEnd="//@children.8/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="304,10" id="org.mindswap.owl/OWLValue@constantValue+org.mindswap.owls.process/Parameter@|org.mindswap.owls.process/Parameter#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="constantValue" location="10,99" id="org.mindswap.owl/OWLValue@constantValue+org.mindswap.owls.process/Parameter@|org.mindswap.owl/OWLValue#constantValue" multiplicityLabel="//@children.8/@sourceConnections.2/@children.2/@children.1" roleLabel="//@children.8/@sourceConnections.2/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" + constantValue" location="2037,2676" size="82,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="2005,2676" size="18,14" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="org.mindswap.owls.process/Parameter->org.mindswap.owl/OWLValue" source="//@children.8" target="//@children.1" targetEnd="//@children.8/@sourceConnections.3/@children.2" label="//@children.8/@sourceConnections.3/@children.0" sourceEnd="//@children.8/@sourceConnections.3/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="294,26" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,82"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.12/@sourceConnections.2 //@children.11/@sourceConnections.4 //@children.10/@sourceConnections.7 //@children.4/@sourceConnections.2 //@children.4/@sourceConnections.6" name="Output" location="1030,2230" size="279,43" id="org.mindswap.owls.process/Output" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" id="org.mindswap.owls.process/Parameter&lt;-org.mindswap.owls.process/Output" source="//@children.9" target="//@children.8" targetEnd="//@children.9/@sourceConnections.0/@children.1" sourceEnd="//@children.9/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="139,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,103" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="SimilaritySyntactic" location="1040,1760" size="161,121" id="ch.unizh.ifi.ddis.cbr.similarity/SimilaritySyntactic" runTimeClassModel="compareProcess(Lorg.mindswap.owls.process.Process;Lorg.mindswap.owls.process.Process;),compareParameter(Lorg.mindswap.owls.process.Parameter;Lorg.mindswap.owls.process.Parameter;),compareOutput(Lorg.mindswap.owls.process.Output;Lorg.mindswap.owls.process.Output;),compareInput(Lorg.mindswap.owls.process.Input;Lorg.mindswap.owls.process.Input;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="121,72">
+      <children xsi:type="editmodel:MethodEditModel" name="compareInput" id="ch.unizh.ifi.ddis.cbr.similarity/SimilaritySyntactic#compareInput(Lorg.mindswap.owls.process.Input;Lorg.mindswap.owls.process.Input;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="compareOutput" id="ch.unizh.ifi.ddis.cbr.similarity/SimilaritySyntactic#compareOutput(Lorg.mindswap.owls.process.Output;Lorg.mindswap.owls.process.Output;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="compareParameter" id="ch.unizh.ifi.ddis.cbr.similarity/SimilaritySyntactic#compareParameter(Lorg.mindswap.owls.process.Parameter;Lorg.mindswap.owls.process.Parameter;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="compareProcess" id="ch.unizh.ifi.ddis.cbr.similarity/SimilaritySyntactic#compareProcess(Lorg.mindswap.owls.process.Process;Lorg.mindswap.owls.process.Process;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.11/@sourceConnections.0" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.similarity/SimilarityDefault&lt;-ch.unizh.ifi.ddis.cbr.similarity/SimilaritySyntactic" source="//@children.10" target="//@children.13" targetEnd="//@children.10/@sourceConnections.0/@children.1" sourceEnd="//@children.10/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="80,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="74,67" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.similarity/SimilaritySyntactic->simpack.api.impl/SimilarityMeasure" source="//@children.10" target="//@children.5" targetEnd="//@children.10/@sourceConnections.1/@children.2" label="//@children.10/@sourceConnections.1/@children.0" sourceEnd="//@children.10/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="90,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="70,103"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.similarity/SimilaritySyntactic->org.mindswap.owls.process/Parameter" source="//@children.10" target="//@children.8" targetEnd="//@children.10/@sourceConnections.2/@children.2" label="//@children.10/@sourceConnections.2/@children.0" sourceEnd="//@children.10/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="151,121" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,10"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="ch.unizh.ifi.ddis.cbr.similarity/SimilaritySyntactic->ch.unizh.ifi.ddis.cbr/PorterStemmer" source="//@children.10" target="//@children.6" targetEnd="//@children.10/@sourceConnections.3/@children.2" label="//@children.10/@sourceConnections.3/@children.0" sourceEnd="//@children.10/@sourceConnections.3/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«access»" size="48,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="160,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="10,131"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.similarity/SimilaritySyntactic->ch.unizh.ifi.ddis.cbr/PorterStemmer" source="//@children.10" target="//@children.6" targetEnd="//@children.10/@sourceConnections.4/@children.2" label="//@children.10/@sourceConnections.4/@children.0" sourceEnd="//@children.10/@sourceConnections.4/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="161,35" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,85"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.similarity/SimilaritySyntactic->org.mindswap.owls.process/Process" source="//@children.10" target="//@children.4" targetEnd="//@children.10/@sourceConnections.5/@children.2" label="//@children.10/@sourceConnections.5/@children.0" sourceEnd="//@children.10/@sourceConnections.5/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,60" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="286,205"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.similarity/SimilaritySyntactic->org.mindswap.owls.process/Input" source="//@children.10" target="//@children.7" targetEnd="//@children.10/@sourceConnections.6/@children.2" label="//@children.10/@sourceConnections.6/@children.0" sourceEnd="//@children.10/@sourceConnections.6/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="151,121" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,10"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.similarity/SimilaritySyntactic->org.mindswap.owls.process/Output" source="//@children.10" target="//@children.9" targetEnd="//@children.10/@sourceConnections.7/@children.2" label="//@children.10/@sourceConnections.7/@children.0" sourceEnd="//@children.10/@sourceConnections.7/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="80,121" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="90,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.similarity/SimilaritySyntactic->simpack.accessor.string/StringAccessor" source="//@children.10" target="//@children.2" targetEnd="//@children.10/@sourceConnections.8/@children.2" label="//@children.10/@sourceConnections.8/@children.0" sourceEnd="//@children.10/@sourceConnections.8/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,10" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="292,229"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="SimilaritySemantic" location="1720,1820" size="163,193" id="ch.unizh.ifi.ddis.cbr.similarity/SimilaritySemantic" runTimeClassModel="compareProcess(Lorg.mindswap.owls.process.Process;Lorg.mindswap.owls.process.Process;),fAIL,rELAXED,compareOutput(Lorg.mindswap.owls.process.Output;Lorg.mindswap.owls.process.Output;),compareParameter(Lorg.mindswap.owls.process.Parameter;Lorg.mindswap.owls.process.Parameter;),sUBSUME,eXACT,compareInput(Lorg.mindswap.owls.process.Input;Lorg.mindswap.owls.process.Input;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="106,72">
+      <children xsi:type="editmodel:AttributeEditModel" name="eXACT" id="ch.unizh.ifi.ddis.cbr.similarity/SimilaritySemantic#eXACT"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="fAIL" id="ch.unizh.ifi.ddis.cbr.similarity/SimilaritySemantic#fAIL"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="rELAXED" id="ch.unizh.ifi.ddis.cbr.similarity/SimilaritySemantic#rELAXED"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="sUBSUME" id="ch.unizh.ifi.ddis.cbr.similarity/SimilaritySemantic#sUBSUME"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="121,72">
+      <children xsi:type="editmodel:MethodEditModel" name="compareInput" id="ch.unizh.ifi.ddis.cbr.similarity/SimilaritySemantic#compareInput(Lorg.mindswap.owls.process.Input;Lorg.mindswap.owls.process.Input;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="compareOutput" id="ch.unizh.ifi.ddis.cbr.similarity/SimilaritySemantic#compareOutput(Lorg.mindswap.owls.process.Output;Lorg.mindswap.owls.process.Output;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="compareParameter" id="ch.unizh.ifi.ddis.cbr.similarity/SimilaritySemantic#compareParameter(Lorg.mindswap.owls.process.Parameter;Lorg.mindswap.owls.process.Parameter;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="compareProcess" id="ch.unizh.ifi.ddis.cbr.similarity/SimilaritySemantic#compareProcess(Lorg.mindswap.owls.process.Process;Lorg.mindswap.owls.process.Process;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.similarity/SimilarityDefault&lt;-ch.unizh.ifi.ddis.cbr.similarity/SimilaritySemantic" source="//@children.11" target="//@children.10/@sourceConnections.0" targetEnd="//@children.11/@sourceConnections.0/@children.1" sourceEnd="//@children.11/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="81,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.similarity/SimilaritySemantic->org.mindswap.owl/OWLType" source="//@children.11" target="//@children.3" targetEnd="//@children.11/@sourceConnections.1/@children.2" label="//@children.11/@sourceConnections.1/@children.0" sourceEnd="//@children.11/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="10,193" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="237,10"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.similarity/SimilaritySemantic->org.mindswap.owls.process/Process" source="//@children.11" target="//@children.4" targetEnd="//@children.11/@sourceConnections.2/@children.2" label="//@children.11/@sourceConnections.2/@children.0" sourceEnd="//@children.11/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,96" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="286,301"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.similarity/SimilaritySemantic->org.mindswap.owls.process/Parameter" source="//@children.11" target="//@children.8" targetEnd="//@children.11/@sourceConnections.3/@children.2" label="//@children.11/@sourceConnections.3/@children.0" sourceEnd="//@children.11/@sourceConnections.3/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,183" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="294,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.similarity/SimilaritySemantic->org.mindswap.owls.process/Output" source="//@children.11" target="//@children.9" targetEnd="//@children.11/@sourceConnections.4/@children.2" label="//@children.11/@sourceConnections.4/@children.0" sourceEnd="//@children.11/@sourceConnections.4/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,183" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="269,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.similarity/SimilaritySemantic->org.mindswap.owls.process/Input" source="//@children.11" target="//@children.7" targetEnd="//@children.11/@sourceConnections.5/@children.2" label="//@children.11/@sourceConnections.5/@children.0" sourceEnd="//@children.11/@sourceConnections.5/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="81,193" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="121,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.similarity/SimilaritySemantic->org.mindswap.owl/OWLValue" source="//@children.11" target="//@children.1" targetEnd="//@children.11/@sourceConnections.6/@children.2" label="//@children.11/@sourceConnections.6/@children.0" sourceEnd="//@children.11/@sourceConnections.6/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="163,183" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="10,0"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.13/@sourceConnections.0" name="Similarity" location="1432,1370" size="144,153" id="ch.unizh.ifi.ddis.cbr.similarity/Similarity" runTimeClassModel="compareProcess(Lorg.mindswap.owls.process.Process;Lorg.mindswap.owls.process.Process;),compareParameter(Lorg.mindswap.owls.process.Parameter;Lorg.mindswap.owls.process.Parameter;),compareOutput(Lorg.mindswap.owls.process.Output;Lorg.mindswap.owls.process.Output;),compareGraph(Lch.unizh.ifi.ddis.cbr.OWLSGraph;Lch.unizh.ifi.ddis.cbr.OWLSGraph;),compareInput(Lorg.mindswap.owls.process.Input;Lorg.mindswap.owls.process.Input;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="121,90">
+      <children xsi:type="editmodel:MethodEditModel" name="compareGraph" id="ch.unizh.ifi.ddis.cbr.similarity/Similarity#compareGraph(Lch.unizh.ifi.ddis.cbr.OWLSGraph;Lch.unizh.ifi.ddis.cbr.OWLSGraph;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="compareInput" id="ch.unizh.ifi.ddis.cbr.similarity/Similarity#compareInput(Lorg.mindswap.owls.process.Input;Lorg.mindswap.owls.process.Input;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="compareOutput" id="ch.unizh.ifi.ddis.cbr.similarity/Similarity#compareOutput(Lorg.mindswap.owls.process.Output;Lorg.mindswap.owls.process.Output;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="compareParameter" id="ch.unizh.ifi.ddis.cbr.similarity/Similarity#compareParameter(Lorg.mindswap.owls.process.Parameter;Lorg.mindswap.owls.process.Parameter;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="compareProcess" id="ch.unizh.ifi.ddis.cbr.similarity/Similarity#compareProcess(Lorg.mindswap.owls.process.Process;Lorg.mindswap.owls.process.Process;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.similarity/Similarity->org.mindswap.owls.process/Process" source="//@children.12" target="//@children.4" targetEnd="//@children.12/@sourceConnections.0/@children.2" label="//@children.12/@sourceConnections.0/@children.0" sourceEnd="//@children.12/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="10,153" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="286,10"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.similarity/Similarity->org.mindswap.owls.process/Parameter" source="//@children.12" target="//@children.8" targetEnd="//@children.12/@sourceConnections.1/@children.2" label="//@children.12/@sourceConnections.1/@children.0" sourceEnd="//@children.12/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="45,153" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="257,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.similarity/Similarity->org.mindswap.owls.process/Output" source="//@children.12" target="//@children.9" targetEnd="//@children.12/@sourceConnections.2/@children.2" label="//@children.12/@sourceConnections.2/@children.0" sourceEnd="//@children.12/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,143" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="269,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.similarity/Similarity->org.mindswap.owls.process/Input" source="//@children.12" target="//@children.7" targetEnd="//@children.12/@sourceConnections.3/@children.2" label="//@children.12/@sourceConnections.3/@children.0" sourceEnd="//@children.12/@sourceConnections.3/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="144,143" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="10,0"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.10/@sourceConnections.0" name="SimilarityDefault" location="1430,1640" size="148,67" id="ch.unizh.ifi.ddis.cbr.similarity/SimilarityDefault" runTimeClassModel="compareGraph(Lch.unizh.ifi.ddis.cbr.OWLSGraph;Lch.unizh.ifi.ddis.cbr.OWLSGraph;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="102,18">
+      <children xsi:type="editmodel:MethodEditModel" name="compareGraph" id="ch.unizh.ifi.ddis.cbr.similarity/SimilarityDefault#compareGraph(Lch.unizh.ifi.ddis.cbr.OWLSGraph;Lch.unizh.ifi.ddis.cbr.OWLSGraph;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.similarity/Similarity&lt;-ch.unizh.ifi.ddis.cbr.similarity/SimilarityDefault" source="//@children.13" target="//@children.12" targetEnd="//@children.13/@sourceConnections.0/@children.1" sourceEnd="//@children.13/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="74,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="72,153"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=7" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="10,10" gridOrigin="0,0" rulerUnit="pixel">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showInterfaceStereotype="true" showAssociationMember="true"/>
+</editmodel:ClassDiagramEditModel>
