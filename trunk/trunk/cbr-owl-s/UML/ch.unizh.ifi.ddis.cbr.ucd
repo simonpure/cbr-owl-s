@@ -1,5 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" id="ch.unizh.ifi.ddis.cbr" metadata="uml2-1.0" tag="10" key="3230303630343131204F574C2D5320434252">
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="1614,1555" id="ch.unizh.ifi.ddis.cbr" metadata="uml2-1.0" initialized="true" tag="10" key="3230303630343131204F574C2D5320434252">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.0 //@children.2/@sourceConnections.1 //@children.2/@sourceConnections.3" name="PorterStemmer" location="310,360" size="160,121" id="ch.unizh.ifi.ddis.cbr/PorterStemmer" runTimeClassModel="instanceOf(),PorterStemmer(),stem(Ljava.lang.String;),stemmer">
+    <children xsi:type="editmodel:CompartmentEditModel" size="137,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="stemmer" id="ch.unizh.ifi.ddis.cbr/PorterStemmer#stemmer"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="101,54">
+      <children xsi:type="editmodel:MethodEditModel" name="PorterStemmer" id="ch.unizh.ifi.ddis.cbr/PorterStemmer#PorterStemmer()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="instanceOf" id="ch.unizh.ifi.ddis.cbr/PorterStemmer#instanceOf()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="stem" id="ch.unizh.ifi.ddis.cbr/PorterStemmer#stem(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="OWLSCaseBasedReasoner" location="977,1017" size="212,229" id="ch.unizh.ifi.ddis.cbr/OWLSCaseBasedReasoner" runTimeClassModel="setKB(Lorg.mindswap.owl.OWLKnowledgeBase;),init(),newCase,getKB(),OWLSCaseBasedReasoner(Lorg.mindswap.owl.OWLKnowledgeBase;),reuse(Lorg.mindswap.owl.OWLOntology;),retrievedCases,retrieve(Lorg.mindswap.owl.OWLOntology;),getCases(),OWLSCaseBasedReasoner()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="165,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="newCase" id="ch.unizh.ifi.ddis.cbr/OWLSCaseBasedReasoner#newCase"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="retrievedCases" id="ch.unizh.ifi.ddis.cbr/OWLSCaseBasedReasoner#retrievedCases"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="164,144">
+      <children xsi:type="editmodel:MethodEditModel" name="OWLSCaseBasedReasoner" id="ch.unizh.ifi.ddis.cbr/OWLSCaseBasedReasoner#OWLSCaseBasedReasoner(Lorg.mindswap.owl.OWLKnowledgeBase;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="OWLSCaseBasedReasoner" id="ch.unizh.ifi.ddis.cbr/OWLSCaseBasedReasoner#OWLSCaseBasedReasoner()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCases" id="ch.unizh.ifi.ddis.cbr/OWLSCaseBasedReasoner#getCases()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getKB" id="ch.unizh.ifi.ddis.cbr/OWLSCaseBasedReasoner#getKB()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="init" id="ch.unizh.ifi.ddis.cbr/OWLSCaseBasedReasoner#init()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="retrieve" id="ch.unizh.ifi.ddis.cbr/OWLSCaseBasedReasoner#retrieve(Lorg.mindswap.owl.OWLOntology;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="reuse" id="ch.unizh.ifi.ddis.cbr/OWLSCaseBasedReasoner#reuse(Lorg.mindswap.owl.OWLOntology;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setKB" id="ch.unizh.ifi.ddis.cbr/OWLSCaseBasedReasoner#setKB(Lorg.mindswap.owl.OWLKnowledgeBase;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr/OWLSCaseBasedReasoner->ch.unizh.ifi.ddis.cbr/OWLWrapper" source="//@children.1" target="//@children.2" targetEnd="//@children.1/@sourceConnections.0/@children.2" label="//@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,5" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="169,421"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr/OWLSCaseBasedReasoner->ch.unizh.ifi.ddis.cbr/CBRFactory" source="//@children.1" target="//@children.3" targetEnd="//@children.1/@sourceConnections.1/@children.2" label="//@children.1/@sourceConnections.1/@children.0" sourceEnd="//@children.1/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«access»" size="48,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="202,229" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,10"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.0" name="OWLWrapper" location="600,601" size="169,427" id="ch.unizh.ifi.ddis.cbr/OWLWrapper" runTimeClassModel="toString(),getOntology(),getURI(),getInputs(),getNumberOfProcesses(),getService(),getOutputNamesLabel(),getProcesses(),getProcessNamesLabel(),getOutputs(),getGraph(),OWLWrapper(Lorg.mindswap.owl.OWLOntology;Lorg.mindswap.owl.OWLKnowledgeBase;),getNumberOfOutputs(),isTrail(),setKB(Lorg.mindswap.owl.OWLKnowledgeBase;),getOutputNames(),printProcessList(),OWLWrapper(Lorg.mindswap.owl.OWLOntology;),getNumberOfInputs(),getInputNames(),getProcessNames()">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="146,378">
+      <children xsi:type="editmodel:MethodEditModel" name="OWLWrapper" id="ch.unizh.ifi.ddis.cbr/OWLWrapper#OWLWrapper(Lorg.mindswap.owl.OWLOntology;Lorg.mindswap.owl.OWLKnowledgeBase;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="OWLWrapper" id="ch.unizh.ifi.ddis.cbr/OWLWrapper#OWLWrapper(Lorg.mindswap.owl.OWLOntology;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getGraph" id="ch.unizh.ifi.ddis.cbr/OWLWrapper#getGraph()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInputNames" id="ch.unizh.ifi.ddis.cbr/OWLWrapper#getInputNames()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInputs" id="ch.unizh.ifi.ddis.cbr/OWLWrapper#getInputs()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNumberOfInputs" id="ch.unizh.ifi.ddis.cbr/OWLWrapper#getNumberOfInputs()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNumberOfOutputs" id="ch.unizh.ifi.ddis.cbr/OWLWrapper#getNumberOfOutputs()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNumberOfProcesses" id="ch.unizh.ifi.ddis.cbr/OWLWrapper#getNumberOfProcesses()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getOntology" id="ch.unizh.ifi.ddis.cbr/OWLWrapper#getOntology()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getOutputNames" id="ch.unizh.ifi.ddis.cbr/OWLWrapper#getOutputNames()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getOutputNamesLabel" id="ch.unizh.ifi.ddis.cbr/OWLWrapper#getOutputNamesLabel()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getOutputs" id="ch.unizh.ifi.ddis.cbr/OWLWrapper#getOutputs()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getProcessNames" id="ch.unizh.ifi.ddis.cbr/OWLWrapper#getProcessNames()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getProcessNamesLabel" id="ch.unizh.ifi.ddis.cbr/OWLWrapper#getProcessNamesLabel()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getProcesses" id="ch.unizh.ifi.ddis.cbr/OWLWrapper#getProcesses()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getService" id="ch.unizh.ifi.ddis.cbr/OWLWrapper#getService()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getURI" id="ch.unizh.ifi.ddis.cbr/OWLWrapper#getURI()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isTrail" id="ch.unizh.ifi.ddis.cbr/OWLWrapper#isTrail()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="printProcessList" id="ch.unizh.ifi.ddis.cbr/OWLWrapper#printProcessList()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setKB" id="ch.unizh.ifi.ddis.cbr/OWLWrapper#setKB(Lorg.mindswap.owl.OWLKnowledgeBase;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toString" id="ch.unizh.ifi.ddis.cbr/OWLWrapper#toString()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr/OWLWrapper->ch.unizh.ifi.ddis.cbr/PorterStemmer" source="//@children.2" target="//@children.0" targetEnd="//@children.2/@sourceConnections.0/@children.2" label="//@children.2/@sourceConnections.0/@children.0" sourceEnd="//@children.2/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«access»" size="48,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,10" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="150,121"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" id="ch.unizh.ifi.ddis.cbr/OWLWrapper->ch.unizh.ifi.ddis.cbr/PorterStemmer" source="//@children.2" target="//@children.0" targetEnd="//@children.2/@sourceConnections.1/@children.2" label="//@children.2/@sourceConnections.1/@children.0" sourceEnd="//@children.2/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«access»" size="48,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="123,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="24,121"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr/OWLWrapper->ch.unizh.ifi.ddis.cbr/OWLSGraph" source="//@children.2" target="//@children.5" targetEnd="//@children.2/@sourceConnections.2/@children.2" label="//@children.2/@sourceConnections.2/@children.0" sourceEnd="//@children.2/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,395" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="211,30"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr/OWLWrapper->ch.unizh.ifi.ddis.cbr/PorterStemmer" source="//@children.2" target="//@children.0" targetEnd="//@children.2/@sourceConnections.3/@children.2" label="//@children.2/@sourceConnections.3/@children.0" sourceEnd="//@children.2/@sourceConnections.3/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,111" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.1" name="CBRFactory" location="1435,1306" size="159,85" id="ch.unizh.ifi.ddis.cbr/CBRFactory" runTimeClassModel="getSimilarityStrategies(),getKB()">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="136,36">
+      <children xsi:type="editmodel:MethodEditModel" name="getKB" id="ch.unizh.ifi.ddis.cbr/CBRFactory#getKB()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getSimilarityStrategies" id="ch.unizh.ifi.ddis.cbr/CBRFactory#getSimilarityStrategies()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.5/@sourceConnections.0" name="AbstractGraphAccessor" location="50,741" size="312,175" id="simpack.api.impl/AbstractGraphAccessor" runTimeClassModel="size(),addNode(Lsimpack.api.IGraphNode;),getRoot(),getNodeSet(),getNode(Ljava.lang.String;),contains(Lsimpack.api.IGraphNode;),setEdge(Lsimpack.api.IGraphNode;Lsimpack.api.IGraphNode;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="86,126">
+      <children xsi:type="editmodel:MethodEditModel" name="addNode" id="simpack.api.impl/AbstractGraphAccessor#addNode(Lsimpack.api.IGraphNode;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="contains" id="simpack.api.impl/AbstractGraphAccessor#contains(Lsimpack.api.IGraphNode;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNode" id="simpack.api.impl/AbstractGraphAccessor#getNode(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getNodeSet" id="simpack.api.impl/AbstractGraphAccessor#getNodeSet()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getRoot" id="simpack.api.impl/AbstractGraphAccessor#getRoot()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setEdge" id="simpack.api.impl/AbstractGraphAccessor#setEdge(Lsimpack.api.IGraphNode;Lsimpack.api.IGraphNode;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="size" id="simpack.api.impl/AbstractGraphAccessor#size()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.2" name="OWLSGraph" location="100,966" size="211,211" id="ch.unizh.ifi.ddis.cbr/OWLSGraph" runTimeClassModel="OWLSGraph(Lorg.mindswap.owls.service.Service;),getShortestPath(Lsimpack.api.IGraphNode;Lsimpack.api.IGraphNode;),addNewNode(Ljava.lang.String;),getRoot(),addParameters(Lorg.mindswap.owls.process.Process;Lsimpack.util.graph.GraphNode;),getPredecessors(Lsimpack.api.IGraphNode;Z),getMaximumDirectedPathLength(),getSuccessors(Lsimpack.api.IGraphNode;Z),getMostRecentCommonAncestor(Lsimpack.api.IGraphNode;Lsimpack.api.IGraphNode;)">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="188,162">
+      <children xsi:type="editmodel:MethodEditModel" name="OWLSGraph" id="ch.unizh.ifi.ddis.cbr/OWLSGraph#OWLSGraph(Lorg.mindswap.owls.service.Service;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addNewNode" id="ch.unizh.ifi.ddis.cbr/OWLSGraph#addNewNode(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addParameters" id="ch.unizh.ifi.ddis.cbr/OWLSGraph#addParameters(Lorg.mindswap.owls.process.Process;Lsimpack.util.graph.GraphNode;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getMaximumDirectedPathLength" id="ch.unizh.ifi.ddis.cbr/OWLSGraph#getMaximumDirectedPathLength()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getMostRecentCommonAncestor" id="ch.unizh.ifi.ddis.cbr/OWLSGraph#getMostRecentCommonAncestor(Lsimpack.api.IGraphNode;Lsimpack.api.IGraphNode;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getPredecessors" id="ch.unizh.ifi.ddis.cbr/OWLSGraph#getPredecessors(Lsimpack.api.IGraphNode;Z)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getRoot" id="ch.unizh.ifi.ddis.cbr/OWLSGraph#getRoot()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getShortestPath" id="ch.unizh.ifi.ddis.cbr/OWLSGraph#getShortestPath(Lsimpack.api.IGraphNode;Lsimpack.api.IGraphNode;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getSuccessors" id="ch.unizh.ifi.ddis.cbr/OWLSGraph#getSuccessors(Lsimpack.api.IGraphNode;Z)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="simpack.api.impl/AbstractGraphAccessor&lt;-ch.unizh.ifi.ddis.cbr/OWLSGraph" source="//@children.5" target="//@children.4" targetEnd="//@children.5/@sourceConnections.0/@children.1" sourceEnd="//@children.5/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="105,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="155,175"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
+  </children>
   <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=7" autoName="false"/>
   <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="10,10" gridOrigin="0,0" rulerUnit="pixel">
     <leftRuler/>
