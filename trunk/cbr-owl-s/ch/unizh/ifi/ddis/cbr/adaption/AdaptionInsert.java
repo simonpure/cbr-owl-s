@@ -1,4 +1,4 @@
-package ch.unizh.ifi.ddis.cbr.merge;
+package ch.unizh.ifi.ddis.cbr.adaption;
 
 import impl.owls.process.ProcessListImpl;
 
@@ -13,20 +13,20 @@ import org.mindswap.owls.process.Process;
 import org.mindswap.owls.process.ProcessList;
 
 import ch.unizh.ifi.ddis.cbr.OWLWrapper;
-import ch.unizh.ifi.ddis.cbr.SimilarityStatic;
 
-public class MergerInsert extends MergerDefault {
+
+public class AdaptionInsert extends AdaptionDefault {
 
 	// NIL pointer
     public static final URI NIL = URI.create("http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#nil");
 
-	public OWLWrapper merge(OWLWrapper oldCase, OWLWrapper newCase) throws FileNotFoundException, URISyntaxException {
+	public OWLWrapper adapt(OWLWrapper oldCase, OWLWrapper newCase) throws FileNotFoundException, URISyntaxException, NoBindingException {
 		doInsertion(oldCase, newCase);
 		return getMergedCase();
 	}
 
 	
-	private void doInsertion(OWLWrapper oldCase, OWLWrapper newCase) {
+	private void doInsertion(OWLWrapper oldCase, OWLWrapper newCase) throws NoBindingException {
 		ProcessList plNew = newCase.getProcesses();
 		Process previousProcess = null;
 		Process process = null;

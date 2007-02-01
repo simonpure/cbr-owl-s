@@ -1,4 +1,4 @@
-package ch.unizh.ifi.ddis.cbr.merge;
+package ch.unizh.ifi.ddis.cbr.adaption;
 
 import java.io.FileNotFoundException;
 import java.net.URISyntaxException;
@@ -7,10 +7,10 @@ import org.mindswap.owls.process.Process;
 
 import ch.unizh.ifi.ddis.cbr.OWLWrapper;
 
-public class MergerCopy extends MergerDefault {
+public class AdaptionCopy extends AdaptionDefault {
 
 	
-	public OWLWrapper merge(OWLWrapper oldCase, OWLWrapper newCase) throws FileNotFoundException, URISyntaxException {
+	public OWLWrapper adapt(OWLWrapper oldCase, OWLWrapper newCase) throws FileNotFoundException, URISyntaxException, NoBindingException {
 		
 		Process newProcess = newCase.getService().getProcess();
 		Process oldProcess = oldCase.getService().getProcess();

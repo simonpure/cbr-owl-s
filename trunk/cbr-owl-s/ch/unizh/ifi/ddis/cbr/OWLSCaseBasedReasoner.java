@@ -20,9 +20,10 @@ import org.mindswap.owls.process.Process;
 import org.mindswap.owls.process.ProcessList;
 import org.mindswap.owls.service.Service;
 
-import ch.unizh.ifi.ddis.cbr.merge.MergerCopy;
-import ch.unizh.ifi.ddis.cbr.merge.MergerInsert;
-import ch.unizh.ifi.ddis.cbr.merge.MergerSimple;
+import ch.unizh.ifi.ddis.cbr.adaption.AdaptionCopy;
+import ch.unizh.ifi.ddis.cbr.adaption.AdaptionInsert;
+import ch.unizh.ifi.ddis.cbr.adaption.AdaptionSimple;
+import ch.unizh.ifi.ddis.cbr.adaption.NoBindingException;
 import ch.unizh.ifi.ddis.cbr.similarity.Similarity;
 import ch.unizh.ifi.ddis.cbr.similarity.SimilarityMatch;
 
@@ -107,38 +108,46 @@ public class OWLSCaseBasedReasoner {
 		return kb;
 	}
 	
-	public OWLOntology reuse(OWLOntology ont1) throws FileNotFoundException, URISyntaxException {
+	public ArrayList reuse(OWLOntology ont1) throws FileNotFoundException, URISyntaxException {
 		//Iterator i = retrievedCases.iterator();
 		newCase = new OWLWrapper(ont1);
 		
 		Iterator i = cases.iterator();
 		OWLWrapper oldCase = null;
 		OWLOntology ont;
-		OWLWrapper mergedCase;
+		OWLWrapper mergedCase = null;
+		ArrayList mergedCases = new ArrayList();
+		
 		while(i.hasNext()) {
 			oldCase = (OWLWrapper) i.next();
 			
-			MergerSimple simple = new MergerSimple();
-			MergerCopy copy = new MergerCopy();
-			MergerInsert insert = new MergerInsert();
+			AdaptionSimple simple = new AdaptionSimple();
+			AdaptionCopy copy = new AdaptionCopy();
+			AdaptionInsert insert = new AdaptionInsert();
 			
-			mergedCase = simple.merge(oldCase, newCase);
+
+			// try to merge the old case with the new case using the different strategies
+			try {
+				mergedCase = insert.adapt(oldCase, newCase);
+			} catch (NoBindingException e) {
+				try {
+					mergedCase = copy.adapt(oldCase, newCase);
+				} catch (NoBindingException e1) {
+					try {
+						mergedCase = simple.adapt(oldCase, newCase);
+					} catch (NoBindingException e2) {
+						// shouldn't happen as simple uses old case only
+					}
+				}
+			}
 			ont = mergedCase.getOntology();
 			//ont.write(System.out);
-
-			mergedCase = copy.merge(oldCase, newCase);
-			ont = mergedCase.getOntology();
-			ont.write(System.out);
-
-			mergedCase = insert.merge(oldCase, newCase);
-			ont = mergedCase.getOntology();
-			//ont.write(System.out);
+			mergedCases.add(ont);
 			
-			break;
+			//break;
 
 		}
-		
-		return null;
+		return mergedCases;
 	}
 
 	ArrayList retrievedCases = new ArrayList();

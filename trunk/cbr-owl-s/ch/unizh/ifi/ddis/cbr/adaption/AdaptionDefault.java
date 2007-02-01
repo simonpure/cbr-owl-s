@@ -1,4 +1,4 @@
-package ch.unizh.ifi.ddis.cbr.merge;
+package ch.unizh.ifi.ddis.cbr.adaption;
 
 import impl.owls.process.InputListImpl;
 import impl.owls.process.OutputListImpl;
@@ -38,7 +38,7 @@ import ch.unizh.ifi.ddis.cbr.CBRFactory;
 import ch.unizh.ifi.ddis.cbr.OWLWrapper;
 import ch.unizh.ifi.ddis.cbr.similarity.Similarity;
 
-public abstract class MergerDefault implements Merger {
+public abstract class AdaptionDefault implements Adaption {
 	
 	public OWLWrapper oldCase, newCase, mergedCase = null;
 	
@@ -60,17 +60,17 @@ public abstract class MergerDefault implements Merger {
 
 	// URL where merged cases are stored
 	// (must end in a slash)
-	private static final String MERGEURL = "http://www.ifi.unizh.ch/ddis/ont/owl-s/mergers/";
-	private static final String MERGEONTOLOGY = "Merge";
-	private static final String MERGEPROCESS = "MergeProcess", MERGESERVICE = "MergeService", MERGEPROFILE = "MergeProfile";
+	private static final String MERGEURL = "http://www.ifi.unizh.ch/ddis/ont/owl-s/adaptions/";
+	private static final String MERGEONTOLOGY = "Adapt";
+	private static final String MERGEPROCESS = "AdaptProcess", MERGESERVICE = "AdaptService", MERGEPROFILE = "AdaptProfile";
 
 	//Similarity strategies
 	private Similarity[] similarityStrategies;
 	
 	// threshold
-	public double similarityThreshold = 0.7;
+	public double similarityThreshold = 0.5;
 
-	public MergerDefault() {
+	public AdaptionDefault() {
 		init();
 	}
 	
@@ -97,7 +97,7 @@ public abstract class MergerDefault implements Merger {
 		similarityStrategies = CBRFactory.getSimilarityStrategies();
 	}
 
-	public void addProcess(Process newProcess) {
+	public void addProcess(Process newProcess) throws NoBindingException {
 		// add this process to sequence
 		Process process = addToSequence(newProcess);
 		// add to sequence
@@ -130,7 +130,7 @@ public abstract class MergerDefault implements Merger {
 		
 	}
 
-	private void addBindings(Process previousProcess, Process newProcess) {
+	private void addBindings(Process previousProcess, Process newProcess) throws NoBindingException {
 		OutputList outputs = previousProcess.getOutputs();
 		InputList inputs = newProcess.getInputs();
 		Iterator i = outputs.iterator();
@@ -151,7 +151,13 @@ public abstract class MergerDefault implements Merger {
 			}
 			Perform perform = newProcess.getPerform();
 			System.out.println("previous Process:: " + previousProcess);
-			perform.addBinding(bestMatch, previousProcess.getPerform(), output);
+			if(similarity >= similarityThreshold) {
+				perform.addBinding(bestMatch, previousProcess.getPerform(), output);	
+			} else {
+				System.err.println("no bindings");
+				throw new NoBindingException("NoBindingException: " + previousProcess + "::" + newProcess);
+			}
+			
 			used.add(bestMatch);
 		}
 		

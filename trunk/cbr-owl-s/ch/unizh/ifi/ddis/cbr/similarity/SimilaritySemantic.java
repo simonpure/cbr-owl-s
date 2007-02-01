@@ -19,7 +19,7 @@ public class SimilaritySemantic extends SimilarityDefault {
 	// constants used for semantic matching
     public static double EXACT   =  1; //0;
     public static double SUBSUME =  0.75;  //1;
-    public static double RELAXED =  0.5;  //2;
+    public static double PLUGIN =  0.5;  //2;
     public static double FAIL    = 0;    //3; 
 
 	// whether to include constants in the matching process
@@ -82,7 +82,7 @@ public class SimilaritySemantic extends SimilarityDefault {
         else if(newCaseType.isSubTypeOf(oldCaseType))
         	matchtype = SUBSUME;        
         else if(oldCaseType.isSubTypeOf(newCaseType)) 
-        	matchtype = RELAXED;
+        	matchtype = PLUGIN;
         else if(newCaseType.getURI().equals(NIL))
         	matchtype = EXACT;
         else

@@ -1,4 +1,4 @@
-package ch.unizh.ifi.ddis.cbr.merge;
+package ch.unizh.ifi.ddis.cbr.adaption;
 
 import java.io.FileNotFoundException;
 import java.net.URISyntaxException;
@@ -10,9 +10,9 @@ import ch.unizh.ifi.ddis.cbr.OWLWrapper;
 /*
  * simply return old case
  */
-public class MergerSimple extends MergerDefault {
+public class AdaptionSimple extends AdaptionDefault {
 
-	public OWLWrapper merge(OWLWrapper oldCase, OWLWrapper newCase) throws FileNotFoundException, URISyntaxException {
+	public OWLWrapper adapt(OWLWrapper oldCase, OWLWrapper newCase) throws FileNotFoundException, URISyntaxException, NoBindingException {
 		Process process = oldCase.getService().getProcess();
 		System.out.println("simple::old process::" + process);
 		addProcess(process);
