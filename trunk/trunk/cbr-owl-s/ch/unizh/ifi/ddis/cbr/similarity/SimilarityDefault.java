@@ -16,7 +16,7 @@ public abstract class SimilarityDefault implements Similarity {
 	*/
 	
 	public double compareGraph(OWLSGraph oldGraph, OWLSGraph newGraph) {
-		MaxCommonSubgraphIsoValiente compareGraph = new MaxCommonSubgraphIsoValiente(oldGraph, newGraph, 2, 0.5, 0.5, "big");
+		MaxCommonSubgraphIsoValiente compareGraph = new MaxCommonSubgraphIsoValiente(oldGraph, newGraph, 1, 0.5, 0.5, "big");
 		return compareGraph.getSimilarity();
 	}
 	

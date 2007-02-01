@@ -8,7 +8,6 @@ import org.mindswap.owls.process.Output;
 import org.mindswap.owls.process.Parameter;
 import org.mindswap.owls.process.Process;
 
-import ch.unizh.ifi.ddis.cbr.OWLWrapper;
 import ch.unizh.ifi.ddis.cbr.PorterStemmer;
 
 import simpack.accessor.string.StringAccessor;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="1449,1960" id="ch.unizh.ifi.ddis.cbr.merge" metadata="uml2-1.0" initialized="true" scrolledX="23" tag="10" key="3230303630343131204F574C2D5320434252">
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="1449,1960" id="ch.unizh.ifi.ddis.cbr.adaption" metadata="uml2-1.0" initialized="true" scrolledX="23" tag="10" key="3230303630343131204F574C2D5320434252">
   <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.7/@sourceConnections.2 //@children.3/@sourceConnections.2 //@children.1/@sourceConnections.1" name="ProcessList" location="1121,593" size="308,99" id="org.mindswap.owls.process/ProcessList" runTimeClassModel="getProcess(Ljava.net.URI;),processAt(I)">
     <children xsi:type="editmodel:CompartmentEditModel"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="85,36">
@@ -102,130 +102,130 @@
     <children xsi:type="editmodel:CompartmentEditModel"/>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" name="MergerInsert" location="940,700" size="122,85" id="ch.unizh.ifi.ddis.cbr.merge/MergerInsert" runTimeClassModel="nIL,merge(Lch.unizh.ifi.ddis.cbr.OWLWrapper;Lch.unizh.ifi.ddis.cbr.OWLWrapper;)">
+  <children xsi:type="editmodel:ClassEditModel" name="MergerInsert" location="940,700" size="122,85" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionInsert" runTimeClassModel="nIL,merge(Lch.unizh.ifi.ddis.cbr.OWLWrapper;Lch.unizh.ifi.ddis.cbr.OWLWrapper;)">
     <children xsi:type="editmodel:CompartmentEditModel" size="56,18">
-      <children xsi:type="editmodel:AttributeEditModel" name="nIL" id="ch.unizh.ifi.ddis.cbr.merge/MergerInsert#nIL"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="nIL" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionInsert#nIL"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="60,18">
-      <children xsi:type="editmodel:MethodEditModel" name="merge" id="ch.unizh.ifi.ddis.cbr.merge/MergerInsert#merge(Lch.unizh.ifi.ddis.cbr.OWLWrapper;Lch.unizh.ifi.ddis.cbr.OWLWrapper;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="merge" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionInsert#adapt(Lch.unizh.ifi.ddis.cbr.OWLWrapper;Lch.unizh.ifi.ddis.cbr.OWLWrapper;)"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel"/>
-    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.merge/MergerDefault&lt;-ch.unizh.ifi.ddis.cbr.merge/MergerInsert" source="//@children.3" target="//@children.4/@sourceConnections.0" targetEnd="//@children.3/@sourceConnections.0/@children.1" sourceEnd="//@children.3/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionDefault&lt;-ch.unizh.ifi.ddis.cbr.adaption/AdaptionInsert" source="//@children.3" target="//@children.4/@sourceConnections.0" targetEnd="//@children.3/@sourceConnections.0/@children.1" sourceEnd="//@children.3/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
       <children xsi:type="editmodel:AssociationEndEditModel" location="61,0" anchorKind="FixedAtEdge" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel"/>
     </sourceConnections>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.merge/MergerInsert->org.mindswap.owls.process/Process" source="//@children.3" target="//@children.2" targetEnd="//@children.3/@sourceConnections.1/@children.2" label="//@children.3/@sourceConnections.1/@children.0" sourceEnd="//@children.3/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionInsert->org.mindswap.owls.process/Process" source="//@children.3" target="//@children.2" targetEnd="//@children.3/@sourceConnections.1/@children.2" label="//@children.3/@sourceConnections.1/@children.0" sourceEnd="//@children.3/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
       <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="10,85" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="286,10"/>
     </sourceConnections>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.merge/MergerInsert->org.mindswap.owls.process/ProcessList" source="//@children.3" target="//@children.0" targetEnd="//@children.3/@sourceConnections.2/@children.2" label="//@children.3/@sourceConnections.2/@children.0" sourceEnd="//@children.3/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionInsert->org.mindswap.owls.process/ProcessList" source="//@children.3" target="//@children.0" targetEnd="//@children.3/@sourceConnections.2/@children.2" label="//@children.3/@sourceConnections.2/@children.0" sourceEnd="//@children.3/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
       <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="122,10" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="10,99"/>
     </sourceConnections>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.merge/MergerInsert->ch.unizh.ifi.ddis.cbr/OWLWrapper" source="//@children.3" target="//@children.1" targetEnd="//@children.3/@sourceConnections.3/@children.2" label="//@children.3/@sourceConnections.3/@children.0" sourceEnd="//@children.3/@sourceConnections.3/@children.1" connectionRouterKind="Manhattan">
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionInsert->ch.unizh.ifi.ddis.cbr/OWLWrapper" source="//@children.3" target="//@children.1" targetEnd="//@children.3/@sourceConnections.3/@children.2" label="//@children.3/@sourceConnections.3/@children.0" sourceEnd="//@children.3/@sourceConnections.3/@children.1" connectionRouterKind="Manhattan">
       <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="0,42" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="276,165"/>
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" name="MergerCopy" location="490,757" size="119,67" id="ch.unizh.ifi.ddis.cbr.merge/MergerCopy" runTimeClassModel="merge(Lch.unizh.ifi.ddis.cbr.OWLWrapper;Lch.unizh.ifi.ddis.cbr.OWLWrapper;)">
+  <children xsi:type="editmodel:ClassEditModel" name="MergerCopy" location="490,757" size="119,67" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionCopy" runTimeClassModel="merge(Lch.unizh.ifi.ddis.cbr.OWLWrapper;Lch.unizh.ifi.ddis.cbr.OWLWrapper;)">
     <children xsi:type="editmodel:CompartmentEditModel"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="60,18">
-      <children xsi:type="editmodel:MethodEditModel" name="merge" location="6,45" id="ch.unizh.ifi.ddis.cbr.merge/MergerCopy#merge(Lch.unizh.ifi.ddis.cbr.OWLWrapper;Lch.unizh.ifi.ddis.cbr.OWLWrapper;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="merge" location="6,45" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionCopy#adapt(Lch.unizh.ifi.ddis.cbr.OWLWrapper;Lch.unizh.ifi.ddis.cbr.OWLWrapper;)"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel"/>
-    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.5/@sourceConnections.0 //@children.3/@sourceConnections.0" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.merge/MergerDefault&lt;-ch.unizh.ifi.ddis.cbr.merge/MergerCopy" source="//@children.4" target="//@children.7" targetEnd="//@children.4/@sourceConnections.0/@children.1" sourceEnd="//@children.4/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.5/@sourceConnections.0 //@children.3/@sourceConnections.0" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionDefault&lt;-ch.unizh.ifi.ddis.cbr.adaption/AdaptionCopy" source="//@children.4" target="//@children.7" targetEnd="//@children.4/@sourceConnections.0/@children.1" sourceEnd="//@children.4/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
       <children xsi:type="editmodel:AssociationEndEditModel" location="59,0" anchorKind="FixedAtEdge" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="87,355" anchorKind="FixedAtEdge"/>
     </sourceConnections>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.merge/MergerCopy->org.mindswap.owls.process/Process" source="//@children.4" target="//@children.2" targetEnd="//@children.4/@sourceConnections.1/@children.2" label="//@children.4/@sourceConnections.1/@children.0" sourceEnd="//@children.4/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionCopy->org.mindswap.owls.process/Process" source="//@children.4" target="//@children.2" targetEnd="//@children.4/@sourceConnections.1/@children.2" label="//@children.4/@sourceConnections.1/@children.0" sourceEnd="//@children.4/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
       <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="102,67" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="15,0"/>
     </sourceConnections>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.merge/MergerCopy->ch.unizh.ifi.ddis.cbr/OWLWrapper" source="//@children.4" target="//@children.1" targetEnd="//@children.4/@sourceConnections.2/@children.2" label="//@children.4/@sourceConnections.2/@children.0" sourceEnd="//@children.4/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionCopy->ch.unizh.ifi.ddis.cbr/OWLWrapper" source="//@children.4" target="//@children.1" targetEnd="//@children.4/@sourceConnections.2/@children.2" label="//@children.4/@sourceConnections.2/@children.0" sourceEnd="//@children.4/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
       <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="0,33" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="276,213"/>
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" name="MergerSimple" location="660,810" size="132,67" id="ch.unizh.ifi.ddis.cbr.merge/MergerSimple" runTimeClassModel="merge(Lch.unizh.ifi.ddis.cbr.OWLWrapper;Lch.unizh.ifi.ddis.cbr.OWLWrapper;)">
+  <children xsi:type="editmodel:ClassEditModel" name="MergerSimple" location="660,810" size="132,67" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionSimple" runTimeClassModel="merge(Lch.unizh.ifi.ddis.cbr.OWLWrapper;Lch.unizh.ifi.ddis.cbr.OWLWrapper;)">
     <children xsi:type="editmodel:CompartmentEditModel"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="60,18">
-      <children xsi:type="editmodel:MethodEditModel" name="merge" id="ch.unizh.ifi.ddis.cbr.merge/MergerSimple#merge(Lch.unizh.ifi.ddis.cbr.OWLWrapper;Lch.unizh.ifi.ddis.cbr.OWLWrapper;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="merge" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionSimple#adapt(Lch.unizh.ifi.ddis.cbr.OWLWrapper;Lch.unizh.ifi.ddis.cbr.OWLWrapper;)"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel"/>
-    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.merge/MergerDefault&lt;-ch.unizh.ifi.ddis.cbr.merge/MergerSimple" source="//@children.5" target="//@children.4/@sourceConnections.0" targetEnd="//@children.5/@sourceConnections.0/@children.1" sourceEnd="//@children.5/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionDefault&lt;-ch.unizh.ifi.ddis.cbr.adaption/AdaptionSimple" source="//@children.5" target="//@children.4/@sourceConnections.0" targetEnd="//@children.5/@sourceConnections.0/@children.1" sourceEnd="//@children.5/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
       <children xsi:type="editmodel:AssociationEndEditModel" location="66,0" anchorKind="FixedAtEdge" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel"/>
     </sourceConnections>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.merge/MergerSimple->org.mindswap.owls.process/Process" source="//@children.5" target="//@children.2" targetEnd="//@children.5/@sourceConnections.1/@children.2" label="//@children.5/@sourceConnections.1/@children.0" sourceEnd="//@children.5/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionSimple->org.mindswap.owls.process/Process" source="//@children.5" target="//@children.2" targetEnd="//@children.5/@sourceConnections.1/@children.2" label="//@children.5/@sourceConnections.1/@children.0" sourceEnd="//@children.5/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
       <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="65,67" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="148,0"/>
     </sourceConnections>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.merge/MergerSimple->ch.unizh.ifi.ddis.cbr/OWLWrapper" source="//@children.5" target="//@children.1" targetEnd="//@children.5/@sourceConnections.2/@children.2" label="//@children.5/@sourceConnections.2/@children.0" sourceEnd="//@children.5/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionSimple->ch.unizh.ifi.ddis.cbr/OWLWrapper" source="//@children.5" target="//@children.1" targetEnd="//@children.5/@sourceConnections.2/@children.2" label="//@children.5/@sourceConnections.2/@children.0" sourceEnd="//@children.5/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
       <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="0,33" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="276,266"/>
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
   </children>
-  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.7/@sourceConnections.0" name="Merger" location="460,70" size="87,81" id="ch.unizh.ifi.ddis.cbr.merge/Merger" runTimeClassModel="merge(Lch.unizh.ifi.ddis.cbr.OWLWrapper;Lch.unizh.ifi.ddis.cbr.OWLWrapper;)">
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.7/@sourceConnections.0" name="Merger" location="460,70" size="87,81" id="ch.unizh.ifi.ddis.cbr.adaption/Adaption" runTimeClassModel="merge(Lch.unizh.ifi.ddis.cbr.OWLWrapper;Lch.unizh.ifi.ddis.cbr.OWLWrapper;)">
     <children xsi:type="editmodel:CompartmentEditModel"/>
     <children xsi:type="editmodel:CompartmentEditModel" size="60,18">
-      <children xsi:type="editmodel:MethodEditModel" name="merge" id="ch.unizh.ifi.ddis.cbr.merge/Merger#merge(Lch.unizh.ifi.ddis.cbr.OWLWrapper;Lch.unizh.ifi.ddis.cbr.OWLWrapper;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="merge" id="ch.unizh.ifi.ddis.cbr.adaption/Adaption#adapt(Lch.unizh.ifi.ddis.cbr.OWLWrapper;Lch.unizh.ifi.ddis.cbr.OWLWrapper;)"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel"/>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.merge/Merger->ch.unizh.ifi.ddis.cbr/OWLWrapper" source="//@children.6" target="//@children.1" targetEnd="//@children.6/@sourceConnections.0/@children.2" label="//@children.6/@sourceConnections.0/@children.0" sourceEnd="//@children.6/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.adaption/Adaption->ch.unizh.ifi.ddis.cbr/OWLWrapper" source="//@children.6" target="//@children.1" targetEnd="//@children.6/@sourceConnections.0/@children.2" label="//@children.6/@sourceConnections.0/@children.0" sourceEnd="//@children.6/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
       <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="0,71" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="266,0"/>
     </sourceConnections>
     <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true"/>
   </children>
-  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.0" name="MergerDefault" location="721,181" size="175,355" id="ch.unizh.ifi.ddis.cbr.merge/MergerDefault" runTimeClassModel="getMergedCase(),ont,MergerDefault(),kb,getOutputs(Lorg.mindswap.owls.process.Process;),similarityThreshold,getParameter(Lorg.mindswap.owls.process.Process;Ljava.net.URI;),getOutput(Lorg.mindswap.owls.process.Process;Ljava.net.URI;),addProcess(Lorg.mindswap.owls.process.Process;),getProcesses(Lorg.mindswap.owls.process.Process;Z),getInputs(Lorg.mindswap.owls.process.Process;),getInput(Lorg.mindswap.owls.process.Process;Ljava.net.URI;),init(),newCase,baseURI,mergedCase,oldCase">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.0" name="MergerDefault" location="721,181" size="175,355" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionDefault" runTimeClassModel="getMergedCase(),ont,MergerDefault(),kb,getOutputs(Lorg.mindswap.owls.process.Process;),similarityThreshold,getParameter(Lorg.mindswap.owls.process.Process;Ljava.net.URI;),getOutput(Lorg.mindswap.owls.process.Process;Ljava.net.URI;),addProcess(Lorg.mindswap.owls.process.Process;),getProcesses(Lorg.mindswap.owls.process.Process;Z),getInputs(Lorg.mindswap.owls.process.Process;),getInput(Lorg.mindswap.owls.process.Process;Ljava.net.URI;),init(),newCase,baseURI,mergedCase,oldCase">
     <children xsi:type="editmodel:CompartmentEditModel" size="152,126">
-      <children xsi:type="editmodel:AttributeEditModel" name="baseURI" id="ch.unizh.ifi.ddis.cbr.merge/MergerDefault#baseURI"/>
-      <children xsi:type="editmodel:AttributeEditModel" name="kb" id="ch.unizh.ifi.ddis.cbr.merge/MergerDefault#kb"/>
-      <children xsi:type="editmodel:AttributeEditModel" name="mergedCase" id="ch.unizh.ifi.ddis.cbr.merge/MergerDefault#mergedCase"/>
-      <children xsi:type="editmodel:AttributeEditModel" name="newCase" id="ch.unizh.ifi.ddis.cbr.merge/MergerDefault#newCase"/>
-      <children xsi:type="editmodel:AttributeEditModel" name="oldCase" id="ch.unizh.ifi.ddis.cbr.merge/MergerDefault#oldCase"/>
-      <children xsi:type="editmodel:AttributeEditModel" name="ont" id="ch.unizh.ifi.ddis.cbr.merge/MergerDefault#ont"/>
-      <children xsi:type="editmodel:AttributeEditModel" name="similarityThreshold" id="ch.unizh.ifi.ddis.cbr.merge/MergerDefault#similarityThreshold"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="baseURI" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionDefault#baseURI"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="kb" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionDefault#kb"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="mergedCase" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionDefault#mergedCase"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="newCase" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionDefault#newCase"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="oldCase" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionDefault#oldCase"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="ont" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionDefault#ont"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="similarityThreshold" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionDefault#similarityThreshold"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel" size="106,180">
-      <children xsi:type="editmodel:MethodEditModel" name="MergerDefault" id="ch.unizh.ifi.ddis.cbr.merge/MergerDefault#MergerDefault()"/>
-      <children xsi:type="editmodel:MethodEditModel" name="addProcess" id="ch.unizh.ifi.ddis.cbr.merge/MergerDefault#addProcess(Lorg.mindswap.owls.process.Process;)"/>
-      <children xsi:type="editmodel:MethodEditModel" name="getInput" id="ch.unizh.ifi.ddis.cbr.merge/MergerDefault#getInput(Lorg.mindswap.owls.process.Process;Ljava.net.URI;)"/>
-      <children xsi:type="editmodel:MethodEditModel" name="getInputs" id="ch.unizh.ifi.ddis.cbr.merge/MergerDefault#getInputs(Lorg.mindswap.owls.process.Process;)"/>
-      <children xsi:type="editmodel:MethodEditModel" name="getMergedCase" id="ch.unizh.ifi.ddis.cbr.merge/MergerDefault#getMergedCase()"/>
-      <children xsi:type="editmodel:MethodEditModel" name="getOutput" id="ch.unizh.ifi.ddis.cbr.merge/MergerDefault#getOutput(Lorg.mindswap.owls.process.Process;Ljava.net.URI;)"/>
-      <children xsi:type="editmodel:MethodEditModel" name="getOutputs" id="ch.unizh.ifi.ddis.cbr.merge/MergerDefault#getOutputs(Lorg.mindswap.owls.process.Process;)"/>
-      <children xsi:type="editmodel:MethodEditModel" name="getParameter" id="ch.unizh.ifi.ddis.cbr.merge/MergerDefault#getParameter(Lorg.mindswap.owls.process.Process;Ljava.net.URI;)"/>
-      <children xsi:type="editmodel:MethodEditModel" name="getProcesses" id="ch.unizh.ifi.ddis.cbr.merge/MergerDefault#getProcesses(Lorg.mindswap.owls.process.Process;Z)"/>
-      <children xsi:type="editmodel:MethodEditModel" name="init" id="ch.unizh.ifi.ddis.cbr.merge/MergerDefault#init()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="MergerDefault" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionDefault#AdaptionDefault()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addProcess" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionDefault#addProcess(Lorg.mindswap.owls.process.Process;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInput" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionDefault#getInput(Lorg.mindswap.owls.process.Process;Ljava.net.URI;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getInputs" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionDefault#getInputs(Lorg.mindswap.owls.process.Process;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getMergedCase" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionDefault#getMergedCase()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getOutput" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionDefault#getOutput(Lorg.mindswap.owls.process.Process;Ljava.net.URI;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getOutputs" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionDefault#getOutputs(Lorg.mindswap.owls.process.Process;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getParameter" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionDefault#getParameter(Lorg.mindswap.owls.process.Process;Ljava.net.URI;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getProcesses" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionDefault#getProcesses(Lorg.mindswap.owls.process.Process;Z)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="init" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionDefault#init()"/>
     </children>
     <children xsi:type="editmodel:CompartmentEditModel"/>
-    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.merge/Merger&lt;-ch.unizh.ifi.ddis.cbr.merge/MergerDefault" source="//@children.7" target="//@children.6" targetEnd="//@children.7/@sourceConnections.0/@children.1" sourceEnd="//@children.7/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.adaption/Adaption&lt;-ch.unizh.ifi.ddis.cbr.adaption/AdaptionDefault" source="//@children.7" target="//@children.6" targetEnd="//@children.7/@sourceConnections.0/@children.1" sourceEnd="//@children.7/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
       <children xsi:type="editmodel:AssociationEndEditModel" location="0,106" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="87,76"/>
     </sourceConnections>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.merge/MergerDefault->ch.unizh.ifi.ddis.cbr/OWLWrapper" source="//@children.7" target="//@children.1" targetEnd="//@children.7/@sourceConnections.1/@children.2" label="//@children.7/@sourceConnections.1/@children.0" sourceEnd="//@children.7/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionDefault->ch.unizh.ifi.ddis.cbr/OWLWrapper" source="//@children.7" target="//@children.1" targetEnd="//@children.7/@sourceConnections.1/@children.2" label="//@children.7/@sourceConnections.1/@children.0" sourceEnd="//@children.7/@sourceConnections.1/@children.1" connectionRouterKind="Manhattan">
       <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="10,355" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="276,10"/>
     </sourceConnections>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.merge/MergerDefault->org.mindswap.owls.process/ProcessList" source="//@children.7" target="//@children.0" targetEnd="//@children.7/@sourceConnections.2/@children.2" label="//@children.7/@sourceConnections.2/@children.0" sourceEnd="//@children.7/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionDefault->org.mindswap.owls.process/ProcessList" source="//@children.7" target="//@children.0" targetEnd="//@children.7/@sourceConnections.2/@children.2" label="//@children.7/@sourceConnections.2/@children.0" sourceEnd="//@children.7/@sourceConnections.2/@children.1" connectionRouterKind="Manhattan">
       <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="175,345" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="10,0"/>
     </sourceConnections>
-    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.merge/MergerDefault->org.mindswap.owls.process/Process" source="//@children.7" target="//@children.2" targetEnd="//@children.7/@sourceConnections.3/@children.2" label="//@children.7/@sourceConnections.3/@children.0" sourceEnd="//@children.7/@sourceConnections.3/@children.1" connectionRouterKind="Manhattan">
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ch.unizh.ifi.ddis.cbr.adaption/AdaptionDefault->org.mindswap.owls.process/Process" source="//@children.7" target="//@children.2" targetEnd="//@children.7/@sourceConnections.3/@children.2" label="//@children.7/@sourceConnections.3/@children.0" sourceEnd="//@children.7/@sourceConnections.3/@children.1" connectionRouterKind="Manhattan">
       <children xsi:type="editmodel:WireLabelEditModel" name="«import»" size="41,14" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="70,355" attachSource="true"/>
       <children xsi:type="editmodel:AssociationEndEditModel" location="214,0"/>

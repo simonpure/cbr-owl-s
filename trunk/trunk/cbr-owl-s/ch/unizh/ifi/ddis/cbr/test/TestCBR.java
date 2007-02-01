@@ -217,7 +217,13 @@ public class TestCBR {
 
 */
 		
-		cbr.reuse(newCase);
+		ArrayList mergedCases = cbr.reuse(newCase);
+		OWLOntology mergedCase;
+		Iterator i = mergedCases.iterator();
+		while(i.hasNext()) {
+			mergedCase = (OWLOntology) i.next();
+			mergedCase.write(System.out);
+		}
 		
 		
 /*
