@@ -118,7 +118,6 @@ public class TestCBR {
 //		Input newInput = newCase.createInput(URI.create(baseURI + "#Input"));
 //		newInput.setParamType(i.getParamType());
 
-//		System.out.println("figger::"+ont.getURI());
 //		ont.write(System.out);
 		
 		String baseURI = "http://www.example.org/Test.owl";
@@ -161,8 +160,11 @@ public class TestCBR {
 		input2.setLabel("Input2");
 		//input1.setConstantValue(newCase.createDataValue("3"));
 
-		Output output = newCase.createOutput(URI.create("http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#nil"));
-		output.setParamType(new OWLDataTypeImpl(URI.create("http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#nil")));
+		//Output output = newCase.createOutput(URI.create("http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#nil"));
+		//output.setParamType(new OWLDataTypeImpl(URI.create("http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#nil")));
+
+		Output output = newCase.createOutput(URI.create(baseURI + "#myOutput"));
+		output.setParamType(new OWLDataTypeImpl(XSD.nonNegativeInteger));
 		output.setProcess(p);
 		output.setLabel("Output");
 		
@@ -181,90 +183,20 @@ public class TestCBR {
 		
 
 		OWLSCaseBasedReasoner cbr = new OWLSCaseBasedReasoner();
-		
-/*		
-		ArrayList cases = cbr.getCases();
-		
-		Iterator j = cases.iterator();
-		OWLWrapper oldCase;
-		while(j.hasNext()) {
-			oldCase = (OWLWrapper) j.next();
-			System.out.println("process list:::" + oldCase.getURI());
-			oldCase.printProcessList();
-		}
-		
-		j = cases.iterator();
-		while(j.hasNext()) {
-			oldCase = (OWLWrapper) j.next();
-			System.out.println("process list::");
-			oldCase.printProcessList();
-		}
-	*/	
-		//System.exit(0);
-		
-		/*
-		ArrayList bestCases = cbr.retrieve(newCase);
 
-		System.out.println("# best cases::" + bestCases.size());
-		Iterator i = bestCases.iterator();
-		OWLWrapper oldCase;
-		while(i.hasNext()) {
-			oldCase = (OWLWrapper) i.next();
-			System.out.println("old case::" + oldCase);
-			//new CombinedCase(similarity).getCombinedCase();
-			
-		}
-
-*/
+		// retrieve cases
+		cbr.retrieve(newCase);
 		
-		ArrayList mergedCases = cbr.reuse(newCase);
+		// adapt cases
+		ArrayList adaptedCases = cbr.reuse();
 		OWLOntology mergedCase;
-		Iterator i = mergedCases.iterator();
+		Iterator i = adaptedCases.iterator();
 		while(i.hasNext()) {
 			mergedCase = (OWLOntology) i.next();
 			mergedCase.write(System.out);
 		}
 		
 		
-/*
- 
- 			System.out.println("-------------");
-			System.out.println("input names::");
-			System.out.println(rc.getInputNames());
-			System.out.println("-------------");
-			
- 		
-		//cbr.getKB().getReader().getCache().setLocalCacheDirectory( "C:\\Hacks\\workspace\\Ontologies\\ont_cache");
-		
-		Set ontologies = kb.getOntologies();
-		
-		System.out.println("size::"+ontologies.size());
-		OWLOntology ont;
-		Iterator i = ontologies.iterator();
-		while(i.hasNext()) {
-			ont = (OWLOntology) i.next();
-			//ont.write(System.out);
-			try {
-				kb.readAllServices(ont.getURI());
-			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			System.out.println(ont.getURI());
-		}
-		
-		ontologies = kb.getOntologies();
-		System.out.println("size::"+ontologies.size());
-		i = ontologies.iterator();
-		while(i.hasNext()) {
-			ont = (OWLOntology) i.next();
-			//ont.write(System.out);
-			System.out.println(ont.getURI());
-		}
-		
-		
-		System.out.println(kb.getOntologies());
-	*/
 		
 	}
 	

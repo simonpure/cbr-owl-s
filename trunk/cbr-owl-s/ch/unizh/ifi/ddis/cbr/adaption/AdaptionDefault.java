@@ -150,11 +150,11 @@ public abstract class AdaptionDefault implements Adaption {
 				}
 			}
 			Perform perform = newProcess.getPerform();
-			System.out.println("previous Process:: " + previousProcess);
+			//System.out.println("previous Process:: " + previousProcess);
 			if(similarity >= similarityThreshold) {
 				perform.addBinding(bestMatch, previousProcess.getPerform(), output);	
 			} else {
-				System.err.println("no bindings");
+				//System.err.println("no bindings");
 				throw new NoBindingException("NoBindingException: " + previousProcess + "::" + newProcess);
 			}
 			
@@ -367,7 +367,7 @@ public abstract class AdaptionDefault implements Adaption {
 		Process process;
 		while(i.hasNext()) {
 			process = (Process) i.next();
-			System.out.println("binding for process::" + process.getURI());
+			//System.out.println("binding for process::" + process.getURI());
 			addInputBindings(process, mergedProcess);
 			addResultBindings(process, mergedProcess);			
 		}
@@ -380,7 +380,7 @@ public abstract class AdaptionDefault implements Adaption {
 
     	ResultList rl = originalProcess.getResults();
     	
-    	if(rl.size() == 0) System.out.println("no results");
+    	//if(rl.size() == 0) System.out.println("no results");
     	
     	Iterator l = rl.iterator();
     	Result result;
@@ -431,7 +431,7 @@ public abstract class AdaptionDefault implements Adaption {
 		//System.out.println("input bindings::" + oldProcess.getURI());
 		Perform perform = originalProcess.getPerform();
     	if(perform == null) {
-    		System.out.println("no perfom");
+    		//System.out.println("no perfom");
     		return;
     	}
     	
