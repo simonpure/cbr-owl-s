@@ -108,15 +108,17 @@ public class OWLSCaseBasedReasoner {
 		return kb;
 	}
 	
-	public ArrayList reuse(OWLOntology ont1) throws FileNotFoundException, URISyntaxException {
-		//Iterator i = retrievedCases.iterator();
-		newCase = new OWLWrapper(ont1);
+	public ArrayList reuse() throws FileNotFoundException, URISyntaxException {
+		if(newCase == null) return null;
 		
-		Iterator i = cases.iterator();
+		logger.info("selected cases::" + retrievedCases.size());
+		
+		Iterator i = retrievedCases.iterator();
+		
 		OWLWrapper oldCase = null;
 		OWLOntology ont;
-		OWLWrapper mergedCase = null;
-		ArrayList mergedCases = new ArrayList();
+		OWLWrapper adaptedCase = null;
+		ArrayList adaptedCases = new ArrayList();
 		
 		while(i.hasNext()) {
 			oldCase = (OWLWrapper) i.next();
@@ -128,26 +130,26 @@ public class OWLSCaseBasedReasoner {
 
 			// try to merge the old case with the new case using the different strategies
 			try {
-				mergedCase = insert.adapt(oldCase, newCase);
+				adaptedCase = insert.adapt(oldCase, newCase);
 			} catch (NoBindingException e) {
 				try {
-					mergedCase = copy.adapt(oldCase, newCase);
+					adaptedCase = copy.adapt(oldCase, newCase);
 				} catch (NoBindingException e1) {
 					try {
-						mergedCase = simple.adapt(oldCase, newCase);
+						adaptedCase = simple.adapt(oldCase, newCase);
 					} catch (NoBindingException e2) {
 						// shouldn't happen as simple uses old case only
 					}
 				}
 			}
-			ont = mergedCase.getOntology();
+			ont = adaptedCase.getOntology();
 			//ont.write(System.out);
-			mergedCases.add(ont);
+			adaptedCases.add(ont);
 			
 			//break;
 
 		}
-		return mergedCases;
+		return adaptedCases;
 	}
 
 	ArrayList retrievedCases = new ArrayList();
@@ -165,7 +167,7 @@ public class OWLSCaseBasedReasoner {
 		SimilarityMatch[] matches;
 		while(i.hasNext()) {
 			oldCase = (OWLWrapper) i.next();
-			logger.info("compare\n new::" + newCase + "\nto old::\n" + oldCase);
+			//logger.info("compare\n new::" + newCase + "\nto old::\n" + oldCase);
 			
 			matches = getSimilarity(oldCase, newCase);
 			
@@ -178,8 +180,8 @@ public class OWLSCaseBasedReasoner {
 				double similarityIOPs = (similarityInputs * inputsWeight) + (similarityOutputs * outputsWeight)
 					+ (similarityProcesses * processesWeight);
 				
-				logger.info("IOPs::" + similarityIOPs + " Inputs::" + similarityInputs + " Outputs::" +  similarityOutputs + " p::" 
-						+  similarityProcesses + " g::" + similarityGraph);
+				//logger.info("IOPs::" + similarityIOPs + " Inputs::" + similarityInputs + " Outputs::" +  similarityOutputs + " p::" 
+				//		+  similarityProcesses + " g::" + similarityGraph);
 				
 				// check if one of the strategies was successful to consider old case
 				if(similarityGraph >= graphThreshold && similarityIOPs >= IOPsThreshold) {

@@ -14,7 +14,6 @@ public class AdaptionSimple extends AdaptionDefault {
 
 	public OWLWrapper adapt(OWLWrapper oldCase, OWLWrapper newCase) throws FileNotFoundException, URISyntaxException, NoBindingException {
 		Process process = oldCase.getService().getProcess();
-		System.out.println("simple::old process::" + process);
 		addProcess(process);
 		
 		return getMergedCase();
